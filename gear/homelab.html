@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homelab — Hunter Evolved</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="nav-brand" href="../index.html">Hunter Evolved</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Gear</a></li>
+      <li><a href="../commander-corner.html">Commander Corner</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Homelab</h1>
+  <p class="page-intro">The rack and what's in it, including an interactive 3D view.</p>
+
+  <!--
+    TODO (HOST-65): mount the Three.js rack scene from HOST-63 into #rack-viewer.
+    TODO (HOST-66): swap in a static-image fallback here for mobile/low-end devices.
+  -->
+  <div id="rack-viewer" class="coming-soon">
+    Interactive 3D rack visualization coming soon.
+  </div>
+
+  <!-- TODO: rack unit inventory / write-up (HOST-67, HOST-61) -->
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Hunter</p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

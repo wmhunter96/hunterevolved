@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garage — Hunter Evolved</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="nav-brand" href="../index.html">Hunter Evolved</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Gear</a></li>
+      <li><a href="../commander-corner.html">Commander Corner</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Garage</h1>
+  <p class="page-intro">Fuel &amp; mileage tracking for the Corolla Hybrid.</p>
+
+  <div class="coming-soon">
+    MPG chart &amp; table coming soon — data source TBD (manual spreadsheet or the Odometer app, HOST-52).
+  </div>
+
+  <!-- TODO: replace with a real chart + this table once data source is wired up (HOST-53/54) -->
+  <table class="data-table">
+    <thead>
+      <tr><th>Date</th><th>Miles</th><th>Gallons</th><th>MPG</th></tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="4">No data yet</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Hunter</p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
