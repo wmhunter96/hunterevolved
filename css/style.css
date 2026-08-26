@@ -65,9 +65,6 @@ body {
 .page-intro a, .page p a { color: var(--link); text-underline-offset: 2px; }
 .page-intro a:hover, .page p a:hover { color: var(--accent); }
 
-.page-header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem; }
-.page-header-row h1 { margin-bottom: 0; }
-
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 .card {
   position: relative;

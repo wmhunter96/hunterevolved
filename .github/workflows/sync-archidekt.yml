@@ -1,0 +1,39 @@
+name: Sync Archidekt decks
+
+on:
+  schedule:
+    # 09:00 UTC daily
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync decks from Archidekt
+        run: node scripts/sync-archidekt.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- mtg.html; then
+            echo "No deck changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mtg.html
+          git commit -m "Sync MTG decks from Archidekt
+
+          Automated update via scripts/sync-archidekt.mjs (.github/workflows/sync-archidekt.yml)."
+          git push
