@@ -129,6 +129,43 @@ a.card:hover::before { filter: brightness(1.15); }
 
 .page h2 { font-size: 1.5rem; margin: 2.5rem 0 .75rem; }
 
+/* Vehicle profile (garage page) */
+.vehicle { display: flex; gap: 2rem; align-items: center; margin-bottom: 2.5rem; }
+.vehicle-photo {
+  flex: 0 0 300px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.vehicle-photo img { display: block; width: 100%; height: auto; }
+.vehicle-photo-caption {
+  padding: .5rem .75rem;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: .75rem;
+  text-align: center;
+}
+.vehicle-info { flex: 1 1 260px; }
+.vehicle-info h2 { margin: 0 0 .25rem; font-size: 1.4rem; }
+.vehicle-info .vehicle-trim { color: var(--fg-muted); margin: 0 0 1rem; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+.stat {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  padding: 1rem 1.25rem;
+}
+.stat-label { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: var(--fg-muted); }
+.stat-value { display: block; font-size: 1.3rem; font-weight: 700; color: var(--fg); margin-top: .3rem; }
+.stat-sub { display: block; font-size: .8rem; color: var(--fg-muted); margin-top: .15rem; }
+
+@media (max-width: 640px) {
+  .vehicle { flex-direction: column; align-items: stretch; }
+  .vehicle-photo { flex-basis: auto; }
+}
+
 .table-scroll { overflow-x: auto; margin-top: 1rem; }
 .data-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
 .table-scroll .data-table { margin-top: 0; }
