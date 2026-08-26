@@ -23,7 +23,7 @@
 
 <main class="page">
   <h1>Homelab</h1>
-  <p class="page-intro">The rack and what's in it, including an interactive 3D view.</p>
+  <p class="page-intro">An 8U DeskPi RackMate T1 running my self-hosted stack, plus an interactive 3D view.</p>
 
   <!--
     TODO (HOST-65): mount the Three.js rack scene from HOST-63 into #rack-viewer.
@@ -33,7 +33,44 @@
     Interactive 3D rack visualization coming soon.
   </div>
 
-  <!-- TODO: rack unit inventory / write-up (HOST-67, HOST-61) -->
+  <section>
+    <h2>What's in the rack</h2>
+    <p>Only one Ethernet run comes in from the router, so the UniFi switch fans that out to wired connections for everything else. <a href="https://beszel.dev/" target="_blank" rel="noopener">Beszel</a> monitors both <strong>stargazer</strong> and <strong>mirage colloid</strong>. Every unit has a custom 3D-printed rack mount — except the MeLE, which just sits in its bay for now.</p>
+
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr><th>U</th><th>Item</th><th>Host</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>U7</td>
+            <td>MeLE Quieter DL (fanless, N150, 8GB/256GB)</td>
+            <td>mirage colloid</td>
+            <td>Nginx Proxy Manager + Pi-hole. Underutilized — more plans coming.</td>
+          </tr>
+          <tr>
+            <td>U6</td>
+            <td>Philips Hue Bridge</td>
+            <td>—</td>
+            <td>Smart lighting: Hue lights, zones, and automations.</td>
+          </tr>
+          <tr>
+            <td>U5</td>
+            <td>UniFi USW-Flex-2.5G-5</td>
+            <td>—</td>
+            <td>Fans the single router uplink out to wired runs for the rest of the rack.</td>
+          </tr>
+          <tr>
+            <td>U1&ndash;U4</td>
+            <td>TerraMaster F4-424 Pro (i3-N305, 32GB DDR5) + 4&times; Seagate BarraCuda Pro 12TB</td>
+            <td>stargazer</td>
+            <td>Primary NAS — runs ~90% of my Docker containers, Plex, and Frigate.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">

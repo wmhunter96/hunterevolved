@@ -122,7 +122,11 @@ a.card:hover::before { filter: brightness(1.15); }
   margin-bottom: 2rem;
 }
 
+.page h2 { font-size: 1.5rem; margin: 2.5rem 0 .75rem; }
+
+.table-scroll { overflow-x: auto; margin-top: 1rem; }
 .data-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.table-scroll .data-table { margin-top: 0; }
 .data-table th, .data-table td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); color: var(--fg-muted); }
 .data-table th { color: var(--fg); font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; }
 

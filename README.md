@@ -9,8 +9,9 @@ index.html               Home
 gear/index.html            Gear landing — links to sub-pages
 gear/garage.html           Garage — Corolla Hybrid fuel/mileage (HOST-52/53/54)
 gear/desktop-pc.html       Desktop PC BOM (HOST-32/33)
-gear/homelab.html          Homelab — has #rack-viewer mount point for the
-                          future interactive 3D rack (Three.js, HOST-63/65)
+gear/homelab.html          Homelab — real rack inventory table, plus a
+                          #rack-viewer mount point for the future
+                          interactive 3D rack (Three.js, HOST-63/65)
 mtg.html                  MTG — EDH decks (HOST-56/57/58), auto-synced from Archidekt
 scripts/sync-archidekt.mjs  Regenerates mtg.html's deck cards from Archidekt
 css/style.css             Shared styles
@@ -20,8 +21,10 @@ CNAME                     Custom domain for GitHub Pages
 
 ## Status
 
-Scaffold only (HOST-60/HOST-70). Remaining sub-page content (BOM, MPG data,
-3D rack) is tracked in separate open tickets.
+Scaffold only (HOST-60/HOST-70). `gear/homelab.html` now has a real rack
+inventory (HOST-67/HOST-61 done). Remaining sub-page content (Desktop PC
+BOM, Garage MPG data, the homelab 3D rack view) is tracked in separate
+open tickets.
 
 ## Archidekt sync
 
