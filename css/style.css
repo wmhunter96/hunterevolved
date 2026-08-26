@@ -76,6 +76,7 @@ body {
 a.card:hover { border-color: var(--accent); }
 .card h3 { margin-top: 0; color: var(--fg); }
 .card p { color: var(--fg-muted); margin-bottom: 0; }
+.card .meta { color: var(--accent-2); font-size: .85rem; font-weight: 600; margin-bottom: .5rem; }
 
 .badge {
   display: inline-block;

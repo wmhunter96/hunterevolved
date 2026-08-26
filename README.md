@@ -19,5 +19,7 @@ CNAME                     Custom domain for GitHub Pages
 
 ## Status
 
-Scaffold only (HOST-60/HOST-70). Sub-page content (BOM, MPG data, decklists,
-3D rack) is tracked in separate open tickets.
+Scaffold only (HOST-60/HOST-70). `mtg.html` now lists the real decks (linking
+out to [Archidekt](https://archidekt.com/folders/1610461)). Remaining
+sub-page content (BOM, MPG data, 3D rack) is tracked in separate open
+tickets.
