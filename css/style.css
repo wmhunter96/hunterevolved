@@ -5,6 +5,7 @@
   --fg-muted: #a8b0ac;
   --accent: #ff8a3d;
   --accent-2: #4fd0a0;
+  --link: #f2b8c6;
   --border: #2c3335;
   --radius: 8px;
   --max-width: 1100px;
@@ -61,6 +62,11 @@ body {
 .page { max-width: var(--max-width); margin: 0 auto; padding: 4rem 1.5rem; }
 .page h1 { font-size: 2.25rem; margin-bottom: .5rem; }
 .page-intro { color: var(--fg-muted); max-width: 60ch; margin-bottom: 2.5rem; }
+.page-intro a, .page p a { color: var(--link); text-underline-offset: 2px; }
+.page-intro a:hover, .page p a:hover { color: var(--accent); }
+
+.page-header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem; }
+.page-header-row h1 { margin-bottom: 0; }
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 .card {
