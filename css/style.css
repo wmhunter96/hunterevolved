@@ -5,7 +5,7 @@
   --fg-muted: #a8b0ac;
   --accent: #ff8a3d;
   --accent-2: #4fd0a0;
-  --link: #f2b8c6;
+  --link: #8a6a66;
   --border: #2c3335;
   --radius: 8px;
   --max-width: 1100px;
@@ -63,8 +63,13 @@ body {
 .page h1 { font-size: 2.25rem; margin-bottom: .5rem; }
 .page-intro { color: var(--fg-muted); max-width: 60ch; margin-bottom: 2.5rem; }
 .disclosure { color: var(--fg-muted); font-size: .8rem; max-width: 60ch; margin: -1.75rem 0 2.5rem; }
-.page-intro a, .page p a { color: var(--link); text-underline-offset: 2px; }
-.page-intro a:hover, .page p a:hover { color: var(--accent); }
+.page-intro a, .page p a, .data-table a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+/* Same color whether visited or not, no hover color shift either — just the underline. */
+.page-intro a:visited, .page p a:visited, .data-table a:visited { color: var(--link); }
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 .card {
@@ -130,8 +135,6 @@ a.card:hover::before { filter: brightness(1.15); }
 .table-scroll .data-table { margin-top: 0; }
 .data-table th, .data-table td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); color: var(--fg-muted); }
 .data-table th { color: var(--fg); font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; }
-.data-table a { color: var(--link); text-underline-offset: 2px; }
-.data-table a:hover { color: var(--accent); }
 
 @media (max-width: 720px) {
   .nav-toggle { display: flex; }
