@@ -62,7 +62,6 @@ body {
 .page { max-width: var(--max-width); margin: 0 auto; padding: 4rem 1.5rem; }
 .page h1 { font-size: 2.25rem; margin-bottom: .5rem; }
 .page-intro { color: var(--fg-muted); max-width: 60ch; margin-bottom: 2.5rem; }
-.disclosure { color: var(--fg-muted); font-size: .8rem; max-width: 60ch; margin: -1.75rem 0 2.5rem; }
 .page-intro a, .page p a, .data-table a {
   color: var(--link);
   text-decoration: underline;
