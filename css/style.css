@@ -70,6 +70,8 @@ body {
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 .card {
+  position: relative;
+  isolation: isolate;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
@@ -79,7 +81,22 @@ body {
   display: block;
   transition: border-color .15s;
 }
+/* Optional per-card art (set inline via --card-art: url(...)), dimmed by a
+   scrim so text stays legible; sits behind the card's own content thanks to
+   isolation + a negative z-index. */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-image: linear-gradient(180deg, rgba(16, 19, 20, .55) 0%, rgba(16, 19, 20, .88) 65%, rgba(16, 19, 20, .95) 100%), var(--card-art, none);
+  background-size: cover;
+  background-position: center;
+  transition: filter .15s;
+}
 a.card:hover { border-color: var(--accent); }
+a.card:hover::before { filter: brightness(1.15); }
 .card h3 { margin-top: 0; color: var(--fg); }
 .card p { color: var(--fg-muted); margin-bottom: 0; }
 .card .meta { color: var(--accent-2); font-size: .85rem; font-weight: 600; margin-bottom: .5rem; }
