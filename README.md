@@ -1,6 +1,6 @@
 # hunterevolved.com
 
-Personal site — Gear, Commander Corner, homelab rack viz. Plain HTML/CSS/JS, GitHub Pages (HOST-38).
+Personal site — Gear, MTG, homelab rack viz. Plain HTML/CSS/JS, GitHub Pages (HOST-38).
 
 ## Structure
 
@@ -11,7 +11,7 @@ gear/garage.html           Garage — Corolla Hybrid fuel/mileage (HOST-52/53/54
 gear/desktop-pc.html       Desktop PC BOM (HOST-32/33)
 gear/homelab.html          Homelab — has #rack-viewer mount point for the
                           future interactive 3D rack (Three.js, HOST-63/65)
-commander-corner.html      Commander Corner — EDH decks (HOST-56/57/58)
+mtg.html                  MTG — EDH decks (HOST-56/57/58)
 css/style.css             Shared styles
 js/main.js                Nav toggle + footer year
 CNAME                     Custom domain for GitHub Pages
