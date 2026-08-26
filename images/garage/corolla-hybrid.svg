@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" role="img" aria-labelledby="corollaTitle">
+  <title id="corollaTitle">Illustration of a black 2025 Toyota Corolla Hybrid, side profile</title>
+  <defs>
+    <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2224"/>
+      <stop offset="100%" stop-color="#101314"/>
+    </linearGradient>
+    <linearGradient id="bodyFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2e30"/>
+      <stop offset="55%" stop-color="#15171a"/>
+      <stop offset="100%" stop-color="#0b0c0d"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a686b"/>
+      <stop offset="100%" stop-color="#2e3538"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="480" height="240" fill="url(#skyFade)"/>
+  <rect x="0" y="196" width="480" height="4" fill="#2c3335"/>
+  <ellipse cx="240" cy="208" rx="210" ry="10" fill="#000" opacity=".35"/>
+
+  <!-- body -->
+  <path d="M46 176
+           C 44 150, 60 142, 84 138
+           L 118 108
+           C 130 96, 148 88, 168 87
+           L 300 87
+           C 322 88, 340 97, 352 110
+           L 380 138
+           C 406 141, 424 150, 428 168
+           L 432 176
+           C 432 184, 426 188, 416 188
+           L 400 188
+           C 400 172, 388 160, 372 160
+           C 356 160, 344 172, 344 188
+           L 148 188
+           C 148 172, 136 160, 120 160
+           C 104 160, 92 172, 92 188
+           L 62 188
+           C 52 188, 46 184, 46 176 Z"
+        fill="url(#bodyFade)" stroke="#000" stroke-width="1.5"/>
+
+  <!-- greenhouse / windows -->
+  <path d="M136 108 L172 88 L296 88 L334 108 L322 108 L232 108 L146 108 Z" fill="url(#glass)" opacity=".9"/>
+  <path d="M140 106 L173 91 L231 91 L231 106 Z" fill="#3a4548"/>
+  <path d="M235 91 L294 91 L318 106 L235 106 Z" fill="#3a4548"/>
+  <line x1="232" y1="88" x2="232" y2="108" stroke="#101314" stroke-width="2"/>
+
+  <!-- accent line -->
+  <path d="M60 150 L420 150" stroke="#ff8a3d" stroke-width="2" opacity=".55"/>
+
+  <!-- headlight / taillight -->
+  <path d="M414 152 L426 156 L424 166 L412 164 Z" fill="#ffd8a8"/>
+  <path d="M50 156 L62 152 L64 164 L52 166 Z" fill="#c23b2c"/>
+
+  <!-- badge -->
+  <circle cx="392" cy="130" r="5" fill="#4fd0a0" opacity=".85"/>
+
+  <!-- wheels -->
+  <circle cx="120" cy="188" r="30" fill="#0b0c0d" stroke="#2c3335" stroke-width="2"/>
+  <circle cx="120" cy="188" r="14" fill="#3a4145"/>
+  <circle cx="120" cy="188" r="4" fill="#101314"/>
+  <circle cx="372" cy="188" r="30" fill="#0b0c0d" stroke="#2c3335" stroke-width="2"/>
+  <circle cx="372" cy="188" r="14" fill="#3a4145"/>
+  <circle cx="372" cy="188" r="4" fill="#101314"/>
+</svg>
