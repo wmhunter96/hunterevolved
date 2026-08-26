@@ -100,6 +100,8 @@ a.card:hover::before { filter: brightness(1.15); }
 .card h3 { margin-top: 0; color: var(--fg); }
 .card p { color: var(--fg-muted); margin-bottom: 0; }
 .card .meta { color: var(--accent-2); font-size: .85rem; font-weight: 600; margin-bottom: .5rem; }
+.mana { display: inline-flex; align-items: center; gap: .2em; margin-left: .35em; vertical-align: -2px; }
+.mana img { width: 1em; height: 1em; display: block; }
 
 .badge {
   display: inline-block;
