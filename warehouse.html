@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warehouse — Hunter Evolved</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="nav-brand" href="index.html">Hunter Evolved</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gear/index.html">Gear</a></li>
+      <li><a href="mtg.html">MTG</a></li>
+      <li><a href="warehouse.html">Warehouse</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Warehouse</h1>
+  <p class="page-intro">Every misc part, spare, and tool I've got on hand, and which bin it's in.</p>
+
+  <div class="wh-tabs" role="tablist" aria-label="Inventory section">
+    <button type="button" class="wh-tab" role="tab" id="whTabParts" data-view="part" aria-selected="true">Parts</button>
+    <button type="button" class="wh-tab" role="tab" id="whTabTools" data-view="tool" aria-selected="false">Tooling</button>
+  </div>
+
+  <!--
+    Inventory (parts and tooling) lives in data/warehouse.json and is rendered by js/warehouse.js.
+    To change it: use "Manage" on this page (edits are kept in this browser
+    only), then "Download JSON" and commit the file over data/warehouse.json.
+  -->
+  <div class="stat-grid" id="whStats"></div>
+
+  <div class="wh-toolbar">
+    <input type="search" id="whSearch" class="wh-input wh-search" placeholder="Search name, notes, location…" aria-label="Search inventory">
+    <select id="whCategory" class="wh-input" aria-label="Filter by category"></select>
+    <select id="whLocation" class="wh-input" aria-label="Filter by location"></select>
+    <label class="wh-check"><input type="checkbox" id="whLow"> <span id="whLowLabel">Low stock only</span></label>
+    <button type="button" class="btn btn-secondary wh-btn" id="whManageToggle" aria-pressed="false">Manage</button>
+  </div>
+
+  <div class="wh-banner" id="whDraftBanner" hidden>
+    <span>You have local changes that aren't on the live site yet.</span>
+    <span class="wh-banner-actions">
+      <button type="button" class="btn btn-primary wh-btn" id="whExport">Download JSON</button>
+      <button type="button" class="btn btn-secondary wh-btn" id="whDiscard">Discard</button>
+    </span>
+  </div>
+
+  <form class="wh-form" id="whForm" hidden>
+    <h2 id="whFormTitle">Add a part</h2>
+    <div class="wh-form-grid">
+      <label>Name<input class="wh-input" name="name" required></label>
+      <label>Category<input class="wh-input" name="category" list="whCategoryList" placeholder="e.g. Fasteners"></label>
+      <label><span id="whLocField">Location</span><input class="wh-input" name="location" list="whLocationList" placeholder="e.g. Bin A3"></label>
+      <label>Qty<input class="wh-input" name="qty" type="number" min="0" step="1" value="1" required></label>
+      <label data-for="part">Low at<input class="wh-input" name="minQty" type="number" min="0" step="1" placeholder="optional"></label>
+      <label data-for="tool">Status
+        <select class="wh-input" name="status">
+          <option value="">In place</option>
+          <option>Loaned out</option>
+          <option>Needs repair</option>
+          <option>Missing</option>
+        </select>
+      </label>
+      <label>Link<input class="wh-input" name="link" type="url" placeholder="https://…"></label>
+      <label class="wh-form-wide">Notes<input class="wh-input" name="notes" placeholder="Size, spec, what it's for…"></label>
+    </div>
+    <datalist id="whCategoryList"></datalist>
+    <datalist id="whLocationList"></datalist>
+    <div class="wh-form-actions">
+      <button type="submit" class="btn btn-primary wh-btn" id="whSubmit">Add part</button>
+      <button type="button" class="btn btn-secondary wh-btn" id="whCancelEdit" hidden>Cancel edit</button>
+      <button type="button" class="btn btn-secondary wh-btn" id="whImport">Import JSON…</button>
+      <input type="file" id="whImportFile" accept="application/json,.json" hidden>
+    </div>
+  </form>
+
+  <div class="table-scroll">
+    <table class="data-table wh-table">
+      <thead>
+        <tr>
+          <th><button type="button" class="wh-sort" data-key="name">Item</button></th>
+          <th><button type="button" class="wh-sort" data-key="category">Category</button></th>
+          <th><button type="button" class="wh-sort" data-key="location" id="whLocHead">Location</button></th>
+          <th class="wh-num"><button type="button" class="wh-sort" data-key="qty">Qty</button></th>
+          <th class="wh-status-col" hidden><button type="button" class="wh-sort" data-key="status">Status</button></th>
+          <th>Notes</th>
+          <th class="wh-manage-col" hidden></th>
+        </tr>
+      </thead>
+      <tbody id="whBody"></tbody>
+    </table>
+  </div>
+  <p class="wh-empty" id="whEmpty" hidden></p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Hunter</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/warehouse.js"></script>
+</body>
+</html>
