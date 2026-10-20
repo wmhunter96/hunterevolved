@@ -32,6 +32,10 @@
   // columns A-J, rows 1-6 from the back) and a size in units (gridW x gridH).
   var GRID = { cols: 10, rows: 6, unit: 42, inner: '450 × 285 mm' };
 
+  // Tools that don't fit a drawer (the cordless drills, for now) sit on top.
+  var TOP = 'Top of toolbox';
+  function isTop(it) { return (it.location || '').trim().toLowerCase() === TOP.toLowerCase(); }
+
   var HASHES = { part: '', tool: '#tooling', project: '#projects' };
   var view = location.hash === '#tooling' ? 'tool' : location.hash === '#projects' ? 'project' : 'part';
 
@@ -40,7 +44,7 @@
       place: 'Location', places: 'locations', placeSub: 'bins, drawers, shelves', placeHint: 'e.g. Bin A3' },
     // Every tool lives in a toolbox drawer, so tooling's "location" reads as Drawer.
     tool: { noun: 'tool', plural: 'Tools', lowLabel: 'Needs attention only',
-      place: 'Drawer', places: 'drawers', placeSub: 'in the toolbox', placeHint: 'Drawer 1-9, top to bottom' },
+      place: 'Drawer', places: 'drawers', placeSub: 'in the toolbox', placeHint: 'Drawer 1-9, or Top of toolbox' },
     project: { noun: 'part', plural: 'Projects', lowLabel: '', place: 'Location', places: 'locations', placeSub: '', placeHint: '' }
   };
 
@@ -165,7 +169,7 @@
   function places() {
     var used = uniq('location');
     if (view !== 'tool') return used;
-    return DRAWERS.concat(used.filter(function (p) { return !drawerOf({ location: p }); }));
+    return DRAWERS.concat([TOP], used.filter(function (p) { return !drawerOf({ location: p }) && !isTop({ location: p }); }));
   }
 
   function inView() { return items.filter(function (it) { return it.kind === view; }); }
@@ -218,16 +222,17 @@
         }, []).length + ' / ' + DRAWERS.length, v.placeSub)
       : stat(v.place + 's', uniq('location').length, v.placeSub);
     if (view === 'tool') {
-      var out = list.filter(function (it) { return it.status === 'Loaned out'; }).length;
-      var broken = list.filter(function (it) { return it.status === 'Needs repair' || it.status === 'Missing'; }).length;
+      var broken = list.filter(function (it) { return !!it.status; }).length;
       var low = list.filter(isLow).length;
+      var consumables = list.filter(function (it) { return it.consumable; }).length;
       els.stats.innerHTML =
         stat('Tools', list.length, 'catalogued') +
         locations +
-        stat('Loaned out', out, out ? 'not in the shop' : 'all home') +
-        stat('Needs attention', broken + low, broken || low
-          ? [broken && broken + ' broken or missing', low && low + ' consumable' + (low === 1 ? '' : 's') + ' low'].filter(Boolean).join(' · ')
-          : 'all good');
+        stat('Consumables', consumables, low ? low + ' running low' : 'stocked') +
+        toggleStat('Needs attention', broken + low, broken || low
+          ? [broken && broken + ' broken or missing', low && low + ' consumable' + (low === 1 ? '' : 's') + ' low'].filter(Boolean).join(' · ') +
+            (els.low.checked ? ' · showing' : ' · click to show')
+          : 'all good', broken + low > 0);
       return;
     }
     var low = list.filter(isLow).length;
@@ -235,7 +240,16 @@
       stat('Parts', list.length, 'distinct items') +
       stat('Units', units.toLocaleString(), 'total on hand') +
       locations +
-      stat('Low stock', low, low ? 'at or below threshold' : 'all good');
+      toggleStat('Low stock', low, low ? 'at or below threshold' + (els.low.checked ? ' · showing' : ' · click to show') : 'all good', low > 0);
+  }
+
+  // A stat tile that toggles the "needs attention" / "low stock" filter.
+  function toggleStat(label, value, sub, enabled) {
+    var on = els.low.checked;
+    return '<button type="button" class="stat wh-stat-toggle' + (on ? ' active' : '') + (value ? ' alert' : '') + '"' +
+      ' data-toggle="low" aria-pressed="' + on + '"' + (enabled || on ? '' : ' disabled') + '>' +
+      '<span class="stat-label">' + label + '</span><span class="stat-value">' + value + '</span>' +
+      '<span class="stat-sub">' + sub + '</span></button>';
   }
 
   function text(s) {
@@ -314,8 +328,36 @@
     var tools = inView();
     var filtering = !!(els.search.value.trim() || els.category.value || els.low.checked);
     var matches = {};
-    rows.forEach(function (it) { var n = drawerOf(it); if (n) matches[n] = (matches[n] || 0) + 1; });
-    var html = '';
+    rows.forEach(function (it) { var n = drawerOf(it) || (isTop(it) ? 'top' : 0); if (n) matches[n] = (matches[n] || 0) + 1; });
+
+    // Chips for what's inside a drawer. While searching/filtering, the matching
+    // tools are always shown (highlighted) and the rest fold into "+N other".
+    function chips(inside) {
+      if (filtering) {
+        var hits = inside.filter(function (it) { return rows.indexOf(it) !== -1; });
+        var rest = inside.length - hits.length;
+        return hits.map(function (it) { return '<li class="hit">' + text(it.name) + '</li>'; }).join('') +
+          (rest ? '<li class="more">+' + rest + ' other</li>' : '');
+      }
+      var shown = inside.slice(0, 4).map(function (it) { return '<li>' + text(it.name) + '</li>'; }).join('');
+      if (inside.length > 4) shown += '<li class="more">+' + (inside.length - 4) + ' more</li>';
+      return shown;
+    }
+    function count(inside, key) {
+      return filtering && matches[key] ? matches[key] + ' of ' + inside.length : String(inside.length);
+    }
+    function attn(inside) {
+      return inside.some(needsAttention) ? '<span class="wh-tb-attn" title="Something in here needs attention"></span>' : '';
+    }
+
+    var onTop = tools.filter(isTop).sort(function (a, b) { return a.name.localeCompare(b.name); });
+    var topCls = 'wh-tb-top';
+    if (els.location.value === TOP) topCls += ' selected';
+    if (filtering) topCls += matches.top ? ' match' : ' dim';
+    var html = '<button type="button" class="' + topCls + '" data-place="' + TOP + '" aria-pressed="' + (els.location.value === TOP) + '">' +
+      '<span class="wh-tb-top-label">Top of toolbox</span>' +
+      '<ul class="wh-tb-list">' + (chips(onTop) || '<li class="empty">Empty</li>') + '</ul>' +
+      '<span class="wh-tb-count">' + count(onTop, 'top') + '</span>' + attn(onTop) + '</button>';
     TOOLBOX_UNITS.forEach(function (unit, u) {
       html += '<div class="wh-tb-unit"><div class="wh-tb-lid"><span>' + unit + '</span></div>';
       for (var i = 1; i <= DRAWERS_PER_UNIT; i++) {
@@ -325,16 +367,12 @@
         var cls = 'wh-tb-drawer';
         if (els.location.value === DRAWERS[n - 1]) cls += ' selected';
         if (filtering) cls += matches[n] ? ' match' : ' dim';
-        var shown = inside.slice(0, 4).map(function (it) {
-          var hit = filtering && rows.indexOf(it) !== -1;
-          return '<li' + (hit ? ' class="hit"' : '') + '>' + text(it.name) + '</li>';
-        }).join('');
-        if (inside.length > 4) shown += '<li class="more">+' + (inside.length - 4) + ' more</li>';
+        var shown = chips(inside);
         html += '<button type="button" class="' + cls + '" data-drawer="' + n + '" aria-pressed="' + (cls.indexOf('selected') !== -1) + '"' +
           ' aria-label="Drawer ' + n + ', ' + inside.length + ' tool' + (inside.length === 1 ? '' : 's') + '">' +
           '<span class="wh-tb-num">' + n + '</span>' +
           '<ul class="wh-tb-list">' + (shown || '<li class="empty">Empty</li>') + '</ul>' +
-          '<span class="wh-tb-count">' + inside.length + '</span>' +
+          '<span class="wh-tb-count">' + count(inside, n) + '</span>' + attn(inside) +
           '<span class="wh-tb-handle" aria-hidden="true"></span></button>';
       }
       html += '</div>';
@@ -343,7 +381,7 @@
     // Tools kept outside the drawers, grouped by where they are ("Top of toolbox", ...).
     var outside = {};
     tools.forEach(function (it) {
-      if (!drawerOf(it)) (outside[it.location || 'No location set'] = outside[it.location || 'No location set'] || []).push(it.name);
+      if (!drawerOf(it) && !isTop(it)) (outside[it.location || 'No location set'] = outside[it.location || 'No location set'] || []).push(it.name);
     });
     var spots = Object.keys(outside).sort();
     els.toolboxLoose.hidden = !spots.length;
@@ -354,6 +392,16 @@
 
   function renderGrid() {
     var n = drawerOf({ location: els.location.value });
+    var close = '<button type="button" class="wh-grid-close" data-clear aria-label="Close">&times;</button>';
+    if (els.location.value === TOP) {
+      var top = inView().filter(isTop);
+      els.gridPanel.innerHTML = '<div class="wh-grid-head"><h3>Top of toolbox</h3><span class="wh-muted">temporary home until the power tools get a proper spot</span>' + close + '</div>' +
+        (top.length ? '<ul class="wh-top-list">' + top.map(function (it) {
+          return '<li data-id="' + it.id + '"><span>' + text(it.name) + '</span>' + (it.status ? ' <span class="wh-low">' + text(it.status) + '</span>' : '') +
+            (it.notes ? '<small>' + text(it.notes) + '</small>' : '') + '</li>';
+        }).join('') + '</ul>' : '<p class="wh-muted">Nothing up here.</p>');
+      return;
+    }
     if (!n) {
       els.gridPanel.innerHTML = '<div class="wh-grid-hint">Pick a drawer to see its ' + GRID.cols + ' &times; ' + GRID.rows +
         ' Gridfinity layout and where each tool sits.</div>';
@@ -376,7 +424,7 @@
     });
     var used = Object.keys(taken).length;
     var html = '<div class="wh-grid-head"><h3>Drawer ' + n + '</h3><span class="wh-muted">' + GRID.cols + ' &times; ' + GRID.rows +
-      ' grid &middot; ' + GRID.inner + ' &middot; ' + used + '/' + GRID.cols * GRID.rows + ' cells used</span></div>';
+      ' grid &middot; ' + GRID.inner + ' &middot; ' + used + '/' + GRID.cols * GRID.rows + ' cells used</span>' + close + '</div>';
     html += '<div class="wh-grid" style="--cols:' + GRID.cols + ';--rows:' + GRID.rows + '">';
     html += '<span class="wh-grid-corner"></span>';
     for (var c = 1; c <= GRID.cols; c++) html += '<span class="wh-grid-label" style="grid-column:' + (c + 1) + ';grid-row:1">' + colLetter(c) + '</span>';
@@ -444,6 +492,7 @@
   function renderView() {
     var v = VIEWS[view];
     document.querySelector('main.page').classList.toggle('wh-view-project', view === 'project');
+    document.querySelector('main.page').classList.toggle('wh-view-tool', view === 'tool');
     els.projectsView.hidden = view !== 'project';
     els.toolboxWrap.hidden = view !== 'tool';
     document.querySelectorAll('.wh-tab').forEach(function (t) {
@@ -584,6 +633,7 @@
       resetForm();
       els.category.value = '';
       els.location.value = '';
+      els.low.checked = false;
       history.replaceState(null, '', HASHES[view] || location.pathname + location.search);
       render();
     });
@@ -703,50 +753,41 @@
 
   els.manageToggle.addEventListener('click', function () { setManaging(!managing); });
 
-  // Export button: the current tab (and its filters) as a Markdown list,
-  // grouped by category, copied to the clipboard (handy for pasting into an LLM).
-  function aiExport() {
-    var rows = filtered().slice().sort(function (a, b) {
-      if (!a.category !== !b.category) return a.category ? -1 : 1; // Uncategorized last
-      return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+  // Export button: everything (parts, tools, projects) as tidy JSON, copied
+  // to the clipboard (handy for pasting into an LLM). Empty fields are dropped.
+  function compact(o) {
+    var out = {};
+    Object.keys(o).forEach(function (k) {
+      var v = o[k];
+      if (v === '' || v === null || v === undefined || v === false || (Array.isArray(v) && !v.length)) return;
+      out[k] = v;
     });
-    var tools = view === 'tool';
-    var onHand = rows.filter(function (it) { return it.qty > 0; });
-    var out = rows.filter(function (it) { return it.qty <= 0; });
-    var filters = [];
-    if (els.search.value.trim()) filters.push('matching "' + els.search.value.trim() + '"');
-    if (els.category.value) filters.push('category ' + els.category.value);
-    if (els.location.value) filters.push(els.location.value);
-    if (els.low.checked) filters.push(tools ? 'needing attention' : 'low stock only');
+    return out;
+  }
 
-    var lines = ['# ' + (tools ? 'Tools' : 'Parts') + ' I have on hand' + (filters.length ? ' (' + filters.join(', ') + ')' : ''), '',
-      'Exported ' + today() + ' from my workshop inventory. ' +
-      (tools
-        ? 'Format: name (qty if more than 1), toolbox drawer and grid spot, status if not in place, notes.'
-        : 'Format: name: quantity on hand (location), notes.'), ''];
-    var group = null;
-    onHand.forEach(function (it) {
-      var cat = it.category || 'Uncategorized';
-      if (cat !== group) {
-        if (group !== null) lines.push('');
-        lines.push('## ' + cat);
-        group = cat;
-      }
-      var where = [it.location, gridSpot(it) && 'spot ' + gridSpot(it)].filter(Boolean).join(', ');
-      var line = tools
-        ? '- ' + it.name + (it.qty > 1 ? ' (x' + it.qty + ')' : '') + (where ? ' [' + where + ']' : '') +
-            (it.consumable ? ' (consumable' + (isLow(it) ? ', running low' : '') + ')' : '') +
-            (it.status ? ' **' + it.status + '**' : '')
-        : '- ' + it.name + ': ' + it.qty + (where ? ' (' + where + ')' : '') + (isLow(it) ? ' (running low)' : '');
-      if (it.notes) line += ' - ' + it.notes;
-      lines.push(line);
+  function exportAll() {
+    var byName = function (a, b) { return a.name.localeCompare(b.name); };
+    var parts = items.filter(function (it) { return it.kind === 'part'; }).sort(byName).map(function (it) {
+      return compact({ name: it.name, qty: it.qty, category: it.category, location: it.location,
+        lowAt: it.minQty, runningLow: isLow(it), link: it.link, notes: it.notes });
     });
-    if (!onHand.length) lines.push('_Nothing on hand' + (filters.length ? ' matching these filters' : '') + '._');
-    if (out.length) {
-      lines.push('', '## Out of stock (not available)');
-      out.forEach(function (it) { lines.push('- ' + it.name); });
-    }
-    return lines.join('\n') + '\n';
+    var tools = items.filter(function (it) { return it.kind === 'tool'; }).sort(function (a, b) {
+      return (drawerOf(a) || 99) - (drawerOf(b) || 99) || a.location.localeCompare(b.location) || byName(a, b);
+    }).map(function (it) {
+      return compact({ name: it.name, qty: it.qty, category: it.category, location: it.location,
+        gridSpot: gridSpot(it), gridSize: gridSize(it), consumable: it.consumable, lowAt: it.minQty,
+        runningLow: isLow(it), status: it.status, link: it.link, notes: it.notes });
+    });
+    var proj = projects.map(function (p) {
+      return compact({ name: p.name, status: p.status, notes: p.notes,
+        used: p.uses.map(function (u) { var it = find(u.itemId); return { name: it ? it.name : u.name, qty: u.qty, date: u.date }; }) });
+    });
+    return JSON.stringify({
+      exported: today(),
+      about: 'Workshop inventory. Tools live in ' + DRAWERS.length + ' toolbox drawers (Drawer 1 at the top) or on top of the toolbox; ' +
+        'gridSpot is a ' + GRID.cols + 'x' + GRID.rows + ' Gridfinity cell (column letter, row number from the back). qty is what is on hand.',
+      parts: parts, tools: tools, projects: proj
+    }, null, 2) + '\n';
   }
 
   // Briefly swap the export icon for a check (copied) or arrow (downloaded).
@@ -764,12 +805,12 @@
   }
 
   els.exportList.addEventListener('click', function () {
-    var md = aiExport();
+    var md = exportAll();
     var fallback = function () {
       // No clipboard access (e.g. http or a blocked permission): download it instead.
       var a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([md], { type: 'text/markdown' }));
-      a.download = (view === 'tool' ? 'tools' : 'parts') + '-on-hand.md';
+      a.href = URL.createObjectURL(new Blob([md], { type: 'application/json' }));
+      a.download = 'warehouse-export.json';
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -819,10 +860,23 @@
     els.importFile.value = '';
   });
 
+  els.stats.addEventListener('click', function (e) {
+    if (!e.target.closest('[data-toggle="low"]')) return;
+    els.low.checked = !els.low.checked;
+    renderStats();
+    renderTable();
+  });
+
+  els.gridPanel.addEventListener('click', function (e) {
+    if (!e.target.closest('[data-clear]')) return;
+    els.location.value = '';
+    renderTable();
+  });
+
   els.toolbox.addEventListener('click', function (e) {
-    var btn = e.target.closest('.wh-tb-drawer');
+    var btn = e.target.closest('.wh-tb-drawer, .wh-tb-top');
     if (!btn) return;
-    var name = DRAWERS[Number(btn.getAttribute('data-drawer')) - 1];
+    var name = btn.getAttribute('data-place') || DRAWERS[Number(btn.getAttribute('data-drawer')) - 1];
     els.location.value = els.location.value === name ? '' : name;
     renderTable();
     if (els.location.value && window.matchMedia('(max-width: 900px)').matches) {
@@ -852,6 +906,7 @@
   [els.search, els.category, els.location, els.low].forEach(function (el) {
     el.addEventListener('input', renderTable);
   });
+  els.low.addEventListener('change', renderStats);
 
   document.querySelectorAll('.wh-sort').forEach(function (b) {
     b.addEventListener('click', function () {
