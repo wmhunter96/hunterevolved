@@ -208,6 +208,9 @@ a.card:hover::before { filter: brightness(1.15); }
 button.btn-primary { border: none; }
 .wh-toolbar .wh-btn { margin-left: auto; }
 .wh-toolbar .wh-btn + .wh-btn { margin-left: 0; }
+.wh-icon-btn { display: inline-flex; align-items: center; justify-content: center; padding: .55rem .65rem; color: var(--fg-muted); }
+.wh-icon-btn:hover { color: var(--fg); }
+.wh-icon-btn.done { color: var(--accent-2); border-color: var(--accent-2); }
 
 .wh-banner {
   display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between;

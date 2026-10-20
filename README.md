@@ -68,10 +68,10 @@ is `data/warehouse.json`; there's no backend, so to change it:
 2. Click **Download JSON** and commit the file over `data/warehouse.json`.
    Once it deploys, everyone sees the update and you can **Discard** the draft.
 
-**Copy for AI** (Parts and Tooling tabs) copies the current tab, with its
+The **export** icon (Parts and Tooling tabs) copies the current tab, with its
 filters applied, as a Markdown list grouped by category (quantities,
 locations, drawer/grid spots, status, notes; out-of-stock parts listed
-separately), to paste into an LLM chat. It downloads a `.md` file instead if
+separately), e.g. to paste into an LLM chat. It downloads a `.md` file instead if
 the clipboard isn't available.
 
 Each item has `kind` (`part` or `tool`), `name`, `category`, `location`

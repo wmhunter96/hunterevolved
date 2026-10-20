@@ -47,7 +47,7 @@
   function $(id) { return document.getElementById(id); }
   var els = {
     stats: $('whStats'), search: $('whSearch'), category: $('whCategory'),
-    location: $('whLocation'), low: $('whLow'), manageToggle: $('whManageToggle'), copyAI: $('whCopyAI'),
+    location: $('whLocation'), low: $('whLow'), manageToggle: $('whManageToggle'), exportList: $('whExportList'),
     banner: $('whDraftBanner'), exportBtn: $('whExport'), discard: $('whDiscard'),
     form: $('whForm'), formTitle: $('whFormTitle'), submit: $('whSubmit'),
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
@@ -685,8 +685,8 @@
 
   els.manageToggle.addEventListener('click', function () { setManaging(!managing); });
 
-  // "Copy for AI": the current tab (and its filters) as a Markdown list,
-  // grouped by category, ready to paste into a chat with an LLM.
+  // Export button: the current tab (and its filters) as a Markdown list,
+  // grouped by category, copied to the clipboard (handy for pasting into an LLM).
   function aiExport() {
     var rows = filtered().slice().sort(function (a, b) {
       if (!a.category !== !b.category) return a.category ? -1 : 1; // Uncategorized last
@@ -730,14 +730,21 @@
     return lines.join('\n') + '\n';
   }
 
-  function flash(btn, label) {
-    var original = btn.textContent;
-    btn.textContent = label;
+  // Briefly swap the export icon for a check (copied) or arrow (downloaded).
+  var CHECK = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
+  var DOWN = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>';
+  function flash(btn, icon, label) {
+    var original = btn.innerHTML, title = btn.title;
+    btn.innerHTML = icon;
+    btn.title = label;
+    btn.classList.add('done');
     btn.disabled = true;
-    setTimeout(function () { btn.textContent = original; btn.disabled = false; }, 1500);
+    setTimeout(function () {
+      btn.innerHTML = original; btn.title = title; btn.classList.remove('done'); btn.disabled = false;
+    }, 1500);
   }
 
-  els.copyAI.addEventListener('click', function () {
+  els.exportList.addEventListener('click', function () {
     var md = aiExport();
     var fallback = function () {
       // No clipboard access (e.g. http or a blocked permission): download it instead.
@@ -748,10 +755,10 @@
       a.click();
       a.remove();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
-      flash(els.copyAI, 'Downloaded');
+      flash(els.exportList, DOWN, 'Downloaded');
     };
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(md).then(function () { flash(els.copyAI, 'Copied!'); }, fallback);
+      navigator.clipboard.writeText(md).then(function () { flash(els.exportList, CHECK, 'Copied to clipboard'); }, fallback);
     } else {
       fallback();
     }
