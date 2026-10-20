@@ -50,7 +50,9 @@ to fill in.
 ## Warehouse
 
 `warehouse.html` is the inventory of misc parts (Parts tab) and tools
-(Tooling tab, each tool assigned to a toolbox drawer). The Projects tab
+(Tooling tab, each tool assigned to a toolbox drawer: three stacked DEWALT
+ToughSystem 2.0 three-drawer units, so `Drawer 1`-`Drawer 9` numbered top to
+bottom, drawn as a clickable map above the table). The Projects tab
 consumes parts: in Manage mode, "Use part" on a project takes that quantity
 out of stock and logs it on the project; "Return to stock" undoes it. The published data
 is `data/warehouse.json`; there's no backend, so to change it:

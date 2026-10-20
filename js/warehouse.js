@@ -19,6 +19,14 @@
   var editingId = null;
   var sortKey = 'name';
   var sortDir = 1;
+  // Tools live in three stacked DEWALT ToughSystem 2.0 three-drawer units
+  // (DWST08330): nine drawers, numbered 1-9 from the top. A tool's location
+  // like "Drawer 4" puts it in the map.
+  var TOOLBOX_UNITS = ['Top', 'Middle', 'Bottom'];
+  var DRAWERS_PER_UNIT = 3;
+  var DRAWERS = [];
+  for (var d = 1; d <= TOOLBOX_UNITS.length * DRAWERS_PER_UNIT; d++) DRAWERS.push('Drawer ' + d);
+
   var HASHES = { part: '', tool: '#tooling', project: '#projects' };
   var view = location.hash === '#tooling' ? 'tool' : location.hash === '#projects' ? 'project' : 'part';
 
@@ -27,7 +35,7 @@
       place: 'Location', places: 'locations', placeSub: 'bins, drawers, shelves', placeHint: 'e.g. Bin A3' },
     // Every tool lives in a toolbox drawer, so tooling's "location" reads as Drawer.
     tool: { noun: 'tool', plural: 'Tools', lowLabel: 'Needs attention only',
-      place: 'Drawer', places: 'drawers', placeSub: 'in the toolbox', placeHint: 'e.g. Drawer 3' },
+      place: 'Drawer', places: 'drawers', placeSub: 'in the toolbox', placeHint: 'Drawer 1-9, top to bottom' },
     project: { noun: 'part', plural: 'Projects', lowLabel: '', place: 'Location', places: 'locations', placeSub: '', placeHint: '' }
   };
 
@@ -40,6 +48,7 @@
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
     categoryList: $('whCategoryList'), locationList: $('whLocationList'),
     body: $('whBody'), empty: $('whEmpty'), lowLabel: $('whLowLabel'),
+    toolboxWrap: $('whToolboxWrap'), toolbox: $('whToolbox'), toolboxLoose: $('whToolboxLoose'),
     projectsView: $('whProjectsView'), projectForm: $('whProjectForm'), projects: $('whProjects')
   };
 
@@ -113,6 +122,21 @@
   // "Needs attention" filter: low stock for parts, any non-default status for tools.
   function needsAttention(it) { return it.kind === 'tool' ? !!it.status : isLow(it); }
 
+  // "Drawer 4", "drawer 4", "Drawer4" -> 4; anything else (or out of range) -> 0.
+  function drawerOf(it) {
+    var m = /drawer\s*(\d+)/i.exec(it.location || '');
+    var n = m ? Number(m[1]) : 0;
+    return n >= 1 && n <= DRAWERS.length ? n : 0;
+  }
+
+  // Location choices for the filter and form: every drawer always shows up on
+  // the Tooling tab, even empty ones.
+  function places() {
+    var used = uniq('location');
+    if (view !== 'tool') return used;
+    return DRAWERS.concat(used.filter(function (p) { return !drawerOf({ location: p }); }));
+  }
+
   function inView() { return items.filter(function (it) { return it.kind === view; }); }
 
   function uniq(key) {
@@ -157,7 +181,11 @@
         stat('Parts used', Object.keys(distinct).length, 'distinct parts');
       return;
     }
-    var locations = stat(v.place + 's', uniq('location').length, v.placeSub);
+    var locations = view === 'tool'
+      ? stat('Drawers in use', list.reduce(function (seen, it) {
+          var n = drawerOf(it); if (n && seen.indexOf(n) === -1) seen.push(n); return seen;
+        }, []).length + ' / ' + DRAWERS.length, v.placeSub)
+      : stat(v.place + 's', uniq('location').length, v.placeSub);
     if (view === 'tool') {
       var out = list.filter(function (it) { return it.status === 'Loaned out'; }).length;
       var broken = list.filter(function (it) { return it.status === 'Needs repair' || it.status === 'Missing'; }).length;
@@ -215,7 +243,8 @@
             '<button type="button" class="wh-link" data-act="del" data-id="' + it.id + '">Delete</button>' +
           '</td>'
         : '';
-      return '<tr' + (editingId === it.id ? ' class="wh-editing"' : '') + '>' +
+      var drawer = view === 'tool' ? drawerOf(it) : 0;
+      return '<tr' + (editingId === it.id ? ' class="wh-editing"' : '') + (drawer ? ' data-drawer="' + drawer + '"' : '') + '>' +
         '<td class="wh-name">' + name + '</td>' +
         '<td>' + text(it.category || '—') + '</td>' +
         '<td>' + text(it.location || '—') + '</td>' +
@@ -236,6 +265,7 @@
       els.empty.textContent = 'No ' + v.plural.toLowerCase() + ' match those filters.';
     }
     els.empty.hidden = rows.length > 0;
+    renderToolbox(rows);
 
     document.querySelectorAll('.wh-sort').forEach(function (b) {
       var active = b.getAttribute('data-key') === sortKey;
@@ -244,10 +274,54 @@
     });
   }
 
+  function renderToolbox(rows) {
+    if (view !== 'tool') return;
+    var tools = inView();
+    var filtering = !!(els.search.value.trim() || els.category.value || els.low.checked);
+    var matches = {};
+    rows.forEach(function (it) { var n = drawerOf(it); if (n) matches[n] = (matches[n] || 0) + 1; });
+    var html = '';
+    TOOLBOX_UNITS.forEach(function (unit, u) {
+      html += '<div class="wh-tb-unit"><div class="wh-tb-lid"><span>' + unit + '</span></div>';
+      for (var i = 1; i <= DRAWERS_PER_UNIT; i++) {
+        var n = u * DRAWERS_PER_UNIT + i;
+        var inside = tools.filter(function (it) { return drawerOf(it) === n; })
+          .sort(function (a, b) { return a.name.localeCompare(b.name); });
+        var cls = 'wh-tb-drawer';
+        if (els.location.value === DRAWERS[n - 1]) cls += ' selected';
+        if (filtering) cls += matches[n] ? ' match' : ' dim';
+        var shown = inside.slice(0, 4).map(function (it) {
+          var hit = filtering && rows.indexOf(it) !== -1;
+          return '<li' + (hit ? ' class="hit"' : '') + '>' + text(it.name) + '</li>';
+        }).join('');
+        if (inside.length > 4) shown += '<li class="more">+' + (inside.length - 4) + ' more</li>';
+        html += '<button type="button" class="' + cls + '" data-drawer="' + n + '" aria-pressed="' + (cls.indexOf('selected') !== -1) + '"' +
+          ' aria-label="Drawer ' + n + ', ' + inside.length + ' tool' + (inside.length === 1 ? '' : 's') + '">' +
+          '<span class="wh-tb-num">' + n + '</span>' +
+          '<ul class="wh-tb-list">' + (shown || '<li class="empty">Empty</li>') + '</ul>' +
+          '<span class="wh-tb-count">' + inside.length + '</span>' +
+          '<span class="wh-tb-handle" aria-hidden="true"></span></button>';
+      }
+      html += '</div>';
+    });
+    els.toolbox.innerHTML = html;
+    var loose = tools.filter(function (it) { return !drawerOf(it); }).length;
+    els.toolboxLoose.hidden = !loose;
+    els.toolboxLoose.textContent = loose + ' tool' + (loose === 1 ? " isn't" : "s aren't") +
+      ' assigned to a drawer (set the Drawer to "Drawer 1" through "Drawer ' + DRAWERS.length + '").';
+  }
+
+  function highlightDrawer(n) {
+    els.toolbox.querySelectorAll('.wh-tb-drawer').forEach(function (el) {
+      el.classList.toggle('hot', Number(el.getAttribute('data-drawer')) === n);
+    });
+  }
+
   function renderView() {
     var v = VIEWS[view];
     document.querySelector('main.page').classList.toggle('wh-view-project', view === 'project');
     els.projectsView.hidden = view !== 'project';
+    els.toolboxWrap.hidden = view !== 'tool';
     document.querySelectorAll('.wh-tab').forEach(function (t) {
       t.setAttribute('aria-selected', String(t.getAttribute('data-view') === view));
     });
@@ -270,9 +344,9 @@
   function render() {
     renderView();
     fillSelect(els.category, uniq('category'), 'All categories');
-    fillSelect(els.location, uniq('location'), 'All ' + VIEWS[view].places);
+    fillSelect(els.location, places(), 'All ' + VIEWS[view].places);
     fillDatalist(els.categoryList, uniq('category'));
-    fillDatalist(els.locationList, uniq('location'));
+    fillDatalist(els.locationList, places());
     renderStats();
     renderTable();
     renderProjects();
@@ -528,6 +602,23 @@
     });
     els.importFile.value = '';
   });
+
+  els.toolbox.addEventListener('click', function (e) {
+    var btn = e.target.closest('.wh-tb-drawer');
+    if (!btn) return;
+    var name = DRAWERS[Number(btn.getAttribute('data-drawer')) - 1];
+    els.location.value = els.location.value === name ? '' : name;
+    renderTable();
+    if (els.location.value && window.matchMedia('(max-width: 720px)').matches) {
+      document.querySelector('.wh-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  els.body.addEventListener('mouseover', function (e) {
+    var tr = e.target.closest('tr');
+    highlightDrawer(tr ? Number(tr.getAttribute('data-drawer')) : 0);
+  });
+  els.body.addEventListener('mouseleave', function () { highlightDrawer(0); });
 
   [els.search, els.category, els.location, els.low].forEach(function (el) {
     el.addEventListener('input', renderTable);
