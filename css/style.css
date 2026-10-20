@@ -364,3 +364,5 @@ button.btn-primary { border: none; }
   .wh-tb-layout { grid-template-columns: minmax(0, 1fr); }
   .wh-grid-panel { position: static; }
 }
+.wh-tag { display: inline-block; font-size: .65rem; text-transform: uppercase; letter-spacing: .05em; color: var(--accent-2); border: 1px solid var(--accent-2); border-radius: 999px; padding: 0 .45rem; margin-left: .35rem; vertical-align: 1px; }
+.wh-form-grid label.wh-check-field { flex-direction: row; align-items: center; align-self: end; gap: .4rem; padding-bottom: .6rem; text-transform: none; letter-spacing: normal; font-size: .9rem; }

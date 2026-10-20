@@ -74,9 +74,13 @@ locations, drawer/grid spots, status, notes; out-of-stock parts listed
 separately), e.g. to paste into an LLM chat. It downloads a `.md` file instead if
 the clipboard isn't available.
 
+Tools can be flagged **consumable** (glue, tape, screws...): they stay in the
+toolbox map but, like parts, get a "Low at" threshold, count toward "Needs
+attention", and can be used in projects.
+
 Each item has `kind` (`part` or `tool`), `name`, `category`, `location`
 (the drawer, for tools), `qty`, optional `minQty` (parts: flags low stock),
-optional `status` (tools: `Loaned out`, `Needs repair`, `Missing`), `link`,
+`consumable` (tools only), optional `status` (tools: `Loaned out`, `Needs repair`, `Missing`), `link`,
 and `notes`.
 
 `projects[]` entries have `name`, `status` (`active` or `done`), `notes`, and
