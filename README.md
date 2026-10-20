@@ -57,7 +57,8 @@ Clicking a drawer opens its Gridfinity preview: each drawer is 450 x 285 mm
 inside, so a 10 x 6 grid of 42 mm units (columns A-J, rows 1-6 from the back;
 `GRID` in `js/warehouse.js`). A tool's optional `gridX`/`gridY` (1-based spot,
 entered as e.g. `B3`) and `gridW`/`gridH` (size in units, e.g. `1x4`) place it
-on that grid; overlaps show red. The Projects tab
+on that grid. Saving a spot that overlaps another tool in the drawer or runs off
+the grid is refused (overlaps already in the JSON still show red). The Projects tab
 consumes parts: in Manage mode, "Use part" on a project takes that quantity
 out of stock and logs it on the project; "Return to stock" undoes it. The published data
 is `data/warehouse.json`; there's no backend, so to change it:

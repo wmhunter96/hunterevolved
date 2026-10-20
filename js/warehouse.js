@@ -396,6 +396,27 @@
     els.gridPanel.innerHTML = html;
   }
 
+  // Why a tool can't take its grid spot (off the grid, or on top of another
+  // tool in the same drawer), or '' if it fits. Saving is refused on a problem.
+  function gridProblem(it) {
+    if (it.kind !== 'tool' || !it.gridX || !it.gridY) return '';
+    var n = drawerOf(it);
+    if (!n) return 'Set the Drawer to "Drawer 1" through "Drawer ' + DRAWERS.length + '" before giving it a grid spot.';
+    var w = it.gridW || 1, h = it.gridH || 1;
+    if (it.gridX + w - 1 > GRID.cols || it.gridY + h - 1 > GRID.rows) {
+      return gridSpot(it) + ' at ' + w + 'x' + h + ' runs off the ' + GRID.cols + ' x ' + GRID.rows +
+        ' grid (columns A-' + colLetter(GRID.cols) + ', rows 1-' + GRID.rows + ').';
+    }
+    var hit = items.filter(function (o) {
+      if (o.id === it.id || o.kind !== 'tool' || drawerOf(o) !== n || !o.gridX || !o.gridY) return false;
+      var ow = o.gridW || 1, oh = o.gridH || 1;
+      return it.gridX < o.gridX + ow && o.gridX < it.gridX + w && it.gridY < o.gridY + oh && o.gridY < it.gridY + h;
+    })[0];
+    return hit
+      ? 'That spot overlaps "' + hit.name + '" (' + gridSpot(hit) + ', ' + (hit.gridW || 1) + 'x' + (hit.gridH || 1) + ') in Drawer ' + n + '.'
+      : '';
+  }
+
   function highlightTool(id) {
     els.gridPanel.querySelectorAll('.wh-grid-tool').forEach(function (el) {
       el.classList.toggle('hot', el.getAttribute('data-id') === id);
@@ -507,6 +528,8 @@
       qty: f.qty.value, minQty: f.minQty.value, link: f.link.value, notes: f.notes.value
     }])[0];
     if (!entry) return;
+    var problem = gridProblem(entry);
+    if (problem) { alert(problem); f.gridSpot.focus(); return; }
     if (editingId) {
       items = items.map(function (it) { return it.id === editingId ? entry : it; });
     } else {
