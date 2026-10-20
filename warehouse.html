@@ -25,25 +25,26 @@
 
 <main class="page">
   <h1>Warehouse</h1>
-  <p class="page-intro">Every misc part, spare, and tool I've got on hand, and which bin it's in.</p>
+  <p class="page-intro">Every misc part, spare, and tool I've got on hand, which bin it's in, and which projects the parts went into.</p>
 
   <div class="wh-tabs" role="tablist" aria-label="Inventory section">
     <button type="button" class="wh-tab" role="tab" id="whTabParts" data-view="part" aria-selected="true">Parts</button>
     <button type="button" class="wh-tab" role="tab" id="whTabTools" data-view="tool" aria-selected="false">Tooling</button>
+    <button type="button" class="wh-tab" role="tab" id="whTabProjects" data-view="project" aria-selected="false">Projects</button>
   </div>
 
   <!--
-    Inventory (parts and tooling) lives in data/warehouse.json and is rendered by js/warehouse.js.
+    Inventory (parts, tooling, and projects) lives in data/warehouse.json and is rendered by js/warehouse.js.
     To change it: use "Manage" on this page (edits are kept in this browser
     only), then "Download JSON" and commit the file over data/warehouse.json.
   -->
   <div class="stat-grid" id="whStats"></div>
 
   <div class="wh-toolbar">
-    <input type="search" id="whSearch" class="wh-input wh-search" placeholder="Search name, notes, location…" aria-label="Search inventory">
-    <select id="whCategory" class="wh-input" aria-label="Filter by category"></select>
-    <select id="whLocation" class="wh-input" aria-label="Filter by location"></select>
-    <label class="wh-check"><input type="checkbox" id="whLow"> <span id="whLowLabel">Low stock only</span></label>
+    <input type="search" id="whSearch" class="wh-input wh-search wh-items-only" placeholder="Search name, notes, location…" aria-label="Search inventory">
+    <select id="whCategory" class="wh-input wh-items-only" aria-label="Filter by category"></select>
+    <select id="whLocation" class="wh-input wh-items-only" aria-label="Filter by location"></select>
+    <label class="wh-check wh-items-only"><input type="checkbox" id="whLow"> <span id="whLowLabel">Low stock only</span></label>
     <button type="button" class="btn btn-secondary wh-btn" id="whManageToggle" aria-pressed="false">Manage</button>
   </div>
 
@@ -55,7 +56,7 @@
     </span>
   </div>
 
-  <form class="wh-form" id="whForm" hidden>
+  <form class="wh-form wh-items-only" id="whForm" hidden>
     <h2 id="whFormTitle">Add a part</h2>
     <div class="wh-form-grid">
       <label>Name<input class="wh-input" name="name" required></label>
@@ -84,7 +85,7 @@
     </div>
   </form>
 
-  <div class="table-scroll">
+  <div class="table-scroll wh-items-only">
     <table class="data-table wh-table">
       <thead>
         <tr>
@@ -100,7 +101,21 @@
       <tbody id="whBody"></tbody>
     </table>
   </div>
-  <p class="wh-empty" id="whEmpty" hidden></p>
+  <p class="wh-empty wh-items-only" id="whEmpty" hidden></p>
+
+  <section id="whProjectsView" hidden>
+    <form class="wh-form" id="whProjectForm" hidden>
+      <h2>New project</h2>
+      <div class="wh-form-grid">
+        <label>Name<input class="wh-input" name="name" required placeholder="e.g. Rack shelf lighting"></label>
+        <label class="wh-form-wide">Notes<input class="wh-input" name="notes" placeholder="What it is, where it lives…"></label>
+      </div>
+      <div class="wh-form-actions">
+        <button type="submit" class="btn btn-primary wh-btn">Add project</button>
+      </div>
+    </form>
+    <div class="wh-projects" id="whProjects"></div>
+  </section>
 </main>
 
 <footer class="site-footer">
