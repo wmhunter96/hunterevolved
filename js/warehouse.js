@@ -86,7 +86,10 @@
         category: String(it.category || '').trim(),
         location: String(it.location || '').trim(),
         qty: Math.max(0, Math.floor(Number(it.qty) || 0)),
-        minQty: isNaN(minQty) || it.kind === 'tool' ? null : minQty,
+        // Consumable tools (glue, tape, screws...) get used up, so like parts
+        // they can have a low-stock threshold and be used in projects.
+        consumable: it.kind === 'tool' && !!it.consumable,
+        minQty: isNaN(minQty) || (it.kind === 'tool' && !it.consumable) ? null : minQty,
         status: it.kind === 'tool' ? String(it.status || '').trim() : '',
         link: String(it.link || '').trim(),
         notes: String(it.notes || '').trim(),
@@ -148,7 +151,7 @@
 
   function isLow(it) { return it.minQty != null && it.qty <= it.minQty; }
   // "Needs attention" filter: low stock for parts, any non-default status for tools.
-  function needsAttention(it) { return it.kind === 'tool' ? !!it.status : isLow(it); }
+  function needsAttention(it) { return it.kind === 'tool' ? !!it.status || isLow(it) : isLow(it); }
 
   // "Drawer 4", "drawer 4", "Drawer4" -> 4; anything else (or out of range) -> 0.
   function drawerOf(it) {
@@ -217,11 +220,14 @@
     if (view === 'tool') {
       var out = list.filter(function (it) { return it.status === 'Loaned out'; }).length;
       var broken = list.filter(function (it) { return it.status === 'Needs repair' || it.status === 'Missing'; }).length;
+      var low = list.filter(isLow).length;
       els.stats.innerHTML =
         stat('Tools', list.length, 'catalogued') +
         locations +
         stat('Loaned out', out, out ? 'not in the shop' : 'all home') +
-        stat('Needs repair', broken, broken ? 'broken or missing' : 'all good');
+        stat('Needs attention', broken + low, broken || low
+          ? [broken && broken + ' broken or missing', low && low + ' consumable' + (low === 1 ? '' : 's') + ' low'].filter(Boolean).join(' · ')
+          : 'all good');
       return;
     }
     var low = list.filter(isLow).length;
@@ -273,7 +279,7 @@
         : '';
       var drawer = view === 'tool' ? drawerOf(it) : 0;
       return '<tr data-id="' + it.id + '"' + (editingId === it.id ? ' class="wh-editing"' : '') + (drawer ? ' data-drawer="' + drawer + '"' : '') + '>' +
-        '<td class="wh-name">' + name + '</td>' +
+        '<td class="wh-name">' + name + (it.consumable ? ' <span class="wh-tag">consumable</span>' : '') + '</td>' +
         '<td>' + text(it.category || '—') + '</td>' +
         '<td>' + text(it.location || '—') + (gridSpot(it) ? ' <span class="wh-spot">' + gridSpot(it) + '</span>' : '') + '</td>' +
         '<td class="wh-num">' + qty + '</td>' +
@@ -334,10 +340,16 @@
       html += '</div>';
     });
     els.toolbox.innerHTML = html;
-    var loose = tools.filter(function (it) { return !drawerOf(it); }).length;
-    els.toolboxLoose.hidden = !loose;
-    els.toolboxLoose.textContent = loose + ' tool' + (loose === 1 ? " isn't" : "s aren't") +
-      ' assigned to a drawer (set the Drawer to "Drawer 1" through "Drawer ' + DRAWERS.length + '").';
+    // Tools kept outside the drawers, grouped by where they are ("Top of toolbox", ...).
+    var outside = {};
+    tools.forEach(function (it) {
+      if (!drawerOf(it)) (outside[it.location || 'No location set'] = outside[it.location || 'No location set'] || []).push(it.name);
+    });
+    var spots = Object.keys(outside).sort();
+    els.toolboxLoose.hidden = !spots.length;
+    els.toolboxLoose.innerHTML = spots.map(function (loc) {
+      return '<strong>' + text(loc) + ':</strong> ' + outside[loc].map(text).join(', ');
+    }).join('<br>');
   }
 
   function renderGrid() {
@@ -439,7 +451,8 @@
     });
     document.querySelector('.wh-status-col').hidden = view !== 'tool';
     document.querySelectorAll('.wh-form [data-for]').forEach(function (el) {
-      el.hidden = el.getAttribute('data-for') !== view;
+      var shows = el.getAttribute('data-for').split(' ');
+      el.hidden = !(shows.indexOf(view) !== -1 || (view === 'tool' && shows.indexOf('consumable') !== -1 && els.form.elements.consumable.checked));
     });
     els.lowLabel.textContent = v.lowLabel;
     document.getElementById('whLocHead').textContent = v.place;
@@ -489,6 +502,7 @@
     els.formTitle.textContent = 'Add a ' + VIEWS[view].noun;
     els.submit.textContent = 'Add ' + VIEWS[view].noun;
     els.cancelEdit.hidden = true;
+    renderView();
   }
 
   function startEdit(it) {
@@ -499,6 +513,8 @@
     f.location.value = it.location;
     f.qty.value = it.qty;
     f.minQty.value = it.minQty == null ? '' : it.minQty;
+    f.consumable.checked = it.consumable;
+    renderView();
     f.link.value = it.link;
     f.notes.value = it.notes;
     f.status.value = it.status;
@@ -525,7 +541,8 @@
       id: editingId || newId(), kind: view, status: f.status.value,
       gridX: spot.x, gridY: spot.y, gridW: size.w, gridH: size.h,
       name: f.name.value, category: f.category.value, location: f.location.value,
-      qty: f.qty.value, minQty: f.minQty.value, link: f.link.value, notes: f.notes.value
+      qty: f.qty.value, minQty: f.minQty.value, link: f.link.value, notes: f.notes.value,
+      consumable: view === 'tool' && f.consumable.checked
     }])[0];
     if (!entry) return;
     var problem = gridProblem(entry);
@@ -541,6 +558,7 @@
   });
 
   els.cancelEdit.addEventListener('click', function () { resetForm(); renderTable(); });
+  els.form.elements.consumable.addEventListener('change', renderView);
 
   els.body.addEventListener('click', function (e) {
     var btn = e.target.closest('button[data-act]');
@@ -577,10 +595,10 @@
   }
 
   function partOptions() {
-    return items.filter(function (it) { return it.kind === 'part' && it.qty > 0; })
+    return items.filter(function (it) { return (it.kind === 'part' || it.consumable) && it.qty > 0; })
       .sort(function (a, b) { return a.name.localeCompare(b.name); })
       .map(function (it) {
-        return '<option value="' + it.id + '">' + text(it.name) + ' (' + it.qty + ' on hand' +
+        return '<option value="' + it.id + '">' + text(it.name) + (it.kind === 'tool' ? ' [consumable]' : '') + ' (' + it.qty + ' on hand' +
           (it.location ? ', ' + text(it.location) : '') + ')</option>';
       }).join('');
   }
@@ -717,6 +735,7 @@
       var where = [it.location, gridSpot(it) && 'spot ' + gridSpot(it)].filter(Boolean).join(', ');
       var line = tools
         ? '- ' + it.name + (it.qty > 1 ? ' (x' + it.qty + ')' : '') + (where ? ' [' + where + ']' : '') +
+            (it.consumable ? ' (consumable' + (isLow(it) ? ', running low' : '') + ')' : '') +
             (it.status ? ' **' + it.status + '**' : '')
         : '- ' + it.name + ': ' + it.qty + (where ? ' (' + where + ')' : '') + (isLow(it) ? ' (running low)' : '');
       if (it.notes) line += ' - ' + it.notes;

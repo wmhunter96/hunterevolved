@@ -64,7 +64,8 @@
       <label>Category<input class="wh-input" name="category" list="whCategoryList" placeholder="e.g. Fasteners"></label>
       <label><span id="whLocField">Location</span><input class="wh-input" name="location" list="whLocationList" placeholder="e.g. Bin A3"></label>
       <label>Qty<input class="wh-input" name="qty" type="number" min="0" step="1" value="1" required></label>
-      <label data-for="part">Low at<input class="wh-input" name="minQty" type="number" min="0" step="1" placeholder="optional"></label>
+      <label data-for="part consumable">Low at<input class="wh-input" name="minQty" type="number" min="0" step="1" placeholder="optional"></label>
+      <label data-for="tool" class="wh-check wh-check-field"><input type="checkbox" name="consumable"> Consumable</label>
       <label data-for="tool">Status
         <select class="wh-input" name="status">
           <option value="">In place</option>
