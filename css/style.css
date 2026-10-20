@@ -207,6 +207,7 @@ a.card:hover::before { filter: brightness(1.15); }
 .wh-btn { padding: .55rem 1rem; cursor: pointer; font-family: inherit; }
 button.btn-primary { border: none; }
 .wh-toolbar .wh-btn { margin-left: auto; }
+.wh-toolbar .wh-btn + .wh-btn { margin-left: 0; }
 
 .wh-banner {
   display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between;
