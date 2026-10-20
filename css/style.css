@@ -321,3 +321,42 @@ button.btn-primary { border: none; }
 .wh-tb-count { font-size: .75rem; color: var(--fg-muted); }
 /* Drawer pull handle along the bottom edge */
 .wh-tb-handle { position: absolute; left: 30%; right: 30%; bottom: 5px; height: 4px; border-radius: 2px; background: var(--tb-yellow); opacity: .85; }
+
+/* Gridfinity drawer preview */
+.wh-tb-layout { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+.wh-grid-panel { position: sticky; top: 5rem; scroll-margin-top: 5rem; min-width: 0; }
+.wh-grid-hint { border: 1px dashed var(--border); border-radius: var(--radius); color: var(--fg-muted); padding: 2rem 1.25rem; text-align: center; }
+.wh-grid-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1rem; margin-bottom: .75rem; }
+.wh-grid-head h3 { margin: 0; color: #febd17; }
+.wh-grid {
+  display: grid;
+  grid-template-columns: 1.25rem repeat(var(--cols), minmax(0, 1fr));
+  grid-template-rows: 1.25rem repeat(var(--rows), auto);
+  gap: 3px;
+  padding: 8px;
+  background: #1c1c1c;
+  border: 2px solid #000;
+  border-radius: 8px 8px 0 0;
+}
+.wh-grid-label { display: flex; align-items: center; justify-content: center; font-size: .7rem; color: var(--fg-muted); font-weight: 600; }
+.wh-grid-cell { aspect-ratio: 1; background: #262626; border: 1px solid #333; border-radius: 4px; }
+.wh-grid-tool {
+  z-index: 1; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  background: rgba(254, 189, 23, .16); border: 1px solid #febd17; border-radius: 5px;
+  color: var(--fg); font-size: .7rem; line-height: 1.15; text-align: center; padding: 2px; cursor: default;
+}
+.wh-grid-tool span { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: break-word; }
+.wh-grid-tool.tall span { writing-mode: vertical-rl; transform: rotate(180deg); -webkit-line-clamp: 2; }
+.wh-grid-tool.hot { background: rgba(79, 208, 160, .25); border-color: var(--accent-2); }
+.wh-grid-tool.clash { background: rgba(255, 90, 90, .2); border-color: #ff5a5a; }
+.wh-grid-front {
+  background: #febd17; color: #1a1203; border-radius: 0 0 8px 8px;
+  font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; text-align: center; padding: .2rem;
+}
+.wh-chip { display: inline-block; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px; padding: 0 .4rem; margin: .15rem 0; color: var(--fg); }
+.wh-spot { font-size: .75rem; color: #febd17; border: 1px solid #5a4a1a; border-radius: 4px; padding: 0 .3rem; margin-left: .25rem; }
+.wh-table tr.wh-hot td { background: rgba(79, 208, 160, .08); }
+@media (max-width: 900px) {
+  .wh-tb-layout { grid-template-columns: minmax(0, 1fr); }
+  .wh-grid-panel { position: static; }
+}

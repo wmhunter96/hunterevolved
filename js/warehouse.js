@@ -27,6 +27,11 @@
   var DRAWERS = [];
   for (var d = 1; d <= TOOLBOX_UNITS.length * DRAWERS_PER_UNIT; d++) DRAWERS.push('Drawer ' + d);
 
+  // Each drawer is 450 x 285 mm inside, which fits a 10 x 6 Gridfinity
+  // baseplate (42 mm units). Tools can take a spot (gridX/gridY, 1-based;
+  // columns A-J, rows 1-6 from the back) and a size in units (gridW x gridH).
+  var GRID = { cols: 10, rows: 6, unit: 42, inner: '450 × 285 mm' };
+
   var HASHES = { part: '', tool: '#tooling', project: '#projects' };
   var view = location.hash === '#tooling' ? 'tool' : location.hash === '#projects' ? 'project' : 'part';
 
@@ -48,6 +53,7 @@
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
     categoryList: $('whCategoryList'), locationList: $('whLocationList'),
     body: $('whBody'), empty: $('whEmpty'), lowLabel: $('whLowLabel'),
+    gridPanel: $('whGridPanel'),
     toolboxWrap: $('whToolboxWrap'), toolbox: $('whToolbox'), toolboxLoose: $('whToolboxLoose'),
     projectsView: $('whProjectsView'), projectForm: $('whProjectForm'), projects: $('whProjects')
   };
@@ -83,9 +89,31 @@
         minQty: isNaN(minQty) || it.kind === 'tool' ? null : minQty,
         status: it.kind === 'tool' ? String(it.status || '').trim() : '',
         link: String(it.link || '').trim(),
-        notes: String(it.notes || '').trim()
+        notes: String(it.notes || '').trim(),
+        gridX: gridNum(it.kind, it.gridX),
+        gridY: gridNum(it.kind, it.gridY),
+        gridW: gridNum(it.kind, it.gridW),
+        gridH: gridNum(it.kind, it.gridH)
       };
     });
+  }
+
+  function gridNum(kind, v) {
+    var n = Math.floor(Number(v));
+    return kind === 'tool' && n >= 1 ? n : null;
+  }
+
+  function colLetter(x) { return String.fromCharCode(64 + x); }
+  function gridSpot(it) { return it.gridX && it.gridY ? colLetter(it.gridX) + it.gridY : ''; }
+  function gridSize(it) { return it.gridW && it.gridH ? it.gridW + 'x' + it.gridH : ''; }
+  // "B3" -> {x: 2, y: 3}; "1x4" -> {w: 1, h: 4}; blank or junk -> nulls.
+  function parseSpot(s) {
+    var m = /^\s*([A-Za-z])\s*(\d+)\s*$/.exec(s || '');
+    return m ? { x: m[1].toUpperCase().charCodeAt(0) - 64, y: Number(m[2]) } : { x: null, y: null };
+  }
+  function parseSize(s) {
+    var m = /^\s*(\d+)\s*[xX×]\s*(\d+)\s*$/.exec(s || '');
+    return m ? { w: Number(m[1]), h: Number(m[2]) } : { w: null, h: null };
   }
 
   function normalizeProjects(list) {
@@ -244,10 +272,10 @@
           '</td>'
         : '';
       var drawer = view === 'tool' ? drawerOf(it) : 0;
-      return '<tr' + (editingId === it.id ? ' class="wh-editing"' : '') + (drawer ? ' data-drawer="' + drawer + '"' : '') + '>' +
+      return '<tr data-id="' + it.id + '"' + (editingId === it.id ? ' class="wh-editing"' : '') + (drawer ? ' data-drawer="' + drawer + '"' : '') + '>' +
         '<td class="wh-name">' + name + '</td>' +
         '<td>' + text(it.category || '—') + '</td>' +
-        '<td>' + text(it.location || '—') + '</td>' +
+        '<td>' + text(it.location || '—') + (gridSpot(it) ? ' <span class="wh-spot">' + gridSpot(it) + '</span>' : '') + '</td>' +
         '<td class="wh-num">' + qty + '</td>' +
         (view === 'tool'
           ? '<td>' + (it.status ? '<span class="wh-low">' + text(it.status) + '</span>' : 'In place') + '</td>'
@@ -266,6 +294,7 @@
     }
     els.empty.hidden = rows.length > 0;
     renderToolbox(rows);
+    if (view === 'tool') renderGrid();
 
     document.querySelectorAll('.wh-sort').forEach(function (b) {
       var active = b.getAttribute('data-key') === sortKey;
@@ -309,6 +338,68 @@
     els.toolboxLoose.hidden = !loose;
     els.toolboxLoose.textContent = loose + ' tool' + (loose === 1 ? " isn't" : "s aren't") +
       ' assigned to a drawer (set the Drawer to "Drawer 1" through "Drawer ' + DRAWERS.length + '").';
+  }
+
+  function renderGrid() {
+    var n = drawerOf({ location: els.location.value });
+    if (!n) {
+      els.gridPanel.innerHTML = '<div class="wh-grid-hint">Pick a drawer to see its ' + GRID.cols + ' &times; ' + GRID.rows +
+        ' Gridfinity layout and where each tool sits.</div>';
+      return;
+    }
+    var inside = inView().filter(function (it) { return drawerOf(it) === n; });
+    var placed = [], unplaced = [], taken = {};
+    inside.forEach(function (it) {
+      var w = it.gridW || 1, h = it.gridH || 1;
+      if (!it.gridX || !it.gridY || it.gridX + w - 1 > GRID.cols || it.gridY + h - 1 > GRID.rows) {
+        unplaced.push(it);
+        return;
+      }
+      placed.push({ it: it, w: w, h: h });
+      for (var x = it.gridX; x < it.gridX + w; x++)
+        for (var y = it.gridY; y < it.gridY + h; y++) {
+          var k = x + ',' + y;
+          taken[k] = (taken[k] || 0) + 1;
+        }
+    });
+    var used = Object.keys(taken).length;
+    var html = '<div class="wh-grid-head"><h3>Drawer ' + n + '</h3><span class="wh-muted">' + GRID.cols + ' &times; ' + GRID.rows +
+      ' grid &middot; ' + GRID.inner + ' &middot; ' + used + '/' + GRID.cols * GRID.rows + ' cells used</span></div>';
+    html += '<div class="wh-grid" style="--cols:' + GRID.cols + ';--rows:' + GRID.rows + '">';
+    html += '<span class="wh-grid-corner"></span>';
+    for (var c = 1; c <= GRID.cols; c++) html += '<span class="wh-grid-label" style="grid-column:' + (c + 1) + ';grid-row:1">' + colLetter(c) + '</span>';
+    for (var r = 1; r <= GRID.rows; r++) {
+      html += '<span class="wh-grid-label" style="grid-column:1;grid-row:' + (r + 1) + '">' + r + '</span>';
+      for (c = 1; c <= GRID.cols; c++) {
+        html += '<span class="wh-grid-cell" style="grid-column:' + (c + 1) + ';grid-row:' + (r + 1) + '" title="' + colLetter(c) + r + '"></span>';
+      }
+    }
+    placed.forEach(function (p) {
+      var clash = false;
+      for (var x = p.it.gridX; x < p.it.gridX + p.w; x++)
+        for (var y = p.it.gridY; y < p.it.gridY + p.h; y++) if (taken[x + ',' + y] > 1) clash = true;
+      html += '<span class="wh-grid-tool' + (clash ? ' clash' : '') + (p.h > p.w ? ' tall' : '') + '" data-id="' + p.it.id + '"' +
+        ' style="grid-column:' + (p.it.gridX + 1) + ' / span ' + p.w + ';grid-row:' + (p.it.gridY + 1) + ' / span ' + p.h + '"' +
+        ' title="' + text(p.it.name) + ' (' + gridSpot(p.it) + ', ' + p.w + 'x' + p.h + ')' + (clash ? ': overlaps another tool' : '') + '">' +
+        '<span>' + text(p.it.name) + '</span></span>';
+    });
+    html += '</div><div class="wh-grid-front">Front (handle)</div>';
+    if (unplaced.length) {
+      html += '<p class="wh-muted">Not placed yet: ' + unplaced.map(function (it) {
+        var bad = it.gridX && it.gridY;
+        return '<span class="wh-chip"' + (bad ? ' title="' + gridSpot(it) + ' ' + (it.gridW || 1) + 'x' + (it.gridH || 1) + ' runs off the grid"' : '') + '>' +
+          text(it.name) + (bad ? ' &#9888;' : '') + '</span>';
+      }).join(' ') + '</p>';
+    } else if (!inside.length) {
+      html += '<p class="wh-muted">Nothing in this drawer yet.</p>';
+    }
+    els.gridPanel.innerHTML = html;
+  }
+
+  function highlightTool(id) {
+    els.gridPanel.querySelectorAll('.wh-grid-tool').forEach(function (el) {
+      el.classList.toggle('hot', el.getAttribute('data-id') === id);
+    });
   }
 
   function highlightDrawer(n) {
@@ -390,6 +481,8 @@
     f.link.value = it.link;
     f.notes.value = it.notes;
     f.status.value = it.status;
+    f.gridSpot.value = gridSpot(it);
+    f.gridSize.value = gridSize(it);
     els.formTitle.textContent = 'Edit ' + VIEWS[view].noun;
     els.submit.textContent = 'Save changes';
     els.cancelEdit.hidden = false;
@@ -406,8 +499,10 @@
   els.form.addEventListener('submit', function (e) {
     e.preventDefault();
     var f = els.form.elements;
+    var spot = parseSpot(f.gridSpot.value), size = parseSize(f.gridSize.value);
     var entry = normalize([{
       id: editingId || newId(), kind: view, status: f.status.value,
+      gridX: spot.x, gridY: spot.y, gridW: size.w, gridH: size.h,
       name: f.name.value, category: f.category.value, location: f.location.value,
       qty: f.qty.value, minQty: f.minQty.value, link: f.link.value, notes: f.notes.value
     }])[0];
@@ -609,16 +704,29 @@
     var name = DRAWERS[Number(btn.getAttribute('data-drawer')) - 1];
     els.location.value = els.location.value === name ? '' : name;
     renderTable();
-    if (els.location.value && window.matchMedia('(max-width: 720px)').matches) {
-      document.querySelector('.wh-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (els.location.value && window.matchMedia('(max-width: 900px)').matches) {
+      els.gridPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
   els.body.addEventListener('mouseover', function (e) {
     var tr = e.target.closest('tr');
     highlightDrawer(tr ? Number(tr.getAttribute('data-drawer')) : 0);
+    highlightTool(tr ? tr.getAttribute('data-id') : null);
   });
-  els.body.addEventListener('mouseleave', function () { highlightDrawer(0); });
+  els.body.addEventListener('mouseleave', function () { highlightDrawer(0); highlightTool(null); });
+
+  // Hovering a tool in the grid lights up its table row.
+  els.gridPanel.addEventListener('mouseover', function (e) {
+    var t = e.target.closest('.wh-grid-tool');
+    var id = t ? t.getAttribute('data-id') : null;
+    highlightTool(id);
+    els.body.querySelectorAll('tr').forEach(function (tr) { tr.classList.toggle('wh-hot', tr.getAttribute('data-id') === id); });
+  });
+  els.gridPanel.addEventListener('mouseleave', function () {
+    highlightTool(null);
+    els.body.querySelectorAll('tr.wh-hot').forEach(function (tr) { tr.classList.remove('wh-hot'); });
+  });
 
   [els.search, els.category, els.location, els.low].forEach(function (el) {
     el.addEventListener('input', renderTable);

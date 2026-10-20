@@ -73,6 +73,8 @@
         </select>
       </label>
       <label>Link<input class="wh-input" name="link" type="url" placeholder="https://…"></label>
+      <label data-for="tool">Grid spot<input class="wh-input" name="gridSpot" placeholder="e.g. B3 (optional)" pattern="\s*[A-Za-z]\s*\d+\s*" title="Column letter + row number, like B3"></label>
+      <label data-for="tool">Grid size<input class="wh-input" name="gridSize" placeholder="cols x rows, e.g. 1x4" pattern="\s*\d+\s*[xX×]\s*\d+\s*" title="Width x depth in grid units, like 1x4"></label>
       <label class="wh-form-wide">Notes<input class="wh-input" name="notes" placeholder="Size, spec, what it's for…"></label>
     </div>
     <datalist id="whCategoryList"></datalist>
@@ -86,9 +88,14 @@
   </form>
 
   <section class="wh-toolbox-wrap wh-items-only" id="whToolboxWrap" hidden>
-    <p class="wh-toolbox-caption">Three DEWALT ToughSystem 2.0 three-drawer units (DWST08330) stacked, drawers numbered top to bottom. Click a drawer to see what's in it.</p>
-    <div class="wh-toolbox" id="whToolbox" aria-label="Toolbox drawers"></div>
-    <p class="wh-muted" id="whToolboxLoose" hidden></p>
+    <p class="wh-toolbox-caption">Three DEWALT ToughSystem 2.0 three-drawer units (DWST08330) stacked, drawers numbered top to bottom. Click a drawer to see its Gridfinity layout.</p>
+    <div class="wh-tb-layout">
+      <div>
+        <div class="wh-toolbox" id="whToolbox" aria-label="Toolbox drawers"></div>
+        <p class="wh-muted" id="whToolboxLoose" hidden></p>
+      </div>
+      <div class="wh-grid-panel" id="whGridPanel"></div>
+    </div>
   </section>
 
   <div class="table-scroll wh-items-only">

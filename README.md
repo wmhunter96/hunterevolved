@@ -52,7 +52,12 @@ to fill in.
 `warehouse.html` is the inventory of misc parts (Parts tab) and tools
 (Tooling tab, each tool assigned to a toolbox drawer: three stacked DEWALT
 ToughSystem 2.0 three-drawer units, so `Drawer 1`-`Drawer 9` numbered top to
-bottom, drawn as a clickable map above the table). The Projects tab
+bottom, drawn as a clickable map above the table).
+Clicking a drawer opens its Gridfinity preview: each drawer is 450 x 285 mm
+inside, so a 10 x 6 grid of 42 mm units (columns A-J, rows 1-6 from the back;
+`GRID` in `js/warehouse.js`). A tool's optional `gridX`/`gridY` (1-based spot,
+entered as e.g. `B3`) and `gridW`/`gridH` (size in units, e.g. `1x4`) place it
+on that grid; overlaps show red. The Projects tab
 consumes parts: in Manage mode, "Use part" on a project takes that quantity
 out of stock and logs it on the project; "Return to stock" undoes it. The published data
 is `data/warehouse.json`; there's no backend, so to change it:
