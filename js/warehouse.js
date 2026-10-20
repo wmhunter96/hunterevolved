@@ -47,7 +47,7 @@
   function $(id) { return document.getElementById(id); }
   var els = {
     stats: $('whStats'), search: $('whSearch'), category: $('whCategory'),
-    location: $('whLocation'), low: $('whLow'), manageToggle: $('whManageToggle'),
+    location: $('whLocation'), low: $('whLow'), manageToggle: $('whManageToggle'), exportList: $('whExportList'),
     banner: $('whDraftBanner'), exportBtn: $('whExport'), discard: $('whDiscard'),
     form: $('whForm'), formTitle: $('whFormTitle'), submit: $('whSubmit'),
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
@@ -684,6 +684,85 @@
   });
 
   els.manageToggle.addEventListener('click', function () { setManaging(!managing); });
+
+  // Export button: the current tab (and its filters) as a Markdown list,
+  // grouped by category, copied to the clipboard (handy for pasting into an LLM).
+  function aiExport() {
+    var rows = filtered().slice().sort(function (a, b) {
+      if (!a.category !== !b.category) return a.category ? -1 : 1; // Uncategorized last
+      return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+    });
+    var tools = view === 'tool';
+    var onHand = rows.filter(function (it) { return it.qty > 0; });
+    var out = rows.filter(function (it) { return it.qty <= 0; });
+    var filters = [];
+    if (els.search.value.trim()) filters.push('matching "' + els.search.value.trim() + '"');
+    if (els.category.value) filters.push('category ' + els.category.value);
+    if (els.location.value) filters.push(els.location.value);
+    if (els.low.checked) filters.push(tools ? 'needing attention' : 'low stock only');
+
+    var lines = ['# ' + (tools ? 'Tools' : 'Parts') + ' I have on hand' + (filters.length ? ' (' + filters.join(', ') + ')' : ''), '',
+      'Exported ' + today() + ' from my workshop inventory. ' +
+      (tools
+        ? 'Format: name (qty if more than 1), toolbox drawer and grid spot, status if not in place, notes.'
+        : 'Format: name: quantity on hand (location), notes.'), ''];
+    var group = null;
+    onHand.forEach(function (it) {
+      var cat = it.category || 'Uncategorized';
+      if (cat !== group) {
+        if (group !== null) lines.push('');
+        lines.push('## ' + cat);
+        group = cat;
+      }
+      var where = [it.location, gridSpot(it) && 'spot ' + gridSpot(it)].filter(Boolean).join(', ');
+      var line = tools
+        ? '- ' + it.name + (it.qty > 1 ? ' (x' + it.qty + ')' : '') + (where ? ' [' + where + ']' : '') +
+            (it.status ? ' **' + it.status + '**' : '')
+        : '- ' + it.name + ': ' + it.qty + (where ? ' (' + where + ')' : '') + (isLow(it) ? ' (running low)' : '');
+      if (it.notes) line += ' - ' + it.notes;
+      lines.push(line);
+    });
+    if (!onHand.length) lines.push('_Nothing on hand' + (filters.length ? ' matching these filters' : '') + '._');
+    if (out.length) {
+      lines.push('', '## Out of stock (not available)');
+      out.forEach(function (it) { lines.push('- ' + it.name); });
+    }
+    return lines.join('\n') + '\n';
+  }
+
+  // Briefly swap the export icon for a check (copied) or arrow (downloaded).
+  var CHECK = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
+  var DOWN = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>';
+  function flash(btn, icon, label) {
+    var original = btn.innerHTML, title = btn.title;
+    btn.innerHTML = icon;
+    btn.title = label;
+    btn.classList.add('done');
+    btn.disabled = true;
+    setTimeout(function () {
+      btn.innerHTML = original; btn.title = title; btn.classList.remove('done'); btn.disabled = false;
+    }, 1500);
+  }
+
+  els.exportList.addEventListener('click', function () {
+    var md = aiExport();
+    var fallback = function () {
+      // No clipboard access (e.g. http or a blocked permission): download it instead.
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([md], { type: 'text/markdown' }));
+      a.download = (view === 'tool' ? 'tools' : 'parts') + '-on-hand.md';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+      flash(els.exportList, DOWN, 'Downloaded');
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(md).then(function () { flash(els.exportList, CHECK, 'Copied to clipboard'); }, fallback);
+    } else {
+      fallback();
+    }
+  });
 
   els.exportBtn.addEventListener('click', function () {
     var json = JSON.stringify({ updated: today(), items: items, projects: projects }, null, 2) + '\n';
