@@ -14,7 +14,7 @@ gear/homelab.html          Homelab — real rack inventory table, plus a
                           interactive 3D rack (Three.js, HOST-63/65)
 mtg.html                  MTG — EDH decks (HOST-56/57/58), auto-synced from Archidekt
 scripts/sync-archidekt.mjs  Regenerates mtg.html's deck cards from Archidekt
-warehouse.html            Warehouse — parts + tooling inventory, rendered by
+warehouse.html            Warehouse — parts + tooling inventory and projects, rendered by
                           js/warehouse.js from data/warehouse.json
 css/style.css             Shared styles
 js/main.js                Nav toggle + footer year
@@ -50,7 +50,9 @@ to fill in.
 ## Warehouse
 
 `warehouse.html` is the inventory of misc parts (Parts tab) and tools
-(Tooling tab, each tool assigned to a toolbox drawer). The published data
+(Tooling tab, each tool assigned to a toolbox drawer). The Projects tab
+consumes parts: in Manage mode, "Use part" on a project takes that quantity
+out of stock and logs it on the project; "Return to stock" undoes it. The published data
 is `data/warehouse.json`; there's no backend, so to change it:
 
 1. Open the page and click **Manage**. Add, edit, delete, or +/- quantities.
@@ -62,3 +64,7 @@ Each item has `kind` (`part` or `tool`), `name`, `category`, `location`
 (the drawer, for tools), `qty`, optional `minQty` (parts: flags low stock),
 optional `status` (tools: `Loaned out`, `Needs repair`, `Missing`), `link`,
 and `notes`.
+
+`projects[]` entries have `name`, `status` (`active` or `done`), `notes`, and
+`uses[]`: `{ itemId, name, qty, date }`, where `itemId` points at a part's
+`id` and `name` is a snapshot so the record survives deleting the part.

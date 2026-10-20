@@ -1,4 +1,4 @@
-// Warehouse — parts and tooling inventory.
+// Warehouse — parts and tooling inventory, plus projects that consume parts.
 //
 // The published inventory is data/warehouse.json. GitHub Pages has no
 // backend, so "Manage" edits a draft copy kept in this browser's
@@ -9,20 +9,26 @@
   var DRAFT_KEY = 'warehouse-draft';
 
   var published = [];
+  var publishedProjects = [];
   var items = [];
+  // Projects record the parts they used. Using a part takes it out of stock;
+  // returning a use puts it back.
+  var projects = [];
   var hasDraft = false;
   var managing = false;
   var editingId = null;
   var sortKey = 'name';
   var sortDir = 1;
-  var view = location.hash === '#tooling' ? 'tool' : 'part';
+  var HASHES = { part: '', tool: '#tooling', project: '#projects' };
+  var view = location.hash === '#tooling' ? 'tool' : location.hash === '#projects' ? 'project' : 'part';
 
   var VIEWS = {
     part: { noun: 'part', plural: 'Parts', lowLabel: 'Low stock only',
       place: 'Location', places: 'locations', placeSub: 'bins, drawers, shelves', placeHint: 'e.g. Bin A3' },
     // Every tool lives in a toolbox drawer, so tooling's "location" reads as Drawer.
     tool: { noun: 'tool', plural: 'Tools', lowLabel: 'Needs attention only',
-      place: 'Drawer', places: 'drawers', placeSub: 'in the toolbox', placeHint: 'e.g. Drawer 3' }
+      place: 'Drawer', places: 'drawers', placeSub: 'in the toolbox', placeHint: 'e.g. Drawer 3' },
+    project: { noun: 'part', plural: 'Projects', lowLabel: '', place: 'Location', places: 'locations', placeSub: '', placeHint: '' }
   };
 
   function $(id) { return document.getElementById(id); }
@@ -33,17 +39,21 @@
     form: $('whForm'), formTitle: $('whFormTitle'), submit: $('whSubmit'),
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
     categoryList: $('whCategoryList'), locationList: $('whLocationList'),
-    body: $('whBody'), empty: $('whEmpty'), lowLabel: $('whLowLabel')
+    body: $('whBody'), empty: $('whEmpty'), lowLabel: $('whLowLabel'),
+    projectsView: $('whProjectsView'), projectForm: $('whProjectForm'), projects: $('whProjects')
   };
 
   function readDraft() {
     try {
       var raw = localStorage.getItem(DRAFT_KEY);
-      return raw ? JSON.parse(raw) : null;
+      if (!raw) return null;
+      var d = JSON.parse(raw);
+      // Drafts saved before projects existed were a bare items array.
+      return Array.isArray(d) ? { items: d, projects: null } : d;
     } catch (e) { return null; }
   }
   function writeDraft() {
-    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(items)); } catch (e) {}
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify({ items: items, projects: projects })); } catch (e) {}
   }
   function clearDraft() {
     try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
@@ -68,6 +78,32 @@
       };
     });
   }
+
+  function normalizeProjects(list) {
+    return (Array.isArray(list) ? list : []).filter(function (p) {
+      return p && typeof p.name === 'string' && p.name.trim();
+    }).map(function (p) {
+      return {
+        id: String(p.id || newId()),
+        name: String(p.name).trim(),
+        status: p.status === 'done' ? 'done' : 'active',
+        notes: String(p.notes || '').trim(),
+        uses: (Array.isArray(p.uses) ? p.uses : []).filter(function (u) {
+          return u && Number(u.qty) > 0;
+        }).map(function (u) {
+          return {
+            id: String(u.id || newId()),
+            itemId: String(u.itemId || ''),
+            name: String(u.name || '').trim(),
+            qty: Math.floor(Number(u.qty)),
+            date: String(u.date || '')
+          };
+        })
+      };
+    });
+  }
+
+  function today() { return new Date().toISOString().slice(0, 10); }
 
   function newId() {
     return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
@@ -108,6 +144,19 @@
     var list = inView();
     var units = list.reduce(function (n, it) { return n + it.qty; }, 0);
     var v = VIEWS[view];
+    if (view === 'project') {
+      var active = projects.filter(function (p) { return p.status === 'active'; }).length;
+      var used = 0, distinct = {};
+      projects.forEach(function (p) {
+        p.uses.forEach(function (u) { used += u.qty; distinct[u.itemId || u.name] = true; });
+      });
+      els.stats.innerHTML =
+        stat('Projects', projects.length, projects.length - active + ' done') +
+        stat('Active', active, 'in progress') +
+        stat('Units used', used.toLocaleString(), 'pulled from stock') +
+        stat('Parts used', Object.keys(distinct).length, 'distinct parts');
+      return;
+    }
     var locations = stat(v.place + 's', uniq('location').length, v.placeSub);
     if (view === 'tool') {
       var out = list.filter(function (it) { return it.status === 'Loaned out'; }).length;
@@ -197,6 +246,8 @@
 
   function renderView() {
     var v = VIEWS[view];
+    document.querySelector('main.page').classList.toggle('wh-view-project', view === 'project');
+    els.projectsView.hidden = view !== 'project';
     document.querySelectorAll('.wh-tab').forEach(function (t) {
       t.setAttribute('aria-selected', String(t.getAttribute('data-view') === view));
     });
@@ -224,6 +275,7 @@
     fillDatalist(els.locationList, uniq('location'));
     renderStats();
     renderTable();
+    renderProjects();
     els.banner.hidden = !hasDraft;
   }
 
@@ -239,8 +291,10 @@
     els.manageToggle.setAttribute('aria-pressed', String(on));
     els.manageToggle.textContent = on ? 'Done' : 'Manage';
     document.querySelector('.wh-manage-col').hidden = !on;
+    els.projectForm.hidden = !on;
     if (!on) resetForm();
     renderTable();
+    renderProjects();
   }
 
   function resetForm() {
@@ -320,16 +374,127 @@
       resetForm();
       els.category.value = '';
       els.location.value = '';
-      history.replaceState(null, '', view === 'tool' ? '#tooling' : location.pathname + location.search);
+      history.replaceState(null, '', HASHES[view] || location.pathname + location.search);
       render();
     });
+  });
+
+  function findProject(id) {
+    for (var i = 0; i < projects.length; i++) if (projects[i].id === id) return projects[i];
+    return null;
+  }
+
+  function partOptions() {
+    return items.filter(function (it) { return it.kind === 'part' && it.qty > 0; })
+      .sort(function (a, b) { return a.name.localeCompare(b.name); })
+      .map(function (it) {
+        return '<option value="' + it.id + '">' + text(it.name) + ' (' + it.qty + ' on hand' +
+          (it.location ? ', ' + text(it.location) : '') + ')</option>';
+      }).join('');
+  }
+
+  function renderProjects() {
+    if (view !== 'project') return;
+    var options = partOptions();
+    var list = projects.slice().sort(function (a, b) {
+      if (a.status !== b.status) return a.status === 'active' ? -1 : 1;
+      return a.name.localeCompare(b.name);
+    });
+    if (!list.length) {
+      els.projects.innerHTML = '<p class="wh-empty">' +
+        (managing ? 'No projects yet. Add one above.' : 'No projects yet.') + '</p>';
+      return;
+    }
+    els.projects.innerHTML = list.map(function (p) {
+      var units = p.uses.reduce(function (n, u) { return n + u.qty; }, 0);
+      var uses = p.uses.length
+        ? '<div class="table-scroll"><table class="data-table wh-table"><thead><tr><th>Part</th><th class="wh-num">Qty</th><th>Used</th>' +
+            (managing ? '<th></th>' : '') + '</tr></thead><tbody>' +
+            p.uses.map(function (u) {
+              var it = find(u.itemId);
+              var ret = managing
+                ? '<td class="wh-row-actions">' + (it
+                    ? '<button type="button" class="wh-link" data-act="return" data-project="' + p.id + '" data-use="' + u.id + '">Return to stock</button>'
+                    : '<span class="wh-muted" title="This part was deleted from the inventory">part deleted</span>') + '</td>'
+                : '';
+              return '<tr><td class="wh-name">' + text(it ? it.name : u.name) + '</td><td class="wh-num">' + u.qty +
+                '</td><td>' + text(u.date) + '</td>' + ret + '</tr>';
+            }).join('') + '</tbody></table></div>'
+        : '<p class="wh-muted">No parts used yet.</p>';
+      var use = managing && p.status === 'active'
+        ? (options
+            ? '<form class="wh-use" data-project="' + p.id + '">' +
+                '<select class="wh-input" name="part" aria-label="Part to use" required>' + options + '</select>' +
+                '<input class="wh-input" name="qty" type="number" min="1" step="1" value="1" aria-label="Quantity" required>' +
+                '<button type="submit" class="btn btn-primary wh-btn">Use part</button></form>'
+            : '<p class="wh-muted">No parts in stock to use.</p>')
+        : '';
+      var actions = managing
+        ? '<div class="wh-project-actions">' +
+            '<button type="button" class="wh-link" data-act="status" data-project="' + p.id + '">' + (p.status === 'active' ? 'Mark done' : 'Reopen') + '</button>' +
+            '<button type="button" class="wh-link" data-act="delproject" data-project="' + p.id + '">Delete project</button></div>'
+        : '';
+      return '<article class="wh-project' + (p.status === 'done' ? ' done' : '') + '">' +
+        '<div class="wh-project-head"><h3>' + text(p.name) + '</h3>' +
+        '<span class="badge">' + (p.status === 'done' ? 'Done' : 'Active') + '</span></div>' +
+        '<p class="meta">' + p.uses.length + ' part' + (p.uses.length === 1 ? '' : 's') + ' &middot; ' + units + ' unit' + (units === 1 ? '' : 's') + '</p>' +
+        (p.notes ? '<p class="wh-project-notes">' + text(p.notes) + '</p>' : '') +
+        uses + use + actions + '</article>';
+    }).join('');
+  }
+
+  els.projectForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = els.projectForm.elements;
+    var p = normalizeProjects([{ name: f.name.value, notes: f.notes.value }])[0];
+    if (!p) return;
+    projects.push(p);
+    els.projectForm.reset();
+    commit();
+  });
+
+  els.projects.addEventListener('submit', function (e) {
+    var form = e.target.closest('form.wh-use');
+    if (!form) return;
+    e.preventDefault();
+    var p = findProject(form.getAttribute('data-project'));
+    var it = find(form.elements.part.value);
+    var n = Math.floor(Number(form.elements.qty.value));
+    if (!p || !it || !(n > 0)) return;
+    if (n > it.qty) { alert('Only ' + it.qty + ' of "' + it.name + '" on hand.'); return; }
+    it.qty -= n;
+    p.uses.push({ id: newId(), itemId: it.id, name: it.name, qty: n, date: today() });
+    commit();
+  });
+
+  els.projects.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-act]');
+    if (!btn) return;
+    var p = findProject(btn.getAttribute('data-project'));
+    if (!p) return;
+    var act = btn.getAttribute('data-act');
+    if (act === 'status') {
+      p.status = p.status === 'active' ? 'done' : 'active';
+      commit();
+    } else if (act === 'delproject' &&
+        confirm('Delete "' + p.name + '"? Parts it used stay out of stock; return them first if you want them back.')) {
+      projects = projects.filter(function (x) { return x !== p; });
+      commit();
+    } else if (act === 'return') {
+      var useId = btn.getAttribute('data-use');
+      var u = p.uses.filter(function (x) { return x.id === useId; })[0];
+      var it = u && find(u.itemId);
+      if (!u || !it) return;
+      it.qty += u.qty;
+      p.uses = p.uses.filter(function (x) { return x !== u; });
+      commit();
+    }
   });
 
   els.manageToggle.addEventListener('click', function () { setManaging(!managing); });
 
   els.exportBtn.addEventListener('click', function () {
-    var today = new Date().toISOString().slice(0, 10);
-    var json = JSON.stringify({ updated: today, items: items }, null, 2) + '\n';
+    var json = JSON.stringify({ updated: today(), items: items, projects: projects }, null, 2) + '\n';
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
     a.download = 'warehouse.json';
@@ -344,6 +509,7 @@
     clearDraft();
     hasDraft = false;
     items = normalize(published);
+    projects = normalizeProjects(publishedProjects);
     resetForm();
     render();
   });
@@ -355,6 +521,7 @@
     file.text().then(function (raw) {
       var data = JSON.parse(raw);
       items = normalize(Array.isArray(data) ? data : data.items);
+      projects = normalizeProjects(Array.isArray(data) ? [] : data.projects);
       commit();
     }).catch(function () {
       alert("That file isn't valid warehouse JSON.");
@@ -380,9 +547,11 @@
     .catch(function () { return { items: [] }; })
     .then(function (data) {
       published = normalize(data.items);
+      publishedProjects = normalizeProjects(data.projects);
       var draft = readDraft();
       hasDraft = !!draft;
-      items = normalize(draft || published);
+      items = normalize(draft ? draft.items : published);
+      projects = normalizeProjects(draft && draft.projects ? draft.projects : publishedProjects);
       render();
     });
 })();
