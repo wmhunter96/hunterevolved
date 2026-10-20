@@ -334,10 +334,16 @@
       html += '</div>';
     });
     els.toolbox.innerHTML = html;
-    var loose = tools.filter(function (it) { return !drawerOf(it); }).length;
-    els.toolboxLoose.hidden = !loose;
-    els.toolboxLoose.textContent = loose + ' tool' + (loose === 1 ? " isn't" : "s aren't") +
-      ' assigned to a drawer (set the Drawer to "Drawer 1" through "Drawer ' + DRAWERS.length + '").';
+    // Tools kept outside the drawers, grouped by where they are ("Top of toolbox", ...).
+    var outside = {};
+    tools.forEach(function (it) {
+      if (!drawerOf(it)) (outside[it.location || 'No location set'] = outside[it.location || 'No location set'] || []).push(it.name);
+    });
+    var spots = Object.keys(outside).sort();
+    els.toolboxLoose.hidden = !spots.length;
+    els.toolboxLoose.innerHTML = spots.map(function (loc) {
+      return '<strong>' + text(loc) + ':</strong> ' + outside[loc].map(text).join(', ');
+    }).join('<br>');
   }
 
   function renderGrid() {
