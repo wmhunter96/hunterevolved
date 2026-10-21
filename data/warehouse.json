@@ -550,7 +550,7 @@
       "name": "MG90S 9g micro servo, metal gear",
       "category": "Servos",
       "location": "",
-      "qty": 10,
+      "qty": 2,
       "status": "",
       "link": "https://www.amazon.com/dp/B0BWJ26PX2",
       "notes": "Miuzei; 2.0 kg·cm, 0.08 s/60°, 180° digital; 10-pack"
@@ -572,7 +572,7 @@
       "name": "Buck converter module, 9-36V to 5V 5A, dual USB",
       "category": "Power",
       "location": "",
-      "qty": 2,
+      "qty": 1,
       "status": "",
       "link": "https://www.amazon.com/dp/B07XXWQ49N",
       "notes": "UCTRONICS; 2-pack"
@@ -649,7 +649,7 @@
       "name": "USB-C female to Micro USB male adapter",
       "category": "Adapters",
       "location": "",
-      "qty": 4,
+      "qty": 3,
       "status": "",
       "link": "https://www.amazon.com/dp/B0GR3XK1FG",
       "notes": "Silver; 4-pack"
@@ -660,7 +660,7 @@
       "name": "Mini rocker switch, SPST on/off, pre-wired",
       "category": "Switches",
       "location": "",
-      "qty": 10,
+      "qty": 9,
       "status": "",
       "link": "https://www.amazon.com/dp/B07S2QJKTX",
       "notes": "DaierTek; KCD1, 2-pin, 12V 20A / 120V 10A, black; 10-pack"
@@ -671,7 +671,7 @@
       "name": "0.96\" OLED display, SSD1306 128x64 I2C",
       "category": "Displays",
       "location": "",
-      "qty": 4,
+      "qty": 3,
       "status": "",
       "link": "https://www.amazon.com/dp/B0GBVWBWCR",
       "notes": "White; 4-pack"
@@ -715,7 +715,7 @@
       "name": "ESP32 dev board, ESP-WROOM-32",
       "category": "Microcontrollers",
       "location": "",
-      "qty": 3,
+      "qty": 2,
       "status": "",
       "notes": "ESP-32S; dual-core, WiFi + Bluetooth, Arduino IDE compatible; 3-pack"
     },
@@ -728,6 +728,58 @@
       "qty": 1,
       "status": "",
       "notes": "TUOFENG; tinned copper, 30 ft each color"
+    }
+  ],
+  "projects": [
+    {
+      "id": "pj-01",
+      "name": "Sesame robot",
+      "status": "done",
+      "notes": "Dorian Todd's build-your-own Sesame robot: https://www.doriantodd.com/sesame/#build-your-own",
+      "uses": [
+        {
+          "id": "pj-01-u1",
+          "itemId": "pt-02",
+          "name": "MG90S 9g micro servo, metal gear",
+          "qty": 8,
+          "date": "2026-10-21"
+        },
+        {
+          "id": "pj-01-u2",
+          "itemId": "pt-17",
+          "name": "ESP32 dev board, ESP-WROOM-32",
+          "qty": 1,
+          "date": "2026-10-21"
+        },
+        {
+          "id": "pj-01-u3",
+          "itemId": "pt-04",
+          "name": "Buck converter module, 9-36V to 5V 5A, dual USB",
+          "qty": 1,
+          "date": "2026-10-21"
+        },
+        {
+          "id": "pj-01-u4",
+          "itemId": "pt-12",
+          "name": "Mini rocker switch, SPST on/off, pre-wired",
+          "qty": 1,
+          "date": "2026-10-21"
+        },
+        {
+          "id": "pj-01-u5",
+          "itemId": "pt-13",
+          "name": "0.96\" OLED display, SSD1306 128x64 I2C",
+          "qty": 1,
+          "date": "2026-10-21"
+        },
+        {
+          "id": "pj-01-u6",
+          "itemId": "pt-11",
+          "name": "USB-C female to Micro USB male adapter",
+          "qty": 1,
+          "date": "2026-10-21"
+        }
+      ]
     }
   ]
 }
