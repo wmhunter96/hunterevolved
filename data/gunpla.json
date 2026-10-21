@@ -440,17 +440,17 @@
       "location": "Shelf not assigned"
     },
     {
-      "name": "Momokapool",
-      "grade": "HG",
-      "scale": "1/144",
-      "notes": "Name to confirm",
+      "name": "Noseru",
+      "grade": "Other",
+      "scale": "1/12",
+      "notes": "Kotobukiya Maruttoys",
       "location": "Shelf not assigned"
     },
     {
-      "name": "Tamotsu",
-      "grade": "HG",
-      "scale": "1/144",
-      "notes": "Name to confirm",
+      "name": "Tamotu",
+      "grade": "Other",
+      "scale": "1/12",
+      "notes": "Kotobukiya Maruttoys",
       "location": "Shelf not assigned"
     },
     {
@@ -469,9 +469,10 @@
       "location": "Shelf not assigned"
     },
     {
-      "name": "Momokapool / Tamotsu unicycle variant",
+      "name": "Noseru / Tamotu (second kit)",
       "grade": "Other",
-      "notes": "Name to confirm",
+      "scale": "1/12",
+      "notes": "Kotobukiya Maruttoys · version to confirm",
       "location": "Shelf not assigned"
     },
     {
