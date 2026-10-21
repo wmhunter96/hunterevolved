@@ -55,6 +55,9 @@
     banner: $('whDraftBanner'), exportBtn: $('whExport'), discard: $('whDiscard'),
     form: $('whForm'), formTitle: $('whFormTitle'), submit: $('whSubmit'),
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
+    importList: $('whImportList'), importListFile: $('whImportListFile'), importConfirm: $('whImportConfirm'),
+    importConfirmText: $('whImportConfirmText'), importReplace: $('whImportReplace'), importCancel: $('whImportCancel'),
+    importMsg: $('whImportMsg'),
     categoryList: $('whCategoryList'), locationList: $('whLocationList'),
     body: $('whBody'), empty: $('whEmpty'), lowLabel: $('whLowLabel'),
     gridPanel: $('whGridPanel'),
@@ -867,6 +870,82 @@
     projects = normalizeProjects(publishedProjects);
     resetForm();
     render();
+  });
+
+  // Import button: takes the export format back in (parts/tools/projects), so
+  // export -> edit -> import round-trips. Replaces the local draft after an
+  // in-page confirm.
+  function fromExport(data) {
+    var all = [];
+    function add(kind, x) {
+      var spot = parseSpot(x.gridSpot), size = parseSize(x.gridSize);
+      all.push({
+        id: newId(), kind: kind, name: x.name, category: x.category, location: x.location, qty: x.qty,
+        minQty: x.lowAt, consumable: x.consumable, status: x.status, link: x.link, fixLink: x.fixLink, notes: x.notes,
+        gridX: spot.x, gridY: spot.y, gridW: size.w, gridH: size.h
+      });
+    }
+    (Array.isArray(data.parts) ? data.parts : []).forEach(function (x) { add('part', x || {}); });
+    data.tools.forEach(function (x) { add('tool', x || {}); });
+    var list = normalize(all);
+    var byName = {};
+    list.forEach(function (it) { if (!byName[it.name]) byName[it.name] = it.id; });
+    var proj = normalizeProjects((Array.isArray(data.projects) ? data.projects : []).map(function (p) {
+      p = p || {};
+      return { name: p.name, status: p.status, notes: p.notes,
+        uses: (Array.isArray(p.used) ? p.used : []).map(function (u) {
+          u = u || {};
+          return { itemId: byName[String(u.name || '').trim()] || '', name: u.name, qty: u.qty, date: u.date };
+        }) };
+    }));
+    return { items: list, projects: proj };
+  }
+
+  var pendingImport = null, importMsgTimer = null;
+  function importMessage(msg, isError) {
+    clearTimeout(importMsgTimer);
+    els.importMsg.textContent = msg;
+    els.importMsg.classList.toggle('error', !!isError);
+    els.importMsg.hidden = false;
+    if (!isError) importMsgTimer = setTimeout(function () { els.importMsg.hidden = true; }, 4000);
+  }
+
+  els.importList.addEventListener('click', function () { els.importListFile.click(); });
+  els.importListFile.addEventListener('change', function () {
+    var file = els.importListFile.files[0];
+    els.importListFile.value = '';
+    if (!file) return;
+    file.text().then(function (raw) {
+      var data;
+      try { data = JSON.parse(raw); } catch (err) {
+        importMessage("Couldn't import " + file.name + ": it isn't valid JSON.", true);
+        return;
+      }
+      if (!data || !Array.isArray(data.tools)) {
+        importMessage("Couldn't import " + file.name + ': it has no "tools" list.', true);
+        return;
+      }
+      pendingImport = fromExport(data);
+      var tools = pendingImport.items.filter(function (it) { return it.kind === 'tool'; }).length;
+      els.importMsg.hidden = true;
+      els.importConfirmText.textContent = 'Replace the current inventory with ' + file.name + ' (' + tools + ' tool' + (tools === 1 ? '' : 's') + ')?';
+      els.importConfirm.hidden = false;
+    });
+  });
+  els.importReplace.addEventListener('click', function () {
+    if (!pendingImport) return;
+    items = pendingImport.items;
+    projects = pendingImport.projects;
+    var tools = items.filter(function (it) { return it.kind === 'tool'; }).length;
+    pendingImport = null;
+    els.importConfirm.hidden = true;
+    resetForm();
+    commit();
+    importMessage('Imported ' + tools + ' tool' + (tools === 1 ? '' : 's') + '.');
+  });
+  els.importCancel.addEventListener('click', function () {
+    pendingImport = null;
+    els.importConfirm.hidden = true;
   });
 
   els.importBtn.addEventListener('click', function () { els.importFile.click(); });
