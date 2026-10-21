@@ -337,10 +337,10 @@
     },
     {
       "name": "Gundam Avalanche Astraea",
-      "grade": "Other",
+      "grade": "MG",
       "series": "Gundam 00F",
-      "notes": "Grade to confirm",
-      "location": "Detolf 2 · Shelf 3"
+      "location": "Detolf 2 · Shelf 3",
+      "scale": "1/100"
     },
     {
       "name": "Burning Gundam",
