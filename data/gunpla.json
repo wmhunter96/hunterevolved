@@ -7,6 +7,7 @@
       "brand": "Bandai",
       "series": "Char's Counterattack",
       "notes": "With the P-Bandai Expansion Funnel Effect Set",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Top"
     },
@@ -16,6 +17,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Char's Counterattack",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Top"
     },
@@ -26,6 +28,7 @@
       "brand": "Bandai",
       "series": "Char's Counterattack",
       "notes": "Gundam Side-F (Fukuoka) exclusive",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -35,6 +38,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED Battle Destiny",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -44,6 +48,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -54,6 +59,7 @@
       "brand": "Bandai",
       "series": "Gundam SEED C.E.73 Δ Astray",
       "notes": "P-Bandai",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -64,6 +70,7 @@
       "brand": "Bandai",
       "series": "Gundam SEED Destiny Astray B",
       "notes": "P-Bandai",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -73,6 +80,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED Astray",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -82,6 +90,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Mobile Suit Gundam",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -91,6 +100,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Requiem for Vengeance",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -100,6 +110,7 @@
       "scale": "1/60",
       "brand": "Bandai",
       "notes": "Replica of the factory injection molding machine. Gift from my wife",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 1"
     },
@@ -109,6 +120,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 2"
     },
@@ -118,6 +130,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 2"
     },
@@ -127,6 +140,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 2"
     },
@@ -136,6 +150,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 2"
     },
@@ -145,6 +160,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 2"
     },
@@ -154,6 +170,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam SEED",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 2"
     },
@@ -163,6 +180,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 3"
     },
@@ -172,6 +190,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 3"
     },
@@ -181,6 +200,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 3"
     },
@@ -190,6 +210,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 3"
     },
@@ -199,6 +220,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam Build Fighters",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 4"
     },
@@ -208,6 +230,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam SEED C.E.73 Stargazer",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 4"
     },
@@ -217,6 +240,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam AGE",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 4"
     },
@@ -227,6 +251,7 @@
       "brand": "Bandai",
       "series": "Victory Gundam",
       "finish": "Custom paint",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 4"
     },
@@ -236,6 +261,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "G Gundam",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 4"
     },
@@ -245,6 +271,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam Build Metaverse",
+      "room": "Office",
       "shelf": "Detolf 1",
       "level": "Shelf 4"
     },
@@ -254,6 +281,7 @@
       "brand": "Third-party",
       "series": "Supreme Evolution Armament Tactical Series",
       "notes": "Stargazer-style kit",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Top"
     },
@@ -263,6 +291,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED Destiny",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Top"
     },
@@ -270,6 +299,7 @@
       "name": "Lizard",
       "grade": "Other",
       "brand": "In Era+",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Top"
     },
@@ -279,6 +309,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -288,6 +319,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -297,6 +329,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -306,6 +339,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -315,6 +349,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -325,6 +360,7 @@
       "brand": "Bandai",
       "series": "The Witch from Mercury",
       "notes": "With backpack",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -334,6 +370,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -343,6 +380,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -352,6 +390,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 1"
     },
@@ -361,6 +400,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2"
     },
     {
@@ -370,6 +410,7 @@
       "brand": "Bandai",
       "series": "The Witch from Mercury",
       "notes": "KOSMOS LED lighting kit",
+      "room": "Office",
       "shelf": "Detolf 2"
     },
     {
@@ -378,6 +419,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
+      "room": "Office",
       "shelf": "Detolf 2"
     },
     {
@@ -386,6 +428,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam Wing",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 2"
     },
@@ -395,6 +438,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 2"
     },
@@ -404,6 +448,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 2"
     },
@@ -413,6 +458,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 3"
     },
@@ -422,6 +468,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 3"
     },
@@ -431,6 +478,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00F",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 3"
     },
@@ -440,6 +488,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "G Gundam",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -449,6 +498,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "G Gundam",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -458,6 +508,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "notes": "Name to confirm",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -467,6 +518,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam Breaker Battlogue",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -476,6 +528,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "The 08th MS Team",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -485,6 +538,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "The 08th MS Team",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -494,6 +548,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Moon Gundam",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -503,6 +558,7 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Crossbone Gundam",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -512,6 +568,7 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Crossbone Gundam",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -520,6 +577,7 @@
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
+      "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
     },
@@ -553,40 +611,52 @@
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "series": "GQuuuuuuX"
+      "series": "GQuuuuuuX",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "Noseru",
       "grade": "Other",
       "scale": "1/12",
-      "brand": "Kotobukiya Maruttoys"
+      "brand": "Kotobukiya Maruttoys",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "Tamotu",
       "grade": "Other",
       "scale": "1/12",
-      "brand": "Kotobukiya Maruttoys"
+      "brand": "Kotobukiya Maruttoys",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "G-Line (blue)",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "series": "Battlefield Record U.C. 0081"
+      "series": "Battlefield Record U.C. 0081",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "G-Line (red)",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "series": "Battlefield Record U.C. 0081"
+      "series": "Battlefield Record U.C. 0081",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "Noseru / Tamotu (second kit)",
       "grade": "Other",
       "scale": "1/12",
       "brand": "Kotobukiya Maruttoys",
-      "notes": "Version to confirm"
+      "notes": "Version to confirm",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "RX-78F00 Gundam",
@@ -594,7 +664,9 @@
       "scale": "1/200",
       "brand": "Bandai",
       "series": "Gundam Factory Yokohama",
-      "notes": "Gundam Factory Yokohama exclusive · Gunpla 40th Anniversary"
+      "notes": "Gundam Factory Yokohama exclusive · Gunpla 40th Anniversary",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "Gundam Barbatos Lupus Rex",
@@ -603,7 +675,8 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Bael",
@@ -612,7 +685,8 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Marchosias",
@@ -621,7 +695,8 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans: Urdr-Hunt",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Astaroth",
@@ -630,7 +705,8 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Astaroth Origin",
@@ -639,7 +715,8 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Vidar",
@@ -648,7 +725,8 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Vual",
@@ -657,7 +735,8 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Dantalion",
@@ -666,14 +745,18 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
       "room": "Living room",
-      "shelf": "Living room shelf"
+      "shelf": "Living room shelf",
+      "level": "Lower"
     },
     {
       "name": "Gundam Astraea",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "series": "Gundam 00P"
+      "series": "Gundam 00P",
+      "room": "Living room",
+      "shelf": "Living room shelf",
+      "level": "Upper"
     }
   ]
 }
