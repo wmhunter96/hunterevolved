@@ -1222,6 +1222,9 @@
       publishedProjects = normalizeProjects(data.projects);
       publishedStamp = stamp(JSON.stringify([data.items || [], data.projects || []]));
       var draft = readDraft();
+      // A draft that now matches the live data (its changes got published) is done with.
+      if (draft && JSON.stringify(exportData(normalize(draft.items), normalizeProjects(draft.projects || data.projects))) ===
+          JSON.stringify(exportData(published, publishedProjects))) { clearDraft(); draft = null; }
       if (draft && draft.base !== publishedStamp) { shelved = draft; draft = null; }
       hasDraft = !!draft;
       draftBase = draft ? String(draft.base || '') : publishedStamp;
