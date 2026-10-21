@@ -247,6 +247,7 @@ button.btn-primary { border: none; }
   color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0 .45rem;
   vertical-align: 1px;
 }
+.wh-fix { margin-left: .35rem; font-size: .8rem; white-space: nowrap; color: var(--accent-2); }
 .wh-row-actions { white-space: nowrap; text-align: right; }
 .wh-icon, .wh-link { background: none; border: 1px solid var(--border); color: var(--fg-muted); border-radius: 6px; cursor: pointer; font: inherit; font-size: .85rem; }
 .wh-icon { width: 1.8rem; height: 1.8rem; margin-right: .25rem; }
@@ -373,7 +374,7 @@ button.btn-primary { border: none; }
 .wh-stat-toggle:not(:disabled):hover { border-color: var(--accent); }
 .wh-stat-toggle.alert .stat-value { color: var(--accent); }
 .wh-stat-toggle.active { border-color: var(--accent); background: rgba(255, 138, 61, .1); }
-.wh-tb-top-wrap { position: relative; padding: 22px 10% 0; margin-bottom: -2px; }
+.wh-tb-top-wrap { position: relative; padding: 0 10%; margin-bottom: -2px; }
 /* Red soft tool bag holding the drills, sitting on the top unit */
 .wh-tb-top {
   position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .75rem;
@@ -384,8 +385,6 @@ button.btn-primary { border: none; }
 }
 /* Zipper along the top of the bag */
 .wh-tb-top::after { content: ""; position: absolute; left: 14px; right: 14px; top: 6px; height: 0; border-top: 2px dashed rgba(0, 0, 0, .45); }
-/* Carry handle */
-.wh-tb-bag-handle { position: absolute; z-index: 1; left: 50%; top: 4px; width: 30%; height: 24px; transform: translateX(-50%); border: 5px solid #8e1b1b; border-bottom: 0; border-radius: 14px 14px 0 0; pointer-events: none; }
 .wh-tb-top:hover, .wh-tb-top:focus-visible { outline: none; box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25), 0 0 0 2px var(--tb-accent); }
 .wh-tb-top.selected { box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25), 0 0 0 3px var(--tb-accent); }
 .wh-tb-top-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #fff; white-space: nowrap; }
@@ -395,6 +394,10 @@ button.btn-primary { border: none; }
 .wh-tb-drawer.match { border-color: var(--accent); background: #2e2219; box-shadow: 0 0 0 1px var(--accent); }
 .wh-tb-top.match { box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25), 0 0 0 3px var(--accent); }
 .wh-tb-drawer.dim, .wh-tb-top.dim { opacity: .3; }
+/* While filtering, non-matching drawers shrink so the matches stay on screen */
+.wh-tb-drawer.dim { min-height: 0; padding-block: .3rem .7rem; }
+.wh-tb-drawer.dim .wh-tb-list { display: none; }
+.wh-tb-drawer.dim .wh-tb-num { font-size: 1rem; }
 .wh-tb-list li.hit { color: #fff; background: rgba(255, 138, 61, .25); border-color: var(--accent); }
 .wh-tb-attn { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px #1c1c1c; }
 .wh-grid-head { position: relative; padding-right: 2rem; }

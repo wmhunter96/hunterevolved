@@ -96,6 +96,8 @@
         minQty: isNaN(minQty) || (it.kind === 'tool' && !it.consumable) ? null : minQty,
         status: it.kind === 'tool' ? String(it.status || '').trim() : '',
         link: String(it.link || '').trim(),
+        // Where to get a replacement / fix, shown when the item needs attention.
+        fixLink: String(it.fixLink || '').trim(),
         notes: String(it.notes || '').trim(),
         gridX: gridNum(it.kind, it.gridX),
         gridY: gridNum(it.kind, it.gridY),
@@ -156,6 +158,11 @@
   function isLow(it) { return it.minQty != null && it.qty <= it.minQty; }
   // "Needs attention" filter: low stock for parts, any non-default status for tools.
   function needsAttention(it) { return it.kind === 'tool' ? !!it.status || isLow(it) : isLow(it); }
+  function fixLink(it) {
+    return it.fixLink && needsAttention(it)
+      ? ' <a class="wh-fix" href="' + text(it.fixLink) + '" target="_blank" rel="noopener">' + (isLow(it) ? 'Reorder' : 'Get replacement') + ' &#8599;</a>'
+      : '';
+  }
 
   // "Drawer 4", "drawer 4", "Drawer4" -> 4; anything else (or out of range) -> 0.
   function drawerOf(it) {
@@ -298,7 +305,7 @@
       var name = it.link
         ? '<a href="' + text(it.link) + '" target="_blank" rel="noopener">' + text(it.name) + '</a>'
         : text(it.name);
-      var qty = it.qty + (isLow(it) ? ' <span class="wh-low" title="Low at ' + it.minQty + '">low</span>' : '');
+      var qty = it.qty + (isLow(it) ? ' <span class="wh-low" title="Low at ' + it.minQty + '">low</span>' : '') + (view === 'part' ? fixLink(it) : '');
       var manage = managing
         ? '<td class="wh-row-actions">' +
             '<button type="button" class="wh-icon" data-act="dec" data-id="' + it.id + '" aria-label="One fewer">&minus;</button>' +
@@ -314,7 +321,7 @@
         '<td>' + text(it.location || '—') + (gridSpot(it) ? ' <span class="wh-spot">' + gridSpot(it) + '</span>' : '') + '</td>' +
         '<td class="wh-num">' + qty + '</td>' +
         (view === 'tool'
-          ? '<td>' + (it.status ? '<span class="wh-low">' + text(it.status) + '</span>' : 'In place') + '</td>'
+          ? '<td>' + (it.status ? '<span class="wh-low">' + text(it.status) + '</span>' : 'In place') + fixLink(it) + '</td>'
           : '') +
         '<td>' + text(it.notes) + '</td>' +
         manage + '</tr>';
@@ -370,7 +377,7 @@
     var topCls = 'wh-tb-top';
     if (els.location.value === TOP) topCls += ' selected';
     if (filtering) topCls += matches.top ? ' match' : ' dim';
-    var html = '<div class="wh-tb-top-wrap"><span class="wh-tb-bag-handle"></span><button type="button" class="' + topCls + '" data-place="' + TOP + '" aria-pressed="' + (els.location.value === TOP) + '" aria-label="Drill bag on top of the toolbox">' +
+    var html = '<div class="wh-tb-top-wrap"><button type="button" class="' + topCls + '" data-place="' + TOP + '" aria-pressed="' + (els.location.value === TOP) + '" aria-label="Drill bag on top of the toolbox">' +
       '<span class="wh-tb-top-label">Drill bag</span>' +
       '<ul class="wh-tb-list">' + (chips(onTop) || '<li class="empty">Empty</li>') + '</ul>' +
       '<span class="wh-tb-count">' + count(onTop, 'top') + '</span>' + attn(onTop) + '</button></div>';
@@ -413,7 +420,7 @@
       var top = inView().filter(isTop);
       els.gridPanel.innerHTML = '<div class="wh-grid-head"><h3>Drill bag</h3><span class="wh-muted">red bag on top of the toolbox</span>' + close + '</div>' +
         (top.length ? '<ul class="wh-top-list">' + top.map(function (it) {
-          return '<li data-id="' + it.id + '"><span>' + text(it.name) + '</span>' + (it.status ? ' <span class="wh-low">' + text(it.status) + '</span>' : '') +
+          return '<li data-id="' + it.id + '"><span>' + text(it.name) + '</span>' + (it.status ? ' <span class="wh-low">' + text(it.status) + '</span>' : '') + fixLink(it) +
             (it.notes ? '<small>' + text(it.notes) + '</small>' : '') + '</li>';
         }).join('') + '</ul>' : '<p class="wh-muted">Nothing up here.</p>');
       return;
@@ -581,6 +588,7 @@
     f.consumable.checked = it.consumable;
     renderView();
     f.link.value = it.link;
+    f.fixLink.value = it.fixLink;
     f.notes.value = it.notes;
     f.status.value = it.status;
     f.gridSpot.value = gridSpot(it);
@@ -606,7 +614,7 @@
       id: editingId || newId(), kind: view, status: f.status.value,
       gridX: spot.x, gridY: spot.y, gridW: size.w, gridH: size.h,
       name: f.name.value, category: f.category.value, location: f.location.value,
-      qty: f.qty.value, minQty: f.minQty.value, link: f.link.value, notes: f.notes.value,
+      qty: f.qty.value, minQty: f.minQty.value, link: f.link.value, fixLink: f.fixLink.value, notes: f.notes.value,
       consumable: view === 'tool' && f.consumable.checked
     }])[0];
     if (!entry) return;
@@ -785,14 +793,14 @@
     var byName = function (a, b) { return a.name.localeCompare(b.name); };
     var parts = items.filter(function (it) { return it.kind === 'part'; }).sort(byName).map(function (it) {
       return compact({ name: it.name, qty: it.qty, category: it.category, location: it.location,
-        lowAt: it.minQty, runningLow: isLow(it), link: it.link, notes: it.notes });
+        lowAt: it.minQty, runningLow: isLow(it), link: it.link, fixLink: it.fixLink, notes: it.notes });
     });
     var tools = items.filter(function (it) { return it.kind === 'tool'; }).sort(function (a, b) {
       return (drawerOf(a) || 99) - (drawerOf(b) || 99) || a.location.localeCompare(b.location) || byName(a, b);
     }).map(function (it) {
       return compact({ name: it.name, qty: it.qty, category: it.category, location: it.location,
         gridSpot: gridSpot(it), gridSize: gridSize(it), consumable: it.consumable, lowAt: it.minQty,
-        runningLow: isLow(it), status: it.status, link: it.link, notes: it.notes });
+        runningLow: isLow(it), status: it.status, link: it.link, fixLink: it.fixLink, notes: it.notes });
     });
     var proj = projects.map(function (p) {
       return compact({ name: p.name, status: p.status, notes: p.notes,
@@ -923,6 +931,15 @@
     el.addEventListener('input', renderTable);
   });
   els.low.addEventListener('change', renderStats);
+  // Picking a category: bring the first matching drawer into view (on a phone
+  // the lower drawers are below the fold, so the highlight was easy to miss).
+  els.category.addEventListener('change', function () {
+    if (view !== 'tool' || !els.category.value) return;
+    var hit = els.toolbox.querySelector('.match');
+    if (!hit) return;
+    var r = hit.getBoundingClientRect();
+    if (r.top < 70 || r.bottom > window.innerHeight) hit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
 
   document.querySelectorAll('.wh-sort').forEach(function (b) {
     b.addEventListener('click', function () {

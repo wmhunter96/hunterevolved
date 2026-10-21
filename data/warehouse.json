@@ -506,7 +506,8 @@
       "location": "Top of toolbox",
       "qty": 1,
       "status": "Needs repair",
-      "notes": "Porter-Cable PCC681L; failed, needs replacement"
+      "notes": "Porter-Cable PCC681L; failed, needs replacement",
+      "fixLink": "https://www.amazon.com/dp/B07BGSM4XD"
     }
   ]
 }
