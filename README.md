@@ -50,7 +50,7 @@ to fill in.
 ## Warehouse
 
 `warehouse.html` is the inventory of misc parts (Parts tab) and tools
-(Tooling tab, each tool assigned to a toolbox drawer: three stacked DEWALT
+(Tooling tab, each tool assigned to a toolbox drawer or `Top of toolbox`: three stacked DEWALT
 ToughSystem 2.0 three-drawer units, so `Drawer 1`-`Drawer 9` numbered top to
 bottom, drawn as a clickable map above the table).
 Clicking a drawer opens its Gridfinity preview: each drawer is 450 x 285 mm
@@ -68,11 +68,14 @@ is `data/warehouse.json`; there's no backend, so to change it:
 2. Click **Download JSON** and commit the file over `data/warehouse.json`.
    Once it deploys, everyone sees the update and you can **Discard** the draft.
 
-The **export** icon (Parts and Tooling tabs) copies the current tab, with its
-filters applied, as a Markdown list grouped by category (quantities,
-locations, drawer/grid spots, status, notes; out-of-stock parts listed
-separately), e.g. to paste into an LLM chat. It downloads a `.md` file instead if
-the clipboard isn't available.
+The **export** icon copies everything (parts, tools, projects) as tidy JSON
+(empty fields dropped, drawer/grid spots and statuses included), e.g. to paste
+into an LLM chat. It downloads `warehouse-export.json` instead if the clipboard
+isn't available.
+
+On the Tooling tab there's no drawer dropdown or attention checkbox: click a
+drawer (or the Top of toolbox shelf) to filter to it, and click the **Needs
+attention** tile to light up broken/missing tools and low consumables.
 
 Tools can be flagged **consumable** (glue, tape, screws...): they stay in the
 toolbox map but, like parts, get a "Low at" threshold, count toward "Needs
@@ -80,7 +83,7 @@ attention", and can be used in projects.
 
 Each item has `kind` (`part` or `tool`), `name`, `category`, `location`
 (the drawer, for tools), `qty`, optional `minQty` (parts: flags low stock),
-`consumable` (tools only), optional `status` (tools: `Loaned out`, `Needs repair`, `Missing`), `link`,
+`consumable` (tools only), optional `status` (tools: `Needs repair`, `Missing`), `link`,
 and `notes`.
 
 `projects[]` entries have `name`, `status` (`active` or `done`), `notes`, and

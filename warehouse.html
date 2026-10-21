@@ -43,9 +43,9 @@
   <div class="wh-toolbar">
     <input type="search" id="whSearch" class="wh-input wh-search wh-items-only" placeholder="Search name, notes, location…" aria-label="Search inventory">
     <select id="whCategory" class="wh-input wh-items-only" aria-label="Filter by category"></select>
-    <select id="whLocation" class="wh-input wh-items-only" aria-label="Filter by location"></select>
-    <label class="wh-check wh-items-only"><input type="checkbox" id="whLow"> <span id="whLowLabel">Low stock only</span></label>
-    <button type="button" class="btn btn-secondary wh-btn wh-icon-btn wh-items-only" id="whExportList" title="Export list" aria-label="Export list"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9"/><path d="M3 9h11M3 15h18M9 9v12"/><path d="M17 3h4v4M21 3l-6 6"/></svg></button>
+    <select id="whLocation" class="wh-input wh-items-only wh-parts-only" aria-label="Filter by location"></select>
+    <label class="wh-check wh-items-only wh-parts-only"><input type="checkbox" id="whLow"> <span id="whLowLabel">Low stock only</span></label>
+    <button type="button" class="btn btn-secondary wh-btn wh-icon-btn" id="whExportList" title="Export everything (JSON)" aria-label="Export everything as JSON"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9"/><path d="M3 9h11M3 15h18M9 9v12"/><path d="M17 3h4v4M21 3l-6 6"/></svg></button>
     <button type="button" class="btn btn-secondary wh-btn" id="whManageToggle" aria-pressed="false">Manage</button>
   </div>
 
@@ -69,7 +69,6 @@
       <label data-for="tool">Status
         <select class="wh-input" name="status">
           <option value="">In place</option>
-          <option>Loaned out</option>
           <option>Needs repair</option>
           <option>Missing</option>
         </select>
@@ -90,7 +89,7 @@
   </form>
 
   <section class="wh-toolbox-wrap wh-items-only" id="whToolboxWrap" hidden>
-    <p class="wh-toolbox-caption">Three DEWALT ToughSystem 2.0 three-drawer units (DWST08330) stacked, drawers numbered top to bottom. Click a drawer to see its Gridfinity layout.</p>
+    <p class="wh-toolbox-caption">Three DEWALT ToughSystem 2.0 three-drawer units (DWST08330) stacked, drawers numbered top to bottom, with the power tools on top for now. Click a drawer to see its Gridfinity layout; click it again to close.</p>
     <div class="wh-tb-layout">
       <div>
         <div class="wh-toolbox" id="whToolbox" aria-label="Toolbox drawers"></div>
