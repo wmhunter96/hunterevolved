@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "items": [
     {
       "id": "tb-d1-01",
@@ -475,8 +475,8 @@
       "category": "Power tools",
       "location": "Top of toolbox",
       "qty": 1,
-      "status": "Needs repair",
-      "notes": "Porter-Cable; 20V MAX lithium-ion; Associated battery is dead; replacement required; charger already owned"
+      "status": "",
+      "notes": "Porter-Cable; 20V MAX lithium-ion"
     },
     {
       "id": "tb-top-03",
@@ -487,6 +487,26 @@
       "qty": 1,
       "status": "",
       "notes": "Porter-Cable; 20V MAX"
+    },
+    {
+      "id": "tb-top-04",
+      "kind": "tool",
+      "name": "20V MAX battery",
+      "category": "Power tools",
+      "location": "Top of toolbox",
+      "qty": 1,
+      "status": "",
+      "notes": "Porter-Cable PCC681L; good"
+    },
+    {
+      "id": "tb-top-05",
+      "kind": "tool",
+      "name": "20V MAX battery",
+      "category": "Power tools",
+      "location": "Top of toolbox",
+      "qty": 1,
+      "status": "Needs repair",
+      "notes": "Porter-Cable PCC681L; failed, needs replacement"
     }
   ]
 }
