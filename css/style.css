@@ -230,6 +230,13 @@ button.btn-primary { border: none; }
 .wh-changes .wh-chg-edit::before { content: "~"; color: var(--accent); }
 .wh-changes .wh-chg-add::before { content: "+"; color: var(--accent-2); }
 .wh-changes .wh-chg-del::before { content: "\2212"; color: #ff6b6b; }
+.wh-moves li { padding-left: 0; }
+.wh-moves li::before { content: none; }
+.wh-moves input { accent-color: var(--accent); }
+.wh-moves label { display: flex; gap: .5rem; align-items: baseline; cursor: pointer; }
+.wh-moves strong { color: var(--fg); font-weight: 600; }
+.wh-moves small { display: block; color: var(--fg-muted); }
+main.page:not(.wh-view-tool) .wh-tools-only { display: none !important; }
 .wh-notice { border-color: var(--accent-2); background: rgba(79, 208, 160, .08); }
 .wh-notice.error { border-color: #ff6b6b; background: rgba(255, 107, 107, .08); }
 

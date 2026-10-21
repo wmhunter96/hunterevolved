@@ -81,6 +81,9 @@ attention** tile to light up broken/missing tools and low consumables. An item c
 (where to replace or reorder it), shown as a link next to it while it needs attention.
 The import icon next to export reads that same export JSON back in (it needs a `tools`
 array), lists every move, edit, addition and removal before you replace anything, and saves it as the local draft, so export, edit, import round-trips.
+On the Tooling tab, the arrows icon between export and import suggests drawer moves (a tool
+that shares words with the tools and category of another drawer more than its own); tick the
+ones you want and they're applied to the local draft.
 
 Tools can be flagged **consumable** (glue, tape, screws...): they stay in the
 toolbox map but, like parts, get a "Low at" threshold, count toward "Needs
