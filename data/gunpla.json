@@ -476,11 +476,12 @@
       "location": "Shelf not assigned"
     },
     {
-      "name": "RX-78F00 Gundam (miniature)",
+      "name": "RX-78F00 Gundam",
       "grade": "Other",
       "series": "Gundam Factory Yokohama",
-      "notes": "Yokohama exclusive",
-      "location": "Shelf not assigned"
+      "notes": "Gundam Factory Yokohama exclusive · Gunpla 40th Anniversary",
+      "location": "Shelf not assigned",
+      "scale": "1/200"
     }
   ]
 }
