@@ -26,10 +26,11 @@
 
 <main class="page">
   <h1>Gunpla</h1>
-  <p class="page-intro">Every Gundam model kit I've built, grouped by grade. Filter by room, shelf and level, or click any tag on a kit to see everything that matches.</p>
+  <p class="page-intro">Every Gundam model kit I've built, plus the backlog still in the box, grouped by grade. Filter by room, shelf and level, or click any tag on a kit to see everything that matches.</p>
 
   <!-- Rendered by js/gunpla.js from data/gunpla.json. Add a build by adding
        an entry to kits[] there; see the top of js/gunpla.js for the fields. -->
+  <div class="wh-tabs" id="gunplaTabs" role="tablist" aria-label="Build status"></div>
   <div class="gp-filters" id="gunplaFilters"></div>
   <div class="stat-grid" id="gunplaStats"></div>
   <div id="gunplaList"></div>

@@ -2,7 +2,8 @@
 //
 // Each entry in kits[]:
 //   name    (required)  e.g. "RX-78-2 Gundam (Revive)"
-//   grade   (required)  PG, MGEX, MG, FM, RG, HG, EG, SD, or anything else ("Other")
+//   grade   (required)  PG, MGEX, MG, FM, RE, RG, HG, EG, SD, or anything else ("Other")
+//   status              "backlog" for kits not built yet (default: built)
 //   scale               e.g. "1/144"
 //   brand               e.g. "Bandai", "Kotobukiya Maruttoys" (defaults to Bandai)
 //   series              e.g. "Mobile Suit Gundam"
@@ -27,6 +28,7 @@
     { id: 'MGEX', label: 'Master Grade Extreme' },
     { id: 'MG', label: 'Master Grade' },
     { id: 'FM', label: 'Full Mechanics' },
+    { id: 'RE', label: 'Reborn-One Hundred (RE/100)' },
     { id: 'RG', label: 'Real Grade' },
     { id: 'HG', label: 'High Grade' },
     { id: 'EG', label: 'Entry Grade' },
@@ -50,7 +52,8 @@
   if (!listEl) return;
 
   var kits = [];
-  var state = { q: '' };
+  var state = { q: '', status: 'built' };
+  function statusOf(kit) { return kit.status === 'backlog' ? 'backlog' : 'built'; }
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -92,6 +95,7 @@
   }
 
   function matches(kit, skipKey) {
+    if (statusOf(kit) !== state.status) return false;
     for (var i = 0; i < FIELDS.length; i++) {
       var key = FIELDS[i].key;
       if (key === skipKey || state[key] == null) continue;
@@ -125,11 +129,12 @@
   // ---- URL state ----
   function readUrl() {
     var params = new URLSearchParams(location.search);
-    state = { q: params.get('q') || '' };
+    state = { q: params.get('q') || '', status: params.get('status') === 'backlog' ? 'backlog' : 'built' };
     FIELDS.forEach(function (f) { if (params.has(f.key)) state[f.key] = params.get(f.key); });
   }
   function writeUrl() {
     var params = new URLSearchParams();
+    if (state.status === 'backlog') params.set('status', 'backlog');
     if (state.q) params.set('q', state.q);
     FIELDS.forEach(function (f) { if (state[f.key] != null) params.set(f.key, state[f.key]); });
     var qs = params.toString();
@@ -150,7 +155,7 @@
   }
 
   function clearAll() {
-    state = { q: '' };
+    state = { q: '', status: state.status };
     var search = document.getElementById('gunplaSearch');
     if (search) search.value = '';
     update();
@@ -191,6 +196,17 @@
       '</div>';
   }
 
+  function renderTabs() {
+    var tabs = document.getElementById('gunplaTabs');
+    if (!tabs) return;
+    var n = { built: 0, backlog: 0 };
+    kits.forEach(function (k) { n[statusOf(k)]++; });
+    tabs.innerHTML = [['built', 'Built'], ['backlog', 'Backlog']].map(function (t) {
+      return '<button type="button" class="wh-tab" role="tab" data-status="' + t[0] + '" aria-selected="' +
+        (state.status === t[0]) + '">' + t[1] + ' <span class="gp-count">' + n[t[0]] + '</span></button>';
+    }).join('');
+  }
+
   function renderFilters() {
     if (!filtersEl) return;
     var selects = FIELDS.filter(function (f) { return !f.hidden; }).map(function (f) {
@@ -223,16 +239,19 @@
 
   function render() {
     var shown = kits.filter(function (k) { return matches(k); });
-    var filtered = shown.length !== kits.length;
+    var total = kits.filter(function (k) { return statusOf(k) === state.status; }).length;
+    var filtered = shown.length !== total;
+    var backlog = state.status === 'backlog';
 
     var byGrade = {};
     shown.forEach(function (k) { (byGrade[gradeOf(k)] = byGrade[gradeOf(k)] || []).push(k); });
-    var stats = stat(filtered ? 'Showing' : 'Kits built', filtered ? shown.length + ' of ' + kits.length : kits.length);
+    var stats = stat(filtered ? 'Showing' : (backlog ? 'In backlog' : 'Kits built'), filtered ? shown.length + ' of ' + total : total);
     GRADES.forEach(function (g) { if (byGrade[g.id]) stats += stat(g.id, byGrade[g.id].length); });
     statsEl.innerHTML = stats;
 
     if (!shown.length) {
-      listEl.innerHTML = '<div class="coming-soon">No kits match these filters. ' +
+      listEl.innerHTML = !total ? '<div class="coming-soon">' + (backlog ? 'Backlog is empty.' : 'Build list coming soon.') + '</div>' :
+        '<div class="coming-soon">No kits match these filters. ' +
         '<button type="button" class="gp-clear" data-clear-all>Clear all</button></div>';
       return;
     }
@@ -249,6 +268,7 @@
 
   function update() {
     writeUrl();
+    renderTabs();
     renderFilters();
     render();
   }
@@ -257,6 +277,11 @@
   function onClick(e) {
     var t = e.target.closest('button');
     if (!t) return;
+    if (t.hasAttribute('data-status')) {
+      // Switching tabs keeps the search but drops filters that may not apply.
+      state = { q: state.q, status: t.getAttribute('data-status') };
+      return update();
+    }
     if (t.hasAttribute('data-clear-all')) return clearAll();
     if (t.hasAttribute('data-clear')) {
       var key = t.getAttribute('data-clear');
@@ -293,6 +318,8 @@
       filtersEl.addEventListener('click', onClick);
     }
     listEl.addEventListener('click', onClick);
+    var tabs = document.getElementById('gunplaTabs');
+    if (tabs) tabs.addEventListener('click', onClick);
     update();
   }
 

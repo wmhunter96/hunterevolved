@@ -128,7 +128,9 @@ HG, EG, SD, then Other; within a grade, newest builds first. Photos go in
 `images/gunpla/` and show as the card background. With no kits the page
 shows a "coming soon" placeholder.
 
-`brand` defaults to Bandai. `room` > `shelf` > `level` say where a kit is
+`brand` defaults to Bandai. Set `"status": "backlog"` on a kit that isn't built yet;
+it moves to the page's Backlog tab (`gunpla.html?status=backlog`). When you
+build it, delete the `status` line and give it its display location. `room` > `shelf` > `level` say where a kit is
 displayed; leave any of them out if unknown. The page has a search box and
 Room / Shelf / Level / Grade / Brand / Series dropdowns that narrow each other,
 and every tag on a card (grade, brand, series, room, shelf, level, finish) is a

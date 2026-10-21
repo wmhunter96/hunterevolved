@@ -757,6 +757,368 @@
       "room": "Living room",
       "shelf": "Living room shelf",
       "level": "Upper"
+    },
+    {
+      "name": "Gundam Sandrock Custom EW",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Gundam Wing: Endless Waltz",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Hi-ν Gundam",
+      "grade": "RG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Char's Counterattack: Beltorchika's Children",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Altron Gundam EW",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Gundam Wing: Endless Waltz",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam TR-6 [Haze'n-thley II]",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Advance of Zeta",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Tallgeese Fluegel EW",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Gundam Wing: Endless Waltz",
+      "notes": "P-Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Astraea + Proto GN Twin Broad Blade",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam 00P",
+      "notes": "P-Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Stormbringer F.A. / GM Turbulence",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Heavyarms Custom EW",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Gundam Wing: Endless Waltz",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Amazing Exia",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam Build Fighters",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Ball Ver.Ka",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Mobile Suit Gundam",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "YF-29 Durandal Valkyrie",
+      "grade": "HG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Macross",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Sword Impulse Gundam SpecII",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Gundam SEED Destiny",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Wing Gundam Zero EW",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Gundam Wing: Endless Waltz",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Dragon Gundam",
+      "grade": "Other",
+      "brand": "Bandai",
+      "series": "G Gundam",
+      "notes": "Grade to confirm",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Exia Repair Parts Set",
+      "grade": "RG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam 00",
+      "notes": "Parts set for RG Exia",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundnode",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "notes": "3 boxes",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Expansion Parts Set for Gundam Barbatos",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Iron-Blooded Orphans",
+      "notes": "Parts set",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Hyper Mega Bazooka Launcher for Hi-ν Gundam",
+      "grade": "RG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Char's Counterattack: Beltorchika's Children",
+      "notes": "Parts set",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Astraea Parts Set",
+      "grade": "RG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam 00P",
+      "notes": "Parts set for RG Exia",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Double X",
+      "grade": "Other",
+      "brand": "Bandai",
+      "series": "After War Gundam X",
+      "notes": "Grade to confirm",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Zaku Warrior (Live Concert Ver.)",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam SEED Destiny",
+      "notes": "The Gundam Base exclusive",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam TR-6 [Barzam II] Re-Zeon Captured (A.O.Z Re-Boot Ver.)",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Advance of Zeta",
+      "notes": "P-Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Astray Turn Red",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam SEED Destiny Astray R",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "00 XN Raiser",
+      "grade": "Other",
+      "brand": "Bandai",
+      "series": "Gundam 00",
+      "notes": "Grade to confirm",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam TR-1 [Hazel Owsla]",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Advance of Zeta",
+      "notes": "P-Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Astray Red Dragon",
+      "grade": "Other",
+      "brand": "Bandai",
+      "series": "Gundam SEED Destiny Astray",
+      "notes": "Grade to confirm",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "00 Qan[T] Full Saber",
+      "grade": "Other",
+      "brand": "Bandai",
+      "series": "Gundam 00V",
+      "notes": "Grade to confirm",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Barbatos Lupus",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Iron-Blooded Orphans",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Desultor",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Double Fin Funnel Custom Unit for ν Gundam Ver.Ka",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Char's Counterattack",
+      "notes": "Parts set",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam TR-6 [Wondwart] Psycho-Blade Custom (A.O.Z Re-Boot Ver.)",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Advance of Zeta",
+      "notes": "P-Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Aerial",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "The Witch from Mercury",
+      "notes": "Version to confirm",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Expansion Parts Set for Gundam Barbatos Lupus",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Iron-Blooded Orphans",
+      "notes": "Parts set",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Den'an-Gei",
+      "grade": "RE",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Crossbone Gundam",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam TR-6 [Wondwart]",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Advance of Zeta",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Barbatos Lupus",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Iron-Blooded Orphans",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Polypod Ball",
+      "grade": "Other",
+      "brand": "Bandai",
+      "series": "The 08th MS Team",
+      "notes": "Grade to confirm",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Astraea Type-F",
+      "grade": "RG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam 00F",
+      "notes": "P-Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Tamotu Pro (Cool White Ver.)",
+      "grade": "Other",
+      "scale": "1/12",
+      "brand": "Kotobukiya Maruttoys",
+      "status": "backlog",
+      "shelf": "Closet"
     }
   ]
 }
