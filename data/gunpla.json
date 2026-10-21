@@ -416,14 +416,14 @@
       "grade": "MGEX",
       "scale": "1/100",
       "series": "Gundam Unicorn",
-      "location": "Living room"
+      "location": "Living room · Top display"
     },
     {
       "name": "Sinanju",
       "grade": "MG",
       "scale": "1/100",
       "series": "Gundam Unicorn",
-      "location": "Living room"
+      "location": "Living room · Top display"
     },
     {
       "name": "Gundam G-Self",
@@ -482,6 +482,57 @@
       "notes": "Gundam Factory Yokohama exclusive · Gunpla 40th Anniversary",
       "location": "Shelf not assigned",
       "scale": "1/200"
+    },
+    {
+      "name": "Gundam Barbatos Lupus Rex",
+      "grade": "HG",
+      "scale": "1/144",
+      "series": "Iron-Blooded Orphans",
+      "location": "Living room · Shelf"
+    },
+    {
+      "name": "Gundam Bael",
+      "grade": "HG",
+      "scale": "1/144",
+      "series": "Iron-Blooded Orphans",
+      "location": "Living room · Shelf"
+    },
+    {
+      "name": "Gundam Marchosias",
+      "grade": "HG",
+      "scale": "1/144",
+      "series": "Iron-Blooded Orphans: Urdr-Hunt",
+      "location": "Living room · Shelf"
+    },
+    {
+      "name": "Gundam Astaroth",
+      "grade": "HG",
+      "scale": "1/144",
+      "series": "Iron-Blooded Orphans Gekko",
+      "location": "Living room · Shelf"
+    },
+    {
+      "name": "Gundam Astaroth Rinascimento",
+      "grade": "HG",
+      "scale": "1/144",
+      "series": "Iron-Blooded Orphans Gekko",
+      "notes": "The red one",
+      "location": "Living room · Shelf"
+    },
+    {
+      "name": "Gundam Vual",
+      "grade": "HG",
+      "scale": "1/144",
+      "series": "Iron-Blooded Orphans Gekko",
+      "notes": "Name to confirm",
+      "location": "Living room · Shelf"
+    },
+    {
+      "name": "Gundam Dantalion",
+      "grade": "HG",
+      "scale": "1/144",
+      "series": "Iron-Blooded Orphans Gekko",
+      "location": "Living room · Shelf"
     }
   ]
 }
