@@ -113,11 +113,12 @@ and `notes`.
   "finish": "Panel lined",
   "photo": "images/gunpla/rx-78-2.jpg",
   "link": "",
-  "notes": "One-line blurb."
+  "notes": "One-line blurb.",
+  "location": "Detolf 1 · Shelf 2"
 }
 ```
 
-Only `name` and `grade` are required. Grades are grouped PG, MG, RG, HG, EG,
-SD, then Other; within a grade, newest builds first. Photos go in
+Only `name` and `grade` are required. Grades are grouped PG, MGEX, MG, FM, RG,
+HG, EG, SD, then Other; within a grade, newest builds first. Photos go in
 `images/gunpla/` and show as the card background. With no kits the page
 shows a "coming soon" placeholder.
