@@ -1,6 +1,6 @@
 # hunterevolved.com
 
-Personal site — Gear, MTG, homelab rack viz. Plain HTML/CSS/JS, GitHub Pages (HOST-38).
+Personal site — Gear, MTG, Gunpla, homelab rack viz. Plain HTML/CSS/JS, GitHub Pages (HOST-38).
 
 ## Structure
 
@@ -14,6 +14,8 @@ gear/homelab.html          Homelab — real rack inventory table, plus a
                           interactive 3D rack (Three.js, HOST-63/65)
 mtg.html                  MTG — EDH decks (HOST-56/57/58), auto-synced from Archidekt
 scripts/sync-archidekt.mjs  Regenerates mtg.html's deck cards from Archidekt
+gunpla.html               Gunpla — every kit built, rendered by js/gunpla.js
+                          from data/gunpla.json, grouped by grade
 warehouse.html            Warehouse — parts + tooling inventory and projects, rendered by
                           js/warehouse.js from data/warehouse.json
 css/style.css             Shared styles
@@ -92,3 +94,27 @@ and `notes`.
 `projects[]` entries have `name`, `status` (`active` or `done`), `notes`, and
 `uses[]`: `{ itemId, name, qty, date }`, where `itemId` points at a part's
 `id` and `name` is a snapshot so the record survives deleting the part.
+
+## Gunpla
+
+`gunpla.html` lists every kit built, rendered by `js/gunpla.js` from
+`data/gunpla.json`. To add a build, add an entry to `kits[]`:
+
+```json
+{
+  "name": "RX-78-2 Gundam (Revive)",
+  "grade": "HG",
+  "scale": "1/144",
+  "series": "Mobile Suit Gundam",
+  "year": 2024,
+  "finish": "Panel lined",
+  "photo": "images/gunpla/rx-78-2.jpg",
+  "link": "",
+  "notes": "One-line blurb."
+}
+```
+
+Only `name` and `grade` are required. Grades are grouped PG, MG, RG, HG, EG,
+SD, then Other; within a grade, newest builds first. Photos go in
+`images/gunpla/` and show as the card background. With no kits the page
+shows a "coming soon" placeholder.
