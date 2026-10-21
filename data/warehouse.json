@@ -697,6 +697,37 @@
       "status": "",
       "link": "https://www.amazon.com/dp/B07G2SWB19",
       "notes": "TUOFENG; stranded tinned copper, 66 ft each color"
+    },
+    {
+      "id": "pt-16",
+      "kind": "part",
+      "name": "Pro Micro nRF52840 dev board, Bluetooth 5.0",
+      "category": "Microcontrollers",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0GSZ7FD6T",
+      "notes": "USB-C charging"
+    },
+    {
+      "id": "pt-17",
+      "kind": "part",
+      "name": "ESP32 dev board, ESP-WROOM-32",
+      "category": "Microcontrollers",
+      "location": "",
+      "qty": 3,
+      "status": "",
+      "notes": "ESP-32S; dual-core, WiFi + Bluetooth, Arduino IDE compatible; 3-pack"
+    },
+    {
+      "id": "pt-18",
+      "kind": "part",
+      "name": "22 AWG solid wire, 6 colors",
+      "category": "Wire",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "notes": "TUOFENG; tinned copper, 30 ft each color"
     }
   ]
 }
