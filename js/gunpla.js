@@ -229,7 +229,7 @@
     var cls = 'gp-kit' + (hits && lit ? ' hit' : '') + (lit ? '' : ' off');
     return '<button type="button" class="' + cls + '" data-kit="' + kits.indexOf(kit) + '" title="' +
       esc((kit.grade || '') + ' ' + kit.name + (kit.notes ? ' — ' + kit.notes : '')) + '">' +
-      '<b class="gp-g gp-c-' + (GRADE_COLOR[g] || 'other') + '">' + esc(g === 'Other' ? (kit.scale || '·') : g) + '</b>' +
+      '<b class="gp-g gp-c-' + (GRADE_COLOR[g] || 'other') + '">' + esc(g === 'Other' ? (kit.scale || '3P') : g) + '</b>' +
       esc(shortName(kit.name)) + '</button>';
   }
 

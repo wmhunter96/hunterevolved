@@ -23,6 +23,26 @@ js/main.js                Nav toggle + footer year
 CNAME                     Custom domain for GitHub Pages
 ```
 
+## Design system
+
+All styling lives in `css/style.css`, built on the tokens at the top of the
+file (technical industrial look, dark graphite):
+
+- **Colour**: `--color-bg` / `--color-surface` / `--color-surface-elevated` /
+  `--color-surface-subtle`, text `--color-text` (+ `-secondary`, `-muted`,
+  `-disabled`), `--color-border` / `--color-border-strong`, and one accent
+  `--color-accent` (#E14A15) reserved for primary buttons, active/selected
+  states, focus and key indicators. Status: `--color-success`, `-warning`,
+  `-error`, `-info`. Don't hardcode colours in components; add a token.
+- **Type**: IBM Plex Sans for everything, IBM Plex Mono only for small
+  uppercase labels, numbers, IDs and counts (`.label`). Scale tokens
+  `--text-display` ... `--text-micro`.
+- **Space / radius / motion**: 4px scale `--space-1`...`--space-8`; radii
+  4 (badges) / 6 (controls) / 8 (cards) / 10 (modals); 150ms ease-out
+  transitions, disabled under `prefers-reduced-motion`.
+- The nav marks the current section with `aria-current="page"` (set by
+  `js/main.js`), shown as a thin orange underline.
+
 ## Status
 
 Scaffold only (HOST-60/HOST-70). `gear/homelab.html` now has a real rack
