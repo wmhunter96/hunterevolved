@@ -503,14 +503,24 @@
       "level": "Shelf 4"
     },
     {
-      "name": "Gundam Astray \"Load Frame\"",
-      "grade": "HG",
+      "name": "God Gundam",
+      "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
-      "notes": "Name to confirm",
+      "series": "G Gundam",
       "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
+    },
+    {
+      "name": "Lord Astray Ω",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "room": "Office",
+      "shelf": "Detolf 2",
+      "level": "Shelf 4",
+      "series": "Gundam SEED Freedom"
     },
     {
       "name": "Gundam Astray Red Frame Inversion",
@@ -900,9 +910,10 @@
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "notes": "3 boxes",
+      "notes": "P-Bandai · 3 boxes",
       "status": "backlog",
-      "shelf": "Closet"
+      "shelf": "Closet",
+      "series": "The Witch from Mercury"
     },
     {
       "name": "Expansion Parts Set for Gundam Barbatos",
@@ -936,12 +947,12 @@
     },
     {
       "name": "Gundam Double X",
-      "grade": "Other",
+      "grade": "MG",
       "brand": "Bandai",
       "series": "After War Gundam X",
-      "notes": "Grade to confirm",
       "status": "backlog",
-      "shelf": "Closet"
+      "shelf": "Closet",
+      "scale": "1/100"
     },
     {
       "name": "Zaku Warrior (Live Concert Ver.)",
@@ -1024,7 +1035,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "status": "backlog",
-      "shelf": "Closet"
+      "shelf": "Closet",
+      "series": "The Witch from Mercury",
+      "notes": "P-Bandai"
     },
     {
       "name": "Double Fin Funnel Custom Unit for ν Gundam Ver.Ka",
@@ -1052,7 +1065,6 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "notes": "Version to confirm",
       "status": "backlog",
       "shelf": "Closet"
     },
@@ -1117,6 +1129,123 @@
       "grade": "Other",
       "scale": "1/12",
       "brand": "Kotobukiya Maruttoys",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Aerial",
+      "grade": "MGSD",
+      "brand": "Bandai",
+      "series": "The Witch from Mercury",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "KOSMOS Lighting Expansion for MGEX Strike Freedom",
+      "grade": "Other",
+      "brand": "KOSMOS",
+      "series": "Gundam SEED Destiny",
+      "notes": "Parts set",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Aerial (Ecopla)",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "The Witch from Mercury",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Turn A Gundam",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Turn A Gundam",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Turn X",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Turn A Gundam",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Maxter",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "G Gundam",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Virtue Armor Display Set",
+      "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
+      "series": "Gundam 00",
+      "notes": "Parts set",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Barbatos",
+      "grade": "MGSD",
+      "brand": "Bandai",
+      "series": "Iron-Blooded Orphans",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Crossbone Gundam X2",
+      "grade": "RG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Crossbone Gundam",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Gundam Naion",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "The Witch from Mercury",
+      "notes": "P-Bandai",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Expansion Set for God Gundam",
+      "grade": "RG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "G Gundam",
+      "notes": "Parts set",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Freedom Gundam",
+      "grade": "MGSD",
+      "brand": "Bandai",
+      "series": "Gundam SEED",
+      "status": "backlog",
+      "shelf": "Closet"
+    },
+    {
+      "name": "Lord Astray Ω",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam SEED Freedom",
       "status": "backlog",
       "shelf": "Closet"
     }

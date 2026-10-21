@@ -2,7 +2,7 @@
 //
 // Each entry in kits[]:
 //   name    (required)  e.g. "RX-78-2 Gundam (Revive)"
-//   grade   (required)  PG, MGEX, MG, FM, RE, RG, HG, EG, SD, or anything else ("Other")
+//   grade   (required)  PG, MGEX, MG, FM, RE, RG, MGSD, HG, EG, SD, or anything else ("Other")
 //   status              "backlog" for kits not built yet (default: built)
 //   scale               e.g. "1/144"
 //   brand               e.g. "Bandai", "Kotobukiya Maruttoys" (defaults to Bandai)
@@ -30,6 +30,7 @@
     { id: 'FM', label: 'Full Mechanics' },
     { id: 'RE', label: 'Reborn-One Hundred (RE/100)' },
     { id: 'RG', label: 'Real Grade' },
+    { id: 'MGSD', label: 'Master Grade SD' },
     { id: 'HG', label: 'High Grade' },
     { id: 'EG', label: 'Entry Grade' },
     { id: 'SD', label: 'Super Deformed' },
