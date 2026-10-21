@@ -478,62 +478,73 @@ button.gp-stat:hover, button.gp-stat:focus-visible { border-color: var(--accent)
 button.gp-stat.active { border-color: var(--accent); background: rgba(255, 138, 61, .1); }
 button.gp-stat.active .stat-value { color: var(--accent); }
 
-/* Gunpla shelf map */
-.gp-map { --c-mgex: #ff8a3d; --c-mg: #4fd0a0; --c-fm: #2fa58f; --c-rg: #b9a4ff; --c-hg: #6ea8ff; --c-sd: #ff7eb6; --c-other: #a8b0ac;
-  --glass: rgba(170, 215, 225, .32); margin-bottom: 1.5rem; }
-.gp-map-wrap { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-alt); padding: .75rem 1rem 1rem; }
-.gp-map-wrap > summary { cursor: pointer; font-weight: 700; color: var(--fg); padding: .25rem 0; }
-.gp-legend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .78rem; color: var(--fg-muted); margin: .5rem 0 1rem; }
-.gp-legend span { display: inline-flex; align-items: center; gap: .35rem; }
-.gp-legend i { width: 9px; height: 14px; border-radius: 2px; display: inline-block; background: var(--c); }
-.gp-legend .gp-legend-hint { margin-left: auto; font-style: italic; }
-.gp-room + .gp-room { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-.gp-room-name, .gp-unit-name, .gp-level-label { font: inherit; background: none; border: none; cursor: pointer; padding: 0; text-align: left; }
-.gp-room-name { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--fg-muted); margin-bottom: .6rem; }
-.gp-room-name:hover, .gp-room-name.selected { color: var(--accent); }
-.gp-units { display: flex; flex-wrap: wrap; gap: 1.25rem 1.5rem; align-items: flex-end; }
-.gp-unit { display: flex; flex-direction: column; }
-.gp-unit-name { font-weight: 700; color: var(--fg); font-size: .9rem; margin-bottom: .35rem; }
-.gp-unit-name span, .gp-level-label span { color: var(--fg-muted); font-weight: 500; }
-.gp-unit-name:hover, .gp-unit-name.selected { color: var(--accent); }
-
-/* one level = a label over a floor the kits stand on */
-.gp-level { position: relative; cursor: pointer; border-radius: 4px; padding: .2rem .35rem 0; transition: background .15s; }
-.gp-level:hover { background: rgba(255, 255, 255, .03); }
-.gp-level.selected { background: rgba(255, 138, 61, .1); box-shadow: inset 0 0 0 1px var(--accent); }
-.gp-level-label { display: block; font-size: .68rem; color: var(--fg-muted); letter-spacing: .03em; margin-bottom: .15rem; }
-.gp-level.selected .gp-level-label, .gp-level-label:hover { color: var(--accent); }
-.gp-floor { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 3px; min-height: 44px; padding: 0 2px; border-bottom: 2px solid var(--glass); }
-.gp-level.empty .gp-floor { min-height: 30px; }
-
-.gp-fig { width: var(--w); height: var(--h); padding: 0; border: none; cursor: pointer; background: var(--c);
-  border-radius: 5px 5px 2px 2px; opacity: .92; transition: transform .12s, opacity .15s, filter .15s; }
-.gp-fig:hover, .gp-fig:focus-visible { transform: translateY(-3px); opacity: 1; outline: 2px solid var(--fg); outline-offset: 1px; }
-.gp-fig.gp-boxed { border-radius: 2px; }
-.gp-fig.dim { opacity: .14; filter: grayscale(1); }
-.gp-c-mgex { --c: var(--c-mgex); } .gp-c-mg { --c: var(--c-mg); } .gp-c-fm { --c: var(--c-fm); } .gp-c-rg { --c: var(--c-rg); }
-.gp-c-hg { --c: var(--c-hg); } .gp-c-sd { --c: var(--c-sd); } .gp-c-other { --c: var(--c-other); }
-
-/* Detolf: roof (Top) + tall glass cabinet with Shelf 1..4 */
-.gp-detolf { width: 250px; }
-.gp-roof .gp-level { padding-left: .5rem; padding-right: .5rem; }
-.gp-roof .gp-floor { border-bottom: 4px solid #3a4447; min-height: 40px; }
-.gp-cabinet { border: 2px solid #3a4447; border-top: none; border-radius: 0 0 3px 3px; padding: .3rem .3rem .45rem;
-  background: linear-gradient(90deg, rgba(170, 215, 225, .07), rgba(170, 215, 225, .015) 40%, rgba(170, 215, 225, .06)); }
-.gp-cabinet .gp-level + .gp-level { margin-top: .35rem; }
-.gp-cabinet .gp-floor { min-height: 62px; }
-.gp-cabinet .gp-level:last-child .gp-floor { border-bottom-color: #3a4447; border-bottom-width: 3px; }
-
-/* ledges (windowsill, top display, closet) and two-level bookcases */
-.gp-ledge { min-width: 200px; max-width: 100%; flex: 0 1 auto; }
-.gp-ledge .gp-floor { border-bottom: 4px solid #4a3b2c; }
-.gp-bookcase { border: 3px solid #4a3b2c; border-radius: 3px; padding: .3rem .35rem .4rem; }
-.gp-bookcase > .gp-unit-name { margin: -.1rem 0 .3rem; }
-.gp-bookcase .gp-level + .gp-level { margin-top: .35rem; }
-
 .gp-card.gp-flash { animation: gp-flash 1.6s ease-out; }
 @keyframes gp-flash { 0%, 30% { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255, 138, 61, .35); } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+/* Gunpla shelf map: drawn like the Warehouse toolbox. Units are dark cases
+   with a coloured header; each level is a drawer-style row of kit chips. */
+.gp-map { --alu: #c9ced2; --wood: #9a7650; --glass: rgba(170, 215, 230, .55);
+  --c-mgex: #ff8a3d; --c-mg: #4fd0a0; --c-fm: #2fb39a; --c-rg: #b9a4ff; --c-hg: #6ea8ff; --c-sd: #ff7eb6; --c-other: #a8b0ac;
+  margin-bottom: 1.5rem; }
+.gp-room + .gp-room { margin-top: 1.5rem; }
+.gp-room-name { font: inherit; background: none; border: none; padding: 0; cursor: pointer; margin-bottom: .6rem;
+  font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--fg-muted); }
+.gp-room-name:hover, .gp-room-name.selected { color: var(--accent); }
+.gp-units { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1.25rem 1.5rem; align-items: end; }
+.gp-ledge { grid-column: 1 / -1; }
+
+.gp-case { background: #1c1c1c; border: 2px solid #000; border-radius: 10px; padding: 0 8px 8px; box-shadow: inset 0 0 0 1px #2a2a2a; }
+.gp-lid { display: flex; justify-content: space-between; align-items: center; width: calc(100% + 16px); height: 24px;
+  margin: 0 -8px 8px; padding: 0 12px; border: none; border-radius: 8px 8px 0 0; cursor: pointer;
+  font: inherit; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; transition: box-shadow .15s, filter .15s; }
+.gp-lid-alu { background: linear-gradient(180deg, #e3e6e8, var(--alu)); color: #1b1f22; }
+.gp-lid-wood { background: linear-gradient(180deg, #b08a60, var(--wood)); color: #1d1206; }
+.gp-lid:hover, .gp-lid:focus-visible { filter: brightness(1.08); outline: none; }
+.gp-lid.selected { box-shadow: 0 0 0 3px var(--accent); }
+.gp-case-rows { display: grid; gap: 6px; }
+
+/* a level: number | kit chips | count, with a glass shelf line at the bottom */
+.gp-row { position: relative; display: grid; grid-template-columns: 2rem 1fr auto; align-items: center; gap: .65rem;
+  min-height: 58px; padding: .5rem .75rem .85rem; background: #262626; border: 1px solid #3a3a3a; border-radius: 6px;
+  cursor: pointer; transition: border-color .15s, background .15s, opacity .15s; }
+.gp-row:hover, .gp-row:focus-visible { border-color: var(--alu); outline: none; }
+.gp-row.match { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.gp-row.selected { border-color: var(--accent); background: #2e2219; box-shadow: 0 0 0 1px var(--accent); }
+.gp-row.dim { opacity: .35; min-height: 0; padding-block: .3rem .65rem; }
+.gp-row.dim .gp-kits { display: none; }
+.gp-row.dim .gp-row-num { font-size: 1rem; }
+.gp-row-num { font-size: 1.35rem; font-weight: 800; color: var(--alu); text-align: center; }
+.gp-row-body { display: grid; gap: .3rem; min-width: 0; }
+.gp-row-name { font-size: .8rem; font-weight: 700; color: var(--fg); }
+.gp-row-count { font-size: .75rem; color: var(--fg-muted); }
+.gp-glass { position: absolute; left: 10px; right: 10px; bottom: 5px; height: 3px; border-radius: 2px; background: var(--glass); }
+.gp-row-single { grid-template-columns: 1fr auto; padding-bottom: .5rem; }
+.gp-case-wood .gp-row-single .gp-row-name { display: none; }
+.gp-case-wood .gp-glass { background: var(--wood); opacity: .8; }
+
+.gp-kits { display: flex; flex-wrap: wrap; gap: .25rem .3rem; min-width: 0; }
+.gp-kit { display: inline-flex; align-items: center; gap: .35rem; max-width: 100%; padding: .1rem .45rem .1rem .15rem;
+  font: inherit; font-size: .78rem; line-height: 1.35; color: var(--fg-muted); background: #1b1b1b; border: 1px solid #333;
+  border-radius: 4px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .15s, border-color .15s, background .15s; }
+.gp-kit:hover, .gp-kit:focus-visible { color: var(--fg); border-color: var(--fg-muted); outline: none; }
+.gp-kit.hit { color: #fff; background: rgba(255, 138, 61, .22); border-color: var(--accent); }
+.gp-kit.off { opacity: .35; }
+.gp-g { flex: none; font-size: .62rem; font-weight: 800; letter-spacing: .02em; padding: .05rem .3rem; border-radius: 3px;
+  color: #101314; background: var(--c); }
+.gp-c-mgex { --c: var(--c-mgex); } .gp-c-mg { --c: var(--c-mg); } .gp-c-fm { --c: var(--c-fm); } .gp-c-rg { --c: var(--c-rg); }
+.gp-c-hg { --c: var(--c-hg); } .gp-c-sd { --c: var(--c-sd); } .gp-c-other { --c: var(--c-other); }
+.gp-empty { font-size: .78rem; font-style: italic; color: var(--fg-muted); }
+
+/* Top of a Detolf: a slab sitting on the roof of the case */
+.gp-roof { padding: 0 8%; margin-bottom: -2px; }
+.gp-row-roof { grid-template-columns: 1fr auto; border: 2px solid #000; border-bottom: none; border-radius: 10px 10px 0 0;
+  background: #2b2f32; padding-bottom: .55rem; min-height: 52px; }
+.gp-row-roof .gp-row-name { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--alu); }
+.gp-row-roof.selected { background: #2e2219; }
+.gp-row-roof.dim { min-height: 0; }
+
 @media (max-width: 640px) {
-  .gp-detolf { width: 100%; }
-  .gp-legend .gp-legend-hint { margin-left: 0; }
+  .gp-roof { padding: 0 3%; }
+  .gp-row { grid-template-columns: 1.5rem 1fr auto; gap: .5rem; padding-inline: .5rem; }
+  .gp-row-single, .gp-row-roof { grid-template-columns: 1fr auto; }
 }

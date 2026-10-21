@@ -208,70 +208,80 @@
   }
 
   // ---- Shelf map ----
-  // A drawing of every display spot: Detolf cabinets as glass cases (Top sits
-  // on the roof, Shelf 1..4 inside), anything else as plain ledges. Each kit is
-  // a little block standing on its level, sized by grade/scale and colored by
-  // grade. Kits that don't match the current filters are dimmed.
-  //   click a level  -> filter to that room/shelf/level (again to clear)
-  //   click a name   -> filter to that whole shelf unit
-  //   click a kit    -> jump to its card
-  var FIG = { // [height px, width px, color var]
-    PG: [80, 18, 'mgex'], MGEX: [72, 18, 'mgex'], MG: [58, 16, 'mg'], FM: [58, 16, 'fm'], RE: [58, 16, 'fm'],
-    RG: [42, 12, 'rg'], HG: [42, 12, 'hg'], EG: [38, 12, 'hg'], MGSD: [34, 16, 'sd'], SD: [26, 12, 'sd'], Other: [46, 14, 'other']
-  };
+  // Drawn like the Warehouse toolbox: each display spot is a physical unit and
+  // each level a "drawer" row (number, kit chips, count). Detolfs get an
+  // aluminium header with Top sitting on the roof and Shelf 1..4 inside; other
+  // spots (windowsill, top display, closet) get a wood header.
+  //   click a row / unit name / room -> filter to it (again to clear)
+  //   click a kit chip               -> jump to its card
   var ROOM_ORDER = ['Office', 'Living room'];
+  var GRADE_COLOR = { PG: 'mgex', MGEX: 'mgex', MG: 'mg', FM: 'fm', RE: 'fm', RG: 'rg', HG: 'hg', EG: 'hg', MGSD: 'sd', SD: 'sd', Other: 'other' };
   function rankIn(list, v) { var i = list.indexOf(v); return i === -1 ? list.length : i; }
   function isDetolf(shelf) { return /^detolf/i.test(shelf || ''); }
+  // Filters other than location: when any is on, matching kits are highlighted.
+  function otherFilters() {
+    return !!state.q || FIELDS.some(function (f) { return ['room', 'shelf', 'level'].indexOf(f.key) === -1 && state[f.key] != null; });
+  }
+  function shortName(n) { return /^Gundam \S/.test(n) && n.split(' ').length > 2 ? n.slice(7) : n; }
 
-  function fig(kit) {
-    var g = gradeOf(kit), f = FIG[g] || FIG.Other, backlog = state.status === 'backlog';
-    var lit = matches(kit);
-    var label = (kit.grade ? kit.grade + ' ' : '') + kit.name;
-    // Backlog kits are still boxed, so draw them as flat boxes instead of figures.
-    var w = backlog ? f[1] * 2 : f[1], h = backlog ? Math.round(f[0] * .45) : f[0];
-    return '<button type="button" class="gp-fig gp-c-' + f[2] + (backlog ? ' gp-boxed' : '') + (lit ? '' : ' dim') +
-      '" style="--w:' + w + 'px;--h:' + h + 'px" data-kit="' + kits.indexOf(kit) + '" title="' + esc(label) +
-      '" aria-label="' + esc(label) + '"></button>';
+  function chip(kit, hits) {
+    var g = gradeOf(kit), lit = matches(kit);
+    var cls = 'gp-kit' + (hits && lit ? ' hit' : '') + (lit ? '' : ' off');
+    return '<button type="button" class="' + cls + '" data-kit="' + kits.indexOf(kit) + '" title="' +
+      esc((kit.grade || '') + ' ' + kit.name + (kit.notes ? ' — ' + kit.notes : '')) + '">' +
+      '<b class="gp-g gp-c-' + (GRADE_COLOR[g] || 'other') + '">' + esc(g === 'Other' ? (kit.scale || '·') : g) + '</b>' +
+      esc(shortName(kit.name)) + '</button>';
   }
 
-  function levelRow(room, shelf, level, list, label) {
-    var lit = list.filter(function (k) { return matches(k); }).length;
-    var sel = state.shelf === shelf && state.level === (level || undefined) && (state.room || '') === (room || '') && level;
-    var attrs = ' data-loc-room="' + esc(room) + '" data-loc-shelf="' + esc(shelf) + '" data-loc-level="' + esc(level) + '"';
-    return '<div class="gp-level' + (sel ? ' selected' : '') + (list.length ? '' : ' empty') + '"' + attrs + '>' +
-      (label === false ? '' : '<button type="button" class="gp-level-label"' + attrs + '>' + esc(label || level || 'Shelf') +
-      ' <span>' + (lit === list.length ? list.length : lit + '/' + list.length) + '</span></button>') +
-      '<div class="gp-floor">' + list.map(fig).join('') + '</div></div>';
+  function row(room, shelf, level, num, list, cls) {
+    var hits = otherFilters(), lit = list.filter(function (k) { return matches(k); }).length;
+    var sel = state.shelf === shelf && (state.level || '') === level && level !== '' ||
+      (level === '' && state.shelf === shelf && state.level == null && cls === 'single');
+    var dim = list.length && !lit || (!list.length && (hits || state.shelf != null));
+    var attrs = ' data-loc-room="' + esc(room) + '" data-loc-shelf="' + esc(shelf) + '"' +
+      (level !== '' ? ' data-loc-level="' + esc(level) + '"' : '');
+    var label = level || shelf;
+    return '<div class="gp-row' + (cls ? ' gp-row-' + cls : '') + (sel ? ' selected' : '') + (dim ? ' dim' : '') +
+      (hits && lit ? ' match' : '') + '" role="button" tabindex="0"' + attrs +
+      ' aria-label="' + esc(shelf + (level ? ' ' + level : '') + ': ' + list.length + ' kits') + '">' +
+      (num != null ? '<span class="gp-row-num">' + esc(num) + '</span>' : '') +
+      '<div class="gp-row-body">' +
+        (num != null && cls !== 'roof' ? '' : '<span class="gp-row-name">' + esc(label) + '</span>') +
+        '<div class="gp-kits">' + (list.length ? list.map(function (k) { return chip(k, hits); }).join('')
+          : '<span class="gp-empty">Empty</span>') + '</div>' +
+      '</div>' +
+      '<span class="gp-row-count">' + (lit === list.length ? list.length : lit + '/' + list.length) + '</span>' +
+      (cls === 'roof' || cls === 'single' ? '' : '<span class="gp-glass"></span>') +
+      '</div>';
   }
 
-  function unit(room, shelf, byLevel) {
+  function unitHtml(room, shelf, byLevel) {
     var levels = Object.keys(byLevel);
     var n = levels.reduce(function (a, l) { return a + byLevel[l].length; }, 0);
     var sel = state.shelf === shelf && state.level == null;
-    var lit = 0;
-    levels.forEach(function (l) { lit += byLevel[l].filter(function (k) { return matches(k); }).length; });
-    var head = '<button type="button" class="gp-unit-name' + (sel ? ' selected' : '') + '" data-loc-room="' + esc(room) +
-      '" data-loc-shelf="' + esc(shelf) + '">' + esc(shelf || 'Unplaced') + ' <span>' + (lit === n ? n : lit + '/' + n) + '</span></button>';
-    var rows = '';
+    var head = function (cls) {
+      return '<button type="button" class="gp-lid ' + cls + (sel ? ' selected' : '') + '" data-loc-room="' + esc(room) +
+        '" data-loc-shelf="' + esc(shelf) + '"><span>' + esc(shelf || 'Unplaced') + '</span><span>' + n + '</span></button>';
+    };
     if (isDetolf(shelf)) {
-      var max = 4;
+      var max = 4, inside = '';
       levels.forEach(function (l) { var m = /^shelf\s*(\d+)/i.exec(l); if (m) max = Math.max(max, +m[1]); });
-      var top = levels.filter(function (l) { return /^top/i.test(l); })[0];
-      rows += '<div class="gp-roof">' + levelRow(room, shelf, top || 'Top', byLevel[top || 'Top'] || [], 'Top') + '</div>';
-      var inside = '';
+      var top = levels.filter(function (l) { return /^top/i.test(l); })[0] || 'Top';
       for (var i = 1; i <= max; i++) {
         var name = levels.filter(function (l) { return new RegExp('^shelf\\s*' + i + '\\b', 'i').test(l); })[0] || 'Shelf ' + i;
-        inside += levelRow(room, shelf, name, byLevel[name] || [], 'Shelf ' + i);
+        inside += row(room, shelf, name, String(i), byLevel[name] || []);
       }
-      if (byLevel['']) inside += levelRow(room, shelf, '', byLevel[''], 'No level');
-      rows += '<div class="gp-cabinet">' + inside + '</div>';
-      return '<div class="gp-unit gp-detolf">' + head + rows + '</div>';
+      if (byLevel['']) inside += row(room, shelf, '', '?', byLevel['']);
+      return '<div class="gp-unit gp-detolf">' +
+        '<div class="gp-roof">' + row(room, shelf, top, null, byLevel[top] || [], 'roof') + '</div>' +
+        '<div class="gp-case">' + head('gp-lid-alu') + '<div class="gp-case-rows">' + inside + '</div></div></div>';
     }
-    levels.sort(function (a, b) { return levelRank(a) - levelRank(b) || a.localeCompare(b); }).forEach(function (l) {
-      // A single unnamed level is just the ledge itself: no separate label.
-      rows += levelRow(room, shelf, l, byLevel[l], l || (levels.length > 1 ? 'No level' : false));
-    });
-    return '<div class="gp-unit gp-ledge' + (levels.length > 1 ? ' gp-bookcase' : '') + '">' + head + rows + '</div>';
+    var rows = '';
+    var sorted = levels.sort(function (a, b) { return levelRank(a) - levelRank(b) || a.localeCompare(b); });
+    if (sorted.length === 1 && sorted[0] === '') rows = row(room, shelf, '', null, byLevel[''], 'single');
+    else sorted.forEach(function (l) { rows += row(room, shelf, l, l ? l.charAt(0).toUpperCase() : '?', byLevel[l]); });
+    return '<div class="gp-unit gp-ledge"><div class="gp-case gp-case-wood">' + head('gp-lid-wood') +
+      '<div class="gp-case-rows">' + rows + '</div></div></div>';
   }
 
   function renderMap() {
@@ -285,23 +295,18 @@
     var rooms = Object.keys(tree).sort(function (a, b) {
       return (a === '') - (b === '') || rankIn(ROOM_ORDER, a) - rankIn(ROOM_ORDER, b) || a.localeCompare(b);
     });
-    var body = rooms.map(function (r) {
-      var shelves = Object.keys(tree[r]).sort(function (a, b) {
-        return (a === '') - (b === '') || isDetolf(b) - isDetolf(a) || a.localeCompare(b, undefined, { numeric: true });
-      });
-      var roomSel = state.room === r && state.shelf == null;
-      return '<section class="gp-room"><button type="button" class="gp-room-name' + (roomSel ? ' selected' : '') +
-        '" data-loc-room="' + esc(r) + '">' + esc(r || 'No room') + '</button>' +
-        '<div class="gp-units">' + shelves.map(function (sh) { return unit(r, sh, tree[r][sh]); }).join('') + '</div></section>';
-    }).join('');
-    var used = {};
-    kits.forEach(function (k) { if (statusOf(k) === state.status) used[(FIG[gradeOf(k)] || FIG.Other)[2]] = 1; });
-    var legend = [['mgex', 'MGEX / PG'], ['mg', 'MG'], ['fm', 'FM / RE/100'], ['rg', 'RG'], ['hg', 'HG / EG'], ['sd', 'SD / MGSD'], ['other', 'Other']]
-      .filter(function (l) { return used[l[0]]; })
-      .map(function (l) { return '<span><i class="gp-c-' + l[0] + '"></i>' + l[1] + '</span>'; }).join('');
-    mapEl.querySelector('.gp-map-body').innerHTML = body;
-    mapEl.querySelector('.gp-legend').innerHTML = legend +
-      '<span class="gp-legend-hint">Click a shelf to filter · click a kit to jump to it</span>';
+    mapEl.innerHTML = '<p class="wh-toolbox-caption">' + (state.status === 'backlog'
+        ? 'Where the unbuilt boxes are stored. Click a spot to filter to it; click a kit to jump to it.'
+        : 'Where every kit is displayed: the two Detolfs (Top is the roof of the case), the windowsill and the living room. Click a shelf to filter to it, click it again to clear; click a kit to jump to it.') + '</p>' +
+      rooms.map(function (r) {
+        var shelves = Object.keys(tree[r]).sort(function (a, b) {
+          return (a === '') - (b === '') || isDetolf(b) - isDetolf(a) || a.localeCompare(b, undefined, { numeric: true });
+        });
+        var roomSel = state.room === r && state.shelf == null;
+        return '<section class="gp-room"><button type="button" class="gp-room-name' + (roomSel ? ' selected' : '') +
+          '" data-loc-room="' + esc(r) + '">' + esc(r || 'No room') + '</button>' +
+          '<div class="gp-units">' + shelves.map(function (sh) { return unitHtml(r, sh, tree[r][sh]); }).join('') + '</div></section>';
+      }).join('');
   }
 
   function pickLocation(el) {
@@ -474,18 +479,14 @@
     listEl.addEventListener('click', onClick);
     statsEl.addEventListener('click', onClick);
     if (mapEl) {
-      // Open by default on wide screens, closed on phones; remember the choice.
-      var open = window.matchMedia('(min-width: 641px)').matches;
-      try { var saved = localStorage.getItem('gunplaMapOpen'); if (saved !== null) open = saved === '1'; } catch (err) {}
-      mapEl.innerHTML = '<details class="gp-map-wrap"' + (open ? ' open' : '') + '><summary>Shelf map</summary>' +
-        '<div class="gp-legend"></div><div class="gp-map-body"></div></details>';
-      mapEl.querySelector('details').addEventListener('toggle', function (e) {
-        try { localStorage.setItem('gunplaMapOpen', e.target.open ? '1' : '0'); } catch (err) {}
-      });
       mapEl.addEventListener('click', function (e) {
         if (e.target.closest('button')) return onClick(e);
-        var lvl = e.target.closest('.gp-level');
-        if (lvl) pickLocation(lvl);
+        var r = e.target.closest('.gp-row');
+        if (r) pickLocation(r);
+      });
+      mapEl.addEventListener('keydown', function (e) {
+        var r = e.target.closest('.gp-row');
+        if (r && e.target === r && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pickLocation(r); }
       });
     }
     var tabs = document.getElementById('gunplaTabs');
