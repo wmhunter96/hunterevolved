@@ -496,7 +496,7 @@
       "location": "Top of toolbox",
       "qty": 1,
       "status": "",
-      "notes": "Porter-Cable PCC681L; good"
+      "notes": "Porter-Cable PCC681L, Type 5, 20V MAX, 26Wh; good"
     },
     {
       "id": "tb-top-05",
@@ -506,7 +506,7 @@
       "location": "Top of toolbox",
       "qty": 1,
       "status": "Needs repair",
-      "notes": "Porter-Cable PCC681L; failed, needs replacement",
+      "notes": "Porter-Cable PCC681L, Type 5, 20V MAX, 26Wh; failed, needs replacement",
       "fixLink": "https://www.amazon.com/dp/B07BGSM4XD"
     }
   ]
