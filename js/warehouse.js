@@ -258,8 +258,24 @@
     return d.innerHTML;
   }
 
+  // Forgiving search: case, spaces, hyphens and simple plurals don't matter,
+  // so "screw driver", "screw-drivers" and "Screwdriver" all find screwdrivers.
+  // Each word just has to appear somewhere in the item.
+  function singular(w) {
+    if (/(x|ch|sh|ss)es$/.test(w)) return w.slice(0, -2);
+    if (/[^s]s$/.test(w) && w.length > 3) return w.slice(0, -1);
+    return w;
+  }
+  function searchMatch(it, q) {
+    var hay = [it.name, it.category, it.location, it.status, it.notes].join(' ').toLowerCase().replace(/[^a-z0-9]+/g, '');
+    var words = q.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).map(singular);
+    if (!words.length) return true;
+    return hay.indexOf(singular(words.join(''))) !== -1 ||
+      words.every(function (w) { return hay.indexOf(w) !== -1; });
+  }
+
   function filtered() {
-    var q = els.search.value.trim().toLowerCase();
+    var q = els.search.value.trim();
     var cat = els.category.value;
     var loc = els.location.value;
     var lowOnly = els.low.checked;
@@ -268,7 +284,7 @@
       if (loc && it.location !== loc) return false;
       if (lowOnly && !needsAttention(it)) return false;
       if (!q) return true;
-      return [it.name, it.category, it.location, it.status, it.notes].join(' ').toLowerCase().indexOf(q) !== -1;
+      return searchMatch(it, q);
     }).sort(function (a, b) {
       var x = a[sortKey], y = b[sortKey];
       if (sortKey === 'qty') return (x - y) * sortDir;
