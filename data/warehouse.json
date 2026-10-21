@@ -26,8 +26,8 @@
       "id": "tb-d1-03",
       "kind": "tool",
       "name": "Box cutter",
-      "category": "General-purpose tools",
-      "location": "Drawer 1",
+      "category": "Cutters and pliers",
+      "location": "Drawer 8",
       "qty": 1,
       "status": "",
       "notes": "Orange"
@@ -36,8 +36,8 @@
       "id": "tb-d1-04",
       "kind": "tool",
       "name": "Self-locking tape measure",
-      "category": "General-purpose tools",
-      "location": "Drawer 1",
+      "category": "Measuring and testing",
+      "location": "Drawer 7",
       "qty": 1,
       "status": "",
       "notes": "Komelon; 12 ft"
@@ -156,8 +156,8 @@
       "id": "tb-d3-02",
       "kind": "tool",
       "name": "PVC pipe cutter",
-      "category": "Heavy-duty hand tools",
-      "location": "Drawer 3",
+      "category": "Cutters and pliers",
+      "location": "Drawer 8",
       "qty": 1,
       "status": "",
       "notes": "HDX; capacity 1-5/8 in (42 mm)"
@@ -251,7 +251,7 @@
       "kind": "tool",
       "name": "Tape measure",
       "category": "Measuring and testing",
-      "location": "Drawer 5",
+      "location": "Drawer 7",
       "qty": 1,
       "status": "",
       "notes": ""
