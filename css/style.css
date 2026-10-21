@@ -341,6 +341,10 @@ main.page:not(.wh-view-tool) .wh-tools-only { display: none !important; }
 .wh-tb-list li { background: #1b1b1b; border: 1px solid #333; border-radius: 4px; padding: .05rem .4rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .wh-tb-list li.empty, .wh-tb-list li.more { background: none; border-color: transparent; font-style: italic; }
 .wh-tb-count { font-size: .75rem; color: var(--fg-muted); }
+.wh-tb-body { display: grid; gap: .3rem; min-width: 0; }
+.wh-tb-name { font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wh-tb-top-label .wh-tb-name { display: block; margin-top: .15rem; color: rgba(255, 255, 255, .75); font-weight: 500; letter-spacing: .04em; }
+.wh-grid-name { color: var(--fg); font-weight: 600; }
 /* Drawer pull handle along the bottom edge */
 .wh-tb-handle { position: absolute; left: 30%; right: 30%; bottom: 5px; height: 4px; border-radius: 2px; background: var(--tb-accent); opacity: .85; }
 
@@ -415,6 +419,7 @@ main.page:not(.wh-view-tool) .wh-tools-only { display: none !important; }
 /* While filtering, non-matching drawers shrink so the matches stay on screen */
 .wh-tb-drawer.dim { min-height: 0; padding-block: .3rem .7rem; }
 .wh-tb-drawer.dim .wh-tb-list { display: none; }
+.wh-tb-drawer.dim .wh-tb-name { opacity: .8; }
 .wh-tb-drawer.dim .wh-tb-num { font-size: 1rem; }
 .wh-tb-list li.hit { color: #fff; background: rgba(255, 138, 61, .25); border-color: var(--accent); }
 .wh-tb-attn { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px #1c1c1c; }

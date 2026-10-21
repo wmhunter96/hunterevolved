@@ -9,6 +9,8 @@
   var DRAFT_KEY = 'warehouse-draft';
 
   var published = [];
+  // Drawer names from data/warehouse.json ("drawers": {"1": "...", "top": "..."}).
+  var drawerNames = {};
   var publishedProjects = [];
   var items = [];
   // Projects record the parts they used. Using a part takes it out of stock;
@@ -17,9 +19,11 @@
   var hasDraft = false;
   // Fingerprint of the published data a draft was started from. If the live
   // data changes later (a commit), an old draft would silently hide it, so the
-  // banner says so and offers the live version instead.
+  // page shows the live data instead and keeps the old draft aside ("shelved")
+  // until it's restored or deleted.
   var publishedStamp = '';
   var staleDraft = false;
+  var shelved = null;
   var draftBase = '';
   function stamp(s) {
     var h = 5381;
@@ -394,7 +398,7 @@
     if (els.location.value === TOP) topCls += ' selected';
     if (filtering) topCls += matches.top ? ' match' : ' dim';
     var html = '<div class="wh-tb-top-wrap"><button type="button" class="' + topCls + '" data-place="' + TOP + '" aria-pressed="' + (els.location.value === TOP) + '" aria-label="Drill bag on top of the toolbox">' +
-      '<span class="wh-tb-top-label">Drill bag</span>' +
+      '<span class="wh-tb-top-label">Drill bag' + (drawerNames.top ? '<span class="wh-tb-name">' + text(drawerNames.top) + '</span>' : '') + '</span>' +
       '<ul class="wh-tb-list">' + (chips(onTop) || '<li class="empty">Empty</li>') + '</ul>' +
       '<span class="wh-tb-count">' + count(onTop, 'top') + '</span>' + attn(onTop) + '</button></div>';
     TOOLBOX_UNITS.forEach(function (unit, u) {
@@ -410,7 +414,8 @@
         html += '<button type="button" class="' + cls + '" data-drawer="' + n + '" aria-pressed="' + (cls.indexOf('selected') !== -1) + '"' +
           ' aria-label="Drawer ' + n + ', ' + inside.length + ' tool' + (inside.length === 1 ? '' : 's') + '">' +
           '<span class="wh-tb-num">' + n + '</span>' +
-          '<ul class="wh-tb-list">' + (shown || '<li class="empty">Empty</li>') + '</ul>' +
+          '<span class="wh-tb-body">' + (drawerNames[n] ? '<span class="wh-tb-name">' + text(drawerNames[n]) + '</span>' : '') +
+          '<ul class="wh-tb-list">' + (shown || '<li class="empty">Empty</li>') + '</ul></span>' +
           '<span class="wh-tb-count">' + count(inside, n) + '</span>' + attn(inside) +
           '<span class="wh-tb-handle" aria-hidden="true"></span></button>';
       }
@@ -434,7 +439,7 @@
     var close = '<button type="button" class="wh-grid-close" data-clear aria-label="Close">&times;</button>';
     if (els.location.value === TOP) {
       var top = inView().filter(isTop);
-      els.gridPanel.innerHTML = '<div class="wh-grid-head"><h3>Drill bag</h3><span class="wh-muted">red bag on top of the toolbox</span>' + close + '</div>' +
+      els.gridPanel.innerHTML = '<div class="wh-grid-head"><h3>Drill bag</h3><span class="wh-muted">' + text(drawerNames.top || 'red bag on top of the toolbox') + '</span>' + close + '</div>' +
         (top.length ? '<ul class="wh-top-list">' + top.map(function (it) {
           return '<li data-id="' + it.id + '"><span>' + text(it.name) + '</span>' + (it.status ? ' <span class="wh-low">' + text(it.status) + '</span>' : '') + fixLink(it) +
             (it.notes ? '<small>' + text(it.notes) + '</small>' : '') + '</li>';
@@ -462,7 +467,7 @@
         }
     });
     var used = Object.keys(taken).length;
-    var html = '<div class="wh-grid-head"><h3>Drawer ' + n + '</h3><span class="wh-muted">' + GRID.cols + ' &times; ' + GRID.rows +
+    var html = '<div class="wh-grid-head"><h3>Drawer ' + n + '</h3>' + (drawerNames[n] ? '<span class="wh-grid-name">' + text(drawerNames[n]) + '</span>' : '') + '<span class="wh-muted">' + GRID.cols + ' &times; ' + GRID.rows +
       ' grid &middot; ' + GRID.inner + ' &middot; ' + used + '/' + GRID.cols * GRID.rows + ' cells used</span>' + close + '</div>';
     html += '<div class="wh-grid" style="--cols:' + GRID.cols + ';--rows:' + GRID.rows + '">';
     html += '<span class="wh-grid-corner"></span>';
@@ -563,18 +568,18 @@
     renderStats();
     renderTable();
     renderProjects();
-    els.banner.hidden = !hasDraft;
-    els.banner.classList.toggle('stale', staleDraft);
-    els.draftText.textContent = staleDraft
-      ? "You're looking at local changes saved before the live inventory last changed, so this isn't what's live."
+    els.banner.hidden = !hasDraft && !shelved;
+    els.banner.classList.toggle('stale', !!shelved);
+    els.draftText.textContent = shelved
+      ? 'Showing the live inventory. This browser also has older local changes from before it was last updated.'
       : "You have local changes that aren't on the live site yet.";
-    els.discard.textContent = staleDraft ? 'Use live version' : 'Discard';
-    els.discard.className = 'btn wh-btn ' + (staleDraft ? 'btn-primary' : 'btn-secondary');
-    els.exportBtn.className = 'btn wh-btn ' + (staleDraft ? 'btn-secondary' : 'btn-primary');
+    els.exportBtn.textContent = shelved ? 'Restore them' : 'Download JSON';
+    els.exportBtn.className = 'btn wh-btn ' + (shelved ? 'btn-secondary' : 'btn-primary');
+    els.discard.textContent = shelved ? 'Delete them' : 'Discard';
   }
 
   function commit() {
-    if (!hasDraft) { staleDraft = false; draftBase = publishedStamp; }
+    if (!hasDraft) { staleDraft = false; draftBase = publishedStamp; shelved = null; }
     hasDraft = true;
     writeDraft();
     render();
@@ -879,6 +884,17 @@
   });
 
   els.exportBtn.addEventListener('click', function () {
+    if (shelved) {
+      items = normalize(shelved.items);
+      projects = normalizeProjects(shelved.projects || publishedProjects);
+      draftBase = String(shelved.base || '');
+      shelved = null;
+      hasDraft = true;
+      staleDraft = true;
+      resetForm();
+      render();
+      return;
+    }
     var json = JSON.stringify({ updated: today(), items: items, projects: projects }, null, 2) + '\n';
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
@@ -890,10 +906,12 @@
   });
 
   els.discard.addEventListener('click', function () {
-    if (!confirm('Throw away local changes and go back to the published inventory?')) return;
+    if (!confirm(shelved ? 'Delete the older local changes saved in this browser?'
+      : 'Throw away local changes and go back to the published inventory?')) return;
     clearDraft();
     hasDraft = false;
     staleDraft = false;
+    shelved = null;
     items = normalize(published);
     projects = normalizeProjects(publishedProjects);
     resetForm();
@@ -1223,11 +1241,12 @@
     .catch(function () { return { items: [] }; })
     .then(function (data) {
       published = normalize(data.items);
+      drawerNames = data.drawers && typeof data.drawers === 'object' ? data.drawers : {};
       publishedProjects = normalizeProjects(data.projects);
       publishedStamp = stamp(JSON.stringify([data.items || [], data.projects || []]));
       var draft = readDraft();
+      if (draft && draft.base !== publishedStamp) { shelved = draft; draft = null; }
       hasDraft = !!draft;
-      staleDraft = !!draft && draft.base !== publishedStamp;
       draftBase = draft ? String(draft.base || '') : publishedStamp;
       items = normalize(draft ? draft.items : published);
       projects = normalizeProjects(draft && draft.projects ? draft.projects : publishedProjects);
