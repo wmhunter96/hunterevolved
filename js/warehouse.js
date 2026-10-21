@@ -58,6 +58,8 @@
     importList: $('whImportList'), importListFile: $('whImportListFile'), importConfirm: $('whImportConfirm'),
     importConfirmText: $('whImportConfirmText'), importReplace: $('whImportReplace'), importCancel: $('whImportCancel'),
     importMsg: $('whImportMsg'), importChanges: $('whImportChanges'),
+    optimize: $('whOptimize'), optimizePanel: $('whOptimizePanel'), optimizeText: $('whOptimizeText'),
+    optimizeList: $('whOptimizeList'), optimizeApply: $('whOptimizeApply'), optimizeCancel: $('whOptimizeCancel'),
     categoryList: $('whCategoryList'), locationList: $('whLocationList'),
     body: $('whBody'), empty: $('whEmpty'), lowLabel: $('whLowLabel'),
     gridPanel: $('whGridPanel'),
@@ -971,6 +973,7 @@
       pendingImport = fromExport(data);
       var tools = pendingImport.items.filter(function (it) { return it.kind === 'tool'; }).length;
       els.importMsg.hidden = true;
+      els.optimizePanel.hidden = true;
       var changes = importChanges(pendingImport);
       var tally = {};
       changes.forEach(function (c) { tally[c.kind] = (tally[c.kind] || 0) + 1; });
@@ -1002,6 +1005,109 @@
   els.importCancel.addEventListener('click', function () {
     pendingImport = null;
     els.importConfirm.hidden = true;
+  });
+
+  // Optimize button: suggests drawer moves so like goes with like. Each tool is
+  // scored against every drawer by shared words (drawer category counts 3, each
+  // other tool in the drawer 1 per word); a move is suggested only when another
+  // drawer with a similar tool in it clearly beats the current one. Nothing moves until it's ticked + applied.
+  var STOP = { and: 1, set: 1, kit: 1, the: 1, with: 1, of: 1, for: 1, piece: 1, tool: 1, tools: 1, assorted: 1, old: 1, small: 1, general: 1, purpose: 1 };
+  function stem(w) { return w.replace(/(ing|ers|er|es|s|e)$/, ''); }
+  function words(s) {
+    var seen = {};
+    return String(s || '').toLowerCase().split(/[^a-z0-9]+/).filter(function (w) {
+      if (w.length < 3 || STOP[w]) return false;
+      w = stem(w);
+      if (seen[w]) return false;
+      return (seen[w] = true);
+    }).map(stem);
+  }
+  function suggestMoves() {
+    var tools = items.filter(function (it) { return it.kind === 'tool' && drawerOf(it); });
+    var drawers = {};
+    tools.forEach(function (it) {
+      var n = drawerOf(it), d = drawers[n] || (drawers[n] = { tools: [], cats: {} });
+      d.tools.push(it);
+      d.cats[it.category] = (d.cats[it.category] || 0) + 1;
+    });
+    Object.keys(drawers).forEach(function (n) {
+      var d = drawers[n];
+      d.category = Object.keys(d.cats).sort(function (a, b) { return d.cats[b] - d.cats[a]; })[0] || '';
+      d.catWords = words(d.category);
+    });
+    function score(it, n, mine) {
+      var d = drawers[n], s = 0, buddies = [];
+      words(it.name).forEach(function (w) {
+        if (d.catWords.indexOf(w) !== -1) s += 3;
+        d.tools.forEach(function (o) {
+          if (o === it || words(o.name).indexOf(w) === -1) return;
+          s += 1;
+          if (buddies.indexOf(o.name) === -1) buddies.push(o.name);
+        });
+      });
+      return { score: s, buddies: buddies };
+    }
+    var out = [];
+    tools.forEach(function (it) {
+      var here = drawerOf(it), cur = score(it, here).score, best = null;
+      Object.keys(drawers).forEach(function (n) {
+        n = Number(n);
+        if (n === here) return;
+        var sc = score(it, n);
+        if (!best || sc.score > best.score) best = { n: n, score: sc.score, buddies: sc.buddies };
+      });
+      // Needs a real neighbour in the target drawer, not just a word in its category name.
+      if (best && best.buddies.length && best.score >= 3 && best.score >= cur + 2) {
+        var d = drawers[best.n];
+        out.push({ it: it, from: here, to: best.n, category: d.category,
+          why: 'goes with ' + best.buddies.slice(0, 3).join(', ') + (best.buddies.length > 3 ? '…' : '') });
+      }
+    });
+    return out;
+  }
+
+  var pendingMoves = [];
+  els.optimize.addEventListener('click', function () {
+    els.importConfirm.hidden = true;
+    pendingMoves = suggestMoves();
+    els.optimizeText.textContent = pendingMoves.length
+      ? pendingMoves.length + ' suggested move' + (pendingMoves.length === 1 ? '' : 's') + ' to keep like tools together. Untick any you don\'t want.'
+      : 'Every tool is already with its kind. No moves to suggest.';
+    els.optimizeList.innerHTML = pendingMoves.map(function (m, i) {
+      return '<li><label><input type="checkbox" data-move="' + i + '" checked><span><strong>' + text(m.it.name) + '</strong> ' +
+        'Drawer ' + m.from + ' \u2192 Drawer ' + m.to + '<small>' + text(m.why) + '</small></span></label></li>';
+    }).join('');
+    els.optimizeList.hidden = !pendingMoves.length;
+    els.optimizeApply.hidden = !pendingMoves.length;
+    els.optimizeCancel.textContent = pendingMoves.length ? 'Cancel' : 'Close';
+    syncOptimizeApply();
+    els.optimizePanel.hidden = false;
+  });
+  function syncOptimizeApply() {
+    var n = els.optimizeList.querySelectorAll('input:checked').length;
+    els.optimizeApply.textContent = 'Move ' + n;
+    els.optimizeApply.disabled = !n;
+  }
+  els.optimizeList.addEventListener('change', syncOptimizeApply);
+  els.optimizeApply.addEventListener('click', function () {
+    var moved = 0;
+    els.optimizeList.querySelectorAll('input:checked').forEach(function (box) {
+      var m = pendingMoves[Number(box.getAttribute('data-move'))];
+      if (!m) return;
+      m.it.location = DRAWERS[m.to - 1];
+      m.it.category = m.category;
+      m.it.gridX = m.it.gridY = null; // its old Gridfinity spot was in the other drawer
+      moved++;
+    });
+    pendingMoves = [];
+    els.optimizePanel.hidden = true;
+    if (!moved) return;
+    commit();
+    importMessage('Moved ' + moved + ' tool' + (moved === 1 ? '' : 's') + '. Download JSON to keep it.');
+  });
+  els.optimizeCancel.addEventListener('click', function () {
+    pendingMoves = [];
+    els.optimizePanel.hidden = true;
   });
 
   els.importBtn.addEventListener('click', function () { els.importFile.click(); });

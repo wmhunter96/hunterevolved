@@ -47,6 +47,7 @@
     <select id="whLocation" class="wh-input wh-items-only wh-parts-only" aria-label="Filter by location"></select>
     <label class="wh-check wh-items-only wh-parts-only"><input type="checkbox" id="whLow"> <span id="whLowLabel">Low stock only</span></label>
     <button type="button" class="btn btn-secondary wh-btn wh-icon-btn" id="whExportList" title="Export everything (JSON)" aria-label="Export everything as JSON"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9"/><path d="M3 9h11M3 15h18M9 9v12"/><path d="M17 3h4v4M21 3l-6 6"/></svg></button>
+    <button type="button" class="btn btn-secondary wh-btn wh-icon-btn wh-tools-only" id="whOptimize" title="Suggest drawer moves" aria-label="Suggest drawer moves"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16M3 16l4 4 4-4"/><path d="M17 20V4M13 8l4-4 4 4"/></svg></button>
     <button type="button" class="btn btn-secondary wh-btn wh-icon-btn" id="whImportList" title="Import JSON" aria-label="Import JSON"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 14v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></button>
     <input type="file" id="whImportListFile" accept="application/json,.json" hidden>
     <button type="button" class="btn btn-secondary wh-btn" id="whManageToggle" aria-pressed="false">Manage</button>
@@ -59,6 +60,14 @@
       <button type="button" class="btn btn-secondary wh-btn" id="whImportCancel">Cancel</button>
     </span>
     <ul class="wh-changes" id="whImportChanges" hidden></ul>
+  </div>
+  <div class="wh-banner" id="whOptimizePanel" hidden>
+    <span id="whOptimizeText"></span>
+    <span class="wh-banner-actions">
+      <button type="button" class="btn btn-primary wh-btn" id="whOptimizeApply">Move</button>
+      <button type="button" class="btn btn-secondary wh-btn" id="whOptimizeCancel">Cancel</button>
+    </span>
+    <ul class="wh-changes wh-moves" id="whOptimizeList" hidden></ul>
   </div>
   <p class="wh-banner wh-notice" id="whImportMsg" role="status" hidden></p>
 
