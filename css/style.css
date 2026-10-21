@@ -222,6 +222,8 @@ button.btn-primary { border: none; }
 }
 .wh-banner[hidden], .wh-form[hidden], .wh-btn[hidden] { display: none; }
 .wh-banner-actions { display: flex; gap: .5rem; }
+.wh-notice { border-color: var(--accent-2); background: rgba(79, 208, 160, .08); }
+.wh-notice.error { border-color: #ff6b6b; background: rgba(255, 107, 107, .08); }
 
 .wh-form { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-alt); padding: 1.25rem; margin-bottom: 1rem; }
 .wh-form h2 { margin: 0 0 1rem; font-size: 1.15rem; }
