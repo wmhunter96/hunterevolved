@@ -532,6 +532,171 @@
       "status": "Needs repair",
       "notes": "Porter-Cable PCC681L, Type 5, 20V MAX, 26Wh; failed, needs replacement",
       "fixLink": "https://www.amazon.com/dp/B07BGSM4XD"
+    },
+    {
+      "id": "pt-01",
+      "kind": "part",
+      "name": "SG90 9g micro servo",
+      "category": "Servos",
+      "location": "",
+      "qty": 5,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0BJQ2QTHG",
+      "notes": "Beffkkip; plastic gear; 5-pack"
+    },
+    {
+      "id": "pt-02",
+      "kind": "part",
+      "name": "MG90S 9g micro servo, metal gear",
+      "category": "Servos",
+      "location": "",
+      "qty": 10,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0BWJ26PX2",
+      "notes": "Miuzei; 2.0 kg·cm, 0.08 s/60°, 180° digital; 10-pack"
+    },
+    {
+      "id": "pt-03",
+      "kind": "part",
+      "name": "Pololu 5V 5A step-down voltage regulator",
+      "category": "Power",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0BJKV91CK",
+      "notes": "Pololu; on order, arriving Tue Oct 27, 2026 (order 111-9749427-7648246)"
+    },
+    {
+      "id": "pt-04",
+      "kind": "part",
+      "name": "Buck converter module, 9-36V to 5V 5A, dual USB",
+      "category": "Power",
+      "location": "",
+      "qty": 2,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B07XXWQ49N",
+      "notes": "UCTRONICS; 2-pack"
+    },
+    {
+      "id": "pt-05",
+      "kind": "part",
+      "name": "Electrolytic capacitor 47uF 35V",
+      "category": "Capacitors",
+      "location": "",
+      "qty": 24,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0FL6ZHQX2",
+      "notes": "MECCANIXITY; high frequency, 5x11 mm"
+    },
+    {
+      "id": "pt-06",
+      "kind": "part",
+      "name": "Electrolytic capacitor 470uF 16V",
+      "category": "Capacitors",
+      "location": "",
+      "qty": 15,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0CMQCQMH5",
+      "notes": "ALLECIN; 8x12 mm, aluminum"
+    },
+    {
+      "id": "pt-07",
+      "kind": "part",
+      "name": "Ceramic capacitor 0.1uF (104, 100nF)",
+      "category": "Capacitors",
+      "location": "",
+      "qty": 120,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B08B3VCK42",
+      "notes": "mxuteuk; multilayer monolithic, 5.08 mm lead pitch"
+    },
+    {
+      "id": "pt-08",
+      "kind": "part",
+      "name": "Metal film resistor assortment, 0 ohm-10M ohm",
+      "category": "Resistors",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0CDWVLTM1",
+      "notes": "ALLECIN; 50 values, 1/4 W, ±1%; kit"
+    },
+    {
+      "id": "pt-09",
+      "kind": "part",
+      "name": "Pin header strip, 40-pin 2.54 mm, male + female",
+      "category": "Connectors",
+      "location": "",
+      "qty": 40,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B01MQ48T2V",
+      "notes": "OCR; single row, breakaway; 2 packs of 20"
+    },
+    {
+      "id": "pt-10",
+      "kind": "part",
+      "name": "XT30 pigtail, male + female",
+      "category": "Connectors",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B09LYHHS9J",
+      "notes": "ZHOFONET; pack count not on the order"
+    },
+    {
+      "id": "pt-11",
+      "kind": "part",
+      "name": "USB-C female to Micro USB male adapter",
+      "category": "Adapters",
+      "location": "",
+      "qty": 4,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0GR3XK1FG",
+      "notes": "Silver; 4-pack"
+    },
+    {
+      "id": "pt-12",
+      "kind": "part",
+      "name": "Mini rocker switch, SPST on/off, pre-wired",
+      "category": "Switches",
+      "location": "",
+      "qty": 10,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B07S2QJKTX",
+      "notes": "DaierTek; KCD1, 2-pin, 12V 20A / 120V 10A, black; 10-pack"
+    },
+    {
+      "id": "pt-13",
+      "kind": "part",
+      "name": "0.96\" OLED display, SSD1306 128x64 I2C",
+      "category": "Displays",
+      "location": "",
+      "qty": 4,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0GBVWBWCR",
+      "notes": "White; 4-pack"
+    },
+    {
+      "id": "pt-14",
+      "kind": "part",
+      "name": "18 AWG wire, red + black",
+      "category": "Wire",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B0G4JWWVH7",
+      "notes": "Tinned copper stranded, PVC; 10 m (32.8 ft), with heat shrink tubing"
+    },
+    {
+      "id": "pt-15",
+      "kind": "part",
+      "name": "30 AWG silicone wire, 6 colors",
+      "category": "Wire",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B07G2SWB19",
+      "notes": "TUOFENG; stranded tinned copper, 66 ft each color"
     }
   ]
 }
