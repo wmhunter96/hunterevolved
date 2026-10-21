@@ -259,14 +259,26 @@
       "notes": "FNIRSI DMT-99"
     },
     {
-      "id": "tb-d7-02",
+      "id": "tb-d7-07",
       "kind": "tool",
-      "name": "Tape measure",
+      "name": "Stanley PowerLock tape measure, 25 ft",
       "category": "Measuring",
       "location": "Drawer 7",
       "qty": 1,
       "status": "",
-      "notes": ""
+      "link": "https://www.amazon.com/dp/B08Z48PYH8",
+      "notes": "Stanley 33-42530 combo pack (25 ft + 30 ft), chrome"
+    },
+    {
+      "id": "tb-d7-08",
+      "kind": "tool",
+      "name": "Stanley PowerLock tape measure, 30 ft",
+      "category": "Measuring",
+      "location": "Drawer 7",
+      "qty": 1,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B08Z48PYH8",
+      "notes": "Stanley 33-42530 combo pack (25 ft + 30 ft), chrome"
     },
     {
       "id": "tb-d7-03",
