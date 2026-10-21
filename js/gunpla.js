@@ -2,7 +2,7 @@
 //
 // Each entry in kits[]:
 //   name    (required)  e.g. "RX-78-2 Gundam (Revive)"
-//   grade   (required)  PG, MG, RG, HG, EG, SD, or anything else ("Other")
+//   grade   (required)  PG, MGEX, MG, FM, RG, HG, EG, SD, or anything else ("Other")
 //   scale               e.g. "1/144"
 //   series              e.g. "Mobile Suit Gundam"
 //   year                year built, e.g. 2024
@@ -10,12 +10,15 @@
 //   photo               path under images/gunpla/ or a full URL
 //   link                optional (Gunpla wiki, build log, etc.)
 //   notes               one-line blurb
+//   location            where it's displayed, e.g. "Detolf 1 · Shelf 2"
 (function () {
   var DATA_URL = 'data/gunpla.json';
   // Display order, biggest/most detailed grades first.
   var GRADES = [
     { id: 'PG', label: 'Perfect Grade' },
+    { id: 'MGEX', label: 'Master Grade Extreme' },
     { id: 'MG', label: 'Master Grade' },
+    { id: 'FM', label: 'Full Mechanics' },
     { id: 'RG', label: 'Real Grade' },
     { id: 'HG', label: 'High Grade' },
     { id: 'EG', label: 'Entry Grade' },
@@ -54,6 +57,7 @@
       '<h3>' + esc(kit.name) + '</h3>' +
       (meta ? '<p class="meta">' + meta + '</p>' : '') +
       (kit.notes ? '<p>' + esc(kit.notes) + '</p>' : '') +
+      (kit.location ? '<p class="meta">' + esc(kit.location) + '</p>' : '') +
       (kit.finish ? '<span class="badge">' + esc(kit.finish) + '</span>' : '') +
       '</' + tag + '>';
   }
