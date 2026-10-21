@@ -6,7 +6,8 @@
 //   status              "backlog" for kits not built yet (default: built)
 //   scale               e.g. "1/144"
 //   brand               e.g. "Bandai", "Kotobukiya Maruttoys" (defaults to Bandai)
-//   series              e.g. "Mobile Suit Gundam"
+//   series              the show/franchise, e.g. "Gundam 00", "The Witch from Mercury"
+//   source              optional specific title within it, e.g. "Gundam 00P", "Endless Waltz"
 //   year                year built, e.g. 2024
 //   finish              e.g. "Straight build", "Panel lined", "Painted", "Custom paint"
 //   photo               path under images/gunpla/ or a full URL
@@ -17,7 +18,7 @@
 //   level               the level within that shelf, e.g. "Top", "Shelf 2"
 //
 // Filters: search, room -> shelf -> level, grade, brand, series. Every tag on
-// a card (grade, brand, series, room, shelf, level, finish) is clickable and
+// a card (grade, brand, series, source, room, shelf, level, finish) is clickable and
 // filters to matching kits. Active filters are kept in the URL query string,
 // so a filtered view can be linked (e.g. gunpla.html?brand=Kotobukiya+Maruttoys).
 (function () {
@@ -43,7 +44,8 @@
     { key: 'level', label: 'Level', none: 'Level not set' },
     { key: 'grade', label: 'Grade' },
     { key: 'brand', label: 'Brand' },
-    { key: 'series', label: 'Series', none: 'Series not set' },
+    { key: 'series', label: 'Series', none: 'No series' },
+    { key: 'source', label: 'Source', hidden: true },
     { key: 'finish', label: 'Finish', hidden: true }
   ];
 
@@ -104,7 +106,7 @@
       if (state[key] === NONE ? v !== '' : v !== state[key]) return false;
     }
     if (state.q) {
-      var hay = [kit.name, kit.grade, kit.scale, val(kit, 'brand'), kit.series, kit.notes, kit.finish,
+      var hay = [kit.name, kit.grade, kit.scale, val(kit, 'brand'), kit.series, kit.source, kit.notes, kit.finish,
         kit.room, kit.shelf, kit.level].join(' ').toLowerCase();
       var words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
       for (var w = 0; w < words.length; w++) if (hay.indexOf(words[w]) === -1) return false;
@@ -179,7 +181,8 @@
     var art = kit.photo ? ' style="--card-art: url(\'' + esc(kit.photo) + '\')"' : '';
     var tags = [tag('grade', gradeOf(kit), kit.grade && kit.scale ? kit.grade + ' ' + kit.scale : (kit.grade || kit.scale))];
     tags.push(tag('brand', val(kit, 'brand'), val(kit, 'brand'), 'gp-tag-brand'));
-    if (kit.series) tags.push(tag('series', kit.series, kit.series));
+    if (kit.series) tags.push(tag('series', kit.series, kit.series, 'gp-tag-series'));
+    if (kit.source) tags.push(tag('source', kit.source, kit.source, 'gp-tag-source'));
     var where = [];
     if (kit.room) where.push(tag('room', kit.room, kit.room, 'gp-tag-loc'));
     if (kit.shelf) where.push(tag('shelf', kit.shelf, kit.shelf, 'gp-tag-loc'));

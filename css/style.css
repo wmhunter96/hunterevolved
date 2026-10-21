@@ -469,3 +469,7 @@ main.page:not(.wh-view-tool) .wh-tools-only { display: none !important; }
   .wh-tb-top-wrap { padding: 0 3%; }
   .wh-tb-top-label .wh-tb-name { max-width: 7rem; }
 }
+.gp-tag-series { color: #b9a4ff; background: rgba(185, 164, 255, .1); border-color: rgba(185, 164, 255, .35); }
+.gp-tag-series:hover, .gp-tag-series:focus-visible { border-color: #b9a4ff; background: rgba(185, 164, 255, .18); }
+.gp-tag-source { color: var(--fg-muted); background: none; border-color: var(--border); border-style: dashed; font-weight: 500; }
+.gp-tag-source:hover, .gp-tag-source:focus-visible { color: var(--fg); border-color: var(--fg-muted); background: none; }

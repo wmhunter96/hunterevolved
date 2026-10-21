@@ -111,6 +111,7 @@ and `notes`.
   "grade": "HG",
   "scale": "1/144",
   "series": "Mobile Suit Gundam",
+  "source": "Gundam The Origin",
   "year": 2024,
   "finish": "Panel lined",
   "photo": "images/gunpla/rx-78-2.jpg",
@@ -128,12 +129,14 @@ HG, EG, SD, then Other; within a grade, newest builds first. Photos go in
 `images/gunpla/` and show as the card background. With no kits the page
 shows a "coming soon" placeholder.
 
-`brand` defaults to Bandai. Set `"status": "backlog"` on a kit that isn't built yet;
+`series` is the show or franchise a kit belongs to ("Gundam 00", "The Witch from
+Mercury"); `source` is optional and names the specific title within it
+("Gundam 00P", "Endless Waltz"). Both show as clickable tags. `brand` defaults to Bandai. Set `"status": "backlog"` on a kit that isn't built yet;
 it moves to the page's Backlog tab (`gunpla.html?status=backlog`). When you
 build it, delete the `status` line and give it its display location. `room` > `shelf` > `level` say where a kit is
 displayed; leave any of them out if unknown. The page has a search box and
 Room / Shelf / Level / Grade / Brand / Series dropdowns that narrow each other,
-and every tag on a card (grade, brand, series, room, shelf, level, finish) is a
+and every tag on a card (grade, brand, series, source, room, shelf, level, finish) is a
 button that filters to matching kits. Filters live in the URL, so a view can be
 linked, e.g. `gunpla.html?brand=Kotobukiya+Maruttoys` or
 `gunpla.html?shelf=Detolf+2&level=Shelf+4`.
