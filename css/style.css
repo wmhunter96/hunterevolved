@@ -7,7 +7,8 @@
   --accent-2: #4fd0a0;
   --link: #8a6a66;
   --border: #2c3335;
-  --tb-accent: #d62828; /* toolbox map */
+  --tb-accent: #febd17; /* toolbox map (DEWALT yellow) */
+  --tb-bag: #c62828; /* red drill bag on top */
   --radius: 8px;
   --max-width: 1100px;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -298,7 +299,7 @@ button.btn-primary { border: none; }
   display: flex; justify-content: space-between; align-items: center;
   height: 22px; margin: 0 -8px 8px; padding: 0 12px;
   background: var(--tb-accent); border-radius: 8px 8px 0 0;
-  color: #fff; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+  color: #1a1203; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
 }
 /* Latches at each corner of the lid */
 .wh-tb-lid::before, .wh-tb-lid::after { content: ""; width: 18px; height: 10px; border-radius: 3px; background: #111; }
@@ -314,7 +315,7 @@ button.btn-primary { border: none; }
 }
 .wh-tb-drawer:first-of-type { margin-top: 0; }
 .wh-tb-drawer:hover, .wh-tb-drawer:focus-visible { border-color: var(--tb-accent); outline: none; }
-.wh-tb-drawer.selected { border-color: var(--tb-accent); background: #3a1d1d; box-shadow: 0 0 0 1px var(--tb-accent); }
+.wh-tb-drawer.selected { border-color: var(--tb-accent); background: #3a3320; box-shadow: 0 0 0 1px var(--tb-accent); }
 .wh-tb-drawer.hot { border-color: var(--accent-2); box-shadow: 0 0 0 1px var(--accent-2); }
 .wh-tb-num { font-size: 1.4rem; font-weight: 800; color: var(--tb-accent); text-align: center; }
 .wh-tb-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem .4rem; font-size: .8rem; color: var(--fg-muted); min-width: 0; }
@@ -344,7 +345,7 @@ button.btn-primary { border: none; }
 .wh-grid-cell { aspect-ratio: 1; background: #262626; border: 1px solid #333; border-radius: 4px; }
 .wh-grid-tool {
   z-index: 1; display: flex; align-items: center; justify-content: center; overflow: hidden;
-  background: rgba(214, 40, 40, .18); border: 1px solid var(--tb-accent); border-radius: 5px;
+  background: rgba(254, 189, 23, .16); border: 1px solid var(--tb-accent); border-radius: 5px;
   color: var(--fg); font-size: .7rem; line-height: 1.15; text-align: center; padding: 2px; cursor: default;
 }
 .wh-grid-tool span { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: break-word; }
@@ -352,11 +353,11 @@ button.btn-primary { border: none; }
 .wh-grid-tool.hot { background: rgba(79, 208, 160, .25); border-color: var(--accent-2); }
 .wh-grid-tool.clash { background: rgba(255, 138, 61, .2); border-color: var(--accent); border-style: dashed; }
 .wh-grid-front {
-  background: var(--tb-accent); color: #fff; border-radius: 0 0 8px 8px;
+  background: var(--tb-accent); color: #1a1203; border-radius: 0 0 8px 8px;
   font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; text-align: center; padding: .2rem;
 }
 .wh-chip { display: inline-block; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px; padding: 0 .4rem; margin: .15rem 0; color: var(--fg); }
-.wh-spot { font-size: .75rem; color: #ff6b6b; border: 1px solid #5a2222; border-radius: 4px; padding: 0 .3rem; margin-left: .25rem; }
+.wh-spot { font-size: .75rem; color: #febd17; border: 1px solid #5a4a1a; border-radius: 4px; padding: 0 .3rem; margin-left: .25rem; }
 .wh-table tr.wh-hot td { background: rgba(79, 208, 160, .08); }
 @media (max-width: 900px) {
   .wh-tb-layout { grid-template-columns: minmax(0, 1fr); }
@@ -372,16 +373,27 @@ button.btn-primary { border: none; }
 .wh-stat-toggle:not(:disabled):hover { border-color: var(--accent); }
 .wh-stat-toggle.alert .stat-value { color: var(--accent); }
 .wh-stat-toggle.active { border-color: var(--accent); background: rgba(255, 138, 61, .1); }
+.wh-tb-top-wrap { position: relative; padding: 22px 10% 0; margin-bottom: -2px; }
+/* Red soft tool bag holding the drills, sitting on the top unit */
 .wh-tb-top {
   position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .75rem;
-  width: 100%; min-height: 52px; padding: .5rem .75rem; margin-bottom: 2px;
-  background: #1c1c1c; border: 2px dashed #444; border-radius: 10px;
-  color: var(--fg); font: inherit; text-align: left; cursor: pointer; transition: border-color .15s, opacity .15s;
+  width: 100%; min-height: 56px; padding: .9rem .75rem .5rem;
+  background: var(--tb-bag); border: 2px solid #000; border-radius: 22px 22px 6px 6px;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25);
+  color: #fff; font: inherit; text-align: left; cursor: pointer; transition: box-shadow .15s, opacity .15s;
 }
-.wh-tb-top:hover, .wh-tb-top:focus-visible { border-color: var(--tb-accent); outline: none; }
-.wh-tb-top.selected { border-style: solid; border-color: var(--tb-accent); background: #3a1d1d; }
-.wh-tb-top-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--tb-accent); white-space: nowrap; }
-.wh-tb-drawer.match, .wh-tb-top.match { border-color: var(--accent); background: #2e2219; box-shadow: 0 0 0 1px var(--accent); }
+/* Zipper along the top of the bag */
+.wh-tb-top::after { content: ""; position: absolute; left: 14px; right: 14px; top: 6px; height: 0; border-top: 2px dashed rgba(0, 0, 0, .45); }
+/* Carry handle */
+.wh-tb-bag-handle { position: absolute; z-index: 1; left: 50%; top: 4px; width: 30%; height: 24px; transform: translateX(-50%); border: 5px solid #8e1b1b; border-bottom: 0; border-radius: 14px 14px 0 0; pointer-events: none; }
+.wh-tb-top:hover, .wh-tb-top:focus-visible { outline: none; box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25), 0 0 0 2px var(--tb-accent); }
+.wh-tb-top.selected { box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25), 0 0 0 3px var(--tb-accent); }
+.wh-tb-top-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #fff; white-space: nowrap; }
+.wh-tb-top .wh-tb-list li { background: rgba(0, 0, 0, .3); border-color: rgba(0, 0, 0, .4); color: #fff; }
+.wh-tb-top .wh-tb-list li.empty, .wh-tb-top .wh-tb-list li.more { background: none; border-color: transparent; }
+.wh-tb-top .wh-tb-count { color: rgba(255, 255, 255, .8); }
+.wh-tb-drawer.match { border-color: var(--accent); background: #2e2219; box-shadow: 0 0 0 1px var(--accent); }
+.wh-tb-top.match { box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25), 0 0 0 3px var(--accent); }
 .wh-tb-drawer.dim, .wh-tb-top.dim { opacity: .3; }
 .wh-tb-list li.hit { color: #fff; background: rgba(255, 138, 61, .25); border-color: var(--accent); }
 .wh-tb-attn { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px #1c1c1c; }
