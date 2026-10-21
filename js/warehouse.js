@@ -57,7 +57,7 @@
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
     importList: $('whImportList'), importListFile: $('whImportListFile'), importConfirm: $('whImportConfirm'),
     importConfirmText: $('whImportConfirmText'), importReplace: $('whImportReplace'), importCancel: $('whImportCancel'),
-    importMsg: $('whImportMsg'),
+    importMsg: $('whImportMsg'), importChanges: $('whImportChanges'),
     categoryList: $('whCategoryList'), locationList: $('whLocationList'),
     body: $('whBody'), empty: $('whEmpty'), lowLabel: $('whLowLabel'),
     gridPanel: $('whGridPanel'),
@@ -792,8 +792,9 @@
     return out;
   }
 
-  function exportAll() {
+  function exportData(items, projects) {
     var byName = function (a, b) { return a.name.localeCompare(b.name); };
+    var find = function (id) { return items.filter(function (it) { return it.id === id; })[0]; };
     var parts = items.filter(function (it) { return it.kind === 'part'; }).sort(byName).map(function (it) {
       return compact({ name: it.name, qty: it.qty, category: it.category, location: it.location,
         lowAt: it.minQty, runningLow: isLow(it), link: it.link, fixLink: it.fixLink, notes: it.notes });
@@ -809,11 +810,16 @@
       return compact({ name: p.name, status: p.status, notes: p.notes,
         used: p.uses.map(function (u) { var it = find(u.itemId); return { name: it ? it.name : u.name, qty: u.qty, date: u.date }; }) });
     });
+    return { parts: parts, tools: tools, projects: proj };
+  }
+
+  function exportAll() {
+    var data = exportData(items, projects);
     return JSON.stringify({
       exported: today(),
       about: 'Workshop inventory. Tools live in ' + DRAWERS.length + ' toolbox drawers (Drawer 1 at the top) or on top of the toolbox; ' +
         'gridSpot is a ' + GRID.cols + 'x' + GRID.rows + ' Gridfinity cell (column letter, row number from the back). qty is what is on hand.',
-      parts: parts, tools: tools, projects: proj
+      parts: data.parts, tools: data.tools, projects: data.projects
     }, null, 2) + '\n';
   }
 
@@ -901,6 +907,43 @@
     return { items: list, projects: proj };
   }
 
+  // What an import would change, compared field by field in export form.
+  // Items are matched by kind + name (duplicates paired up, exact matches first).
+  var DIFF_FIELDS = ['location', 'category', 'qty', 'status', 'consumable', 'lowAt', 'gridSpot', 'gridSize', 'link', 'fixLink', 'notes'];
+  var DIFF_LABELS = { lowAt: 'low at', gridSpot: 'grid spot', gridSize: 'grid size', fixLink: 'fix link' };
+  function importChanges(next) {
+    var a = exportData(items, projects), b = exportData(next.items, next.projects);
+    var out = [];
+    ['parts', 'tools'].forEach(function (key) {
+      var noun = key === 'parts' ? 'part' : 'tool';
+      var olds = a[key].slice(), news = [];
+      b[key].forEach(function (n) {
+        var same = -1;
+        for (var i = 0; i < olds.length; i++) if (JSON.stringify(olds[i]) === JSON.stringify(n)) { same = i; break; }
+        if (same !== -1) olds.splice(same, 1); else news.push(n);
+      });
+      news.forEach(function (n) {
+        var i = -1;
+        for (var j = 0; j < olds.length; j++) if (olds[j].name === n.name) { i = j; break; }
+        if (i === -1) { out.push({ kind: 'add', text: 'Added ' + noun + ' ' + n.name + (n.location ? ' (' + n.location + ')' : '') }); return; }
+        var o = olds.splice(i, 1)[0], bits = [];
+        var moved = (o.location || '') !== (n.location || '');
+        DIFF_FIELDS.forEach(function (f) {
+          if (f === 'location' || String(o[f] == null ? '' : o[f]) === String(n[f] == null ? '' : n[f])) return;
+          bits.push((DIFF_LABELS[f] || f) + ' ' + (o[f] == null || o[f] === '' ? '(none)' : o[f]) + ' \u2192 ' + (n[f] == null || n[f] === '' ? '(none)' : n[f]));
+        });
+        if (moved) out.push({ kind: 'move', text: n.name + ': ' + (o.location || '(nowhere)') + ' \u2192 ' + (n.location || '(nowhere)') + (bits.length ? '; ' + bits.join('; ') : '') });
+        else if (bits.length) out.push({ kind: 'edit', text: n.name + ': ' + bits.join('; ') });
+      });
+      olds.forEach(function (o) { out.push({ kind: 'del', text: 'Removed ' + noun + ' ' + o.name + (o.location ? ' (' + o.location + ')' : '') }); });
+    });
+    if (JSON.stringify(a.projects) !== JSON.stringify(b.projects)) {
+      out.push({ kind: 'edit', text: 'Projects: ' + a.projects.length + ' \u2192 ' + b.projects.length + ' (contents differ)' });
+    }
+    var order = { move: 0, edit: 1, add: 2, del: 3 };
+    return out.sort(function (x, y) { return order[x.kind] - order[y.kind]; });
+  }
+
   var pendingImport = null, importMsgTimer = null;
   function importMessage(msg, isError) {
     clearTimeout(importMsgTimer);
@@ -928,7 +971,20 @@
       pendingImport = fromExport(data);
       var tools = pendingImport.items.filter(function (it) { return it.kind === 'tool'; }).length;
       els.importMsg.hidden = true;
-      els.importConfirmText.textContent = 'Replace the current inventory with ' + file.name + ' (' + tools + ' tool' + (tools === 1 ? '' : 's') + ')?';
+      var changes = importChanges(pendingImport);
+      var tally = {};
+      changes.forEach(function (c) { tally[c.kind] = (tally[c.kind] || 0) + 1; });
+      var summary = [['move', 'moved'], ['edit', 'edited'], ['add', 'added'], ['del', 'removed']].filter(function (k) { return tally[k[0]]; })
+        .map(function (k) { return tally[k[0]] + ' ' + k[1]; }).join(', ');
+      els.importConfirmText.textContent = changes.length
+        ? file.name + ' (' + tools + ' tool' + (tools === 1 ? '' : 's') + '): ' + summary + '. Replace the current inventory?'
+        : file.name + ' matches what\'s here already. Nothing would change.';
+      els.importReplace.hidden = !changes.length;
+      els.importCancel.textContent = changes.length ? 'Cancel' : 'Close';
+      els.importChanges.innerHTML = changes.map(function (c) {
+        return '<li class="wh-chg-' + c.kind + '">' + text(c.text) + '</li>';
+      }).join('');
+      els.importChanges.hidden = !changes.length;
       els.importConfirm.hidden = false;
     });
   });
