@@ -116,7 +116,10 @@ and `notes`.
   "photo": "images/gunpla/rx-78-2.jpg",
   "link": "",
   "notes": "One-line blurb.",
-  "location": "Detolf 1 · Shelf 2"
+  "brand": "Bandai",
+  "room": "Living room",
+  "shelf": "Detolf 1",
+  "level": "Shelf 2"
 }
 ```
 
@@ -124,3 +127,11 @@ Only `name` and `grade` are required. Grades are grouped PG, MGEX, MG, FM, RG,
 HG, EG, SD, then Other; within a grade, newest builds first. Photos go in
 `images/gunpla/` and show as the card background. With no kits the page
 shows a "coming soon" placeholder.
+
+`brand` defaults to Bandai. `room` > `shelf` > `level` say where a kit is
+displayed; leave any of them out if unknown. The page has a search box and
+Room / Shelf / Level / Grade / Brand / Series dropdowns that narrow each other,
+and every tag on a card (grade, brand, series, room, shelf, level, finish) is a
+button that filters to matching kits. Filters live in the URL, so a view can be
+linked, e.g. `gunpla.html?brand=Kotobukiya+Maruttoys` or
+`gunpla.html?shelf=Detolf+2&level=Shelf+4`.

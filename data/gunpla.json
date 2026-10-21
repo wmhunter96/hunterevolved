@@ -4,546 +4,676 @@
       "name": "Sazabi Ver.Ka",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Char's Counterattack",
       "notes": "With the P-Bandai Expansion Funnel Effect Set",
-      "location": "Detolf 1 · Top"
+      "shelf": "Detolf 1",
+      "level": "Top"
     },
     {
       "name": "ν Gundam Ver.Ka",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Char's Counterattack",
-      "location": "Detolf 1 · Top"
+      "shelf": "Detolf 1",
+      "level": "Top"
     },
     {
       "name": "RX-93ff ν Gundam",
       "grade": "RG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Char's Counterattack",
       "notes": "Gundam Side-F (Fukuoka) exclusive",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Ex Impulse",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED Battle Destiny",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Barbatos",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Testament Gundam",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED C.E.73 Δ Astray",
       "notes": "P-Bandai",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Astray Out Frame D",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED Destiny Astray B",
       "notes": "P-Bandai",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Astray Red Frame",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED Astray",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "RX-78-2 Gundam Ver.2.0",
       "grade": "RG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Mobile Suit Gundam",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam EX",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Requiem for Vengeance",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Bandai Hobby Center Injection Machine",
       "grade": "Other",
       "scale": "1/60",
+      "brand": "Bandai",
       "notes": "Replica of the factory injection molding machine. Gift from my wife",
-      "location": "Detolf 1 · Shelf 1"
+      "shelf": "Detolf 1",
+      "level": "Shelf 1"
     },
     {
       "name": "Aile Strike Gundam",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED",
-      "location": "Detolf 1 · Shelf 2"
+      "shelf": "Detolf 1",
+      "level": "Shelf 2"
     },
     {
       "name": "Aegis Gundam",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED",
-      "location": "Detolf 1 · Shelf 2"
+      "shelf": "Detolf 1",
+      "level": "Shelf 2"
     },
     {
       "name": "Blitz Gundam",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED",
-      "location": "Detolf 1 · Shelf 2"
+      "shelf": "Detolf 1",
+      "level": "Shelf 2"
     },
     {
       "name": "Duel Gundam",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED",
-      "location": "Detolf 1 · Shelf 2"
+      "shelf": "Detolf 1",
+      "level": "Shelf 2"
     },
     {
       "name": "Buster Gundam",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED",
-      "location": "Detolf 1 · Shelf 2"
+      "shelf": "Detolf 1",
+      "level": "Shelf 2"
     },
     {
       "name": "Aile Strike Gundam",
       "grade": "RG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Gundam SEED",
-      "location": "Detolf 1 · Shelf 2"
+      "shelf": "Detolf 1",
+      "level": "Shelf 2"
     },
     {
       "name": "Gundam Kyrios",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam 00",
-      "location": "Detolf 1 · Shelf 3"
+      "shelf": "Detolf 1",
+      "level": "Shelf 3"
     },
     {
       "name": "Gundam Exia",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam 00",
-      "location": "Detolf 1 · Shelf 3"
+      "shelf": "Detolf 1",
+      "level": "Shelf 3"
     },
     {
       "name": "Gundam Dynames",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam 00",
-      "location": "Detolf 1 · Shelf 3"
+      "shelf": "Detolf 1",
+      "level": "Shelf 3"
     },
     {
       "name": "Gundam Virtue",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam 00",
-      "location": "Detolf 1 · Shelf 3"
+      "shelf": "Detolf 1",
+      "level": "Shelf 3"
     },
     {
       "name": "Turn A Gundam Shin",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Gundam Build Fighters",
-      "location": "Detolf 1 · Shelf 4"
+      "shelf": "Detolf 1",
+      "level": "Shelf 4"
     },
     {
       "name": "Stargazer Gundam",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Gundam SEED C.E.73 Stargazer",
-      "location": "Detolf 1 · Shelf 4"
+      "shelf": "Detolf 1",
+      "level": "Shelf 4"
     },
     {
       "name": "Farsia",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Gundam AGE",
-      "location": "Detolf 1 · Shelf 4"
+      "shelf": "Detolf 1",
+      "level": "Shelf 4"
     },
     {
       "name": "V2 Assault-Buster Gundam",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Victory Gundam",
       "finish": "Custom paint",
-      "location": "Detolf 1 · Shelf 4"
+      "shelf": "Detolf 1",
+      "level": "Shelf 4"
     },
     {
       "name": "Gundam Rose",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "G Gundam",
-      "location": "Detolf 1 · Shelf 4"
+      "shelf": "Detolf 1",
+      "level": "Shelf 4"
     },
     {
       "name": "Typhoeus Gundam Chimera",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Gundam Build Metaverse",
-      "location": "Detolf 1 · Shelf 4"
+      "shelf": "Detolf 1",
+      "level": "Shelf 4"
     },
     {
       "name": "Eternal Star [ST-001] \"Glory\"",
       "grade": "Other",
+      "brand": "Third-party",
       "series": "Supreme Evolution Armament Tactical Series",
-      "notes": "Third-party Stargazer-style kit",
-      "location": "Detolf 2 · Top"
+      "notes": "Stargazer-style kit",
+      "shelf": "Detolf 2",
+      "level": "Top"
     },
     {
       "name": "Strike Freedom Gundam",
       "grade": "MGEX",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam SEED Destiny",
-      "location": "Detolf 2 · Top"
+      "shelf": "Detolf 2",
+      "level": "Top"
     },
     {
       "name": "Lizard",
       "grade": "Other",
-      "notes": "Third-party kit by In Era+",
-      "location": "Detolf 2 · Top"
+      "brand": "In Era+",
+      "shelf": "Detolf 2",
+      "level": "Top"
     },
     {
       "name": "Michaelis",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Pharact",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Schwarzette",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Darilbalde",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Lfrith Jiu",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Aerial",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
       "notes": "With backpack",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Calibarn",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Lfrith",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Lfrith (Pre-production Model)",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2 · Shelf 1"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Aerial Rebuild",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2"
+      "shelf": "Detolf 2"
     },
     {
       "name": "Gundam Aerial",
       "grade": "FM",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
       "notes": "KOSMOS LED lighting kit",
-      "location": "Detolf 2"
+      "shelf": "Detolf 2"
     },
     {
       "name": "Gundam Lfrith Anavata",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "location": "Detolf 2"
+      "shelf": "Detolf 2"
     },
     {
       "name": "Gundam Deathscythe Hell",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Gundam Wing",
-      "location": "Detolf 2 · Shelf 2"
+      "shelf": "Detolf 2",
+      "level": "Shelf 2"
     },
     {
       "name": "Gundam Deathscythe Hell EW",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
-      "location": "Detolf 2 · Shelf 2"
+      "shelf": "Detolf 2",
+      "level": "Shelf 2"
     },
     {
       "name": "Wing Gundam EW",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
-      "location": "Detolf 2 · Shelf 2"
+      "shelf": "Detolf 2",
+      "level": "Shelf 2"
     },
     {
       "name": "00 XN Raiser",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam 00",
-      "location": "Detolf 2 · Shelf 3"
+      "shelf": "Detolf 2",
+      "level": "Shelf 3"
     },
     {
       "name": "Gundam Avalanche Exia",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam 00",
-      "location": "Detolf 2 · Shelf 3"
+      "shelf": "Detolf 2",
+      "level": "Shelf 3"
     },
     {
       "name": "Gundam Avalanche Astraea",
       "grade": "MG",
+      "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam 00F",
-      "location": "Detolf 2 · Shelf 3",
-      "scale": "1/100"
+      "shelf": "Detolf 2",
+      "level": "Shelf 3"
     },
     {
       "name": "Burning Gundam",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "G Gundam",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Nobel Gundam",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "G Gundam",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Gundam Astray \"Load Frame\"",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "notes": "Name to confirm",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Gundam Astray Red Frame Inversion",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Gundam Breaker Battlogue",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Gundam Ground Type",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "The 08th MS Team",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Gundam Ez8",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "The 08th MS Team",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Moon Gundam",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Moon Gundam",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Crossbone Gundam X1",
       "grade": "RG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Crossbone Gundam",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Crossbone Gundam X1",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Crossbone Gundam",
-      "location": "Detolf 2 · Shelf 4"
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Varguil",
       "grade": "HG",
       "scale": "1/144",
-      "location": "Detolf 2 · Shelf 4"
+      "brand": "Bandai",
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
     },
     {
       "name": "Unicorn Gundam",
       "grade": "MGEX",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam Unicorn",
-      "location": "Living room · Top display"
+      "room": "Living room",
+      "shelf": "Top display"
     },
     {
       "name": "Sinanju",
       "grade": "MG",
       "scale": "1/100",
+      "brand": "Bandai",
       "series": "Gundam Unicorn",
-      "location": "Living room · Top display"
+      "room": "Living room",
+      "shelf": "Top display"
     },
     {
       "name": "Gundam G-Self",
       "grade": "HG",
       "scale": "1/144",
-      "series": "Reconguista in G",
-      "location": "Shelf not assigned"
+      "brand": "Bandai",
+      "series": "Reconguista in G"
     },
     {
       "name": "GQuuuuuuX",
       "grade": "HG",
       "scale": "1/144",
-      "series": "GQuuuuuuX",
-      "location": "Shelf not assigned"
+      "brand": "Bandai",
+      "series": "GQuuuuuuX"
     },
     {
       "name": "Noseru",
       "grade": "Other",
       "scale": "1/12",
-      "notes": "Kotobukiya Maruttoys",
-      "location": "Shelf not assigned"
+      "brand": "Kotobukiya Maruttoys"
     },
     {
       "name": "Tamotu",
       "grade": "Other",
       "scale": "1/12",
-      "notes": "Kotobukiya Maruttoys",
-      "location": "Shelf not assigned"
+      "brand": "Kotobukiya Maruttoys"
     },
     {
       "name": "G-Line (blue)",
       "grade": "HG",
       "scale": "1/144",
-      "series": "Battlefield Record U.C. 0081",
-      "location": "Shelf not assigned"
+      "brand": "Bandai",
+      "series": "Battlefield Record U.C. 0081"
     },
     {
       "name": "G-Line (red)",
       "grade": "HG",
       "scale": "1/144",
-      "series": "Battlefield Record U.C. 0081",
-      "location": "Shelf not assigned"
+      "brand": "Bandai",
+      "series": "Battlefield Record U.C. 0081"
     },
     {
       "name": "Noseru / Tamotu (second kit)",
       "grade": "Other",
       "scale": "1/12",
-      "notes": "Kotobukiya Maruttoys · version to confirm",
-      "location": "Shelf not assigned"
+      "brand": "Kotobukiya Maruttoys",
+      "notes": "Version to confirm"
     },
     {
       "name": "RX-78F00 Gundam",
       "grade": "Other",
+      "scale": "1/200",
+      "brand": "Bandai",
       "series": "Gundam Factory Yokohama",
-      "notes": "Gundam Factory Yokohama exclusive · Gunpla 40th Anniversary",
-      "location": "Shelf not assigned",
-      "scale": "1/200"
+      "notes": "Gundam Factory Yokohama exclusive · Gunpla 40th Anniversary"
     },
     {
       "name": "Gundam Barbatos Lupus Rex",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Bael",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Marchosias",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans: Urdr-Hunt",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Astaroth",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Astaroth Origin",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Vidar",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Vual",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Dantalion",
       "grade": "HG",
       "scale": "1/144",
+      "brand": "Bandai",
       "series": "Iron-Blooded Orphans Gekko",
-      "location": "Living room · Shelf"
+      "room": "Living room",
+      "shelf": "Living room shelf"
     },
     {
       "name": "Gundam Astraea",
       "grade": "HG",
       "scale": "1/144",
-      "series": "Gundam 00P",
-      "location": "Shelf not assigned"
+      "brand": "Bandai",
+      "series": "Gundam 00P"
     }
   ]
 }
