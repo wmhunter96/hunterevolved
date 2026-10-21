@@ -34,6 +34,9 @@ file (technical industrial look, dark graphite):
   `--color-accent` (#E14A15) reserved for primary buttons, active/selected
   states, focus and key indicators. Status: `--color-success`, `-warning`,
   `-error`, `-info`. Don't hardcode colours in components; add a token.
+  The drawn maps use `--color-object-*` tokens for the real objects they
+  depict (DEWALT-yellow toolbox lids, the red drill bag, the Detolf
+  aluminium and wood headers).
 - **Type**: IBM Plex Sans for everything, IBM Plex Mono only for small
   uppercase labels, numbers, IDs and counts (`.label`). Scale tokens
   `--text-display` ... `--text-micro`.
