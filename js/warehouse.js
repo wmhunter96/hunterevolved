@@ -1080,7 +1080,8 @@
       if (best && best.buddies.length && best.score >= 3 && best.score >= cur + 2) {
         var d = drawers[best.n];
         out.push({ it: it, from: here, to: best.n, category: d.category,
-          why: 'goes with ' + best.buddies.slice(0, 3).join(', ') + (best.buddies.length > 3 ? '…' : '') });
+          why: 'goes with ' + best.buddies.slice(0, 3).join(', ') + (best.buddies.length > 3 ? '…' : '') +
+            (best.buddies.length > 1 ? ', all' : '') + ' in Drawer ' + best.n });
       }
     });
     return out;
