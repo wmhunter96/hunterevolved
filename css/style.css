@@ -473,3 +473,7 @@ main.page:not(.wh-view-tool) .wh-tools-only { display: none !important; }
 .gp-tag-series:hover, .gp-tag-series:focus-visible { border-color: #b9a4ff; background: rgba(185, 164, 255, .18); }
 .gp-tag-source { color: var(--fg-muted); background: none; border-color: var(--border); border-style: dashed; font-weight: 500; }
 .gp-tag-source:hover, .gp-tag-source:focus-visible { color: var(--fg); border-color: var(--fg-muted); background: none; }
+button.gp-stat { font: inherit; color: inherit; text-align: left; cursor: pointer; width: 100%; transition: border-color .15s, background .15s; }
+button.gp-stat:hover, button.gp-stat:focus-visible { border-color: var(--accent); outline: none; }
+button.gp-stat.active { border-color: var(--accent); background: rgba(255, 138, 61, .1); }
+button.gp-stat.active .stat-value { color: var(--accent); }

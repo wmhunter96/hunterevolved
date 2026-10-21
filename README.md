@@ -135,7 +135,8 @@ Mercury"); `source` is optional and names the specific title within it
 it moves to the page's Backlog tab (`gunpla.html?status=backlog`). When you
 build it, delete the `status` line and give it its display location. `room` > `shelf` > `level` say where a kit is
 displayed; leave any of them out if unknown. The page has a search box and
-Room / Shelf / Level / Grade / Brand / Series dropdowns that narrow each other,
+Room / Shelf / Level / Grade / Brand / Series dropdowns that narrow each other;
+the grade stat tiles filter to that grade and the total tile clears filters,
 and every tag on a card (grade, brand, series, source, room, shelf, level, finish) is a
 button that filters to matching kits. Filters live in the URL, so a view can be
 linked, e.g. `gunpla.html?brand=Kotobukiya+Maruttoys` or

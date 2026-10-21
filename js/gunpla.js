@@ -165,9 +165,12 @@
   }
 
   // ---- Rendering ----
-  function stat(label, value) {
-    return '<div class="stat"><span class="stat-label">' + esc(label) +
-      '</span><span class="stat-value">' + esc(value) + '</span></div>';
+  // Stat tiles are buttons: a grade tile filters to that grade (click again
+  // to clear it); the total tile clears every filter.
+  function stat(label, value, attrs, active, title) {
+    return '<button type="button" class="stat gp-stat' + (active ? ' active' : '') + '" ' + attrs +
+      ' aria-pressed="' + !!active + '" title="' + esc(title) + '"><span class="stat-label">' + esc(label) +
+      '</span><span class="stat-value">' + esc(value) + '</span></button>';
   }
 
   function tag(key, value, text, cls) {
@@ -249,8 +252,17 @@
 
     var byGrade = {};
     shown.forEach(function (k) { (byGrade[gradeOf(k)] = byGrade[gradeOf(k)] || []).push(k); });
-    var stats = stat(filtered ? 'Showing' : (backlog ? 'In backlog' : 'Kits built'), filtered ? shown.length + ' of ' + total : total);
-    GRADES.forEach(function (g) { if (byGrade[g.id]) stats += stat(g.id, byGrade[g.id].length); });
+    var stats = stat(filtered ? 'Showing' : (backlog ? 'In backlog' : 'Kits built'), filtered ? shown.length + ' of ' + total : total,
+      'data-clear-all', false, filtered ? 'Clear all filters' : 'Showing everything');
+    // Grade tiles count kits matching every filter except grade, so the other
+    // grades stay visible (and clickable) while one is selected.
+    var gradeCounts = {};
+    kits.forEach(function (k) { if (matches(k, 'grade')) gradeCounts[gradeOf(k)] = (gradeCounts[gradeOf(k)] || 0) + 1; });
+    GRADES.forEach(function (g) {
+      if (!gradeCounts[g.id]) return;
+      stats += stat(g.id, gradeCounts[g.id], 'data-stat-grade="' + g.id + '"', state.grade === g.id,
+        (state.grade === g.id ? 'Show all grades' : 'Show only ' + g.label));
+    });
     statsEl.innerHTML = stats;
 
     if (!shown.length) {
@@ -287,6 +299,10 @@
       return update();
     }
     if (t.hasAttribute('data-clear-all')) return clearAll();
+    if (t.hasAttribute('data-stat-grade')) {
+      var gid = t.getAttribute('data-stat-grade');
+      return setFilter('grade', state.grade === gid ? null : gid);
+    }
     if (t.hasAttribute('data-clear')) {
       var key = t.getAttribute('data-clear');
       if (key === 'q') {
@@ -322,6 +338,7 @@
       filtersEl.addEventListener('click', onClick);
     }
     listEl.addEventListener('click', onClick);
+    statsEl.addEventListener('click', onClick);
     var tabs = document.getElementById('gunplaTabs');
     if (tabs) tabs.addEventListener('click', onClick);
     update();
