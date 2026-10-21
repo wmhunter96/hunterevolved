@@ -986,11 +986,17 @@
         importMessage("Couldn't import " + file.name + ": it isn't valid JSON.", true);
         return;
       }
-      if (!data || !Array.isArray(data.tools)) {
-        importMessage("Couldn't import " + file.name + ': it has no "tools" list.', true);
+      // Two formats: the export (parts/tools/projects) and Download JSON's own
+      // warehouse.json (items/projects, same as data/warehouse.json).
+      if (data && Array.isArray(data.tools)) {
+        pendingImport = fromExport(data);
+      } else if (data && (Array.isArray(data.items) || Array.isArray(data))) {
+        pendingImport = { items: normalize(Array.isArray(data) ? data : data.items),
+          projects: normalizeProjects(Array.isArray(data) ? [] : data.projects) };
+      } else {
+        importMessage("Couldn't import " + file.name + ': it has no "tools" or "items" list.', true);
         return;
       }
-      pendingImport = fromExport(data);
       var tools = pendingImport.items.filter(function (it) { return it.kind === 'tool'; }).length;
       els.importMsg.hidden = true;
       els.optimizePanel.hidden = true;
