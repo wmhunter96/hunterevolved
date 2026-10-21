@@ -75,7 +75,8 @@ isn't available.
 
 On the Tooling tab there's no drawer dropdown or attention checkbox: click a
 drawer (or the red drill bag on top) to filter to it, and click the **Needs
-attention** tile to light up broken/missing tools and low consumables.
+attention** tile to light up broken/missing tools and low consumables. An item can carry an optional `fixLink`
+(where to replace or reorder it), shown as a link next to it while it needs attention.
 
 Tools can be flagged **consumable** (glue, tape, screws...): they stay in the
 toolbox map but, like parts, get a "Low at" threshold, count toward "Needs
