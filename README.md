@@ -106,8 +106,8 @@ The import icon next to export reads that export JSON, or a Download JSON `wareh
 or `items` array), lists every move, edit, addition and removal before you replace anything, and saves it as the local draft, so export, edit, import round-trips.
 Drawer names shown on the map come from `drawers` in `data/warehouse.json` (`"1"`-`"9"` and `"top"`).
 If the live data changes after you made local changes, the page shows the live data and offers to restore or delete the older local copy.
-On the Tooling tab, the arrows icon between export and import suggests drawer moves (a tool
-that shares words with the tools and category of another drawer more than its own); tick the
+On the Tooling tab, the arrows icon between export and import suggests drawer moves: each tool
+belongs in the drawer named after its category (`drawers` names), or else where most of that category already is; tick the
 ones you want and they're applied to the local draft.
 
 Tools can be flagged **consumable** (glue, tape, screws...): they stay in the
