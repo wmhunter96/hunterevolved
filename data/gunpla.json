@@ -401,7 +401,8 @@
       "brand": "Bandai",
       "series": "The Witch from Mercury",
       "room": "Office",
-      "shelf": "Detolf 2"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Aerial",
@@ -411,7 +412,8 @@
       "series": "The Witch from Mercury",
       "notes": "KOSMOS LED lighting kit",
       "room": "Office",
-      "shelf": "Detolf 2"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Lfrith Anavata",
@@ -420,7 +422,8 @@
       "brand": "Bandai",
       "series": "The Witch from Mercury",
       "room": "Office",
-      "shelf": "Detolf 2"
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
     },
     {
       "name": "Gundam Deathscythe Hell",
@@ -517,10 +520,10 @@
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
+      "series": "Gundam SEED Freedom",
       "room": "Office",
       "shelf": "Detolf 2",
-      "level": "Shelf 4",
-      "series": "Gundam SEED Freedom"
+      "level": "Shelf 4"
     },
     {
       "name": "Gundam Astray Red Frame Inversion",
@@ -614,7 +617,9 @@
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "series": "Reconguista in G"
+      "series": "Reconguista in G",
+      "room": "Office",
+      "shelf": "Windowsill"
     },
     {
       "name": "GQuuuuuuX",
@@ -774,8 +779,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Hi-ν Gundam",
@@ -783,8 +789,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Char's Counterattack: Beltorchika's Children",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Altron Gundam EW",
@@ -792,8 +799,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam TR-6 [Haze'n-thley II]",
@@ -801,8 +809,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Advance of Zeta",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Tallgeese Fluegel EW",
@@ -811,8 +820,9 @@
       "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
       "notes": "P-Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Astraea + Proto GN Twin Broad Blade",
@@ -821,16 +831,18 @@
       "brand": "Bandai",
       "series": "Gundam 00P",
       "notes": "P-Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Stormbringer F.A. / GM Turbulence",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Heavyarms Custom EW",
@@ -838,8 +850,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Amazing Exia",
@@ -847,8 +860,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam Build Fighters",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Ball Ver.Ka",
@@ -856,8 +870,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Mobile Suit Gundam",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "YF-29 Durandal Valkyrie",
@@ -865,8 +880,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Macross",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Sword Impulse Gundam SpecII",
@@ -874,8 +890,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED Destiny",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Wing Gundam Zero EW",
@@ -883,17 +900,19 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam Wing: Endless Waltz",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Dragon Gundam",
-      "grade": "Other",
+      "grade": "HG",
+      "scale": "1/144",
       "brand": "Bandai",
       "series": "G Gundam",
-      "notes": "Grade to confirm",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Exia Repair Parts Set",
@@ -902,18 +921,20 @@
       "brand": "Bandai",
       "series": "Gundam 00",
       "notes": "Parts set for RG Exia",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundnode",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
+      "series": "The Witch from Mercury",
       "notes": "P-Bandai · 3 boxes",
-      "status": "backlog",
+      "room": "Office",
       "shelf": "Closet",
-      "series": "The Witch from Mercury"
+      "status": "backlog"
     },
     {
       "name": "Expansion Parts Set for Gundam Barbatos",
@@ -922,8 +943,9 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
       "notes": "Parts set",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Hyper Mega Bazooka Launcher for Hi-ν Gundam",
@@ -932,8 +954,9 @@
       "brand": "Bandai",
       "series": "Char's Counterattack: Beltorchika's Children",
       "notes": "Parts set",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Astraea Parts Set",
@@ -942,17 +965,19 @@
       "brand": "Bandai",
       "series": "Gundam 00P",
       "notes": "Parts set for RG Exia",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Double X",
       "grade": "MG",
+      "scale": "1/100",
       "brand": "Bandai",
       "series": "After War Gundam X",
-      "status": "backlog",
+      "room": "Office",
       "shelf": "Closet",
-      "scale": "1/100"
+      "status": "backlog"
     },
     {
       "name": "Zaku Warrior (Live Concert Ver.)",
@@ -961,8 +986,9 @@
       "brand": "Bandai",
       "series": "Gundam SEED Destiny",
       "notes": "The Gundam Base exclusive",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam TR-6 [Barzam II] Re-Zeon Captured (A.O.Z Re-Boot Ver.)",
@@ -971,8 +997,9 @@
       "brand": "Bandai",
       "series": "Advance of Zeta",
       "notes": "P-Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Astray Turn Red",
@@ -980,17 +1007,19 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam SEED Destiny Astray R",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "00 XN Raiser",
-      "grade": "Other",
+      "grade": "MG",
+      "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00",
-      "notes": "Grade to confirm",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam TR-1 [Hazel Owsla]",
@@ -999,26 +1028,29 @@
       "brand": "Bandai",
       "series": "Advance of Zeta",
       "notes": "P-Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Astray Red Dragon",
-      "grade": "Other",
+      "grade": "MG",
+      "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam SEED Destiny Astray",
-      "notes": "Grade to confirm",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "00 Qan[T] Full Saber",
-      "grade": "Other",
+      "grade": "MG",
+      "scale": "1/100",
       "brand": "Bandai",
       "series": "Gundam 00V",
-      "notes": "Grade to confirm",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Barbatos Lupus",
@@ -1026,18 +1058,20 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Desultor",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
-      "status": "backlog",
-      "shelf": "Closet",
       "series": "The Witch from Mercury",
-      "notes": "P-Bandai"
+      "notes": "P-Bandai",
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Double Fin Funnel Custom Unit for ν Gundam Ver.Ka",
@@ -1046,8 +1080,9 @@
       "brand": "Bandai",
       "series": "Char's Counterattack",
       "notes": "Parts set",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam TR-6 [Wondwart] Psycho-Blade Custom (A.O.Z Re-Boot Ver.)",
@@ -1056,8 +1091,9 @@
       "brand": "Bandai",
       "series": "Advance of Zeta",
       "notes": "P-Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Aerial",
@@ -1065,8 +1101,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Expansion Parts Set for Gundam Barbatos Lupus",
@@ -1075,8 +1112,9 @@
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
       "notes": "Parts set",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Den'an-Gei",
@@ -1084,8 +1122,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Crossbone Gundam",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam TR-6 [Wondwart]",
@@ -1093,8 +1132,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Advance of Zeta",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Barbatos Lupus",
@@ -1102,17 +1142,19 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Polypod Ball",
-      "grade": "Other",
+      "grade": "MG",
+      "scale": "1/100",
       "brand": "Bandai",
       "series": "The 08th MS Team",
-      "notes": "Grade to confirm",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Astraea Type-F",
@@ -1121,24 +1163,27 @@
       "brand": "Bandai",
       "series": "Gundam 00F",
       "notes": "P-Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Tamotu Pro (Cool White Ver.)",
       "grade": "Other",
       "scale": "1/12",
       "brand": "Kotobukiya Maruttoys",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Aerial",
       "grade": "MGSD",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "KOSMOS Lighting Expansion for MGEX Strike Freedom",
@@ -1146,8 +1191,9 @@
       "brand": "KOSMOS",
       "series": "Gundam SEED Destiny",
       "notes": "Parts set",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Aerial (Ecopla)",
@@ -1155,8 +1201,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Turn A Gundam",
@@ -1164,8 +1211,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Turn A Gundam",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Turn X",
@@ -1173,8 +1221,9 @@
       "scale": "1/100",
       "brand": "Bandai",
       "series": "Turn A Gundam",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Maxter",
@@ -1182,8 +1231,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "G Gundam",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Virtue Armor Display Set",
@@ -1192,16 +1242,18 @@
       "brand": "Bandai",
       "series": "Gundam 00",
       "notes": "Parts set",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Barbatos",
       "grade": "MGSD",
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Crossbone Gundam X2",
@@ -1209,8 +1261,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Crossbone Gundam",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Gundam Naion",
@@ -1219,8 +1272,9 @@
       "brand": "Bandai",
       "series": "The Witch from Mercury",
       "notes": "P-Bandai",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Expansion Set for God Gundam",
@@ -1229,16 +1283,18 @@
       "brand": "Bandai",
       "series": "G Gundam",
       "notes": "Parts set",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Freedom Gundam",
       "grade": "MGSD",
       "brand": "Bandai",
       "series": "Gundam SEED",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     },
     {
       "name": "Lord Astray Ω",
@@ -1246,8 +1302,9 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "Gundam SEED Freedom",
-      "status": "backlog",
-      "shelf": "Closet"
+      "room": "Office",
+      "shelf": "Closet",
+      "status": "backlog"
     }
   ]
 }
