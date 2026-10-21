@@ -28,7 +28,7 @@
     { id: 'MGEX', label: 'Master Grade Extreme' },
     { id: 'MG', label: 'Master Grade' },
     { id: 'FM', label: 'Full Mechanics' },
-    { id: 'RE', label: 'Reborn-One Hundred (RE/100)' },
+    { id: 'RE', label: 'Reborn-One Hundred' },
     { id: 'RG', label: 'Real Grade' },
     { id: 'MGSD', label: 'Master Grade SD' },
     { id: 'HG', label: 'High Grade' },
