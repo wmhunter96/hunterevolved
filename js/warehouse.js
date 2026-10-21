@@ -354,10 +354,10 @@
     var topCls = 'wh-tb-top';
     if (els.location.value === TOP) topCls += ' selected';
     if (filtering) topCls += matches.top ? ' match' : ' dim';
-    var html = '<button type="button" class="' + topCls + '" data-place="' + TOP + '" aria-pressed="' + (els.location.value === TOP) + '">' +
-      '<span class="wh-tb-top-label">Top of toolbox</span>' +
+    var html = '<div class="wh-tb-top-wrap"><span class="wh-tb-bag-handle"></span><button type="button" class="' + topCls + '" data-place="' + TOP + '" aria-pressed="' + (els.location.value === TOP) + '" aria-label="Drill bag on top of the toolbox">' +
+      '<span class="wh-tb-top-label">Drill bag</span>' +
       '<ul class="wh-tb-list">' + (chips(onTop) || '<li class="empty">Empty</li>') + '</ul>' +
-      '<span class="wh-tb-count">' + count(onTop, 'top') + '</span>' + attn(onTop) + '</button>';
+      '<span class="wh-tb-count">' + count(onTop, 'top') + '</span>' + attn(onTop) + '</button></div>';
     TOOLBOX_UNITS.forEach(function (unit, u) {
       html += '<div class="wh-tb-unit"><div class="wh-tb-lid"><span>' + unit + '</span></div>';
       for (var i = 1; i <= DRAWERS_PER_UNIT; i++) {
@@ -395,7 +395,7 @@
     var close = '<button type="button" class="wh-grid-close" data-clear aria-label="Close">&times;</button>';
     if (els.location.value === TOP) {
       var top = inView().filter(isTop);
-      els.gridPanel.innerHTML = '<div class="wh-grid-head"><h3>Top of toolbox</h3><span class="wh-muted">temporary home until the power tools get a proper spot</span>' + close + '</div>' +
+      els.gridPanel.innerHTML = '<div class="wh-grid-head"><h3>Drill bag</h3><span class="wh-muted">red bag on top of the toolbox</span>' + close + '</div>' +
         (top.length ? '<ul class="wh-top-list">' + top.map(function (it) {
           return '<li data-id="' + it.id + '"><span>' + text(it.name) + '</span>' + (it.status ? ' <span class="wh-low">' + text(it.status) + '</span>' : '') +
             (it.notes ? '<small>' + text(it.notes) + '</small>' : '') + '</li>';
