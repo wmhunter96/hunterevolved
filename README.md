@@ -134,8 +134,13 @@ Mercury"); `source` is optional and names the specific title within it
 ("Gundam 00P", "Endless Waltz"). Both show as clickable tags. `brand` defaults to Bandai. Set `"status": "backlog"` on a kit that isn't built yet;
 it moves to the page's Backlog tab (`gunpla.html?status=backlog`). When you
 build it, delete the `status` line and give it its display location. `room` > `shelf` > `level` say where a kit is
-displayed; leave any of them out if unknown. The page has a search box and
-Room / Shelf / Level / Grade / Brand / Series dropdowns that narrow each other;
+displayed; leave any of them out if unknown. The page has a **shelf map**: each Detolf is drawn as a glass case (Top on the
+roof, Shelf 1-4 inside) and other spots as ledges, with every kit as a block
+standing on its level (height by grade, color by grade; boxes on the Backlog
+tab). Click a level or shelf name to filter to it, click a kit to jump to its
+card; kits outside the current filters are dimmed. Any `shelf` whose name
+starts with "Detolf" is drawn as a case. There's also a search box and
+Room / Grade / Brand / Series dropdowns that narrow each other;
 the grade stat tiles filter to that grade and the total tile clears filters,
 and every tag on a card (grade, brand, series, source, room, shelf, level, finish) is a
 button that filters to matching kits. Filters live in the URL, so a view can be
