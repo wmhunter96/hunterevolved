@@ -24,6 +24,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Pages caches .js/.css for ~10 minutes, so a deploy could run new HTML
+      # against old scripts. Stamp each local asset URL with the commit.
+      - name: Cache-bust local CSS/JS
+        run: |
+          v="${GITHUB_SHA::7}"
+          find . -name '*.html' -not -path './.git/*' -print0 | xargs -0 sed -i -E \
+            "s#(href|src)=\"([^\":?]+)\.(css|js)\"#\1=\"\2.\3?v=${v}\"#g"
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
