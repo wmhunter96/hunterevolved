@@ -81,6 +81,8 @@ attention** tile to light up broken/missing tools and low consumables. An item c
 (where to replace or reorder it), shown as a link next to it while it needs attention.
 The import icon next to export reads that export JSON, or a Download JSON `warehouse.json`, back in (it needs a `tools`
 or `items` array), lists every move, edit, addition and removal before you replace anything, and saves it as the local draft, so export, edit, import round-trips.
+Drawer names shown on the map come from `drawers` in `data/warehouse.json` (`"1"`-`"9"` and `"top"`).
+If the live data changes after you made local changes, the page shows the live data and offers to restore or delete the older local copy.
 On the Tooling tab, the arrows icon between export and import suggests drawer moves (a tool
 that shares words with the tools and category of another drawer more than its own); tick the
 ones you want and they're applied to the local draft.

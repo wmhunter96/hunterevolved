@@ -1,5 +1,17 @@
 {
   "updated": "2026-10-21",
+  "drawers": {
+    "1": "General purpose",
+    "2": "Screwdrivers & hex keys",
+    "3": "Heavy-duty",
+    "4": "Fasteners & adhesives",
+    "5": "Measuring & testing",
+    "6": "Precision & electronics",
+    "7": "Drill bits & tape measures",
+    "8": "Cutters & pliers",
+    "9": "Sockets & adjustable pliers",
+    "top": "Power tools & batteries"
+  },
   "items": [
     {
       "id": "tb-d1-01",
@@ -86,8 +98,8 @@
       "id": "tb-d2-03",
       "kind": "tool",
       "name": "Acrylic cutter",
-      "category": "Screwdrivers and hex keys",
-      "location": "Drawer 2",
+      "category": "Cutters and pliers",
+      "location": "Drawer 8",
       "qty": 1,
       "status": "",
       "notes": "Includes spare blades"
