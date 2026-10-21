@@ -15,6 +15,17 @@
   // returning a use puts it back.
   var projects = [];
   var hasDraft = false;
+  // Fingerprint of the published data a draft was started from. If the live
+  // data changes later (a commit), an old draft would silently hide it, so the
+  // banner says so and offers the live version instead.
+  var publishedStamp = '';
+  var staleDraft = false;
+  var draftBase = '';
+  function stamp(s) {
+    var h = 5381;
+    for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+    return String(h >>> 0);
+  }
   var managing = false;
   var editingId = null;
   var sortKey = 'name';
@@ -52,7 +63,7 @@
   var els = {
     stats: $('whStats'), search: $('whSearch'), category: $('whCategory'),
     location: $('whLocation'), low: $('whLow'), manageToggle: $('whManageToggle'), exportList: $('whExportList'),
-    banner: $('whDraftBanner'), exportBtn: $('whExport'), discard: $('whDiscard'),
+    banner: $('whDraftBanner'), draftText: $('whDraftText'), exportBtn: $('whExport'), discard: $('whDiscard'),
     form: $('whForm'), formTitle: $('whFormTitle'), submit: $('whSubmit'),
     cancelEdit: $('whCancelEdit'), importBtn: $('whImport'), importFile: $('whImportFile'),
     importList: $('whImportList'), importListFile: $('whImportListFile'), importConfirm: $('whImportConfirm'),
@@ -77,7 +88,7 @@
     } catch (e) { return null; }
   }
   function writeDraft() {
-    try { localStorage.setItem(DRAFT_KEY, JSON.stringify({ items: items, projects: projects })); } catch (e) {}
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify({ base: draftBase, items: items, projects: projects })); } catch (e) {}
   }
   function clearDraft() {
     try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
@@ -553,9 +564,17 @@
     renderTable();
     renderProjects();
     els.banner.hidden = !hasDraft;
+    els.banner.classList.toggle('stale', staleDraft);
+    els.draftText.textContent = staleDraft
+      ? "You're looking at local changes saved before the live inventory last changed, so this isn't what's live."
+      : "You have local changes that aren't on the live site yet.";
+    els.discard.textContent = staleDraft ? 'Use live version' : 'Discard';
+    els.discard.className = 'btn wh-btn ' + (staleDraft ? 'btn-primary' : 'btn-secondary');
+    els.exportBtn.className = 'btn wh-btn ' + (staleDraft ? 'btn-secondary' : 'btn-primary');
   }
 
   function commit() {
+    if (!hasDraft) { staleDraft = false; draftBase = publishedStamp; }
     hasDraft = true;
     writeDraft();
     render();
@@ -874,6 +893,7 @@
     if (!confirm('Throw away local changes and go back to the published inventory?')) return;
     clearDraft();
     hasDraft = false;
+    staleDraft = false;
     items = normalize(published);
     projects = normalizeProjects(publishedProjects);
     resetForm();
@@ -1197,8 +1217,11 @@
     .then(function (data) {
       published = normalize(data.items);
       publishedProjects = normalizeProjects(data.projects);
+      publishedStamp = stamp(JSON.stringify([data.items || [], data.projects || []]));
       var draft = readDraft();
       hasDraft = !!draft;
+      staleDraft = !!draft && draft.base !== publishedStamp;
+      draftBase = draft ? String(draft.base || '') : publishedStamp;
       items = normalize(draft ? draft.items : published);
       projects = normalizeProjects(draft && draft.projects ? draft.projects : publishedProjects);
       render();
