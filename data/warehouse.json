@@ -385,11 +385,65 @@
       "kind": "tool",
       "name": "GodHand nippers",
       "brand": "GodHand",
-      "category": "Cutters",
+      "category": "Gunpla",
+      "location": "Gunpla tool case",
+      "qty": 1,
+      "status": "",
+      "notes": "Gunpla nippers; model not recorded yet"
+    },
+    {
+      "id": "tb-gp-01",
+      "kind": "tool",
+      "name": "GunPrimer Raser Origin",
+      "brand": "GunPrimer",
+      "category": "Gunpla",
+      "location": "Gunpla tool case",
+      "qty": 1,
+      "status": "",
+      "notes": ""
+    },
+    {
+      "id": "tb-gp-02",
+      "kind": "tool",
+      "name": "GunPrimer Raser Plus",
+      "brand": "GunPrimer",
+      "category": "Gunpla",
+      "location": "Gunpla tool case",
+      "qty": 1,
+      "status": "",
+      "notes": ""
+    },
+    {
+      "id": "tb-gp-03",
+      "kind": "tool",
+      "name": "Pointed precision tweezers",
+      "category": "Gunpla",
+      "location": "Gunpla tool case",
+      "qty": 1,
+      "status": "",
+      "notes": "Very fine, sharp tips"
+    },
+    {
+      "id": "tb-sd-01",
+      "kind": "tool",
+      "name": "Pinecil smart mini portable soldering iron",
+      "brand": "PINE64",
+      "category": "Soldering",
       "location": "",
       "qty": 1,
       "status": "",
-      "notes": "Gunpla nippers; model and location not recorded yet"
+      "notes": "Location not recorded yet"
+    },
+    {
+      "id": "tb-3d-01",
+      "kind": "tool",
+      "name": "Original Prusa MK4S 3D printer",
+      "brand": "Prusa Research",
+      "category": "3D printing",
+      "location": "3D printer table",
+      "qty": 1,
+      "status": "",
+      "notes": ""
     },
     {
       "id": "tb-d8-05",
