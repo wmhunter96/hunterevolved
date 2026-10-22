@@ -668,13 +668,35 @@
     {
       "id": "pt-12",
       "kind": "part",
-      "name": "Mini rocker switch, SPST on/off, pre-wired",
+      "name": "Mini rocker switch, SPST on/off",
       "category": "Switches",
       "location": "",
       "qty": 9,
       "status": "",
       "link": "https://www.amazon.com/dp/B07S2QJKTX",
-      "notes": "DaierTek; KCD1, 2-pin, 12V 20A / 120V 10A, black; 10-pack"
+      "notes": "DaierTek; KCD1, 2-pin, 12V 20A / 120V 10A, black; kit of 10 switches + 10 red and 10 black quick-disconnect wires"
+    },
+    {
+      "id": "pt-20",
+      "kind": "part",
+      "name": "Quick-disconnect wire, red",
+      "category": "Wire",
+      "location": "",
+      "qty": 9,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B07S2QJKTX",
+      "notes": "DaierTek; from the rocker switch kit"
+    },
+    {
+      "id": "pt-21",
+      "kind": "part",
+      "name": "Quick-disconnect wire, black",
+      "category": "Wire",
+      "location": "",
+      "qty": 10,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B07S2QJKTX",
+      "notes": "DaierTek; from the rocker switch kit"
     },
     {
       "id": "pt-13",
@@ -772,7 +794,7 @@
         {
           "id": "pj-01-u4",
           "itemId": "pt-12",
-          "name": "Mini rocker switch, SPST on/off, pre-wired",
+          "name": "Mini rocker switch, SPST on/off",
           "qty": 1,
           "date": "2026-10-18"
         },
@@ -794,6 +816,13 @@
           "id": "pj-01-u7",
           "itemId": "pt-10",
           "name": "XT30 pigtail, male",
+          "qty": 1,
+          "date": "2026-10-18"
+        },
+        {
+          "id": "pj-01-u8",
+          "itemId": "pt-20",
+          "name": "Quick-disconnect wire, red",
           "qty": 1,
           "date": "2026-10-18"
         }
