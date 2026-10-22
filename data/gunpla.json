@@ -434,6 +434,16 @@
       "level": "Shelf 1"
     },
     {
+      "name": "Gundvolva",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "The Witch from Mercury",
+      "room": "Office",
+      "shelf": "Detolf 2",
+      "level": "Shelf 1"
+    },
+    {
       "name": "Gundam Deathscythe Hell",
       "grade": "HG",
       "scale": "1/144",
@@ -502,6 +512,27 @@
       "scale": "1/144",
       "brand": "Bandai",
       "series": "G Gundam",
+      "room": "Office",
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
+    },
+    {
+      "name": "Build Burning Gundam",
+      "grade": "HG",
+      "scale": "1/144",
+      "brand": "Bandai",
+      "series": "Gundam Build",
+      "source": "Gundam Build Fighters Try",
+      "room": "Office",
+      "shelf": "Detolf 2",
+      "level": "Shelf 4"
+    },
+    {
+      "name": "Liger Zero",
+      "grade": "Other",
+      "scale": "1/72",
+      "series": "Zoids",
+      "source": "Zoids: New Century",
       "room": "Office",
       "shelf": "Detolf 2",
       "level": "Shelf 4"
