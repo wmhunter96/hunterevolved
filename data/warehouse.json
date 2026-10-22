@@ -21,7 +21,18 @@
       "location": "Drawer 1",
       "qty": 1,
       "status": "",
-      "notes": "HOTO; With extra glue sticks"
+      "notes": "HOTO; loaded with a partial glue stick (less than 1)"
+    },
+    {
+      "id": "tb-d1-07",
+      "kind": "tool",
+      "name": "Hot glue sticks",
+      "category": "General",
+      "location": "Drawer 1",
+      "qty": 57,
+      "status": "",
+      "notes": "Unused, for the HOTO glue gun; a partial stick is loaded in the gun",
+      "consumable": true
     },
     {
       "id": "tb-d1-02",
