@@ -1,0 +1,3482 @@
+{
+  "source": "https://gundam.fandom.com",
+  "pages": {
+    "AMS-123X Varguil": {
+      "url": "https://gundam.fandom.com/wiki/AMS-123X_Varguil",
+      "model": "AMS-123X",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Neo Zeon"
+      ],
+      "operator": [
+        "Neo Zeon"
+      ],
+      "pilot": [
+        "Agos Lagarto",
+        "Jutta Qasim"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "20.9 m, 21.7 m (with Gundam head)",
+      "weight": "57.6 t, 51.8 t (with Gundam head)",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy",
+      "equipment": [
+        "2 × Propellant Tank"
+      ],
+      "fixedArmaments": [
+        "Beam Tomahawk (Beam Saber)",
+        "2 x Butterfly Edge",
+        "2 x 60mm Vulcan Gun (After modification)"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle (Grenade Launcher)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/5/59/AMS-123X-VARGUIL.jpg/revision/latest/scale-to-width-down/480?cb=20181017150250"
+    },
+    "AMS-123X-X Moon Gundam": {
+      "url": "https://gundam.fandom.com/wiki/AMS-123X-X_Moon_Gundam",
+      "model": "AMS-123X-X",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "operator": [
+        "Neo Zeon",
+        "Moon Moon"
+      ],
+      "pilot": [
+        "Jutta Qasim"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "21.7 m",
+      "armor": "Gundarium Alloy",
+      "fixedArmaments": [
+        "2 x 60mm Vulcan Gun",
+        "2 x Butterfly Edge",
+        "Beam Tomahawk"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/1/14/Moon_Gundam_Front.png/revision/latest/scale-to-width-down/480?cb=20241113093217"
+    },
+    "ARZ-124WD Gundam TR-6 ［Wondwart］ Psycho Blade Custom": {
+      "url": "https://gundam.fandom.com/wiki/ARZ-124WD_Gundam_TR-6_%EF%BC%BBWondwart%EF%BC%BD_Psycho_Blade_Custom",
+      "model": "ARZ-124WD",
+      "era": "Universal Century",
+      "production": "Limited Production",
+      "manufacturer": [
+        "ReZeon"
+      ],
+      "operator": [
+        "ReZeon"
+      ],
+      "pilot": [
+        "Gloria Zabi"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/83/ARZ-124_Gundam_TR-6_-Wondwart-_Psycho_Blade_Custom_-_Front.jpg/revision/latest/scale-to-width-down/480?cb=20190216074247"
+    },
+    "ARZ-154BZII ［Barzam II］": {
+      "url": "https://gundam.fandom.com/wiki/ARZ-154BZII_%EF%BC%BBBarzam_II%EF%BC%BD",
+      "model": "ARZ-154BZII",
+      "era": "Universal Century",
+      "manufacturer": [
+        "ReZeon"
+      ],
+      "operator": [
+        "ReZeon"
+      ],
+      "designer": [
+        "Kenki Fujioka"
+      ],
+      "equipment": [
+        "Eleanor Satellite System"
+      ],
+      "fixedArmaments": [
+        "Cracker Holder"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle (w/ Grenade Launcher)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/78/Re-boot_07.jpeg/revision/latest/scale-to-width-down/480?cb=20250515035803"
+    },
+    "ASW-G-01 Gundam Bael": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-01_Gundam_Bael",
+      "model": "ASW-G-01",
+      "era": "Post Disaster",
+      "manufacturer": [
+        "Gjallarhorn"
+      ],
+      "operator": [
+        "Gjallarhorn",
+        "Revolutionary Fleet"
+      ],
+      "pilot": [
+        "Agnika Kaieru",
+        "McGillis Fareed"
+      ],
+      "designer": [
+        "Naohiro Washio"
+      ],
+      "height": "18 m",
+      "weight": "30 t (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "equipment": [
+        "2 x Blade Holder",
+        "2 x Thruster Wing"
+      ],
+      "fixedArmaments": [
+        "2 x Electromagnetic Cannon"
+      ],
+      "handheldArmaments": [
+        "2 x Bael Sword"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/0/0c/ASW-01_Gundam_Bael_%28Front%29.png/revision/latest/scale-to-width-down/480?cb=20251011053449"
+    },
+    "ASW-G-08 Gundam Barbatos": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-08_Gundam_Barbatos",
+      "model": "ASW-G-08",
+      "era": "Post Disaster",
+      "manufacturer": [
+        "Gjallarhorn (Calamity War)",
+        "Tekkadan (2nd-3rd)",
+        "Teiwaz (4th-6th)"
+      ],
+      "operator": [
+        "Gjallarhorn (Calamity War)",
+        "Tekkadan"
+      ],
+      "pilot": [
+        "Mikazuki Augus",
+        "Kentaro Mahara"
+      ],
+      "designer": [
+        "Naohiro Washio"
+      ],
+      "height": "18 m (1st-5th), 18.8 m (5th Ground-6th)",
+      "weight": "28.5 t (4th), 30.5 t (6th) (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "equipment": [
+        "Backpack Arm",
+        "Alaya-Vijnana System"
+      ],
+      "fixedArmaments": [
+        "Gauntlet (1st-2nd Form)",
+        "GR-Es02 Wire Claw (3rd Form)",
+        "4 x Arm Mortar (5th Form)",
+        "2 x 170mm Autocannon (5th Ground-6th Form)"
+      ],
+      "handheldArmaments": [
+        "Mace (Needle) (1st-5th Form)",
+        "Long Sword (4th Form-6th Form)",
+        "Smoothbore Gun (60mm Machine Gun) (2nd Form-5th Form)",
+        "Large Special Mace (5th Ground-6th Form)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/8e/ASW-G-08_Gundam_Barbatos_1st_Form_%28Front%29.png/revision/latest?cb=20181007005623"
+    },
+    "ASW-G-08 Gundam Barbatos Lupus": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-08_Gundam_Barbatos_Lupus",
+      "model": "ASW-G-08",
+      "era": "Post Disaster",
+      "production": "Custom",
+      "manufacturer": [
+        "Teiwaz"
+      ],
+      "operator": [
+        "Tekkadan"
+      ],
+      "pilot": [
+        "Mikazuki Augus"
+      ],
+      "designer": [
+        "Naohiro Washio"
+      ],
+      "height": "19 m",
+      "weight": "31.2 t (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "equipment": [
+        "2 x Sub Arm"
+      ],
+      "handheldArmaments": [
+        "Sword Mace",
+        "2 x Twin Mace"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/5/5d/Barbatos_Lupus_Front_%28Official%29.png/revision/latest/scale-to-width-down/480?cb=20251010043617"
+    },
+    "ASW-G-08 Gundam Barbatos Lupus Rex": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-08_Gundam_Barbatos_Lupus_Rex",
+      "model": "ASW-G-08",
+      "era": "Post Disaster",
+      "production": "Custom",
+      "manufacturer": [
+        "Teiwaz"
+      ],
+      "operator": [
+        "Tekkadan",
+        "BUILD DiVERS"
+      ],
+      "pilot": [
+        "Mikazuki Augus",
+        "Hiroto Kuga"
+      ],
+      "height": "19 m",
+      "weight": "32.1 t (empty)",
+      "powerplant": "2 × Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "equipment": [
+        "2 × Sub-Arm"
+      ],
+      "fixedArmaments": [
+        "Tail Blade",
+        "10 × Rex Nail",
+        "2 × 200mm Gun",
+        "2 × Heel Bunker"
+      ],
+      "handheldArmaments": [
+        "Ultra Large Mace (2 × Pile Bunker)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/c/c7/Barbatos_Lupus_Rex_Front_%28Official%29.png/revision/latest/scale-to-width-down/480?cb=20251010043658"
+    },
+    "ASW-G-29 Gundam Astaroth": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-29_Gundam_Astaroth",
+      "model": "ASW-G-29",
+      "era": "Post Disaster",
+      "manufacturer": [
+        "Tanto Tempo"
+      ],
+      "operator": [
+        "Tanto Tempo"
+      ],
+      "pilot": [
+        "Argi Mirage"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.2 m",
+      "weight": "30.6 t (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "equipment": [
+        "Sub Knuckle",
+        "Special Energy Transmission Mechanism"
+      ],
+      "fixedArmaments": [
+        "2 x Knife"
+      ],
+      "handheldArmaments": [
+        "Demolition Knife",
+        "Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/a/a9/Gundam_astaroth_front_lineart_color.png/revision/latest?cb=20230609193233"
+    },
+    "ASW-G-29 Gundam Astaroth Origin": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-29_Gundam_Astaroth_Origin",
+      "model": "ASW-G-29",
+      "era": "Post Disaster",
+      "manufacturer": [
+        "Gjallarhorn"
+      ],
+      "operator": [
+        "Gjallarhorn"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.5 m",
+      "weight": "32.2 t (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "equipment": [
+        "Special Energy Transmission Mechanism",
+        "Flight Form"
+      ],
+      "handheldArmaments": [
+        "150mm Shotgun",
+        "Sledgehammer",
+        "γ Nanolaminate Sword"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/a/ae/Gundam_Ashtaroth_Origin_f.jpg/revision/latest/scale-to-width-down/480?cb=20250809094152"
+    },
+    "ASW-G-35 Gundam Marchosias": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-35_Gundam_Marchosias",
+      "model": "ASW-G-35",
+      "era": "Post Disaster",
+      "manufacturer": [
+        "Gjallarhorn"
+      ],
+      "operator": [
+        "Gjallarhorn"
+      ],
+      "designer": [
+        "Naohiro Washio"
+      ],
+      "height": "18.7 m",
+      "weight": "34.3 t (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "equipment": [
+        "4 x Binder (4 x Sub Arm)"
+      ],
+      "fixedArmaments": [
+        "Shield",
+        "4 x Short Sword",
+        "2 x Knuckle Guard/Claw",
+        "2 x Railgun"
+      ],
+      "handheldArmaments": [
+        "Large Long Sword (Bastard Mace)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/6/6d/ASW-G-35_Gundam_Marchosias_%28Front%29.png/revision/latest/scale-to-width-down/480?cb=20260911205226"
+    },
+    "ASW-G-47 Gundam Vual": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-47_Gundam_Vual",
+      "model": "ASW-G-47",
+      "era": "Post Disaster",
+      "production": "Custom",
+      "manufacturer": [
+        "Gjallarhorn (Gundam Frame)",
+        "Tanto Tempo"
+      ],
+      "operator": [
+        "Gjallarhorn (Calamity War)",
+        "Tanto Tempo"
+      ],
+      "pilot": [
+        "Rosario Leone"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.9 m",
+      "weight": "31.5 t (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "fixedArmaments": [
+        "Round Shield",
+        "Spike Shield"
+      ],
+      "handheldArmaments": [
+        "Glaive",
+        "Mining Hammer",
+        "210mm Anti-Material Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/fd/Vual-glaive.png/revision/latest/scale-to-width-down/480?cb=20170622071127"
+    },
+    "ASW-G-71 Gundam Dantalion": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-71_Gundam_Dantalion",
+      "model": "ASW-G-71",
+      "era": "Post Disaster",
+      "manufacturer": [
+        "Gjallarhorn"
+      ],
+      "operator": [
+        "Gjallarhorn"
+      ],
+      "pilot": [
+        "Zaza Fossil"
+      ],
+      "designer": [
+        "Tamotsu Shinohara"
+      ],
+      "height": "18.0 m, 21.0 m (w/ Perfect Cowl), 23.4 m (Perfect Cowl flight mode)",
+      "weight": "27.1 t, 39.5 t (w/ T Booster), 45.3 t (w/ B Booster), 64.2 t (w/ Perfect Cowl) (empty)",
+      "powerplant": "2 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "handheldArmaments": [
+        "Bayonet Rifle/Bayonet Sword",
+        "Bident",
+        "Keraunos",
+        "Aegis (2 x Autocannon)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/7f/ASW-G-71_Gundam_Dantalion_Front.png/revision/latest?cb=20200113225141"
+    },
+    "ASW-G-XX Gundam Vidar": {
+      "url": "https://gundam.fandom.com/wiki/ASW-G-XX_Gundam_Vidar",
+      "model": "ASW-G-XX",
+      "era": "Post Disaster",
+      "production": "Custom",
+      "manufacturer": [
+        "Gjallarhorn"
+      ],
+      "operator": [
+        "Gjallarhorn",
+        "Arianrhod Fleet"
+      ],
+      "pilot": [
+        "Gaelio Bauduin"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.5 m",
+      "weight": "30.9 t (empty)",
+      "powerplant": "3 x Ahab Reactor",
+      "armor": "Nanolaminate Armor",
+      "fixedArmaments": [
+        "2 x Hunter's Edge"
+      ],
+      "handheldArmaments": [
+        "2 x Handgun",
+        "Burst Saber",
+        "110mm Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f3/Gundam_vidar_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20251012031335"
+    },
+    "AVP-03 Gundam Lfrith Anavata": {
+      "url": "https://gundam.fandom.com/wiki/AVP-03_Gundam_Lfrith_Anavata",
+      "model": "AVP-03",
+      "era": "Ad Stella",
+      "manufacturer": [
+        "Vanadis Institute"
+      ],
+      "pilot": [
+        "Yoshika Hygeia"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.2 m",
+      "weight": "44.7 t",
+      "equipment": [
+        "Shell Unit",
+        "2 x Hover Unit",
+        "2 x Electricity Emitter"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Vulcan",
+        "2 x Beam Gun"
+      ],
+      "handheldArmaments": [
+        "Gurenge",
+        "2 x Narukami"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/6/6a/Lfrith_Anavata_Front.png/revision/latest/scale-to-width-down/480?cb=20250223014844"
+    },
+    "BG-011B Build Burning Gundam": {
+      "url": "https://gundam.fandom.com/wiki/BG-011B_Build_Burning_Gundam",
+      "model": "BG-011B",
+      "era": "Build Fighters",
+      "production": "Custom",
+      "manufacturer": [
+        "Sei Iori"
+      ],
+      "operator": [
+        "Try Fighters"
+      ],
+      "pilot": [
+        "Sekai Kamiki",
+        "Sei Iori"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "18.0 m",
+      "weight": "78.3 t",
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/24/BG-011B_Build_Burning_Gundam_-_Front.png/revision/latest?cb=20141123043557"
+    },
+    "CFK-029 Michaelis": {
+      "url": "https://gundam.fandom.com/wiki/CFK-029_Michaelis",
+      "model": "CFK-029",
+      "era": "Ad Stella",
+      "production": "Limited Production",
+      "manufacturer": [
+        "Grassley Defense Systems"
+      ],
+      "operator": [
+        "Grassley House"
+      ],
+      "pilot": [
+        "Shaddiq Zenelli"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "20.3 m",
+      "weight": "68.8 t",
+      "fixedArmaments": [
+        "Beam Bracer",
+        "Beam Saber",
+        "Javelin Bracer (Drill Javelin, Strike Brace)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/c/cf/Michaelis_Front.png/revision/latest/scale-to-width-down/480?cb=20220630034105"
+    },
+    "Concept-X 6-1-2 Turn X": {
+      "url": "https://gundam.fandom.com/wiki/Concept-X_6-1-2_Turn_X",
+      "model": "Concept-X 6-1-2",
+      "era": "Correct Century",
+      "production": "Prototype",
+      "operator": [
+        "Ghingham Fleet"
+      ],
+      "pilot": [
+        "Gym Ghingham",
+        "Monta Gonda (Turn X Monta Gonda Custom)"
+      ],
+      "designer": [
+        "Syd Mead",
+        "Takeshi Takakura (Original Turn X)"
+      ],
+      "height": "20.5 m",
+      "weight": "50.6 t",
+      "powerplant": "Unknown",
+      "armor": "Unidentified",
+      "equipment": [
+        "X-Top",
+        "All Range Attack",
+        "I-Field Barrier",
+        "Moonlight Butterfly System"
+      ],
+      "fixedArmaments": [
+        "Carapace Weapon Platform",
+        "*Bazooka",
+        "*Beam Rifle",
+        "*3-tube Missile Launcher",
+        "*Hand Beam Gun",
+        "9 x Mega Particle Cannon",
+        "Triple Beam Projection System",
+        "Fusion and Crushing Manipulator",
+        "3 x Wire Claw"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/a/a4/CONCEPT-X_6-1-2_Turn_X_-_Front.png/revision/latest/scale-to-width-down/480?cb=20260918230102"
+    },
+    "EDM-GB Gundvölva": {
+      "url": "https://gundam.fandom.com/wiki/EDM-GB_Gundv%C3%B6lva",
+      "model": "EDM-GB",
+      "era": "Ad Stella",
+      "operator": [
+        "Dawn of Fold"
+      ],
+      "designer": [
+        "Takayuki Yanase"
+      ],
+      "height": "18.5 m",
+      "weight": "42.9 t",
+      "equipment": [
+        "2 x Spare Magazine"
+      ],
+      "fixedArmaments": [
+        "Shield"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "2 x Beam Saber"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/0/07/Gundv%C3%B6lva_Front.png/revision/latest/scale-to-width-down/480?cb=20230423222717"
+    },
+    "FP/A-77 Gundam Pharact": {
+      "url": "https://gundam.fandom.com/wiki/FP/A-77_Gundam_Pharact",
+      "model": "FP/A-77",
+      "era": "Ad Stella",
+      "production": "Custom",
+      "manufacturer": [
+        "Peil Technologies"
+      ],
+      "operator": [
+        "Peil House",
+        "GUND-ARM Inc."
+      ],
+      "pilot": [
+        "Elan Ceres",
+        "Norea Du Noc"
+      ],
+      "designer": [
+        "Wataru Inata"
+      ],
+      "height": "19.1 m",
+      "weight": "57.1 t",
+      "equipment": [
+        "2 x Blast Booster",
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 x Beak Foot"
+      ],
+      "handheldArmaments": [
+        "2 x Beam Saber",
+        "Beam Arquebus",
+        "2 x Beam Caliver"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/e/ed/Gundam_Pharact_Front.png/revision/latest/scale-to-width-down/480?cb=20260823190536"
+    },
+    "GAT-X102 Duel Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GAT-X102_Duel_Gundam",
+      "model": "GAT-X102",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Morgenröte Inc.",
+        "Actaeon Industries (Re-manufactured unit)"
+      ],
+      "operator": [
+        "Earth Alliance",
+        "Atlantic Federation",
+        "OMNI Enforcer",
+        "ZAFT",
+        "Le Creuset Team",
+        "Joule Team",
+        "Phantom Pain (Re-manufactured unit)",
+        "Mass-Divers",
+        "Coalition of Volunteers"
+      ],
+      "pilot": [
+        "Yzak Joule",
+        "Mudie Holcroft (Re-manufactured unit)"
+      ],
+      "designer": [
+        "Junichi Akutsu (Principal Design)",
+        "Kunio Okawara (Cleanup)"
+      ],
+      "height": "17.50 m",
+      "weight": "61.9 t, 103.47 t (w/ Assault Shroud)",
+      "powerplant": "Ultracompact Energy Battery",
+      "armor": "Phase Shift armor",
+      "fixedArmaments": [
+        "2 × Igelstellung'75mm Multi-barrel CIWS",
+        "2 × Beam Saber",
+        "Assault Shroud (Shiva 115mm Railgun, 220mm 5-barrel Missile Pod)"
+      ],
+      "handheldArmaments": [
+        "57mm High-energy Beam Rifle (175mm Grenade Launcher)",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f6/Duel_Gundam_%28Front%29_01.png/revision/latest/scale-to-width-down/480?cb=20251012210129"
+    },
+    "GAT-X103 Buster Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GAT-X103_Buster_Gundam",
+      "model": "GAT-X103",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Morgenröte Inc.",
+        "Actaeon Industries (Re-manufactured unit)"
+      ],
+      "operator": [
+        "Earth Alliance",
+        "Atlantic Federation",
+        "OMNI Enforcer",
+        "ZAFT",
+        "Le Creuset Team",
+        "Three Ships Alliance",
+        "Archangel Corps",
+        "Phantom Pain (Re-manufactured unit)",
+        "7th Panzer Division"
+      ],
+      "pilot": [
+        "Dearka Elsman",
+        "Shams Couza (Re-manufactured unit)"
+      ],
+      "designer": [
+        "Junichi Akutsu (principal design)",
+        "Kunio Okawara (cleanup)"
+      ],
+      "height": "18.86 m",
+      "weight": "84.2 t",
+      "powerplant": "Ultracompact Energy Battery",
+      "armor": "Phase Shift Armor",
+      "fixedArmaments": [
+        "2 × 220mm 6-tube Missile Pod",
+        "350mm Gun Launcher (Anti-Armor Shotgun)",
+        "94mm High-energy Rifle (Hyper Impulse Long-Range Sniper Rifle)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/8e/Buster_Gundam_%28Front%29_01.png/revision/latest/scale-to-width-down/480?cb=20251012205938"
+    },
+    "GAT-X105+AQM/E-X01 Aile Strike Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GAT-X105%2BAQM/E-X01_Aile_Strike_Gundam",
+      "model": "GAT-X105+AQM/E-X01",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Morgenröte Inc."
+      ],
+      "operator": [
+        "Earth Alliance",
+        "Atlantic Federation",
+        "OMNI Enforcer",
+        "Archangel Corps",
+        "Orb Union",
+        "Three Ships Alliance",
+        "Coalition of Volunteers"
+      ],
+      "pilot": [
+        "Kira Yamato",
+        "Mu La Flaga"
+      ],
+      "designer": [
+        "Junichi Akutsu",
+        "Kunio Okawara"
+      ],
+      "height": "17.72 m",
+      "weight": "85.1 t",
+      "powerplant": "Ultracompact Energy Battery",
+      "armor": "Phase Shift Armor",
+      "equipment": [
+        "Striker Pack System"
+      ],
+      "fixedArmaments": [
+        "2 × Igelstellung 75mm Multi-barrel CIWS",
+        "2 × Armor Schneider Combat Knife",
+        "2 × Beam Saber"
+      ],
+      "handheldArmaments": [
+        "57mm High-energy Beam Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/5/57/Aile_strike_gundam_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20251012210522"
+    },
+    "GAT-X207 Blitz Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GAT-X207_Blitz_Gundam",
+      "model": "GAT-X207",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Morgenröte Inc.",
+        "Actaeon Industries (Re-manufactured unit)"
+      ],
+      "operator": [
+        "Earth Alliance",
+        "Atlantic Federation",
+        "OMNI Enforcer",
+        "ZAFT",
+        "Le Creuset Team",
+        "Phantom Pain (Re-manufactured unit)",
+        "Mass-Divers",
+        "Coalition of Volunteers"
+      ],
+      "pilot": [
+        "Nicol Amalfi",
+        "Dana Snip (Re-manufactured unit)"
+      ],
+      "height": "18.63 m",
+      "weight": "73.5 t (empty)",
+      "powerplant": "Ultracompact Energy Battery",
+      "armor": "Phase Shift armor",
+      "equipment": [
+        "Mirage Colloid Stealth System"
+      ],
+      "fixedArmaments": [
+        "Piercer Lock Gleipnir",
+        "Trikeros Offensive Shield System (50mm High-energy Beam Rifle, Beam Saber, 3 × Lancer Dart Hypervelocity Kinetic Energy Penetrator)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/fe/GAT-X207_Blitz_Gundam_Front.png/revision/latest/scale-to-width-down/480?cb=20251012205626"
+    },
+    "GAT-X303 Aegis Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GAT-X303_Aegis_Gundam",
+      "model": "GAT-X303",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Morgenröte Inc.",
+        "Actaeon Industries (Re-manufactured unit)"
+      ],
+      "operator": [
+        "Earth Alliance",
+        "Atlantic Federation",
+        "OMNI Enforcer",
+        "ZAFT",
+        "Le Creuset Team",
+        "Phantom Pain (Re-manufactured unit)"
+      ],
+      "pilot": [
+        "Athrun Zala",
+        "Emilio Bloderick (Re-manufactured unit)"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "18.86 m",
+      "weight": "79.6 t",
+      "powerplant": "Ultracompact Energy Battery",
+      "armor": "Phase Shift Armor",
+      "equipment": [
+        "Launcher"
+      ],
+      "fixedArmaments": [
+        "2 × Igelstellung 75mm Multi-barrel CIWS",
+        "4 × Beam Saber",
+        "Scylla 580mm Multi-phase Energy Cannon"
+      ],
+      "handheldArmaments": [
+        "60mm High Energy Beam Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/9/94/Aegis_Gundam_%28Front%29.png/revision/latest/scale-to-width-down/480?cb=20251012205422"
+    },
+    "GF13-006NA Gundam Maxter": {
+      "url": "https://gundam.fandom.com/wiki/GF13-006NA_Gundam_Maxter",
+      "model": "GF13-006NA",
+      "era": "Future Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Neo America"
+      ],
+      "operator": [
+        "Neo America",
+        "Shuffle Alliance",
+        "Devil Gundam Corps"
+      ],
+      "pilot": [
+        "Chibodee Crocket"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "16.3 m",
+      "weight": "16.8 t",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundarium alloy super ceramic composite, rare metal hybrid multilayered materials",
+      "fixedArmaments": [
+        "2 x Gigantic Magnum",
+        "2 x Glove",
+        "2 x Fighting Knuckle",
+        "Shield/Surfboard"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/7b/GF13-006NA_Gundam_Maxter_Normal_Mode_Front.png/revision/latest/scale-to-width-down/480?cb=20251012212802"
+    },
+    "GF13-009NF Gundam Rose": {
+      "url": "https://gundam.fandom.com/wiki/GF13-009NF_Gundam_Rose",
+      "model": "GF13-009NF",
+      "era": "Future Century",
+      "manufacturer": [
+        "Neo France"
+      ],
+      "operator": [
+        "Neo France",
+        "Shuffle Alliance",
+        "Devil Gundam Corps"
+      ],
+      "pilot": [
+        "George de Sand"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "16.2 m",
+      "weight": "13.1 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundarium alloy super ceramic composite, rare metal hybrid multilayered materials",
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "Chevalier Beam Saber"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/6/60/GF13-009NF_Gundam_Rose_Front.png/revision/latest/scale-to-width-down/480?cb=20251012212950"
+    },
+    "GF13-011NC Dragon Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GF13-011NC_Dragon_Gundam",
+      "model": "GF13-011NC",
+      "era": "Future Century",
+      "manufacturer": [
+        "Neo China"
+      ],
+      "operator": [
+        "Neo China",
+        "Kokuryu Gang",
+        "Shuffle Alliance",
+        "Devil Gundam Corps",
+        "Coalition of Volunteers"
+      ],
+      "pilot": [
+        "Sai Saici",
+        "Hiryu"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "16.4 m",
+      "weight": "17.0 t",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundarium alloy super ceramic composite, Rare metal hybrid multilayered materials",
+      "fixedArmaments": [
+        "12 x Feilong Flag",
+        "Benpatsu Tou",
+        "2 x Dragon Claw"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/25/GF13-011NC_Dragon_Gundam_Front.png/revision/latest/scale-to-width-down/480?cb=20251012212848"
+    },
+    "GF13-017NJII God Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GF13-017NJII_God_Gundam",
+      "model": "GF13-017NJII",
+      "era": "Future Century",
+      "manufacturer": [
+        "Neo Japan"
+      ],
+      "operator": [
+        "Neo Japan",
+        "Shuffle Alliance"
+      ],
+      "pilot": [
+        "Domon Kasshu",
+        "Captain Zeon",
+        "Misa Satsukino"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "16.6 m",
+      "weight": "20.6 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy Super Ceramic Composite, Rare Metal Hybrid Multilayered Materials",
+      "fixedArmaments": [
+        "4 x Vulcan Gun",
+        "2 x Machine Cannon",
+        "2 x Beam Sword/God Slash",
+        "2 x God Finger Protector"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/c/c9/God_Gundam_Front_%28transparent%29.png/revision/latest/scale-to-width-down/480?cb=20251012212727"
+    },
+    "GF13-050NSW Nobel Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GF13-050NSW_Nobel_Gundam",
+      "model": "GF13-050NSW",
+      "era": "Future Century",
+      "manufacturer": [
+        "Neo Sweden"
+      ],
+      "operator": [
+        "Neo Sweden"
+      ],
+      "pilot": [
+        "Allenby Beardsley",
+        "Pigna Hershey"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "16.2 m",
+      "weight": "12.6 t",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundarium alloy super ceramic composite, Rare metal hybrid multilayered materials",
+      "equipment": [
+        "Berserker System"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "Beam Ribbon",
+        "Beam Hula Hoop"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/8f/GF13-050NSW_Nobel_Gundam_Front.png/revision/latest/scale-to-width-down/480?cb=20251012215930"
+    },
+    "GMS-Ω GQuuuuuuX": {
+      "url": "https://gundam.fandom.com/wiki/GMS-%CE%A9_GQuuuuuuX",
+      "model": "GMS-Ω",
+      "era": "Universal Century (GQ)",
+      "production": "Prototype",
+      "manufacturer": [
+        "Principality of Zeon (GQ)"
+      ],
+      "operator": [
+        "Principality of Zeon (GQ)",
+        "Sodon Fleet",
+        "Pomeranians (temporarily)"
+      ],
+      "pilot": [
+        "Xavier Olivette",
+        "Amate Yuzuriha",
+        "Nyaan"
+      ],
+      "designer": [
+        "Ikuto Yamashita"
+      ],
+      "height": "18.2 m",
+      "weight": "48.8 t",
+      "equipment": [
+        "Core Fighter",
+        "Psycommu System Omega-type"
+      ],
+      "fixedArmaments": [
+        "Vulcan x 4"
+      ],
+      "handheldArmaments": [
+        "Beam Saber x 2"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/4/4f/GQuuuuuuX_%28Normal%29_Front.png/revision/latest?cb=20260518070526"
+    },
+    "GN-0000+GNR-010/XN 00 XN Raiser": {
+      "url": "https://gundam.fandom.com/wiki/GN-0000%2BGNR-010/XN_00_XN_Raiser",
+      "model": "GN-0000+GNR-010/XN",
+      "era": "Anno Domini",
+      "height": "18.3 m",
+      "powerplant": "2 x GN Drive",
+      "armor": "E-Carbon",
+      "equipment": [
+        "2 x Sub Arm",
+        "Twin Drive System",
+        "Trans-Am System",
+        "Trans-Am Burst System",
+        "Raiser System",
+        "GN Field",
+        "Dock for Haro"
+      ],
+      "fixedArmaments": [
+        "2 x GN Beam Saber",
+        "2 x GN Beam Machine Gun",
+        "8 x GN Micro Missile"
+      ],
+      "handheldArmaments": [
+        "2 x GN Sword II",
+        "2 x GN Buster Sword III"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/5/5c/Gn-0000%2Bgnr-010xn.jpg/revision/latest/scale-to-width-down/480?cb=20120904123854"
+    },
+    "GN-001 Gundam Exia": {
+      "url": "https://gundam.fandom.com/wiki/GN-001_Gundam_Exia",
+      "model": "GN-001",
+      "era": "Anno Domini",
+      "manufacturer": [
+        "Krung Thep"
+      ],
+      "operator": [
+        "Celestial Being"
+      ],
+      "pilot": [
+        "Setsuna F. Seiei"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.3 m",
+      "weight": "57.2 t (empty)",
+      "powerplant": "GN Drive",
+      "armor": "E-Carbon",
+      "equipment": [
+        "Over Boost Mode",
+        "Optical Camouflage",
+        "Trans-Am System",
+        "Veda-linked Operating System"
+      ],
+      "fixedArmaments": [
+        "2 x GN Vulcan",
+        "2 x GN Beam Dagger",
+        "2 x GN Beam Saber"
+      ],
+      "handheldArmaments": [
+        "GN Long Blade",
+        "GN Short Blade",
+        "GN Sword (Rifle Mode)",
+        "GN Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/d/d9/GN-001_%28Front%29.png/revision/latest/scale-to-width-down/480?cb=20210804123915"
+    },
+    "GN-001/hs-A01D Gundam Avalanche Exia'": {
+      "url": "https://gundam.fandom.com/wiki/GN-001/hs-A01D_Gundam_Avalanche_Exia'",
+      "model": "GN-001/hs-A01D",
+      "era": "Anno Domini",
+      "manufacturer": [
+        "Celestial Being"
+      ],
+      "operator": [
+        "Celestial Being"
+      ],
+      "pilot": [
+        "Setsuna F. Seiei"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.3 m",
+      "weight": "65.9 t (Avalanche Dash Unit: 8.7 t)",
+      "powerplant": "GN Drive",
+      "armor": "E-Carbon",
+      "equipment": [
+        "2 x Weapon Arm",
+        "Burst Mode",
+        "Trans-Am System"
+      ],
+      "fixedArmaments": [
+        "2 x GN Claw (2 x GN Beam Saber)",
+        "2 x GN Vulcan",
+        "2 x GN Beam Dagger",
+        "2 x GN Beam Saber"
+      ],
+      "handheldArmaments": [
+        "GN Long Blade",
+        "GN Short Blade",
+        "GN Sword (Rifle Mode)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f6/Gn-001hs-a01d.jpg/revision/latest/scale-to-width-down/480?cb=20251011151640"
+    },
+    "GN-002 Gundam Dynames": {
+      "url": "https://gundam.fandom.com/wiki/GN-002_Gundam_Dynames",
+      "model": "GN-002",
+      "era": "Anno Domini",
+      "manufacturer": [
+        "Krung Thep"
+      ],
+      "operator": [
+        "Celestial Being"
+      ],
+      "pilot": [
+        "Lockon Stratos"
+      ],
+      "designer": [
+        "Takayuki Yanase"
+      ],
+      "height": "18.2 m",
+      "weight": "59.1 t (empty)",
+      "powerplant": "GN Drive",
+      "armor": "E-Carbon",
+      "equipment": [
+        "Sniper Mode",
+        "Dock for Haro",
+        "Optical Camouflage",
+        "Trans-Am System",
+        "Veda-linked Operating System"
+      ],
+      "fixedArmaments": [
+        "24 x GN Missile",
+        "2 x GN Beam Saber",
+        "GN Shield"
+      ],
+      "handheldArmaments": [
+        "GN Sniper Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/4/4c/Gundam_Dynames_%28Front%29_01.png/revision/latest/scale-to-width-down/480?cb=20220717103940"
+    },
+    "GN-003 Gundam Kyrios": {
+      "url": "https://gundam.fandom.com/wiki/GN-003_Gundam_Kyrios",
+      "model": "GN-003",
+      "era": "Anno Domini",
+      "manufacturer": [
+        "Krung Thep"
+      ],
+      "operator": [
+        "Celestial Being",
+        "Human Reform League",
+        "Coalition of Volunteers"
+      ],
+      "pilot": [
+        "Allelujah Haptism"
+      ],
+      "designer": [
+        "Takayuki Yanase"
+      ],
+      "height": "18.9 m",
+      "weight": "54.8 t (empty)",
+      "powerplant": "GN Drive, GN Drive Tau (HRL Experiment)",
+      "armor": "E-Carbon",
+      "equipment": [
+        "GN Field",
+        "Optical Camouflage",
+        "Trans-Am System",
+        "Veda-linked Operating System"
+      ],
+      "fixedArmaments": [
+        "2 x GN Beam Saber",
+        "2 x GN Vulcan"
+      ],
+      "handheldArmaments": [
+        "GN Beam Submachine Gun",
+        "GN Shield (GN Shield Needle)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/6/6d/GN-003_Kyrios.png/revision/latest/scale-to-width-down/480?cb=20210410171256"
+    },
+    "GN-005 Gundam Virtue": {
+      "url": "https://gundam.fandom.com/wiki/GN-005_Gundam_Virtue",
+      "model": "GN-005",
+      "era": "Anno Domini",
+      "manufacturer": [
+        "Krung Thep"
+      ],
+      "operator": [
+        "Celestial Being"
+      ],
+      "pilot": [
+        "Tieria Erde",
+        "Georgios Laertius (GBF)"
+      ],
+      "designer": [
+        "Takayuki Yanase"
+      ],
+      "height": "18.4 m",
+      "weight": "66.7 t (empty)",
+      "powerplant": "GN Drive",
+      "armor": "E-Carbon",
+      "equipment": [
+        "GN Field",
+        "Optical Camouflage",
+        "Trans-Am System",
+        "Veda-linked Operating System"
+      ],
+      "fixedArmaments": [
+        "2 x GN Beam Saber",
+        "2 x GN Cannon"
+      ],
+      "handheldArmaments": [
+        "GN Bazooka (Burst Mode)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/1/1e/Gundam_Virtue_%28Front%29_01.png/revision/latest/scale-to-width-down/480?cb=20220717105108"
+    },
+    "GNT-0000/FS 00 Qan［T］ Full Saber": {
+      "url": "https://gundam.fandom.com/wiki/GNT-0000/FS_00_Qan%EF%BC%BBT%EF%BC%BD_Full_Saber",
+      "model": "GNT-0000/FS",
+      "era": "Anno Domini",
+      "manufacturer": [
+        "Celestial Being"
+      ],
+      "operator": [
+        "Celestial Being"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.3 m",
+      "weight": "70.1 t (empty)",
+      "powerplant": "2 x GN Drive",
+      "armor": "E-Carbon",
+      "equipment": [
+        "Twin Drive System",
+        "Quantum System (Quantum Burst, Quantum Teleportation)",
+        "Trans-Am System",
+        "Quantum Brainwave Control System",
+        "Veda-linked Operating System"
+      ],
+      "fixedArmaments": [
+        "GN Shield (GN Beam Gun)"
+      ],
+      "handheldArmaments": [
+        "GN Sword V",
+        "GN Sword IV Full Saber (Full Saber Mode, GN Launcher Mode, 3 x GN Gunblade (Blade Mode, Gun Mode, GN Gunblade Twin Edge), GN Katar Mode, GN Sword IV Saber Mode, GN Sword IV Rifle Mode)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/6/61/00_Qan%28T%29_FS_Front.jpg/revision/latest/scale-to-width-down/480?cb=20101226180104"
+    },
+    "GNY-001 Gundam Astraea": {
+      "url": "https://gundam.fandom.com/wiki/GNY-001_Gundam_Astraea",
+      "model": "GNY-001",
+      "era": "Anno Domini",
+      "production": "Prototype",
+      "manufacturer": [
+        "Krung Thep"
+      ],
+      "operator": [
+        "Celestial Being",
+        "Krung Thep"
+      ],
+      "pilot": [
+        "Ruido Resonance",
+        "Chall Acustica",
+        "Gundam Meister 874",
+        "Eco Calore"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.3 m",
+      "weight": "55.1 t (empty)",
+      "powerplant": "GN Drive",
+      "armor": "E-Carbon",
+      "equipment": [
+        "Veda-linked Operating System"
+      ],
+      "fixedArmaments": [
+        "2 x GN Beam Saber"
+      ],
+      "handheldArmaments": [
+        "GN Beam Rifle",
+        "GN Shield",
+        "Proto GN Sword"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/4/45/GNY-001_-_Gundam_Astraea_-_Front_View.jpg/revision/latest?cb=20110211014024"
+    },
+    "GNY-001F Gundam Astraea Type F": {
+      "url": "https://gundam.fandom.com/wiki/GNY-001F_Gundam_Astraea_Type_F",
+      "model": "GNY-001F",
+      "era": "Anno Domini",
+      "production": "Custom",
+      "manufacturer": [
+        "Krung Thep (Original Unit)",
+        "Celestial Being Mobile Suit Factory (Astraea Type F Black recolor only)"
+      ],
+      "operator": [
+        "Fereshte",
+        "Fon Spaak (Astraea Type F Black recolor only)"
+      ],
+      "pilot": [
+        "Fon Spaak"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.3 m",
+      "weight": "55.1 t (empty)",
+      "powerplant": "GN Drive (Original Unit, GN Drive Tau)",
+      "armor": "E-Carbon",
+      "equipment": [
+        "Trans-Am System (Original Unit)",
+        "Sensor Mask",
+        "Veda-linked Operating System",
+        "Dock for Hanayo"
+      ],
+      "fixedArmaments": [
+        "2 x GN Beam Saber",
+        "2 x GN Vulcan"
+      ],
+      "handheldArmaments": [
+        "GN Beam Rifle",
+        "GN Shield",
+        "Proto GN Sword",
+        "GN Hammer (Astraea Type F Black recolor only)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/e/e3/Gny-001f.jpg/revision/latest?cb=20120903225743"
+    },
+    "GNY-001F/hs-A01D Gundam Avalanche Astraea Type F'": {
+      "url": "https://gundam.fandom.com/wiki/GNY-001F/hs-A01D_Gundam_Avalanche_Astraea_Type_F'",
+      "model": "GNY-001F/hs-A01D",
+      "era": "Anno Domini",
+      "production": "Custom",
+      "manufacturer": [
+        "Celestial Being Mobile Suit Factory"
+      ],
+      "operator": [
+        "Fon Spaak"
+      ],
+      "pilot": [
+        "Fon Spaak"
+      ],
+      "height": "18.3 m",
+      "weight": "55.1 t (empty)",
+      "powerplant": "GN Drive Tau,",
+      "armor": "E-Carbon",
+      "equipment": [
+        "Sensor Mask"
+      ],
+      "fixedArmaments": [
+        "2 x GN Beam Saber",
+        "2 x GN Claw (2 x GN Beam Saber)"
+      ],
+      "handheldArmaments": [
+        "GN Sword (Rifle Mode)",
+        "GN Beam Rifle",
+        "GN Shield",
+        "GN Hammer"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/75/Gny-001fhs-a01d.jpg/revision/latest/scale-to-width-down/480?cb=20120903231241"
+    },
+    "GSX-401FW Stargazer Gundam": {
+      "url": "https://gundam.fandom.com/wiki/GSX-401FW_Stargazer_Gundam",
+      "model": "GSX-401FW",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Deep Space Survey and Development Organization"
+      ],
+      "operator": [
+        "Deep Space Survey and Development Organization"
+      ],
+      "pilot": [
+        "Sol Ryuune L'ange (pilot)",
+        "Selene McGriff (co-pilot)",
+        "Lady Kawaguchi"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "18.94 m",
+      "weight": "76.22 t (MS only), 83.59 t (w/ Voiture Lumiere ring) (empty)",
+      "equipment": [
+        "A.I.",
+        "Nanomachine Repair System",
+        "Voiture Lumiere Propulsion System"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/4/48/Stargazer_new_site.png/revision/latest/scale-to-width-down/480?cb=20260118062041"
+    },
+    "GX-9901-DX Gundam Double X": {
+      "url": "https://gundam.fandom.com/wiki/GX-9901-DX_Gundam_Double_X",
+      "model": "GX-9901-DX",
+      "era": "After War",
+      "manufacturer": [
+        "New United Nations Earth"
+      ],
+      "operator": [
+        "New United Nations Earth",
+        "Vulture",
+        "Time Sphere Liberation Army"
+      ],
+      "pilot": [
+        "Garrod Ran",
+        "Kato",
+        "K2"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "17 m",
+      "weight": "7.8 t (empty)",
+      "armor": "Luna Titanium Alloy",
+      "equipment": [
+        "Satellite System Mk-II",
+        "Flash System"
+      ],
+      "fixedArmaments": [
+        "2 x Head Vulcan",
+        "4 x Breast Launcher",
+        "2 x Hyper Beam Sword",
+        "Twin Satellite Cannon"
+      ],
+      "handheldArmaments": [
+        "Buster Rifle",
+        "Defense Plate"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/1/19/Gundam_Double_X_%28Front%29_01.png/revision/latest/scale-to-width-down/480?cb=20221108141202"
+    },
+    "Gundam Ex Impulse": {
+      "url": "https://gundam.fandom.com/wiki/Gundam_Ex_Impulse",
+      "production": "Custom",
+      "operator": [
+        "Sokyu Ryodan"
+      ],
+      "pilot": [
+        "Manfred von Sakazaki"
+      ],
+      "designer": [
+        "NAOKI"
+      ],
+      "equipment": [
+        "Core Splendor",
+        "Hardpoints (for Silhouette Packs)"
+      ],
+      "fixedArmaments": [
+        "2 × Beam Saber",
+        "2 × Anti-armor Knife",
+        "2 × 20mm CIWS"
+      ],
+      "handheldArmaments": [
+        "Adler Zwei Large Beam Rifle",
+        "Mobile Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/75/Ex_Impulse_Gundam_1.jpg/revision/latest/scale-to-width-down/480?cb=20230609151907"
+    },
+    "LM314V24 Victory 2 Assault Gundam": {
+      "url": "https://gundam.fandom.com/wiki/LM314V24_Victory_2_Assault_Gundam",
+      "model": "LM314V24",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "League Militaire"
+      ],
+      "operator": [
+        "League Militaire"
+      ],
+      "pilot": [
+        "Uso Ewin"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "15.5 m",
+      "weight": "19.1 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium alloy/super-ceramic composite, Anti-beam-coated external armor plates",
+      "equipment": [
+        "Core Block System",
+        "Custom Targeting Sensor",
+        "10 x Hardpoint",
+        "2 x I-Field Generator",
+        "Minovsky Drive System"
+      ],
+      "fixedArmaments": [
+        "2 x Head Vulcan",
+        "4 x Beam Saber",
+        "2 x Beam Shield",
+        "2 x VSBR"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "↳ Beam Pistol",
+        "↳ Multi-Launcher",
+        "↳ Grenade Launcher",
+        "Mega Beam Rifle",
+        "Mega Beam Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/7c/Victory_2_Assault_Gundam.jpg/revision/latest?cb=20120707130831"
+    },
+    "MBF-02VV Gundam Astray Turn Red": {
+      "url": "https://gundam.fandom.com/wiki/MBF-02VV_Gundam_Astray_Turn_Red",
+      "model": "MBF-02VV",
+      "era": "Cosmic Era",
+      "production": "Custom",
+      "manufacturer": [
+        "Actaeon Industries"
+      ],
+      "operator": [
+        "Actaeon Industries"
+      ],
+      "pilot": [
+        "Valerio Valeri"
+      ],
+      "height": "22.67 m",
+      "weight": "76.12 t",
+      "powerplant": "Ultracompact Energy Battery",
+      "equipment": [
+        "Trio System",
+        "80 (Combat AI)"
+      ],
+      "fixedArmaments": [
+        "2 x Igelstellung 75mm multi-barrel CIWS",
+        "2 x Tactical Arms"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/e/e7/GSDAR_Astray_Turn_Red.png/revision/latest/scale-to-width-down/480?cb=20211126151253"
+    },
+    "MBF-P02 Gundam Astray Red Dragon": {
+      "url": "https://gundam.fandom.com/wiki/MBF-P02_Gundam_Astray_Red_Dragon",
+      "model": "MBF-P02",
+      "era": "Cosmic Era",
+      "production": "Custom",
+      "manufacturer": [
+        "Morgenröte Inc.",
+        "Junk Guild"
+      ],
+      "operator": [
+        "Junk Guild"
+      ],
+      "pilot": [
+        "Lowe Guele"
+      ],
+      "designer": [
+        "Junichi Akutsu"
+      ],
+      "height": "17.53 m",
+      "powerplant": "Ultracompact energy battery",
+      "armor": "Foaming Metal",
+      "equipment": [
+        "Ddraig Head",
+        "Flight Unit"
+      ],
+      "fixedArmaments": [
+        "Gerbera Straight",
+        "2 x Beam saber",
+        "3 x Caletvwlch"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/a/a9/Astray_Red_Dragon_.jpg/revision/latest/scale-to-width-down/480?cb=20130929124722"
+    },
+    "MBF-P02 Gundam Astray Red Frame": {
+      "url": "https://gundam.fandom.com/wiki/MBF-P02_Gundam_Astray_Red_Frame",
+      "model": "MBF-P02",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Morgenröte Inc.",
+        "Librarian Works (Replica unit)"
+      ],
+      "operator": [
+        "Junk Guild"
+      ],
+      "pilot": [
+        "Lowe Guele",
+        "Juri Wu Nien",
+        "Un'no (Replica unit)",
+        "Tsukasa Shiba",
+        "Shuji Sendo"
+      ],
+      "designer": [
+        "Junichi Akutsu"
+      ],
+      "height": "17.53 m",
+      "weight": "57.1 t (w/ flight unit)",
+      "powerplant": "Ultracompact energy battery",
+      "armor": "Foaming metal",
+      "equipment": [
+        "External connector"
+      ],
+      "fixedArmaments": [
+        "2 x Igelstellung 75mm multi-barrel CIWS",
+        "2 x Beam Saber",
+        "Gerbera Straight"
+      ],
+      "handheldArmaments": [
+        "Type 71 beam rifle",
+        "Shield",
+        "Caletvwlch"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/81/Mbf-p02d.jpg/revision/latest/scale-to-width-down/480?cb=20120223165739"
+    },
+    "MBF-P0S Gundam Astray Red Frame Inversion": {
+      "url": "https://gundam.fandom.com/wiki/MBF-P0S_Gundam_Astray_Red_Frame_Inversion",
+      "model": "MBF-P0S",
+      "era": "Gundam Breaker",
+      "production": "Custom",
+      "manufacturer": [
+        "Kentaro Mahara"
+      ],
+      "pilot": [
+        "Mr. Bushido (AI)"
+      ],
+      "height": "17.53 m",
+      "weight": "58.0 t",
+      "equipment": [
+        "External Connector",
+        "Flight Unit"
+      ],
+      "fixedArmaments": [
+        "2 x Igelstellung",
+        "2 x Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Gerbera Straight",
+        "Shield"
+      ]
+    },
+    "MD-0021 Desultor": {
+      "url": "https://gundam.fandom.com/wiki/MD-0021_Desultor",
+      "model": "MD-0021",
+      "era": "Ad Stella",
+      "production": "Mass Production",
+      "manufacturer": [
+        "Jeturk Heavy Machinery"
+      ],
+      "operator": [
+        "Dawn of Fold"
+      ],
+      "pilot": [
+        "Olcott",
+        "Guel Jeturk"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.1 m",
+      "weight": "67.5 t",
+      "fixedArmaments": [
+        "2 x 140mm Vulcan",
+        "Shield",
+        "2 x Heat Knife"
+      ],
+      "handheldArmaments": [
+        "Assault Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/21/Desultor_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20230329014728"
+    },
+    "MD-0064 Darilbalde": {
+      "url": "https://gundam.fandom.com/wiki/MD-0064_Darilbalde",
+      "model": "MD-0064",
+      "era": "Ad Stella",
+      "production": "Custom",
+      "manufacturer": [
+        "Jeturk Heavy Machinery"
+      ],
+      "operator": [
+        "Jeturk House"
+      ],
+      "pilot": [
+        "Guel Jeturk"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.7 m",
+      "weight": "72.8 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Vulcan",
+        "2 x Shackle Claw",
+        "2 x Knee Crusher (4 x Pellet Mine)"
+      ],
+      "handheldArmaments": [
+        "Beam Javelin (Beam Anchor/Beam Kunai)",
+        "Composite Arms (New Weapons Ver. only)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/3/3a/Darilbalde_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20221016181621"
+    },
+    "MDX-0003 Gundam Schwarzette": {
+      "url": "https://gundam.fandom.com/wiki/MDX-0003_Gundam_Schwarzette",
+      "model": "MDX-0003",
+      "era": "Ad Stella",
+      "production": "Prototype",
+      "manufacturer": [
+        "Jeturk Heavy Machinery"
+      ],
+      "operator": [
+        "Jeturk House"
+      ],
+      "pilot": [
+        "Lauda Neill"
+      ],
+      "designer": [
+        "Ippei Gyoubu"
+      ],
+      "height": "18.7 m",
+      "weight": "73.3 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 x Arm Launcher"
+      ],
+      "handheldArmaments": [
+        "Guardian (Beam Blade/Beam Gatling)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f6/Gundam_schwarzette_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20230625083834"
+    },
+    "MHF-01Ω Load Astray Ω": {
+      "url": "https://gundam.fandom.com/wiki/MHF-01%CE%A9_Load_Astray_%CE%A9",
+      "model": "MHF-01Ω",
+      "era": "Cosmic Era",
+      "production": "Custom",
+      "manufacturer": [
+        "Fairness Zweigle"
+      ],
+      "pilot": [
+        "Fairness Zweigle"
+      ],
+      "handheldArmaments": [
+        "Load Long Sword (Load Saber, Load Whip)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/4/45/Load_Astray_Omega_Sword.png/revision/latest/scale-to-width-down/480?cb=20260612165510"
+    },
+    "MSN-04 Sazabi": {
+      "url": "https://gundam.fandom.com/wiki/MSN-04_Sazabi",
+      "model": "MSN-04",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Anaheim Electronics"
+      ],
+      "operator": [
+        "Neo Zeon",
+        "Newborn Neo Zeon",
+        "Mass-Divers"
+      ],
+      "pilot": [
+        "Char Aznable",
+        "Smith Kingsley",
+        "Vladi Zarth",
+        "Kenta Sakazaki"
+      ],
+      "designer": [
+        "Yutaka Izubuchi",
+        "Hajime Katoki (Ver.Ka)"
+      ],
+      "height": "25.6 m",
+      "weight": "71.2 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy",
+      "equipment": [
+        "2 x External Propellant Tank",
+        "Psycho-Frame Cockpit",
+        "Psycommu System"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Saber",
+        "Scattering Mega Particle Cannon"
+      ],
+      "handheldArmaments": [
+        "Beam Shot Rifle",
+        "Shield",
+        "↳ 3 x Missile",
+        "↳ Beam Tomahawk"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/b/b8/MSN-04_Sazabi_-_Front.png/revision/latest/scale-to-width-down/480?cb=20171001171810"
+    },
+    "MSN-06S Sinanju": {
+      "url": "https://gundam.fandom.com/wiki/MSN-06S_Sinanju",
+      "model": "MSN-06S",
+      "era": "Universal Century",
+      "production": "Custom",
+      "manufacturer": [
+        "Anaheim Electronics (Original Unit)"
+      ],
+      "operator": [
+        "Sleeves"
+      ],
+      "pilot": [
+        "Full Frontal"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "22.6 m",
+      "weight": "56.9 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy",
+      "equipment": [
+        "2 x External Propellant Tank",
+        "Psycho-Frame Cockpit",
+        "Intention Automatic System"
+      ],
+      "fixedArmaments": [
+        "2 x 60mm Vulcan Gun",
+        "2 x Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "Shield (2 x Beam Axe, Grenade Launcher)",
+        "Rocket Bazooka"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/b/bc/Msn-06s.jpg/revision/latest/scale-to-width-down/480?cb=20160225053012"
+    },
+    "OZ-00MS Tallgeese Flugel": {
+      "url": "https://gundam.fandom.com/wiki/OZ-00MS_Tallgeese_Flugel",
+      "model": "OZ-00MS",
+      "era": "After Colony",
+      "production": "Custom",
+      "manufacturer": [
+        "OZ"
+      ],
+      "operator": [
+        "OZ"
+      ],
+      "pilot": [
+        "Zechs Merquise"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "17.4 m",
+      "powerplant": "Ultracompact Fusion Reactor,",
+      "armor": "Titanium Alloy",
+      "equipment": [
+        "Self-Destruct System"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Saber",
+        "Dober Gun",
+        "Tempest Heat Lance"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f4/Oz-00ms-_flugel.jpg/revision/latest/scale-to-width-down/480?cb=20140527043206"
+    },
+    "PPGN-001 Gundam Amazing Exia": {
+      "url": "https://gundam.fandom.com/wiki/PPGN-001_Gundam_Amazing_Exia",
+      "model": "PPGN-001",
+      "era": "Build Fighters",
+      "production": "Custom",
+      "manufacturer": [
+        "Plavsky Particle System Engineering",
+        "Allan Adams",
+        "Meijin Kawaguchi"
+      ],
+      "operator": [
+        "Plavsky Particle System Engineering"
+      ],
+      "pilot": [
+        "Meijin Kawaguchi",
+        "Allan Adams"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.3 m",
+      "weight": "81.0 t (Completed form)",
+      "equipment": [
+        "Trans-Am System",
+        "Trans-Am Booster"
+      ],
+      "fixedArmaments": [
+        "2 x GN Vulcan/Beam Saber",
+        "2 x Trans-Am GN Blade (Complete Form)",
+        "Head Cannon (Beam Barrier, Trans-Am Booster only)"
+      ],
+      "handheldArmaments": [
+        "Amazing GN Sword (GN Vulcan/Beam Saber)",
+        "Amazing GN Blade",
+        "Amazing GN Shield (Complete Form)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/c/c8/PPMS-001_Front.png/revision/latest?cb=20140310134136"
+    },
+    "RB-79 Ball": {
+      "url": "https://gundam.fandom.com/wiki/RB-79_Ball",
+      "model": "RB-79",
+      "era": "Universal Century",
+      "production": "Mass Production",
+      "manufacturer": [
+        "Earth Federation"
+      ],
+      "operator": [
+        "Earth Federation Forces"
+      ],
+      "pilot": [
+        "Hayato Kobayashi",
+        "Hiden",
+        "Broglie Ligera",
+        "Philip Hughes",
+        "Summona Fulis",
+        "Reiji",
+        "Gloria Chambler",
+        "Frankie Kruger",
+        "Grant",
+        "Renee",
+        "Ubaldo Molina"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "12.8 m",
+      "weight": "25.0 t",
+      "powerplant": "Fuel Cell",
+      "fixedArmaments": [
+        "180mm Low-Recoil Cannon"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/0/04/Rb-79.jpg/revision/latest?cb=20120630062609"
+    },
+    "RB-79PP Polypodball": {
+      "url": "https://gundam.fandom.com/wiki/RB-79PP_Polypodball",
+      "model": "RB-79PP",
+      "production": "Custom",
+      "manufacturer": [
+        "Azuma Carl Thompson"
+      ],
+      "operator": [
+        "V'Cards"
+      ],
+      "pilot": [
+        "BALL"
+      ],
+      "designer": [
+        "Junya Ishigaki"
+      ],
+      "fixedArmaments": [
+        "180mm Cannon"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/84/Polypodball.jpg/revision/latest/scale-to-width-down/480?cb=20180925111921"
+    },
+    "RVR-01 Gundam Naion": {
+      "url": "https://gundam.fandom.com/wiki/RVR-01_Gundam_Naion",
+      "model": "RVR-01",
+      "era": "Ad Stella",
+      "manufacturer": [
+        "Shijima Zoma"
+      ],
+      "operator": [
+        "Rocking Horse Orphanage"
+      ],
+      "designer": [
+        "Wataru Inata"
+      ],
+      "height": "19.7 m",
+      "weight": "75.8 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 × Beam Vulcan",
+        "2 × Vajra"
+      ],
+      "handheldArmaments": [
+        "Alterable Bayonet",
+        "2 × Beam Saber"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/26/Gundam_Naion_Front.jpg/revision/latest/scale-to-width-down/480?cb=20250923075727"
+    },
+    "RX-0 Unicorn Gundam": {
+      "url": "https://gundam.fandom.com/wiki/RX-0_Unicorn_Gundam",
+      "model": "RX-0",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Anaheim Electronics"
+      ],
+      "operator": [
+        "Vist Foundation",
+        "Londo Bell"
+      ],
+      "pilot": [
+        "Banagher Links"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "19.7 m (Unicorn Mode), 21.7 m (Destroy Mode)",
+      "weight": "42.7 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy",
+      "equipment": [
+        "La+ Program",
+        "Intention Automatic System",
+        "NT-D System",
+        "Destroy Unchained",
+        "Luminous Crystal Body"
+      ],
+      "fixedArmaments": [
+        "2 x 60mm Vulcan Gun (OVA Version only)",
+        "4 x Beam Saber (2 on forearms; 2 in backpack, usable in Destroy Mode only)",
+        "↳ 2 x Beam Tonfa"
+      ],
+      "handheldArmaments": [
+        "Beam Magnum",
+        "Hyper Bazooka",
+        "Shield (I-Field Generator)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/b/b2/Unicorn_Gundam_Unicorn_Mode_front.png/revision/latest/scale-to-width-down/480?cb=20260603135516"
+    },
+    "RX-121-2P Gundam TR-1 ［Hazel Owsla］": {
+      "url": "https://gundam.fandom.com/wiki/RX-121-2P_Gundam_TR-1_%EF%BC%BBHazel_Owsla%EF%BC%BD",
+      "model": "RX-121-2P",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Konpeitoh Arsenal"
+      ],
+      "operator": [
+        "Titans Test Team (Black Otter Team)"
+      ],
+      "pilot": [
+        "Carl Matsubara"
+      ],
+      "designer": [
+        "Kenki Fujioka"
+      ],
+      "height": "18.1 m",
+      "weight": "63.0 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Luna Titanium Alloy",
+      "equipment": [
+        "Emergency Escape Pod ［Primrose］"
+      ],
+      "fixedArmaments": [
+        "Beam Saber",
+        "2 x Vulcan Gun"
+      ],
+      "handheldArmaments": [
+        "Long Blade Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/fb/Hazel_Owsla_base_unit_titans.png/revision/latest?cb=20251201114131"
+    },
+    "RX-124 Gundam TR-6 ［Haze'n-thley II］": {
+      "url": "https://gundam.fandom.com/wiki/RX-124_Gundam_TR-6_%EF%BC%BBHaze'n-thley_II%EF%BC%BD",
+      "model": "RX-124",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Konpeitoh Arsenal"
+      ],
+      "operator": [
+        "Titans Test Team (Black Otter Team)",
+        "Black Hares"
+      ],
+      "pilot": [
+        "Eliard Hunter"
+      ],
+      "designer": [
+        "Kenki Fujioka"
+      ],
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "equipment": [
+        "Boost Pod",
+        "BUNNyS",
+        "MP-X87 ［Primrose II］"
+      ],
+      "fixedArmaments": [
+        "2 x Boost Pod Vulcan",
+        "2 x Beam Cannon",
+        "Leg Missile Launcher",
+        "2 x High Mega Particle Cannon"
+      ],
+      "handheldArmaments": [
+        "Composite Shield Booster"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/c/c8/RX-124_GUNDAM_TR-6_HAZE%E2%80%99N-THLEY%E2%85%A1-_Front.png/revision/latest/scale-to-width-down/480?cb=20250620120712"
+    },
+    "RX-124 Gundam TR-6 ［Woundwort］": {
+      "url": "https://gundam.fandom.com/wiki/RX-124_Gundam_TR-6_%EF%BC%BBWoundwort%EF%BC%BD",
+      "model": "RX-124",
+      "era": "Universal Century",
+      "production": "Limited Production",
+      "manufacturer": [
+        "Konpeitoh Arsenal"
+      ],
+      "operator": [
+        "Titans Test Team (Black Otter Team)",
+        "Black Hares"
+      ],
+      "pilot": [
+        "Eliard Hunter"
+      ],
+      "designer": [
+        "Kenki Fujioka"
+      ],
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "equipment": [
+        "Boost Pod",
+        "MP-X87 ［Primrose II］",
+        "Sub-Arm Unit"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun"
+      ],
+      "handheldArmaments": [
+        "Composite Shield Booster",
+        "*I-Field Generator",
+        "*Beam Rifle/Heat Blade/Claw"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/73/Rx-124-woundwort-ms.jpg/revision/latest/scale-to-width-down/480?cb=20250605061436"
+    },
+    "RX-78(G)E Gundam EX": {
+      "url": "https://gundam.fandom.com/wiki/RX-78(G)E_Gundam_EX",
+      "model": "RX-78(G)E",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Earth Federation Forces"
+      ],
+      "operator": [
+        "Earth Federation Ground Force"
+      ],
+      "pilot": [
+        "Gundam Pilot"
+      ],
+      "designer": [
+        "Kimitoshi Yamane"
+      ],
+      "height": "18.5 m",
+      "weight": "41.2 t (empty)",
+      "armor": "Luna Titanium Alloy",
+      "fixedArmaments": [
+        "4 x Head Autocannon",
+        "Shoulder Gatling Gun",
+        "3 x Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/9/92/RfV_Mecha_RX-78%28G%29E_Gundam_EX_p01_design_front_20241124.jpg/revision/latest?cb=20241124143102"
+    },
+    "RX-78-2 Gundam": {
+      "url": "https://gundam.fandom.com/wiki/RX-78-2_Gundam",
+      "model": "RX-78-2",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Earth Federation",
+        "Project V"
+      ],
+      "operator": [
+        "Earth Federation Space Force",
+        "13th Autonomous Corps",
+        "Eisengrad Army",
+        "Time Sphere Liberation Army"
+      ],
+      "pilot": [
+        "Amuro Ray",
+        "Sayla Mass",
+        "Ryu Jose",
+        "Shiro Kyoda",
+        "Takeshi Iori",
+        "Hal Vizardt",
+        "Tristan",
+        "Hiroto Kuga",
+        "Mercury Promenade",
+        "Tokio Kurono",
+        "Aiko Anna Pruna"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "18.0 m",
+      "weight": "60.0 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Luna Titanium Alloy",
+      "equipment": [
+        "Core Block System",
+        "Hardpoints",
+        "Learning Computer",
+        "Magnet Coating (field upgrade)",
+        "Heatproof Film/Heatproof Field",
+        "Autopilot"
+      ],
+      "fixedArmaments": [
+        "2 × 60mm Vulcan Gun"
+      ],
+      "handheldArmaments": [
+        "BOWA-XBR-M-79-07G Beam Rifle",
+        "RX-M-SH-008/S-01025 Shield",
+        "2 × Beam Saber (2 x Beam Javelin)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/3/36/01._RX-78-2_Gundam.jpg/revision/latest/scale-to-width-down/480?cb=20170821232511"
+    },
+    "RX-78F00 Gundam": {
+      "url": "https://gundam.fandom.com/wiki/RX-78F00_Gundam",
+      "model": "RX-78F00",
+      "era": "Not Applicable/Specified",
+      "designer": [
+        "Masaki Kawahara"
+      ],
+      "height": "18 m",
+      "weight": "25 t",
+      "image": "https://static.wikia.nocookie.net/gundam/images/c/c6/RX-78F00-Gundam.png/revision/latest/scale-to-width-down/480?cb=20210821053049"
+    },
+    "RX-78TB-3［FA］ Gundam Stormbringer F.A.": {
+      "url": "https://gundam.fandom.com/wiki/RX-78TB-3%EF%BC%BBFA%EF%BC%BD_Gundam_Stormbringer_F.A.",
+      "model": "RX-78TB-3［FA］",
+      "era": "Not Applicable/Specified",
+      "production": "Custom",
+      "manufacturer": [
+        "Tim Barret"
+      ],
+      "operator": [
+        "V'Cards"
+      ],
+      "pilot": [
+        "GIMM"
+      ],
+      "designer": [
+        "NAOKI"
+      ],
+      "equipment": [
+        "2 x External Propellant Tank"
+      ],
+      "fixedArmaments": [
+        "Twin Beam Cannon",
+        "360mm Rocket Cannon Custom",
+        "Box Beam Saber"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/25/Gundam_Stormbringer_Fatal_Ash_front.png/revision/latest?cb=20221105230041"
+    },
+    "RX-79［G］ Gundam Ground Type": {
+      "url": "https://gundam.fandom.com/wiki/RX-79%EF%BC%BBG%EF%BC%BD_Gundam_Ground_Type",
+      "model": "RX-79［G］",
+      "era": "Universal Century",
+      "production": "Limited Production",
+      "manufacturer": [
+        "Earth Federation"
+      ],
+      "operator": [
+        "Earth Federation Ground Force",
+        "08th Mobile Suit Team",
+        "Gunpla Mafia (GM Head)"
+      ],
+      "pilot": [
+        "Shiro Amada",
+        "Terry Sanders Jr.",
+        "Karen Joshua",
+        "Matt Healy",
+        "Kamuna Tachibana",
+        "Barry Balzary",
+        "Nao Jessica Parker",
+        "Sebastian Kurie",
+        "Michel Ninorich",
+        "Aina Sahalin",
+        "Itsuse Hiko Turner",
+        "Damon Keisley",
+        "Naomi Kudo"
+      ],
+      "designer": [
+        "Kunio Okawara (principal design)",
+        "Kimitoshi Yamane (detailed design)"
+      ],
+      "height": "18.2 m",
+      "weight": "73 t",
+      "powerplant": "Thermonuclear Fusion Reactor",
+      "armor": "Luna Titanium Alloy",
+      "equipment": [
+        "MAX Mode",
+        "Head Equipment",
+        "Desert Equipment",
+        "Container Rack"
+      ],
+      "fixedArmaments": [
+        "Vulcan Gun",
+        "Multi-Launcher",
+        "2 x X.B.Sa-G-03 Beam Saber"
+      ],
+      "handheldArmaments": [
+        "YHI YF-MG100 100mm Machine Gun",
+        "RGM*S-Sh-WF/S-00109 Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/e/ec/Gundam_Ground_Type_Front_HD.png/revision/latest/scale-to-width-down/480?cb=20241022125512"
+    },
+    "RX-79［G］Ez-8 Gundam Ez8": {
+      "url": "https://gundam.fandom.com/wiki/RX-79%EF%BC%BBG%EF%BC%BDEz-8_Gundam_Ez8",
+      "model": "RX-79［G］Ez-8",
+      "era": "Universal Century",
+      "production": "Custom",
+      "manufacturer": [
+        "Earth Federation"
+      ],
+      "operator": [
+        "Earth Federation Ground Force",
+        "08th Mobile Suit Team",
+        "Coalition of Volunteers"
+      ],
+      "pilot": [
+        "Shiro Amada",
+        "Aina Sahalin"
+      ],
+      "designer": [
+        "Kimitoshi Yamane"
+      ],
+      "height": "18.0 m",
+      "weight": "71.7 t",
+      "powerplant": "Thermonuclear Fusion Reactor",
+      "armor": "Luna Titanium Alloy, Super-Hard Steel Alloy",
+      "equipment": [
+        "Container Rack"
+      ],
+      "fixedArmaments": [
+        "2 x 35mm Machine Gun",
+        "12.7mm Vulcan Gun",
+        "2 x X.B.Sa-G-03 Beam Saber"
+      ],
+      "handheldArmaments": [
+        "YHI YF-MG100 100mm Machine Gun",
+        "RGM*S-Sh-WF/S-00109 Shield",
+        "RGM·S-Sh-WF/S-00116·Ap-A Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/75/Gundam_EZ8_Front_HD.png/revision/latest/scale-to-width-down/480?cb=20241022131752"
+    },
+    "RX-81 G-Line": {
+      "url": "https://gundam.fandom.com/wiki/RX-81_G-Line",
+      "model": "RX-81",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Earth Federation"
+      ],
+      "operator": [
+        "Earth Federation Forces",
+        "Phantom Sweep Corps"
+      ],
+      "pilot": [
+        "Hugues Courand",
+        "Cherie Allison"
+      ],
+      "height": "19.2 m",
+      "weight": "72.0 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Luna Titanium Alloy",
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "2 x Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Short Beam Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f1/G-Line_frame_Front.png/revision/latest?cb=20231115040028"
+    },
+    "RX-93 ν Gundam": {
+      "url": "https://gundam.fandom.com/wiki/RX-93_%CE%BD_Gundam",
+      "model": "RX-93",
+      "era": "Universal Century",
+      "production": "Custom",
+      "manufacturer": [
+        "Anaheim Electronics"
+      ],
+      "operator": [
+        "Earth Federation Forces",
+        "Londo Bell"
+      ],
+      "pilot": [
+        "Amuro Ray",
+        "Keiji Date"
+      ],
+      "designer": [
+        "Yutaka Izubuchi"
+      ],
+      "height": "23.0 m",
+      "weight": "63.0 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy",
+      "equipment": [
+        "Birdlime Launchers",
+        "Dummy Launchers",
+        "Psycho-Frame Cockpit"
+      ],
+      "fixedArmaments": [
+        "2 x 60mm Vulcan Gun",
+        "Beam Saber",
+        "Spare Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle (Grenade Launcher)",
+        "New Hyper Bazooka",
+        "Shield (Beam Cannon, 4 x Small Missile)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/8c/Rx-93.jpg/revision/latest/scale-to-width-down/480?cb=20201101140124"
+    },
+    "RX-93-ν2 Hi-ν Gundam": {
+      "url": "https://gundam.fandom.com/wiki/RX-93-%CE%BD2_Hi-%CE%BD_Gundam",
+      "model": "RX-93-ν2",
+      "era": "Universal Century",
+      "production": "Custom",
+      "manufacturer": [
+        "Anaheim Electronics"
+      ],
+      "operator": [
+        "Londo Bell"
+      ],
+      "pilot": [
+        "Amuro Ray",
+        "Beltorchika Irma",
+        "Koji Matsumoto (GPB Colors)",
+        "Pigna Hershey"
+      ],
+      "designer": [
+        "Yutaka Izubuchi"
+      ],
+      "height": "20.0 m",
+      "weight": "27.9 t (empty)",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy",
+      "equipment": [
+        "2 x Propellant/Thruster Unit",
+        "Psycho-Frame"
+      ],
+      "fixedArmaments": [
+        "2 x 60mm Vulcan Gun",
+        "Machine Gun/Beam Gatling Gun (Beam Saber)",
+        "3 x Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "New Hyper Bazooka",
+        "Shield (Beam Cannon, 4 x Small Missile)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/8e/Rx-93-v-2.jpg/revision/latest/scale-to-width-down/480?cb=20130207174216"
+    },
+    "RX-93ff ν Gundam": {
+      "url": "https://gundam.fandom.com/wiki/RX-93ff_%CE%BD_Gundam",
+      "model": "RX-93ff",
+      "era": "Universal Century",
+      "manufacturer": [
+        "Side-F"
+      ],
+      "pilot": [
+        "Amuro Ray"
+      ],
+      "designer": [
+        "Masatake Kawahara"
+      ],
+      "height": "24.8 m",
+      "equipment": [
+        "Birdlime Launchers",
+        "Dummy Launchers",
+        "Psycho-Frame Cockpit"
+      ],
+      "fixedArmaments": [
+        "2 x 60mm Vulcan Gun",
+        "Beam Saber",
+        "Spare Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "↳ Grenade Launcher",
+        "New Hyper Bazooka",
+        "Shield",
+        "↳ Beam Cannon",
+        "↳ 4 x Small Missile"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/b/b9/RX-93ff_%CE%BD_Gundam_Front_CG.jpg/revision/latest/scale-to-width-down/480?cb=20220314031840"
+    },
+    "System-∀99 ∀ Gundam": {
+      "url": "https://gundam.fandom.com/wiki/System-%E2%88%8099_%E2%88%80_Gundam",
+      "model": "System-∀99",
+      "era": "Correct Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Unknown Human Civilization"
+      ],
+      "operator": [
+        "Inglessa Militia",
+        "Ghingham Fleet",
+        "Dianna Counter"
+      ],
+      "pilot": [
+        "Loran Cehack",
+        "Sochie Heim",
+        "Teteth Halleh",
+        "Merrybell Gadget",
+        "Joseph Yaht"
+      ],
+      "designer": [
+        "Syd Mead (draft)",
+        "Atsushi Shigeta (cleanup)"
+      ],
+      "height": "20.0 m",
+      "weight": "28.6 t",
+      "powerplant": "DHGCP (Discontinuous Hyperoscillation Gauge Collapsing Pile) Type",
+      "armor": "FE Type",
+      "equipment": [
+        "Core Fighter",
+        "Moonlight Butterfly",
+        "Nanoskin",
+        "Spatial Transfer",
+        "System ∀"
+      ],
+      "fixedArmaments": [
+        "2 x Abdominal Beam Cannon",
+        "2 x Beam Saber",
+        "6 x Chest Multi-Purpose Silo"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/80/SYSTEM_%E2%88%80-99_%E2%88%80_Gundam_Front.png/revision/latest/scale-to-width-down/480?cb=20260918230012"
+    },
+    "TYP-G12/CMR Typhoeus Gundam Chimera": {
+      "url": "https://gundam.fandom.com/wiki/TYP-G12/CMR_Typhoeus_Gundam_Chimera",
+      "model": "TYP-G12/CMR",
+      "era": "Not Applicable/Specified",
+      "production": "Custom",
+      "manufacturer": [
+        "Maria Urutsuki"
+      ],
+      "pilot": [
+        "Mascarilla"
+      ],
+      "height": "31.3 m",
+      "weight": "336.5 t",
+      "equipment": [
+        "Psycommu System"
+      ],
+      "fixedArmaments": [
+        "2 x Smoothbore Gun",
+        "Psycho Arm Unit II",
+        "↳ 6 x Mega Beam Cannon",
+        "↳ 2 x 5-barrel Beam Cannon",
+        "↳ 2 x Wire-Guided Beam Sword",
+        "2 x Dragon Head (Breath Thruster)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/26/Typhoeus_Gundam_Chimera.png/revision/latest/scale-to-width-down/480?cb=20231210042722"
+    },
+    "WD-M01MS ∀ Gundam Shin": {
+      "url": "https://gundam.fandom.com/wiki/WD-M01MS_%E2%88%80_Gundam_Shin",
+      "model": "WD-M01MS",
+      "era": "Build Fighters",
+      "production": "Custom",
+      "manufacturer": [
+        "Shinya Shimizu",
+        "TAKU (replica)"
+      ],
+      "pilot": [
+        "Shinya Shimizu"
+      ],
+      "designer": [
+        "Seira Masuo",
+        "ASTRAYS (illustration)"
+      ],
+      "height": "20.0 m",
+      "weight": "28.6 t",
+      "equipment": [
+        "I-Field Barrier",
+        "Core Block System",
+        "Docking System"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Saber",
+        "2 x Beam Cannon",
+        "6 x Multi-Purpose Silo"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/d/d9/Turn_A_Gundam_Shin.png/revision/latest/scale-to-width-down/480?cb=20150927064456"
+    },
+    "X-EX01 Gundam Calibarn": {
+      "url": "https://gundam.fandom.com/wiki/X-EX01_Gundam_Calibarn",
+      "model": "X-EX01",
+      "era": "Ad Stella",
+      "production": "Prototype",
+      "manufacturer": [
+        "Ochs Earth Corporation"
+      ],
+      "operator": [
+        "Vanadis Institute",
+        "Earth House"
+      ],
+      "pilot": [
+        "Suletta Mercury"
+      ],
+      "designer": [
+        "JNTHED"
+      ],
+      "height": "18.2 m",
+      "weight": "44.7 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Vulcan",
+        "Variable Rod Rifle"
+      ],
+      "handheldArmaments": [
+        "2 x Beam Saber"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/9/98/Gundam_calibarn_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20260809141344"
+    },
+    "XGF-01 Gundam Lfrith Pre-Production Model": {
+      "url": "https://gundam.fandom.com/wiki/XGF-01_Gundam_Lfrith_Pre-Production_Model",
+      "model": "XGF-01",
+      "era": "Ad Stella",
+      "production": "Mass Production",
+      "manufacturer": [
+        "Ochs Earth Corporation"
+      ],
+      "operator": [
+        "Vanadis Institute",
+        "Ochs Earth Corporation/"
+      ],
+      "pilot": [
+        "Nadim Samaya (LF-01)",
+        "Wendy Olent (LF-02)",
+        "Shinji Koma",
+        "Kiyu Lavot",
+        "Yoshika"
+      ],
+      "designer": [
+        "JNTHED"
+      ],
+      "height": "18.0 m",
+      "weight": "49.1 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 × Beam Vulcan",
+        "2 x Large Launcher"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/0/01/Gundam_Lfrith_Pre-Production_Model_Front.png/revision/latest/scale-to-width-down/480?cb=20250223041459"
+    },
+    "XGF-01［Ⅱ3］ Gundam Lfrith Jiu": {
+      "url": "https://gundam.fandom.com/wiki/XGF-01%EF%BC%BB%E2%85%A13%EF%BC%BD_Gundam_Lfrith_Jiu",
+      "model": "XGF-01［Ⅱ3］",
+      "era": "Ad Stella",
+      "manufacturer": [
+        "Vanadis Institute"
+      ],
+      "pilot": [
+        "Kiyu Lavot"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.8 m",
+      "weight": "37.8 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/d/d0/Gundam_Lfrith_Jyu_Front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20230426040811"
+    },
+    "XGF-02 Gundam Lfrith": {
+      "url": "https://gundam.fandom.com/wiki/XGF-02_Gundam_Lfrith",
+      "model": "XGF-02",
+      "era": "Ad Stella",
+      "production": "Prototype",
+      "manufacturer": [
+        "Ochs Earth Corporation"
+      ],
+      "operator": [
+        "Vanadis Institute"
+      ],
+      "pilot": [
+        "Elnora Samaya (Test pilot)"
+      ],
+      "designer": [
+        "JNTHED"
+      ],
+      "height": "18.0 m",
+      "weight": "49.3 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 × Beam Vulcan",
+        "Compo GUND-BIT Shield"
+      ],
+      "handheldArmaments": [
+        "2 × Beam Saber",
+        "Receiver Gun (Beam Blade/GUND-BIT Rifle)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/1/1e/Gundam_Lfrith_Bit_On_Form_Front.png/revision/latest/scale-to-width-down/480?cb=20220804220519"
+    },
+    "XGF-E3 Gundnode": {
+      "url": "https://gundam.fandom.com/wiki/XGF-E3_Gundnode",
+      "model": "XGF-E3",
+      "era": "Ad Stella",
+      "production": "Mass Production",
+      "manufacturer": [
+        "Prospera Mercury"
+      ],
+      "operator": [
+        "Shin Sei Development Corporation"
+      ],
+      "designer": [
+        "Kanetake Ebikawa"
+      ],
+      "height": "18.9 m",
+      "weight": "44.1 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "Beam Rev Rifle",
+        "2 x Beam Blade"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/3/38/Gundnode_Front.png/revision/latest/scale-to-width-down/480?cb=20230619000842"
+    },
+    "XM-02 Den'an-Gei": {
+      "url": "https://gundam.fandom.com/wiki/XM-02_Den'an-Gei",
+      "model": "XM-02",
+      "era": "Universal Century",
+      "production": "Mass Production",
+      "manufacturer": [
+        "Buch Concern"
+      ],
+      "operator": [
+        "Crossbone Vanguard"
+      ],
+      "pilot": [
+        "Zabine Chareux",
+        "Bobulz"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "13.9 m",
+      "weight": "19.2 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Titanium Alloy-High Ceramic Composite",
+      "equipment": [
+        "Beam Flag Emitter"
+      ],
+      "fixedArmaments": [
+        "Triple Grenade Rack",
+        "Beam Gun",
+        "Beam Shield",
+        "Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/9/91/XM-02_Den%27an_Gei_Front.png/revision/latest/scale-to-width-down/480?cb=20200924155226"
+    },
+    "XM-X1 Crossbone Gundam X-1": {
+      "url": "https://gundam.fandom.com/wiki/XM-X1_Crossbone_Gundam_X-1",
+      "model": "XM-X1",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Strategic Naval Research Institute"
+      ],
+      "operator": [
+        "Crossbone Vanguard"
+      ],
+      "pilot": [
+        "Kincade Nau"
+      ],
+      "designer": [
+        "Hajime Katoki",
+        "Yuuichi Hasegawa"
+      ],
+      "height": "15.9 m",
+      "weight": "24.8 t",
+      "powerplant": "Minvosky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy Ceramic Composite",
+      "equipment": [
+        "Precision Shooting Support Device",
+        "Bio-Computer",
+        "Anti-Beam Coating Cloak",
+        "Dummy Launcher",
+        "Heat Radiation Face Open"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "2 x Beam Saber (2 x Beam Gun)",
+        "2 x Heat Dagger",
+        "2 x Scissor Anchor",
+        "2 x Beam Shield/Brand Marker"
+      ],
+      "handheldArmaments": [
+        "Buster Gun",
+        "Beam Zanber",
+        "↳ Zanbuster",
+        "↳ Rifle Grenade",
+        "↳ Atomic Shell"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/b/b3/XM-X1_Crossbone_Gundam_X-1_Front.png/revision/latest/scale-to-width-down/480?cb=20190827123805"
+    },
+    "XM-X2 Crossbone Gundam X-2": {
+      "url": "https://gundam.fandom.com/wiki/XM-X2_Crossbone_Gundam_X-2",
+      "model": "XM-X2",
+      "era": "Universal Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "SNRI"
+      ],
+      "operator": [
+        "Crossbone Vanguard",
+        "Jupiter Empire"
+      ],
+      "pilot": [
+        "Zabine Chareux",
+        "Rosemary Raspberry",
+        "Tobia Arronax"
+      ],
+      "height": "15.9 m",
+      "weight": "24.8 t",
+      "powerplant": "Minovsky Ultracompact Fusion Reactor",
+      "armor": "Gundarium Alloy Ceramic Composite",
+      "equipment": [
+        "Precision Shooting Support Device",
+        "Dummy Launcher",
+        "Heat Radiation Face Open",
+        "Anti-Beam Coating Cloak",
+        "Bio-Computer"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "2 x Beam Saber (2 x Beam Gun)",
+        "2 x Heat Dagger",
+        "2 x Scissor Anchor",
+        "2 x Beam Shield/Brand Marker"
+      ],
+      "handheldArmaments": [
+        "Shot Lancer (4 x Heavy Machine Gun)",
+        "Buster Gun",
+        "Beam Zanber",
+        "↳ Zanbuster",
+        "Buster Launcher"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/21/CrossboneGundamX2.png/revision/latest?cb=20260103022758"
+    },
+    "XVX-016 Gundam Aerial": {
+      "url": "https://gundam.fandom.com/wiki/XVX-016_Gundam_Aerial",
+      "model": "XVX-016",
+      "era": "Ad Stella",
+      "production": "Prototype",
+      "manufacturer": [
+        "Shin Sei Development Corporation"
+      ],
+      "operator": [
+        "Earth House"
+      ],
+      "pilot": [
+        "Suletta Mercury",
+        "Miorine Rembran",
+        "Elan Ceres"
+      ],
+      "designer": [
+        "JNTHED"
+      ],
+      "height": "18.0 m",
+      "weight": "43.9 t",
+      "equipment": [
+        "8 x Shell Unit",
+        "PPA"
+      ],
+      "fixedArmaments": [
+        "2 x Head Beam Vulcan",
+        "Escutcheon"
+      ],
+      "handheldArmaments": [
+        "2 x Beam Saber",
+        "Beam Rifle (Beam Blade/Long Barrel Beam Rifle)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/3/3d/Gundam_Aerial_Bit_On_Form_Front.png/revision/latest/scale-to-width-down/480?cb=20260809142138"
+    },
+    "XVX-016RN Gundam Aerial Rebuild": {
+      "url": "https://gundam.fandom.com/wiki/XVX-016RN_Gundam_Aerial_Rebuild",
+      "model": "XVX-016RN",
+      "era": "Ad Stella",
+      "manufacturer": [
+        "Shin Sei Development Corporation"
+      ],
+      "operator": [
+        "Earth House",
+        "Shin Sei Development Corporation"
+      ],
+      "pilot": [
+        "Suletta Mercury",
+        "Prospera Mercury",
+        "Ericht Samaya"
+      ],
+      "height": "18.2 m",
+      "weight": "53.2 t",
+      "equipment": [
+        "Shell Unit"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Vulcan",
+        "Escutcheon"
+      ],
+      "handheldArmaments": [
+        "2 x Beam Saber",
+        "Beam Rifle (GUND-BIT Cannon)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f0/Gundam_Aerial_Rebuild_Front.png/revision/latest/scale-to-width-down/480?cb=20260809142759"
+    },
+    "XXXG-00W0 Wing Gundam Zero EW": {
+      "url": "https://gundam.fandom.com/wiki/XXXG-00W0_Wing_Gundam_Zero_EW",
+      "model": "XXXG-00W0",
+      "era": "After Colony",
+      "manufacturer": [
+        "Winner Corporation"
+      ],
+      "operator": [
+        "Sanc Kingdom",
+        "G Team"
+      ],
+      "pilot": [
+        "Heero Yuy",
+        "Zechs Merquise",
+        "Parviz"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "16.7 m",
+      "weight": "8.0 t (empty)",
+      "armor": "Gundanium Alloy",
+      "equipment": [
+        "ZERO System",
+        "Wing Unit",
+        "Self-Destruct System"
+      ],
+      "fixedArmaments": [
+        "2 x Machine Cannon",
+        "Shield (2 x Wing Vulcan)"
+      ],
+      "handheldArmaments": [
+        "Twin Buster Rifle",
+        "2 x Beam Saber"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/2a/Wing_gundam_zero_EW_front.png/revision/latest/scale-to-width-down/480?cb=20260809143546"
+    },
+    "XXXG-01D2 Gundam Deathscythe Hell": {
+      "url": "https://gundam.fandom.com/wiki/XXXG-01D2_Gundam_Deathscythe_Hell",
+      "model": "XXXG-01D2",
+      "era": "After Colony",
+      "production": "Custom",
+      "manufacturer": [
+        "The Gundam Scientists"
+      ],
+      "operator": [
+        "G Team"
+      ],
+      "pilot": [
+        "Duo Maxwell"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "16.3 m",
+      "weight": "7.4 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundanium Alloy",
+      "equipment": [
+        "Active Cloak",
+        "Hyper Jammer",
+        "Self-Destruct System"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "Buster Shield"
+      ],
+      "handheldArmaments": [
+        "Twin Beam Scythe"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/8/88/Xxxg-01d2.jpg/revision/latest/scale-to-width-down/480?cb=20140413040815"
+    },
+    "XXXG-01D2 Gundam Deathscythe Hell EW": {
+      "url": "https://gundam.fandom.com/wiki/XXXG-01D2_Gundam_Deathscythe_Hell_EW",
+      "model": "XXXG-01D2",
+      "era": "After Colony",
+      "production": "Custom",
+      "manufacturer": [
+        "The Gundam Scientists"
+      ],
+      "operator": [
+        "G Team"
+      ],
+      "pilot": [
+        "Duo Maxwell",
+        "Mahdi",
+        "Touma Aizen"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "16.3 m",
+      "weight": "7.4 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundanium Alloy",
+      "equipment": [
+        "Active Cloak",
+        "Hyper Jammer",
+        "Self-Destruct System"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "2 x Buster Shield (GotL)"
+      ],
+      "handheldArmaments": [
+        "Beam Scissors",
+        "Twin Beam Scissors (GotL)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/24/XXXG-01D2_EW_Rear.jpg/revision/latest/scale-to-width-down/480?cb=20240621015645"
+    },
+    "XXXG-01H2 Gundam Heavyarms Custom EW": {
+      "url": "https://gundam.fandom.com/wiki/XXXG-01H2_Gundam_Heavyarms_Custom_EW",
+      "model": "XXXG-01H2",
+      "era": "After Colony",
+      "production": "Custom",
+      "manufacturer": [
+        "Mike Howard"
+      ],
+      "operator": [
+        "G Team"
+      ],
+      "pilot": [
+        "Trowa Barton"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "16.7 m",
+      "weight": "8.2 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundanium Alloy",
+      "equipment": [
+        "Self-Destruct System"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "2 x Machine Cannon",
+        "4 x Chest Gatling Gun",
+        "44 x Homing Missile",
+        "52 x Micro Missile"
+      ],
+      "handheldArmaments": [
+        "2 x Double Gatling Gun"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/2/20/Heavyarms_Kai_Front_%28transparent%29.png/revision/latest/scale-to-width-down/480?cb=20260121103717"
+    },
+    "XXXG-01S2 Altron Gundam EW": {
+      "url": "https://gundam.fandom.com/wiki/XXXG-01S2_Altron_Gundam_EW",
+      "model": "XXXG-01S2",
+      "era": "After Colony",
+      "production": "Custom",
+      "manufacturer": [
+        "The Gundam Scientists"
+      ],
+      "operator": [
+        "G Team",
+        "Mariemaia Army",
+        "Neo Zarth"
+      ],
+      "pilot": [
+        "Chang Wufei",
+        "Tuck"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "16.4 m",
+      "weight": "7.5 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundanium Alloy",
+      "equipment": [
+        "Self-Destruct System"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun",
+        "Twin Beam Cannon (GotL)",
+        "2 x Dragon Fang"
+      ],
+      "handheldArmaments": [
+        "Twin Beam Trident"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/d/dd/Altron_EW_Front_%28transparent%29.png/revision/latest/scale-to-width-down/480?cb=20260121020603"
+    },
+    "XXXG-01SR2 Gundam Sandrock Custom EW": {
+      "url": "https://gundam.fandom.com/wiki/XXXG-01SR2_Gundam_Sandrock_Custom_EW",
+      "model": "XXXG-01SR2",
+      "era": "After Colony",
+      "production": "Custom",
+      "manufacturer": [
+        "Mike Howard"
+      ],
+      "operator": [
+        "G Team"
+      ],
+      "pilot": [
+        "Quatre Raberba Winner"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "16.5 m",
+      "weight": "7.9 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundanium Alloy",
+      "equipment": [
+        "Self-Destruct System",
+        "Anti-Beam Coating Cloak"
+      ],
+      "fixedArmaments": [
+        "2 x Vulcan Gun"
+      ],
+      "handheldArmaments": [
+        "2 x Heat Shotel"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/e/e3/Sandrock_Kai_front_%28transparent%29.png/revision/latest/scale-to-width-down/480?cb=20251012025923"
+    },
+    "XXXG-01W Wing Gundam EW": {
+      "url": "https://gundam.fandom.com/wiki/XXXG-01W_Wing_Gundam_EW",
+      "model": "XXXG-01W",
+      "era": "After Colony",
+      "manufacturer": [
+        "Jay Null"
+      ],
+      "operator": [
+        "Colony Liberation Organizaton",
+        "G Team",
+        "Sanc Kingdom",
+        "Earth Sphere Unified Nation"
+      ],
+      "pilot": [
+        "Heero Yuy",
+        "Trowa Barton",
+        "Lady Une"
+      ],
+      "designer": [
+        "Hajime Katoki"
+      ],
+      "height": "16.3 m",
+      "weight": "7.1 t (empty)",
+      "powerplant": "Ultracompact Fusion Reactor",
+      "armor": "Gundanium Alloy",
+      "equipment": [
+        "Bird Mode",
+        "Search Eye",
+        "Self-Destruct System"
+      ],
+      "fixedArmaments": [
+        "2 x Machine Cannon"
+      ],
+      "handheldArmaments": [
+        "Buster Rifle",
+        "Shield (2 x Beam Saber)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/9/9a/Dengeki-ew-3d-and-settei_p080_Wing_300dpi.png/revision/latest/scale-to-width-down/480?cb=20200604061416"
+    },
+    "Xvb-fnc Fawn Farsia": {
+      "url": "https://gundam.fandom.com/wiki/Xvb-fnc_Fawn_Farsia",
+      "model": "Xvb-fnc",
+      "era": "Advanced Generation",
+      "manufacturer": [
+        "Vagan"
+      ],
+      "operator": [
+        "Vagan"
+      ],
+      "pilot": [
+        "Fram Nara"
+      ],
+      "height": "16.2 m",
+      "weight": "29.9 t (empty)",
+      "equipment": [
+        "Electromagnetic Armor",
+        "Particle Bit Generator"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Vulcan Gun/Beam Saber",
+        "Diffuse Beam Cannon",
+        "Fawn Farsia Sword"
+      ],
+      "handheldArmaments": [
+        "Fawn Farsia Baton"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/7b/Fawn-farsia-front.png/revision/latest?cb=20120729154329"
+    },
+    "YG-111 Gundam G-Self": {
+      "url": "https://gundam.fandom.com/wiki/YG-111_Gundam_G-Self",
+      "model": "YG-111",
+      "era": "Regild Century",
+      "production": "Prototype",
+      "manufacturer": [
+        "Towasanga",
+        "Ameria (Backpacks)",
+        "Capital Army (High Torque Pack)",
+        "Venus Globe (Perfect Pack)"
+      ],
+      "operator": [
+        "Towasanga",
+        "Capital Guard (Captured)",
+        "Capital Army (Captured)",
+        "Pirate Corps"
+      ],
+      "pilot": [
+        "Raraiya Akuparl",
+        "Aida Surugan",
+        "Bellri Zenam"
+      ],
+      "designer": [
+        "Akira Yasuda"
+      ],
+      "height": "18.0 m",
+      "weight": "31.1 t (empty)",
+      "powerplant": "Photon Battery",
+      "armor": "Photon Frame",
+      "equipment": [
+        "Core Block System",
+        "Photon Armor",
+        "Atmospheric Pack",
+        "BPAM-02 Space Pack",
+        "BPAM-03 Reflector Pack",
+        "BPAM-05 Assault Pack",
+        "BPMF-01 Perfect Pack",
+        "High Torque Pack",
+        "Tricky Pack"
+      ],
+      "fixedArmaments": [
+        "2 x Head Vulcan",
+        "2 x Beam Saber"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/7/7e/YG-111_Gundam_G-Self_Front_%28Movie%29.png/revision/latest/scale-to-width-down/480?cb=20191026000024"
+    },
+    "ZGMF-1000 ZAKU Warrior": {
+      "url": "https://gundam.fandom.com/wiki/ZGMF-1000_ZAKU_Warrior",
+      "model": "ZGMF-1000",
+      "era": "Cosmic Era",
+      "production": "Mass Production",
+      "manufacturer": [
+        "Integrated Design Bureau"
+      ],
+      "operator": [
+        "ZAFT",
+        "Joule Team",
+        "Anti-factice",
+        "ZAFT Coup d'état Faction"
+      ],
+      "pilot": [
+        "Lunamaria Hawke",
+        "Athrun Zala",
+        "Dearka Elsman",
+        "Shiho Hahnenfuss",
+        "Valentina Binon"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "17.19 m",
+      "weight": "73.09 t",
+      "powerplant": "Ultracompact Energy Battery",
+      "equipment": [
+        "Wizard System"
+      ],
+      "fixedArmaments": [
+        "Anti-Beam Shield (MA-M8 Beam Tomahawk)",
+        "4 × Hand Grenade (ZR30F fragmentation grenade, ZR20E high explosive grenade, ZR271 thermite incendiary grenade, ZR11Q flash grenade, ZR13Q smoke grenade)"
+      ],
+      "handheldArmaments": [
+        "MMI-M633 Beam Assault Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/a/a4/Zgmf-1000.jpg/revision/latest/scale-to-width-down/480?cb=20201029112714"
+    },
+    "ZGMF-56E2/β Sword Impulse Gundam Spec II": {
+      "url": "https://gundam.fandom.com/wiki/ZGMF-56E2/%CE%B2_Sword_Impulse_Gundam_Spec_II",
+      "model": "ZGMF-56E2/β",
+      "era": "Cosmic Era",
+      "operator": [
+        "Compass",
+        "Three Ships Alliance",
+        "Millennium Corps",
+        "Yamato Team"
+      ],
+      "pilot": [
+        "Lunamaria Hawke"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "powerplant": "Ultracompact Energy Battery",
+      "armor": "Variable Phase Shift armor",
+      "equipment": [
+        "Deuterion Beam Energy Transfer System",
+        "Hardpoints (for Silhouettes)"
+      ],
+      "fixedArmaments": [
+        "2 × MMI-GAU25A 20mm CIWS",
+        "2 × M71-AAK Folding Razor Anti-Armor Knife",
+        "2 × RQM60 Flash-Edge Beam Boomerang",
+        "2 × MMI-710 Excalibur Anti-Ship Laser Sword"
+      ],
+      "handheldArmaments": [
+        "Type 35 Prototype Advanced Railgun",
+        "MMI-RG59V Mobile Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/e/e9/Sword_Impulse_Gundam_SpecII.png/revision/latest/scale-to-width-down/480?cb=20240401071006"
+    },
+    "ZGMF-X10A Freedom Gundam": {
+      "url": "https://gundam.fandom.com/wiki/ZGMF-X10A_Freedom_Gundam",
+      "model": "ZGMF-X10A",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Integrated Design Bureau"
+      ],
+      "operator": [
+        "ZAFT",
+        "Three Ships Alliance",
+        "Archangel Corps",
+        "Clyne Faction"
+      ],
+      "pilot": [
+        "Kira Yamato"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "18.03 m",
+      "weight": "71.5 t",
+      "powerplant": "Ultracompact Nuclear Fission Reactor",
+      "armor": "Phase Shift Armor",
+      "equipment": [
+        "High-Mobility Aerial Tactics (HiMAT) Mode",
+        "Full Burst Mode",
+        "Multi Lock-on System",
+        "Neutron Jammer Canceller"
+      ],
+      "fixedArmaments": [
+        "2 × MMI-GAU2 Picus 76mm CIWS",
+        "2 × M100 Balaena Plasma Beam Cannon",
+        "2 × MA-M01 Lacerta Beam Saber",
+        "2 × MMI-M15 Xiphias Railgun"
+      ],
+      "handheldArmaments": [
+        "MA-M20 Lupus High-energy Beam Rifle",
+        "Laminated Anti-beam Shield"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/d/d1/Freedom_gundam_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20260103063443"
+    },
+    "ZGMF-X12A Testament Gundam": {
+      "url": "https://gundam.fandom.com/wiki/ZGMF-X12A_Testament_Gundam",
+      "model": "ZGMF-X12A",
+      "era": "Cosmic Era",
+      "production": "Prototype",
+      "manufacturer": [
+        "Integrated Design Bureau"
+      ],
+      "operator": [
+        "ZAFT",
+        "Earth Alliance",
+        "OMNI Enforcer",
+        "The Clan"
+      ],
+      "pilot": [
+        "Ash Gray",
+        "Kaite Madigan"
+      ],
+      "height": "17.71 m",
+      "weight": "46.4 t (Standard)",
+      "powerplant": "Ultracompact Nuclear Fission Reactor",
+      "armor": "Variable Phase Shift armor",
+      "equipment": [
+        "Neutron Jammer Canceller",
+        "Hardpoint (for mounting Striker Packs)",
+        "Quantum Computer Virus Transmission System"
+      ],
+      "fixedArmaments": [
+        "75mm Igelstellung CIWS",
+        "2 x Beam Saber"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/f9/Zgmf-x12a-long.jpg/revision/latest?cb=20211020143708"
+    },
+    "ZGMF-X12D Gundam Astray Out Frame D": {
+      "url": "https://gundam.fandom.com/wiki/ZGMF-X12D_Gundam_Astray_Out_Frame_D",
+      "model": "ZGMF-X12D",
+      "era": "Cosmic Era",
+      "production": "Custom",
+      "manufacturer": [
+        "ZAFT",
+        "Junk Guild"
+      ],
+      "operator": [
+        "Civilians"
+      ],
+      "pilot": [
+        "Jess Rabble",
+        "Kaite Madigan",
+        "Bernadette Leroux (Co-Pilot/Observer Only)"
+      ],
+      "designer": [
+        "Junichi Akutsu"
+      ],
+      "height": "17.71 m",
+      "weight": "46.4 t (empty)",
+      "powerplant": "Ultracompact Energy Battery",
+      "armor": "Foaming metal",
+      "equipment": [
+        "Hardpoints (for Striker Packs)",
+        "Multi-Pack",
+        "Gun Camera"
+      ],
+      "fixedArmaments": [
+        "2 x Beam Sign"
+      ],
+      "handheldArmaments": [
+        "Beam Rifle",
+        "Custom Shield",
+        "Caletvwlch (Gun Camera version)"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/f/ff/Zgmf-x12d_Astray.jpg/revision/latest/scale-to-width-down/480?cb=20201021003243"
+    },
+    "ZGMF-X20A Strike Freedom Gundam": {
+      "url": "https://gundam.fandom.com/wiki/ZGMF-X20A_Strike_Freedom_Gundam",
+      "model": "ZGMF-X20A",
+      "era": "Cosmic Era",
+      "production": "Custom",
+      "manufacturer": [
+        "Terminal",
+        "Clyne Faction"
+      ],
+      "operator": [
+        "Clyne Faction",
+        "Orb National Defense Force",
+        "Second Space Fleet",
+        "Three Ships Alliance",
+        "Archangel Corps",
+        "Terminal",
+        "Avalon"
+      ],
+      "pilot": [
+        "Kira Yamato",
+        "Kyoya Kisugi",
+        "Sana Miyama",
+        "Seria Urutsuki"
+      ],
+      "designer": [
+        "Kunio Okawara"
+      ],
+      "height": "18.88 m",
+      "weight": "80.09 t",
+      "powerplant": "Hyper-Deuterion Engine",
+      "armor": "Variable Phase Shift armor",
+      "equipment": [
+        "High-Mobility Aerial Tactics (HiMAT) Mode",
+        "Full Burst Mode",
+        "Multi Lock-on System",
+        "Voiture Lumiere Propulsion System",
+        "Neutron Jammer Canceller",
+        "Super DRAGOON System"
+      ],
+      "fixedArmaments": [
+        "2 × MMI-GAU27D 31mm CIWS",
+        "MGX-2235 Calidus Multi-phase Beam Cannon",
+        "2 × MX2200 Beam Shield",
+        "2 × MA-M02G Super Lacerta Beam Saber",
+        "2 × MMI-M15E Xiphias 3 Railgun"
+      ],
+      "handheldArmaments": [
+        "2 × MA-M21KF High-energy Beam Rifle"
+      ],
+      "image": "https://static.wikia.nocookie.net/gundam/images/5/58/Strike_freedom_front_lineart_color.png/revision/latest/scale-to-width-down/480?cb=20260103060837"
+    }
+  }
+}

@@ -2,6 +2,7 @@
   "kits": [
     {
       "name": "Sazabi Ver.Ka",
+      "wiki": "MSN-04 Sazabi",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -13,6 +14,7 @@
     },
     {
       "name": "ν Gundam Ver.Ka",
+      "wiki": "RX-93 ν Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -23,6 +25,7 @@
     },
     {
       "name": "RX-93ff ν Gundam",
+      "wiki": "RX-93ff ν Gundam",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -34,6 +37,7 @@
     },
     {
       "name": "Gundam Ex Impulse",
+      "wiki": "Gundam Ex Impulse",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -45,6 +49,7 @@
     },
     {
       "name": "Gundam Barbatos",
+      "wiki": "ASW-G-08 Gundam Barbatos",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -55,6 +60,7 @@
     },
     {
       "name": "Testament Gundam",
+      "wiki": "ZGMF-X12A Testament Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -67,6 +73,7 @@
     },
     {
       "name": "Gundam Astray Out Frame D",
+      "wiki": "ZGMF-X12D Gundam Astray Out Frame D",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -79,6 +86,7 @@
     },
     {
       "name": "Gundam Astray Red Frame",
+      "wiki": "MBF-P02 Gundam Astray Red Frame",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -90,6 +98,7 @@
     },
     {
       "name": "RX-78-2 Gundam Ver.2.0",
+      "wiki": "RX-78-2 Gundam",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -100,6 +109,7 @@
     },
     {
       "name": "Gundam EX",
+      "wiki": "RX-78(G)E Gundam EX",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -120,6 +130,7 @@
     },
     {
       "name": "Aile Strike Gundam",
+      "wiki": "GAT-X105+AQM/E-X01 Aile Strike Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -130,6 +141,7 @@
     },
     {
       "name": "Aegis Gundam",
+      "wiki": "GAT-X303 Aegis Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -140,6 +152,7 @@
     },
     {
       "name": "Blitz Gundam",
+      "wiki": "GAT-X207 Blitz Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -150,6 +163,7 @@
     },
     {
       "name": "Duel Gundam",
+      "wiki": "GAT-X102 Duel Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -160,6 +174,7 @@
     },
     {
       "name": "Buster Gundam Assault Shroud",
+      "wiki": "GAT-X103 Buster Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -170,6 +185,7 @@
     },
     {
       "name": "Aile Strike Gundam",
+      "wiki": "GAT-X105+AQM/E-X01 Aile Strike Gundam",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -180,6 +196,7 @@
     },
     {
       "name": "Gundam Kyrios",
+      "wiki": "GN-003 Gundam Kyrios",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -190,6 +207,7 @@
     },
     {
       "name": "Gundam Exia",
+      "wiki": "GN-001 Gundam Exia",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -200,6 +218,7 @@
     },
     {
       "name": "Gundam Dynames",
+      "wiki": "GN-002 Gundam Dynames",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -210,6 +229,7 @@
     },
     {
       "name": "Gundam Virtue",
+      "wiki": "GN-005 Gundam Virtue",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -220,6 +240,7 @@
     },
     {
       "name": "Turn A Gundam Shin",
+      "wiki": "WD-M01MS ∀ Gundam Shin",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -231,6 +252,7 @@
     },
     {
       "name": "Stargazer Gundam",
+      "wiki": "GSX-401FW Stargazer Gundam",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -242,6 +264,7 @@
     },
     {
       "name": "Fawn Farsia",
+      "wiki": "Xvb-fnc Fawn Farsia",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -252,6 +275,7 @@
     },
     {
       "name": "V2 Assault-Buster Gundam",
+      "wiki": "LM314V24 Victory 2 Assault Gundam",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -263,6 +287,7 @@
     },
     {
       "name": "Gundam Rose",
+      "wiki": "GF13-009NF Gundam Rose",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -273,6 +298,7 @@
     },
     {
       "name": "Typhoeus Gundam Chimera",
+      "wiki": "TYP-G12/CMR Typhoeus Gundam Chimera",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -294,6 +320,7 @@
     },
     {
       "name": "Strike Freedom Gundam",
+      "wiki": "ZGMF-X20A Strike Freedom Gundam",
       "grade": "MGEX",
       "scale": "1/100",
       "brand": "Bandai",
@@ -313,6 +340,7 @@
     },
     {
       "name": "Michaelis",
+      "wiki": "CFK-029 Michaelis",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -323,6 +351,7 @@
     },
     {
       "name": "Gundam Pharact",
+      "wiki": "FP/A-77 Gundam Pharact",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -333,6 +362,7 @@
     },
     {
       "name": "Gundam Schwarzette",
+      "wiki": "MDX-0003 Gundam Schwarzette",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -343,6 +373,7 @@
     },
     {
       "name": "Darilbalde",
+      "wiki": "MD-0064 Darilbalde",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -353,6 +384,7 @@
     },
     {
       "name": "Gundam Lfrith Jiu",
+      "wiki": "XGF-01［Ⅱ3］ Gundam Lfrith Jiu",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -363,6 +395,7 @@
     },
     {
       "name": "Gundam Aerial",
+      "wiki": "XVX-016 Gundam Aerial",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -374,6 +407,7 @@
     },
     {
       "name": "Gundam Calibarn",
+      "wiki": "X-EX01 Gundam Calibarn",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -384,6 +418,7 @@
     },
     {
       "name": "Gundam Lfrith",
+      "wiki": "XGF-02 Gundam Lfrith",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -394,6 +429,7 @@
     },
     {
       "name": "Gundam Lfrith (Pre-production Model)",
+      "wiki": "XGF-01 Gundam Lfrith Pre-Production Model",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -404,6 +440,7 @@
     },
     {
       "name": "Gundam Aerial Rebuild",
+      "wiki": "XVX-016RN Gundam Aerial Rebuild",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -414,6 +451,7 @@
     },
     {
       "name": "Gundam Aerial",
+      "wiki": "XVX-016 Gundam Aerial",
       "grade": "FM",
       "scale": "1/100",
       "brand": "Bandai",
@@ -425,6 +463,7 @@
     },
     {
       "name": "Gundam Lfrith Anavata",
+      "wiki": "AVP-03 Gundam Lfrith Anavata",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -435,6 +474,7 @@
     },
     {
       "name": "Gundvolva",
+      "wiki": "EDM-GB Gundvölva",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -445,6 +485,7 @@
     },
     {
       "name": "Gundam Deathscythe Hell",
+      "wiki": "XXXG-01D2 Gundam Deathscythe Hell",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -455,6 +496,7 @@
     },
     {
       "name": "Gundam Deathscythe Hell EW",
+      "wiki": "XXXG-01D2 Gundam Deathscythe Hell EW",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -466,6 +508,7 @@
     },
     {
       "name": "Wing Gundam EW",
+      "wiki": "XXXG-01W Wing Gundam EW",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -477,6 +520,7 @@
     },
     {
       "name": "00 XN Raiser",
+      "wiki": "GN-0000+GNR-010/XN 00 XN Raiser",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -487,6 +531,7 @@
     },
     {
       "name": "Gundam Avalanche Exia",
+      "wiki": "GN-001/hs-A01D Gundam Avalanche Exia'",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -497,6 +542,7 @@
     },
     {
       "name": "Gundam Avalanche Astraea",
+      "wiki": "GNY-001F/hs-A01D Gundam Avalanche Astraea Type F'",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -508,6 +554,7 @@
     },
     {
       "name": "Build Burning Gundam",
+      "wiki": "BG-011B Build Burning Gundam",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -529,6 +576,7 @@
     },
     {
       "name": "Nobel Gundam",
+      "wiki": "GF13-050NSW Nobel Gundam",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -539,6 +587,7 @@
     },
     {
       "name": "God Gundam",
+      "wiki": "GF13-017NJII God Gundam",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -549,6 +598,7 @@
     },
     {
       "name": "Lord Astray Ω",
+      "wiki": "MHF-01Ω Load Astray Ω",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -560,6 +610,7 @@
     },
     {
       "name": "Gundam Astray Red Frame Inversion",
+      "wiki": "MBF-P0S Gundam Astray Red Frame Inversion",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -571,6 +622,7 @@
     },
     {
       "name": "Gundam Ground Type",
+      "wiki": "RX-79［G］ Gundam Ground Type",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -582,6 +634,7 @@
     },
     {
       "name": "Gundam Ez8",
+      "wiki": "RX-79［G］Ez-8 Gundam Ez8",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -593,6 +646,7 @@
     },
     {
       "name": "Moon Gundam",
+      "wiki": "AMS-123X-X Moon Gundam",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -603,6 +657,7 @@
     },
     {
       "name": "Crossbone Gundam X1",
+      "wiki": "XM-X1 Crossbone Gundam X-1",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -613,6 +668,7 @@
     },
     {
       "name": "Crossbone Gundam X1",
+      "wiki": "XM-X1 Crossbone Gundam X-1",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -623,6 +679,7 @@
     },
     {
       "name": "Varguil",
+      "wiki": "AMS-123X Varguil",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -633,6 +690,7 @@
     },
     {
       "name": "Unicorn Gundam",
+      "wiki": "RX-0 Unicorn Gundam",
       "grade": "MGEX",
       "scale": "1/100",
       "brand": "Bandai",
@@ -642,6 +700,7 @@
     },
     {
       "name": "Sinanju",
+      "wiki": "MSN-06S Sinanju",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -651,6 +710,7 @@
     },
     {
       "name": "Gundam G-Self Perfect Pack",
+      "wiki": "YG-111 Gundam G-Self",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -660,6 +720,7 @@
     },
     {
       "name": "GQuuuuuuX",
+      "wiki": "GMS-Ω GQuuuuuuX",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -685,6 +746,7 @@
     },
     {
       "name": "G-Line (blue)",
+      "wiki": "RX-81 G-Line",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -695,6 +757,7 @@
     },
     {
       "name": "G-Line (red)",
+      "wiki": "RX-81 G-Line",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -730,6 +793,7 @@
     },
     {
       "name": "RX-78F00 Gundam",
+      "wiki": "RX-78F00 Gundam",
       "grade": "Other",
       "scale": "1/200",
       "brand": "Bandai",
@@ -741,6 +805,7 @@
     },
     {
       "name": "Gundam Barbatos Lupus Rex",
+      "wiki": "ASW-G-08 Gundam Barbatos Lupus Rex",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -751,6 +816,7 @@
     },
     {
       "name": "Gundam Bael",
+      "wiki": "ASW-G-01 Gundam Bael",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -761,6 +827,7 @@
     },
     {
       "name": "Gundam Marchosias",
+      "wiki": "ASW-G-35 Gundam Marchosias",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -772,6 +839,7 @@
     },
     {
       "name": "Gundam Astaroth",
+      "wiki": "ASW-G-29 Gundam Astaroth",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -783,6 +851,7 @@
     },
     {
       "name": "Gundam Astaroth Origin",
+      "wiki": "ASW-G-29 Gundam Astaroth Origin",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -794,6 +863,7 @@
     },
     {
       "name": "Gundam Vidar",
+      "wiki": "ASW-G-XX Gundam Vidar",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -804,6 +874,7 @@
     },
     {
       "name": "Gundam Vual",
+      "wiki": "ASW-G-47 Gundam Vual",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -815,6 +886,7 @@
     },
     {
       "name": "Gundam Dantalion",
+      "wiki": "ASW-G-71 Gundam Dantalion",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -826,6 +898,7 @@
     },
     {
       "name": "Gundam Astraea",
+      "wiki": "GNY-001 Gundam Astraea",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -837,6 +910,7 @@
     },
     {
       "name": "Gundam Sandrock Custom EW",
+      "wiki": "XXXG-01SR2 Gundam Sandrock Custom EW",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -848,6 +922,7 @@
     },
     {
       "name": "Hi-ν Gundam",
+      "wiki": "RX-93-ν2 Hi-ν Gundam",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -859,6 +934,7 @@
     },
     {
       "name": "Altron Gundam EW",
+      "wiki": "XXXG-01S2 Altron Gundam EW",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -870,6 +946,7 @@
     },
     {
       "name": "Gundam TR-6 [Haze'n-thley II]",
+      "wiki": "RX-124 Gundam TR-6 ［Haze'n-thley II］",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -881,6 +958,7 @@
     },
     {
       "name": "Tallgeese Fluegel EW",
+      "wiki": "OZ-00MS Tallgeese Flugel",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -893,6 +971,7 @@
     },
     {
       "name": "Gundam Astraea + Proto GN Twin Broad Blade",
+      "wiki": "GNY-001 Gundam Astraea",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -905,6 +984,7 @@
     },
     {
       "name": "Gundam Stormbringer F.A. / GM Turbulence",
+      "wiki": "RX-78TB-3［FA］ Gundam Stormbringer F.A.",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -917,6 +997,7 @@
     },
     {
       "name": "Gundam Heavyarms Custom EW",
+      "wiki": "XXXG-01H2 Gundam Heavyarms Custom EW",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -928,6 +1009,7 @@
     },
     {
       "name": "Gundam Amazing Exia",
+      "wiki": "PPGN-001 Gundam Amazing Exia",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -939,6 +1021,7 @@
     },
     {
       "name": "Ball Ver.Ka",
+      "wiki": "RB-79 Ball",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -960,6 +1043,7 @@
     },
     {
       "name": "Sword Impulse Gundam SpecII",
+      "wiki": "ZGMF-56E2/β Sword Impulse Gundam Spec II",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -971,6 +1055,7 @@
     },
     {
       "name": "Wing Gundam Zero EW",
+      "wiki": "XXXG-00W0 Wing Gundam Zero EW",
       "grade": "MGSD",
       "brand": "Bandai",
       "series": "Gundam Wing",
@@ -981,6 +1066,7 @@
     },
     {
       "name": "Dragon Gundam",
+      "wiki": "GF13-011NC Dragon Gundam",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -991,6 +1077,7 @@
     },
     {
       "name": "Gundam Exia Repair Parts Set",
+      "wiki": "GN-001 Gundam Exia",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1002,6 +1089,7 @@
     },
     {
       "name": "Gundnode",
+      "wiki": "XGF-E3 Gundnode",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1013,6 +1101,7 @@
     },
     {
       "name": "Expansion Parts Set for Gundam Barbatos",
+      "wiki": "ASW-G-08 Gundam Barbatos",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1024,6 +1113,7 @@
     },
     {
       "name": "Hyper Mega Bazooka Launcher for Hi-ν Gundam",
+      "wiki": "RX-93-ν2 Hi-ν Gundam",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1036,6 +1126,7 @@
     },
     {
       "name": "Gundam Astraea Parts Set",
+      "wiki": "GNY-001 Gundam Astraea",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1048,6 +1139,7 @@
     },
     {
       "name": "Gundam Double X",
+      "wiki": "GX-9901-DX Gundam Double X",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1059,6 +1151,7 @@
     },
     {
       "name": "Zaku Warrior (Live Concert Ver.)",
+      "wiki": "ZGMF-1000 ZAKU Warrior",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1071,6 +1164,7 @@
     },
     {
       "name": "Gundam TR-6 [Barzam II] Re-Zeon Captured (A.O.Z Re-Boot Ver.)",
+      "wiki": "ARZ-154BZII ［Barzam II］",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1083,6 +1177,7 @@
     },
     {
       "name": "Gundam Astray Turn Red",
+      "wiki": "MBF-02VV Gundam Astray Turn Red",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1094,6 +1189,7 @@
     },
     {
       "name": "00 XN Raiser",
+      "wiki": "GN-0000+GNR-010/XN 00 XN Raiser",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1104,6 +1200,7 @@
     },
     {
       "name": "Gundam TR-1 [Hazel Owsla]",
+      "wiki": "RX-121-2P Gundam TR-1 ［Hazel Owsla］",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1116,6 +1213,7 @@
     },
     {
       "name": "Gundam Astray Red Dragon",
+      "wiki": "MBF-P02 Gundam Astray Red Dragon",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1127,6 +1225,7 @@
     },
     {
       "name": "00 Qan[T] Full Saber",
+      "wiki": "GNT-0000/FS 00 Qan［T］ Full Saber",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1138,6 +1237,7 @@
     },
     {
       "name": "Gundam Barbatos Lupus",
+      "wiki": "ASW-G-08 Gundam Barbatos Lupus",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1148,6 +1248,7 @@
     },
     {
       "name": "Desultor",
+      "wiki": "MD-0021 Desultor",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1159,6 +1260,7 @@
     },
     {
       "name": "Double Fin Funnel Custom Unit for ν Gundam Ver.Ka",
+      "wiki": "RX-93 ν Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1170,6 +1272,7 @@
     },
     {
       "name": "Gundam TR-6 [Wondwart] Psycho-Blade Custom (A.O.Z Re-Boot Ver.)",
+      "wiki": "ARZ-124WD Gundam TR-6 ［Wondwart］ Psycho Blade Custom",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1182,6 +1285,7 @@
     },
     {
       "name": "Gundam Aerial",
+      "wiki": "XVX-016 Gundam Aerial",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1192,6 +1296,7 @@
     },
     {
       "name": "Expansion Parts Set for Gundam Barbatos Lupus",
+      "wiki": "ASW-G-08 Gundam Barbatos Lupus",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1203,6 +1308,7 @@
     },
     {
       "name": "Den'an-Gei",
+      "wiki": "XM-02 Den'an-Gei",
       "grade": "RE",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1213,6 +1319,7 @@
     },
     {
       "name": "Gundam TR-6 [Wondwart]",
+      "wiki": "RX-124 Gundam TR-6 ［Woundwort］",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1224,6 +1331,7 @@
     },
     {
       "name": "Gundam Barbatos Lupus",
+      "wiki": "ASW-G-08 Gundam Barbatos Lupus",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1234,6 +1342,7 @@
     },
     {
       "name": "Polypod Ball",
+      "wiki": "RB-79PP Polypodball",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1245,6 +1354,7 @@
     },
     {
       "name": "Gundam Astraea Type-F",
+      "wiki": "GNY-001F Gundam Astraea Type F",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1266,6 +1376,7 @@
     },
     {
       "name": "Gundam Aerial",
+      "wiki": "XVX-016 Gundam Aerial",
       "grade": "MGSD",
       "brand": "Bandai",
       "series": "The Witch from Mercury",
@@ -1286,6 +1397,7 @@
     },
     {
       "name": "Gundam Aerial (Ecopla)",
+      "wiki": "XVX-016 Gundam Aerial",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1296,6 +1408,7 @@
     },
     {
       "name": "Turn A Gundam",
+      "wiki": "System-∀99 ∀ Gundam",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1306,6 +1419,7 @@
     },
     {
       "name": "Turn X",
+      "wiki": "Concept-X 6-1-2 Turn X",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1316,6 +1430,7 @@
     },
     {
       "name": "Gundam Maxter",
+      "wiki": "GF13-006NA Gundam Maxter",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1326,6 +1441,7 @@
     },
     {
       "name": "Gundam Virtue Armor Display Set",
+      "wiki": "GN-005 Gundam Virtue",
       "grade": "MG",
       "scale": "1/100",
       "brand": "Bandai",
@@ -1337,6 +1453,7 @@
     },
     {
       "name": "Gundam Barbatos",
+      "wiki": "ASW-G-08 Gundam Barbatos",
       "grade": "MGSD",
       "brand": "Bandai",
       "series": "Iron-Blooded Orphans",
@@ -1346,6 +1463,7 @@
     },
     {
       "name": "Crossbone Gundam X2",
+      "wiki": "XM-X2 Crossbone Gundam X-2",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1356,6 +1474,7 @@
     },
     {
       "name": "Gundam Naion",
+      "wiki": "RVR-01 Gundam Naion",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1367,6 +1486,7 @@
     },
     {
       "name": "Expansion Set for God Gundam",
+      "wiki": "GF13-017NJII God Gundam",
       "grade": "RG",
       "scale": "1/144",
       "brand": "Bandai",
@@ -1378,6 +1498,7 @@
     },
     {
       "name": "Freedom Gundam",
+      "wiki": "ZGMF-X10A Freedom Gundam",
       "grade": "MGSD",
       "brand": "Bandai",
       "series": "Gundam SEED",
@@ -1387,6 +1508,7 @@
     },
     {
       "name": "Lord Astray Ω",
+      "wiki": "MHF-01Ω Load Astray Ω",
       "grade": "HG",
       "scale": "1/144",
       "brand": "Bandai",

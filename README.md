@@ -16,6 +16,9 @@ mtg.html                  MTG — EDH decks (HOST-56/57/58), auto-synced from Ar
 scripts/sync-archidekt.mjs  Regenerates mtg.html's deck cards from Archidekt
 gunpla.html               Gunpla — every kit built, rendered by js/gunpla.js
                           from data/gunpla.json, grouped by grade
+scripts/sync-gundam-wiki.mjs  Regenerates data/gunpla-wiki.json (suit specs shown
+                          in each kit's Specs dialog) from the Gundam Fandom
+                          wiki pages named by the kits' `wiki` fields
 warehouse.html            Warehouse — parts + tooling inventory and projects, rendered by
                           js/warehouse.js from data/warehouse.json
 css/style.css             Shared styles
