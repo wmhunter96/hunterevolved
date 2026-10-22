@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "drawers": {
     "1": "General",
     "2": "Drivers",
@@ -263,13 +263,13 @@
     {
       "id": "tb-d5-01",
       "kind": "tool",
-      "name": "Digital micrometer",
+      "name": "Digital calipers",
       "brand": "LOUISWARE",
       "category": "Measuring",
       "location": "Drawer 5",
       "qty": 1,
       "status": "",
-      "notes": "Type/model not verified"
+      "notes": "Model not verified"
     },
     {
       "id": "tb-d7-01",
@@ -351,7 +351,7 @@
     {
       "id": "tb-d8-01",
       "kind": "tool",
-      "name": "Micrometer",
+      "name": "Digital calipers",
       "brand": "Pittsburgh",
       "category": "Measuring",
       "location": "Drawer 5",
@@ -362,21 +362,11 @@
     {
       "id": "tb-d8-02",
       "kind": "tool",
-      "name": "End cutter",
-      "brand": "CHP",
+      "name": "CHP-170 micro flush cutter",
+      "brand": "Hakko",
       "category": "Cutters",
       "location": "Drawer 8",
-      "qty": 2,
-      "status": "",
-      "notes": ""
-    },
-    {
-      "id": "tb-d8-03",
-      "kind": "tool",
-      "name": "End cutter",
-      "category": "Cutters",
-      "location": "Drawer 8",
-      "qty": 1,
+      "qty": 3,
       "status": "",
       "notes": ""
     },
@@ -389,6 +379,17 @@
       "qty": 1,
       "status": "",
       "notes": ""
+    },
+    {
+      "id": "tb-d8-15",
+      "kind": "tool",
+      "name": "GodHand nippers",
+      "brand": "GodHand",
+      "category": "Cutters",
+      "location": "",
+      "qty": 1,
+      "status": "",
+      "notes": "Gunpla nippers; model and location not recorded yet"
     },
     {
       "id": "tb-d8-05",
