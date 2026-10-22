@@ -116,7 +116,8 @@ attention", and can be used in projects.
 
 Each item has `kind` (`part` or `tool`), `name`, `category`, `location`
 (the drawer, for tools), `qty`, optional `minQty` (parts: flags low stock),
-`consumable` (tools only), optional `status` (tools: `Needs repair`, `Missing`), `link`,
+`consumable` (tools only), optional `brand` (tools: shown in its own column on the Tooling tab),
+optional `status` (tools: `Needs repair`, `Missing`), `link`,
 and `notes`.
 
 `projects[]` entries have `name`, `status` (`active` or `done`), `notes`, and

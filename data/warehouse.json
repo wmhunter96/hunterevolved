@@ -17,11 +17,12 @@
       "id": "tb-d1-01",
       "kind": "tool",
       "name": "USB-C rechargeable hot glue gun",
+      "brand": "HOTO",
       "category": "General",
       "location": "Drawer 1",
       "qty": 1,
       "status": "",
-      "notes": "HOTO; loaded with a partial glue stick (less than 1)"
+      "notes": "Loaded with a partial glue stick (less than 1)"
     },
     {
       "id": "tb-d1-07",
@@ -38,11 +39,12 @@
       "id": "tb-d1-02",
       "kind": "tool",
       "name": "ScotchBlue Pro Sharp Lines blue painter's tape",
+      "brand": "3M",
       "category": "General",
       "location": "Drawer 1",
       "qty": 1,
       "status": "",
-      "notes": "3M; 1 roll",
+      "notes": "1 roll",
       "consumable": true
     },
     {
@@ -59,51 +61,56 @@
       "id": "tb-d1-04",
       "kind": "tool",
       "name": "Self-locking tape measure",
+      "brand": "Komelon",
       "category": "Measuring",
       "location": "Drawer 5",
       "qty": 1,
       "status": "",
-      "notes": "Komelon; 12 ft"
+      "notes": "12 ft"
     },
     {
       "id": "tb-d1-05",
       "kind": "tool",
       "name": "Multitool",
+      "brand": "Winchester",
       "category": "General",
       "location": "Drawer 1",
       "qty": 1,
       "status": "",
-      "notes": "Winchester"
+      "notes": ""
     },
     {
       "id": "tb-d1-06",
       "kind": "tool",
       "name": "Multitool",
+      "brand": "Leatherman",
       "category": "General",
       "location": "Drawer 1",
       "qty": 1,
       "status": "",
-      "notes": "Leatherman"
+      "notes": ""
     },
     {
       "id": "tb-d2-01",
       "kind": "tool",
       "name": "Multi-bit screwdriver",
+      "brand": "Milwaukee",
       "category": "Drivers",
       "location": "Drawer 2",
       "qty": 1,
       "status": "",
-      "notes": "Milwaukee; Red/black; reversible double-ended bits and socket/nut-driver function"
+      "notes": "Red/black; reversible double-ended bits and socket/nut-driver function"
     },
     {
       "id": "tb-d2-02",
       "kind": "tool",
       "name": "Magnetic precision screwdriver kit",
+      "brand": "ORIA",
       "category": "Drivers",
       "location": "Drawer 2",
       "qty": 1,
       "status": "",
-      "notes": "ORIA HA7R; 60-in-1"
+      "notes": "HA7R; 60-in-1"
     },
     {
       "id": "tb-d2-03",
@@ -119,11 +126,12 @@
       "id": "tb-d2-04",
       "kind": "tool",
       "name": "Precision screwdriver and bit set",
+      "brand": "Pro'sKit",
       "category": "Drivers",
       "location": "Drawer 2",
       "qty": 1,
       "status": "",
-      "notes": "Pro'sKit; 16-piece; Green set"
+      "notes": "16-piece; Green set"
     },
     {
       "id": "tb-d2-05",
@@ -179,11 +187,12 @@
       "id": "tb-d3-02",
       "kind": "tool",
       "name": "PVC pipe cutter",
+      "brand": "HDX",
       "category": "Cutters",
       "location": "Drawer 8",
       "qty": 1,
       "status": "",
-      "notes": "HDX; capacity 1-5/8 in (42 mm)"
+      "notes": "Capacity 1-5/8 in (42 mm)"
     },
     {
       "id": "tb-d3-03",
@@ -199,11 +208,12 @@
       "id": "tb-d4-01",
       "kind": "tool",
       "name": "Super Glue Gel",
+      "brand": "Gorilla",
       "category": "Fasteners",
       "location": "Drawer 4",
       "qty": 1,
       "status": "",
-      "notes": "Gorilla",
+      "notes": "",
       "consumable": true
     },
     {
@@ -221,11 +231,12 @@
       "id": "tb-d4-03",
       "kind": "tool",
       "name": "VHB adhesive tape disc",
+      "brand": "3M",
       "category": "Fasteners",
       "location": "Drawer 4",
       "qty": 1,
       "status": "",
-      "notes": "3M",
+      "notes": "",
       "consumable": true
     },
     {
@@ -253,26 +264,29 @@
       "id": "tb-d5-01",
       "kind": "tool",
       "name": "Digital micrometer",
+      "brand": "LOUISWARE",
       "category": "Measuring",
       "location": "Drawer 5",
       "qty": 1,
       "status": "",
-      "notes": "LOUISWARE; type/model not verified"
+      "notes": "Type/model not verified"
     },
     {
       "id": "tb-d7-01",
       "kind": "tool",
       "name": "Digital multimeter",
+      "brand": "FNIRSI",
       "category": "Measuring",
       "location": "Drawer 5",
       "qty": 1,
       "status": "",
-      "notes": "FNIRSI DMT-99"
+      "notes": "DMT-99"
     },
     {
       "id": "tb-d7-07",
       "kind": "tool",
       "name": "Stanley PowerLock tape measure, 25 ft",
+      "brand": "Stanley",
       "category": "Measuring",
       "location": "Drawer 5",
       "qty": 1,
@@ -284,6 +298,7 @@
       "id": "tb-d7-08",
       "kind": "tool",
       "name": "Stanley PowerLock tape measure, 30 ft",
+      "brand": "Stanley",
       "category": "Measuring",
       "location": "Drawer 5",
       "qty": 1,
@@ -295,21 +310,23 @@
       "id": "tb-d7-03",
       "kind": "tool",
       "name": "Bit set",
+      "brand": "Porter-Cable",
       "category": "Bits",
       "location": "Drawer 7",
       "qty": 1,
       "status": "",
-      "notes": "Porter-Cable"
+      "notes": ""
     },
     {
       "id": "tb-d7-04",
       "kind": "tool",
       "name": "ToughCase+ drill bit set",
+      "brand": "DEWALT",
       "category": "Bits",
       "location": "Drawer 7",
       "qty": 1,
       "status": "",
-      "notes": "DEWALT"
+      "notes": ""
     },
     {
       "id": "tb-d7-05",
@@ -335,21 +352,23 @@
       "id": "tb-d8-01",
       "kind": "tool",
       "name": "Micrometer",
+      "brand": "Pittsburgh",
       "category": "Measuring",
       "location": "Drawer 5",
       "qty": 1,
       "status": "",
-      "notes": "Pittsburgh; model not verified"
+      "notes": "Model not verified"
     },
     {
       "id": "tb-d8-02",
       "kind": "tool",
       "name": "End cutter",
+      "brand": "CHP",
       "category": "Cutters",
       "location": "Drawer 8",
       "qty": 2,
       "status": "",
-      "notes": "CHP"
+      "notes": ""
     },
     {
       "id": "tb-d8-03",
@@ -425,6 +444,7 @@
       "id": "tb-d8-10",
       "kind": "tool",
       "name": "Gorilla Super Glue",
+      "brand": "Gorilla",
       "category": "Fasteners",
       "location": "Drawer 4",
       "qty": 1,
@@ -477,71 +497,78 @@
       "id": "tb-d9-01",
       "kind": "tool",
       "name": "Adjustable tongue-and-groove pliers",
+      "brand": "Milwaukee",
       "category": "Sockets",
       "location": "Drawer 9",
       "qty": 2,
       "status": "",
-      "notes": "Milwaukee"
+      "notes": ""
     },
     {
       "id": "tb-d9-02",
       "kind": "tool",
       "name": "Socket set",
+      "brand": "Kobalt",
       "category": "Sockets",
       "location": "Drawer 9",
       "qty": 1,
       "status": "",
-      "notes": "Kobalt; Blue and black halves of a single clamshell case; stored open because the closed case does not fit in the drawer"
+      "notes": "Blue and black halves of a single clamshell case; stored open because the closed case does not fit in the drawer"
     },
     {
       "id": "tb-top-01",
       "kind": "tool",
       "name": "Cordless adjustable-chuck drill/driver",
+      "brand": "Porter-Cable",
       "category": "Power",
       "location": "Top of toolbox",
       "qty": 1,
       "status": "",
-      "notes": "Porter-Cable; 20V MAX lithium-ion"
+      "notes": "20V MAX lithium-ion"
     },
     {
       "id": "tb-top-02",
       "kind": "tool",
       "name": "Cordless impact driver",
+      "brand": "Porter-Cable",
       "category": "Power",
       "location": "Top of toolbox",
       "qty": 1,
       "status": "",
-      "notes": "Porter-Cable; 20V MAX lithium-ion"
+      "notes": "20V MAX lithium-ion"
     },
     {
       "id": "tb-top-03",
       "kind": "tool",
       "name": "Battery charger",
+      "brand": "Porter-Cable",
       "category": "Power",
       "location": "Top of toolbox",
       "qty": 1,
       "status": "",
-      "notes": "Porter-Cable; 20V MAX"
+      "notes": "20V MAX"
     },
     {
       "id": "tb-top-04",
       "kind": "tool",
       "name": "20V MAX battery",
+      "brand": "Porter-Cable",
       "category": "Power",
       "location": "Top of toolbox",
       "qty": 1,
       "status": "",
-      "notes": "Porter-Cable PCC681L, Type 5, 20V MAX, 26Wh; good"
+      "notes": "PCC681L, Type 5, 20V MAX, 26Wh; good"
     },
     {
       "id": "tb-top-05",
       "kind": "tool",
       "name": "20V MAX battery",
+      "brand": "Porter-Cable",
       "category": "Power",
       "location": "Top of toolbox",
       "qty": 1,
       "status": "Needs repair",
-      "notes": "Porter-Cable PCC681L, Type 5, 20V MAX, 26Wh; failed, needs replacement",
+      "notes": "PCC681L, Type 5, 20V MAX, 26Wh; failed, needs replacement",
       "fixLink": "https://www.amazon.com/dp/B07BGSM4XD"
     },
     {

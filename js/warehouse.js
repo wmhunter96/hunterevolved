@@ -107,6 +107,7 @@
         id: String(it.id || newId()),
         kind: it.kind === 'tool' ? 'tool' : 'part',
         name: String(it.name).trim(),
+        brand: String(it.brand || '').trim(),
         category: String(it.category || '').trim(),
         location: String(it.location || '').trim(),
         qty: Math.max(0, Math.floor(Number(it.qty) || 0)),
@@ -294,7 +295,7 @@
     return w;
   }
   function searchMatch(it, q) {
-    var hay = [it.name, it.category, it.location, it.status, it.notes].join(' ').toLowerCase().replace(/[^a-z0-9]+/g, '');
+    var hay = [it.name, it.brand, it.category, it.location, it.status, it.notes].join(' ').toLowerCase().replace(/[^a-z0-9]+/g, '');
     var words = q.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).map(singular);
     if (!words.length) return true;
     return hay.indexOf(singular(words.join(''))) !== -1 ||
@@ -337,6 +338,7 @@
       var drawer = view === 'tool' ? drawerOf(it) : 0;
       return '<tr data-id="' + it.id + '"' + (editingId === it.id ? ' class="wh-editing"' : '') + (drawer ? ' data-drawer="' + drawer + '"' : '') + '>' +
         '<td class="wh-name">' + name + (it.consumable ? ' <span class="wh-tag">consumable</span>' : '') + '</td>' +
+        (view === 'tool' ? '<td>' + text(it.brand || '—') + '</td>' : '') +
         '<td>' + text(it.category || '—') + '</td>' +
         '<td>' + text(it.location || '—') + (gridSpot(it) ? ' <span class="wh-spot">' + gridSpot(it) + '</span>' : '') + '</td>' +
         '<td class="wh-num">' + qty + '</td>' +
@@ -543,6 +545,7 @@
       t.setAttribute('aria-selected', String(t.getAttribute('data-view') === view));
     });
     document.querySelector('.wh-status-col').hidden = view !== 'tool';
+    document.querySelector('.wh-brand-col').hidden = view !== 'tool';
     document.querySelectorAll('.wh-form [data-for]').forEach(function (el) {
       var shows = el.getAttribute('data-for').split(' ');
       el.hidden = !(shows.indexOf(view) !== -1 || (view === 'tool' && shows.indexOf('consumable') !== -1 && els.form.elements.consumable.checked));
@@ -610,6 +613,7 @@
     editingId = it.id;
     var f = els.form.elements;
     f.name.value = it.name;
+    f.brand.value = it.brand;
     f.category.value = it.category;
     f.location.value = it.location;
     f.qty.value = it.qty;
@@ -642,7 +646,7 @@
     var entry = normalize([{
       id: editingId || newId(), kind: view, status: f.status.value,
       gridX: spot.x, gridY: spot.y, gridW: size.w, gridH: size.h,
-      name: f.name.value, category: f.category.value, location: f.location.value,
+      name: f.name.value, brand: f.brand.value, category: f.category.value, location: f.location.value,
       qty: f.qty.value, minQty: f.minQty.value, link: f.link.value, fixLink: f.fixLink.value, notes: f.notes.value,
       consumable: view === 'tool' && f.consumable.checked
     }])[0];
@@ -828,7 +832,7 @@
     var tools = items.filter(function (it) { return it.kind === 'tool'; }).sort(function (a, b) {
       return (drawerOf(a) || 99) - (drawerOf(b) || 99) || a.location.localeCompare(b.location) || byName(a, b);
     }).map(function (it) {
-      return compact({ name: it.name, qty: it.qty, category: it.category, location: it.location,
+      return compact({ name: it.name, brand: it.brand, qty: it.qty, category: it.category, location: it.location,
         gridSpot: gridSpot(it), gridSize: gridSize(it), consumable: it.consumable, lowAt: it.minQty,
         runningLow: isLow(it), status: it.status, link: it.link, fixLink: it.fixLink, notes: it.notes });
     });
@@ -926,7 +930,7 @@
     function add(kind, x) {
       var spot = parseSpot(x.gridSpot), size = parseSize(x.gridSize);
       all.push({
-        id: newId(), kind: kind, name: x.name, category: x.category, location: x.location, qty: x.qty,
+        id: newId(), kind: kind, name: x.name, brand: x.brand, category: x.category, location: x.location, qty: x.qty,
         minQty: x.lowAt, consumable: x.consumable, status: x.status, link: x.link, fixLink: x.fixLink, notes: x.notes,
         gridX: spot.x, gridY: spot.y, gridW: size.w, gridH: size.h
       });
@@ -949,7 +953,7 @@
 
   // What an import would change, compared field by field in export form.
   // Items are matched by kind + name (duplicates paired up, exact matches first).
-  var DIFF_FIELDS = ['location', 'category', 'qty', 'status', 'consumable', 'lowAt', 'gridSpot', 'gridSize', 'link', 'fixLink', 'notes'];
+  var DIFF_FIELDS = ['location', 'brand', 'category', 'qty', 'status', 'consumable', 'lowAt', 'gridSpot', 'gridSize', 'link', 'fixLink', 'notes'];
   var DIFF_LABELS = { lowAt: 'low at', gridSpot: 'grid spot', gridSize: 'grid size', fixLink: 'fix link' };
   function importChanges(next) {
     var a = exportData(items, projects), b = exportData(next.items, next.projects);
