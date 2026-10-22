@@ -16,6 +16,9 @@
 //   room                where it's displayed, e.g. "Living room"
 //   shelf               the case/shelf unit, e.g. "Detolf 1"
 //   level               the level within that shelf, e.g. "Top", "Shelf 2"
+//   wiki                the suit's Gundam Fandom wiki page title, e.g. "XVX-016 Gundam Aerial".
+//                       Its specs (data/gunpla-wiki.json, from scripts/sync-gundam-wiki.mjs)
+//                       show in a details dialog when the card is clicked.
 //
 // Filters: search, room -> shelf -> level, grade, brand, series. Every tag on
 // a card (grade, brand, series, source, room, shelf, level, finish) is clickable and
@@ -23,6 +26,7 @@
 // so a filtered view can be linked (e.g. gunpla.html?brand=Kotobukiya+Maruttoys).
 (function () {
   var DATA_URL = 'data/gunpla.json';
+  var WIKI_URL = 'data/gunpla-wiki.json';
   // Display order, biggest/most detailed grades first.
   var GRADES = [
     { id: 'PG', label: 'Perfect Grade' },
@@ -57,6 +61,9 @@
   if (!listEl) return;
 
   var kits = [];
+  var wiki = {}; // wiki page title -> specs
+  var dialogEl;
+  function specsOf(kit) { return kit.wiki ? wiki[kit.wiki] : null; }
   var state = { q: '', status: 'built' };
   function statusOf(kit) { return kit.status === 'backlog' ? 'backlog' : 'built'; }
 
@@ -111,7 +118,7 @@
     }
     if (state.q) {
       var hay = [kit.name, kit.grade, kit.scale, val(kit, 'brand'), kit.series, kit.source, kit.notes, kit.finish,
-        kit.room, kit.shelf, kit.level].join(' ').toLowerCase();
+        kit.room, kit.shelf, kit.level, kit.wiki].join(' ').toLowerCase();
       var words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
       for (var w = 0; w < words.length; w++) if (hay.indexOf(words[w]) === -1) return false;
     }
@@ -197,14 +204,71 @@
     var title = kit.link
       ? '<a href="' + esc(kit.link) + '" target="_blank" rel="noopener">' + esc(kit.name) + '</a>'
       : esc(kit.name);
-    return '<div class="card gp-card" id="kit-' + kits.indexOf(kit) + '"' + art + '>' +
+    var specs = specsOf(kit), i = kits.indexOf(kit);
+    return '<div class="card gp-card' + (specs ? ' gp-has-specs' : '') + '" id="kit-' + i + '"' +
+      (specs ? ' data-specs="' + i + '"' : '') + art + '>' +
+      (specs && specs.model ? '<span class="label gp-model">' + esc(specs.model) + '</span>' : '') +
       '<h3>' + title + '</h3>' +
       '<div class="gp-tags">' + tags.join('') + '</div>' +
       (kit.notes ? '<p>' + esc(kit.notes) + '</p>' : '') +
       (where.length ? '<div class="gp-tags gp-where">' + where.join('<span class="gp-sep">›</span>') + '</div>' : '') +
       (kit.finish ? '<div class="gp-tags">' + tag('finish', kit.finish, kit.finish, 'gp-tag-finish') + '</div>' : '') +
       (kit.year ? '<p class="gp-year">Built ' + esc(kit.year) + '</p>' : '') +
+      (specs ? '<button type="button" class="btn btn-tertiary btn-sm gp-specs-btn" data-specs="' + i + '">Specs</button>' : '') +
       '</div>';
+  }
+
+  // ---- Specs dialog ----
+  // The suit's Gundam wiki data, grouped like the wiki's infobox.
+  var SPEC_GROUPS = [
+    { title: 'Profile', rows: [['model', 'Model number'], ['era', 'Era'], ['production', 'Production'],
+      ['manufacturer', 'Manufacturer'], ['operator', 'Operator'], ['pilot', 'Pilots'], ['designer', 'Mechanical designer']] },
+    { title: 'Specifications', rows: [['height', 'Height'], ['weight', 'Weight'], ['powerplant', 'Power source'], ['armor', 'Armor']] },
+    { title: 'Equipment', list: true, rows: [['equipment', 'Standard equipment']] },
+    { title: 'Armaments', list: true, rows: [['fixedArmaments', 'Fixed'], ['handheldArmaments', 'Handheld']] }
+  ];
+
+  function specsHtml(kit, specs) {
+    var groups = SPEC_GROUPS.map(function (g) {
+      var rows = g.rows.filter(function (r) { var v = specs[r[0]]; return v && (!Array.isArray(v) || v.length); });
+      if (!rows.length) return '';
+      return '<section class="gp-spec-group"><h3 class="label">' + esc(g.title) + '</h3><dl>' + rows.map(function (r) {
+        var v = specs[r[0]];
+        var dd = Array.isArray(v) && g.list
+          ? '<ul>' + v.map(function (x) {
+            return /^↳ /.test(x) ? '<li class="gp-spec-sub">' + esc(x.slice(2)) + '</li>' : '<li>' + esc(x) + '</li>';
+          }).join('') + '</ul>'
+          : esc(Array.isArray(v) ? v.join(', ') : v);
+        return '<div><dt>' + esc(r[1]) + '</dt><dd>' + dd + '</dd></div>';
+      }).join('') + '</dl></section>';
+    }).join('');
+    return '<div class="gp-spec-head">' +
+        (specs.image ? '<img class="gp-spec-img" src="' + esc(specs.image) + '" alt="' + esc(kit.wiki) + '" referrerpolicy="no-referrer" onerror="this.remove()">' : '') +
+        '<div><p class="label">' + esc([kit.grade, kit.scale].filter(Boolean).join(' ')) + '</p>' +
+        '<h2 id="gunplaDialogTitle">' + esc(kit.name) + '</h2>' +
+        '<p class="gp-spec-suit">' + esc(kit.wiki) + '</p></div>' +
+        '<button type="button" class="btn btn-tertiary btn-sm gp-spec-close" data-close aria-label="Close">&times;</button>' +
+      '</div>' + groups +
+      '<p class="gp-spec-src"><a href="' + esc(specs.url) + '" target="_blank" rel="noopener">View on the Gundam Wiki</a>' +
+      ' · text CC BY-SA, Gundam Fandom contributors</p>';
+  }
+
+  function openSpecs(i) {
+    var kit = kits[i], specs = kit && specsOf(kit);
+    if (!specs) return;
+    if (!dialogEl) {
+      dialogEl = document.createElement('dialog');
+      dialogEl.className = 'gp-dialog';
+      dialogEl.setAttribute('aria-labelledby', 'gunplaDialogTitle');
+      document.body.appendChild(dialogEl);
+      dialogEl.addEventListener('click', function (e) {
+        // Clicks on the backdrop land on the dialog element itself.
+        if (e.target === dialogEl || e.target.closest('[data-close]')) dialogEl.close();
+      });
+    }
+    dialogEl.innerHTML = '<div class="gp-dialog-body">' + specsHtml(kit, specs) + '</div>';
+    if (dialogEl.showModal) dialogEl.showModal(); else dialogEl.setAttribute('open', '');
+    dialogEl.scrollTop = 0;
   }
 
   // ---- Shelf map ----
@@ -429,7 +493,13 @@
   // ---- Events ----
   function onClick(e) {
     var t = e.target.closest('button');
-    if (!t) return;
+    if (!t) {
+      // A click on the card itself (not a tag or link) opens its specs.
+      var c = e.target.closest('.gp-card[data-specs]');
+      if (c && !e.target.closest('a')) openSpecs(+c.getAttribute('data-specs'));
+      return;
+    }
+    if (t.hasAttribute('data-specs')) return openSpecs(+t.getAttribute('data-specs'));
     if (t.hasAttribute('data-status')) {
       // Switching tabs keeps the search but drops filters that may not apply.
       state = { q: state.q, status: t.getAttribute('data-status') };
@@ -495,8 +565,14 @@
   }
 
   readUrl();
+  // Wiki specs are optional: without them the cards just have no Specs button.
+  var wikiLoad = fetch(WIKI_URL, { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : {}; })
+    .then(function (data) { wiki = data.pages || {}; })
+    .catch(function () {});
   fetch(DATA_URL, { cache: 'no-cache' })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) { return wikiLoad.then(function () { return data; }); })
     .then(function (data) {
       kits = Array.isArray(data.kits) ? data.kits : [];
       if (!kits.length) {

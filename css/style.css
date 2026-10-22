@@ -58,6 +58,7 @@
   --color-object-alu-hi: #E3E6E8;
   --color-object-alu-ink: #1B1F22;
   --color-object-wood: #9A7650;       /* wood shelves / sill */
+  --color-object-spec-art: #DDE2E6;   /* light mat behind wiki suit art */
   --color-object-wood-hi: #B08A60;
   --color-object-wood-ink: #1D1206;
   --color-scrim: 17, 20, 24; /* --color-bg as RGB, for image scrims */
@@ -767,6 +768,45 @@ main.page:not(.wh-view-tool) .wh-tools-only { display: none !important; }
 .gp-sep { color: var(--color-text-disabled); font-size: 12px; }
 .gp-year { font: var(--text-micro); color: var(--color-text-muted); }
 @media (max-width: 640px) { .gp-selects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Kits with Gundam wiki specs: the card opens a details dialog */
+.gp-has-specs { cursor: pointer; }
+.gp-has-specs:hover { border-color: var(--color-border-strong); background: var(--color-surface-elevated); }
+.gp-model { display: block; margin-bottom: 2px; }
+.gp-specs-btn { margin: var(--space-3) 0 0 calc(-1 * var(--space-3)); }
+
+.gp-dialog {
+  width: min(720px, calc(100vw - 2 * var(--space-4))); max-height: calc(100vh - 2 * var(--space-6));
+  padding: 0; color: var(--color-text);
+  background: var(--color-surface); border: 1px solid var(--color-border-strong); border-radius: var(--radius-xl);
+}
+.gp-dialog::backdrop { background: rgba(var(--color-scrim), .78); }
+.gp-dialog-body { padding: var(--space-5); }
+.gp-spec-head { display: flex; gap: var(--space-4); align-items: flex-start; margin-bottom: var(--space-2); }
+.gp-spec-head > div { flex: 1; min-width: 0; }
+.gp-spec-head h2 { font: var(--text-h3); margin: 2px 0 var(--space-1); }
+.gp-spec-head p { margin: 0; }
+.gp-spec-suit { color: var(--color-text-secondary); font: var(--text-small); }
+.gp-spec-img {
+  flex: none; width: 140px; height: 180px; object-fit: contain;
+  background: var(--color-object-spec-art); border-radius: var(--radius-lg);
+}
+.gp-spec-close { flex: none; width: var(--control-h-sm); padding: 0; font-size: 20px; }
+.gp-spec-group { margin-top: var(--space-5); }
+.gp-spec-group h3 { margin: 0 0 var(--space-2); padding-bottom: var(--space-2); border-bottom: 1px solid var(--color-border); }
+.gp-spec-group dl { margin: 0; }
+.gp-spec-group dl > div { display: grid; grid-template-columns: 160px 1fr; gap: var(--space-3); padding: 6px 0; }
+.gp-spec-group dt { color: var(--color-text-muted); font: var(--text-small); }
+.gp-spec-group dd { margin: 0; font: var(--text-small); color: var(--color-text); }
+.gp-spec-group ul { margin: 0; padding-left: var(--space-4); }
+.gp-spec-group li.gp-spec-sub { margin-left: var(--space-4); list-style: circle; color: var(--color-text-secondary); }
+.gp-spec-src { margin: var(--space-5) 0 0; font: var(--text-small); color: var(--color-text-muted); }
+@media (max-width: 640px) {
+  .gp-dialog-body { padding: var(--space-4); }
+  .gp-spec-head { flex-wrap: wrap; }
+  .gp-spec-img { order: 3; width: 100%; height: 220px; }
+  .gp-spec-group dl > div { grid-template-columns: 1fr; gap: 2px; }
+}
 
 /* Card highlight when jumping to a kit from the shelf map */
 .gp-card.gp-flash { animation: gp-flash 1.4s ease-out; }
