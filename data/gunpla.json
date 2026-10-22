@@ -683,11 +683,27 @@
       "shelf": "Windowsill"
     },
     {
-      "name": "Noseru / Tamotu (second kit)",
+      "name": "Mamoru",
       "grade": "Other",
       "scale": "1/12",
       "brand": "Kotobukiya Maruttoys",
-      "notes": "Version to confirm",
+      "room": "Office",
+      "shelf": "Windowsill"
+    },
+    {
+      "name": "Hakobu / Riku",
+      "grade": "Other",
+      "scale": "1/12",
+      "brand": "Kotobukiya Maruttoys",
+      "room": "Office",
+      "shelf": "Windowsill"
+    },
+    {
+      "name": "Hakobu / Riku Cart & Container 2-set pack",
+      "grade": "Other",
+      "scale": "1/12",
+      "brand": "Kotobukiya Maruttoys",
+      "notes": "Accessory set for Hakobu / Riku",
       "room": "Office",
       "shelf": "Windowsill"
     },
