@@ -635,13 +635,24 @@
     {
       "id": "pt-10",
       "kind": "part",
-      "name": "XT30 pigtail, male + female",
+      "name": "XT30 pigtail, male",
       "category": "Connectors",
       "location": "",
-      "qty": 1,
+      "qty": 4,
       "status": "",
       "link": "https://www.amazon.com/dp/B09LYHHS9J",
-      "notes": "ZHOFONET; pack count not on the order"
+      "notes": "ZHOFONET; came as 5 male + 5 female pairs"
+    },
+    {
+      "id": "pt-19",
+      "kind": "part",
+      "name": "XT30 pigtail, female",
+      "category": "Connectors",
+      "location": "",
+      "qty": 5,
+      "status": "",
+      "link": "https://www.amazon.com/dp/B09LYHHS9J",
+      "notes": "ZHOFONET; came as 5 male + 5 female pairs"
     },
     {
       "id": "pt-11",
@@ -776,6 +787,13 @@
           "id": "pj-01-u6",
           "itemId": "pt-11",
           "name": "USB-C female to Micro USB male adapter",
+          "qty": 1,
+          "date": "2026-10-18"
+        },
+        {
+          "id": "pj-01-u7",
+          "itemId": "pt-10",
+          "name": "XT30 pigtail, male",
           "qty": 1,
           "date": "2026-10-18"
         }
