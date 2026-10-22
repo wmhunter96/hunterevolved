@@ -632,7 +632,7 @@
       "name": "SG90 9g micro servo",
       "category": "Servos",
       "location": "",
-      "qty": 5,
+      "qty": 0,
       "status": "",
       "link": "https://www.amazon.com/dp/B0BJQ2QTHG",
       "notes": "Beffkkip; plastic gear; 5-pack"
@@ -1336,7 +1336,7 @@
       "name": "0.96\" OLED display, SSD1306 128x64 I2C",
       "category": "Displays",
       "location": "",
-      "qty": 3,
+      "qty": 2,
       "status": "",
       "link": "https://www.amazon.com/dp/B0GBVWBWCR",
       "notes": "White; 4-pack"
@@ -1380,7 +1380,7 @@
       "name": "ESP32 dev board, ESP-WROOM-32",
       "category": "Microcontrollers",
       "location": "",
-      "qty": 2,
+      "qty": 1,
       "status": "",
       "notes": "ESP-32S; dual-core, WiFi + Bluetooth, Arduino IDE compatible; 3-pack"
     },
@@ -1457,6 +1457,35 @@
           "name": "Quick-disconnect wire, red",
           "qty": 1,
           "date": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "pj-02",
+      "name": "Tiny Engineer AI desk robot",
+      "status": "active",
+      "notes": "jamro's Tiny Engineer (https://www.thingiverse.com/thing:7419478, https://github.com/jamro/tiny-engineer), adapted: ESP32-WROOM instead of ESP32-C3-Zero, 0.96\" 128x64 OLED instead of 0.91\", servos driven directly from ESP32 GPIOs (no PCA9685), no audio. Servo power from the Pololu 5V 5A regulator (on order, arriving Oct 27), common ground. Firmware needs porting; printed mounts need adapting for the larger board and screen. Print the parts/sg90 set. Uses M2 screws from the organizer (self-tapping preferred).",
+      "uses": [
+        {
+          "id": "pj-02-u1",
+          "itemId": "pt-01",
+          "name": "SG90 9g micro servo",
+          "qty": 5,
+          "date": "2026-10-22"
+        },
+        {
+          "id": "pj-02-u2",
+          "itemId": "pt-17",
+          "name": "ESP32 dev board, ESP-WROOM-32",
+          "qty": 1,
+          "date": "2026-10-22"
+        },
+        {
+          "id": "pj-02-u3",
+          "itemId": "pt-13",
+          "name": "0.96\" OLED display, SSD1306 128x64 I2C",
+          "qty": 1,
+          "date": "2026-10-22"
         }
       ]
     }
