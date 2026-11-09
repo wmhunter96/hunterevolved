@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Regenerates the deck cards on mtg.html from the "Owned" Archidekt folder.
+// Regenerates the deck cards on tcg.html from the "Owned" Archidekt folder.
 //
 // Archidekt's API only sets Access-Control-Allow-Origin for its own frontend,
 // so this can't run as a button in the browser (see README) — it runs here,
@@ -7,7 +7,7 @@
 //
 // For each deck this pulls: name, commander(s), color identity (as mana
 // symbol icons), and featured art, then rewrites the <div class="card-grid">
-// block in mtg.html. Each card's hand-written blurb <p> is matched by
+// block in tcg.html. Each card's hand-written blurb <p> is matched by
 // data-deck-id and carried over untouched; a deck seen for the first time
 // gets a placeholder blurb to fill in by hand. Decks removed from the
 // Archidekt folder are dropped from the page.
@@ -20,10 +20,10 @@ import path from "node:path";
 
 const FOLDER_ID = 1610461;
 const FOLDER_URL = `https://archidekt.com/folders/${FOLDER_ID}`;
-const MTG_HTML_PATH = path.join(
+const TCG_HTML_PATH = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
-  "mtg.html",
+  "tcg.html",
 );
 const USER_AGENT = "hunterevolved-sync/1.0 (+https://hunterevolved.com)";
 const PLACEHOLDER_BLURB = "Add a strategy blurb for this deck.";
@@ -166,7 +166,7 @@ async function buildCard(deckSummary, existingBlurbs) {
 }
 
 async function main() {
-  const html = await readFile(MTG_HTML_PATH, "utf8");
+  const html = await readFile(TCG_HTML_PATH, "utf8");
   const existingBlurbs = extractExistingBlurbs(html);
   const existingIds = new Set(existingBlurbs.keys());
 
@@ -193,7 +193,7 @@ async function main() {
     return;
   }
 
-  await writeFile(MTG_HTML_PATH, newHtml, "utf8");
+  await writeFile(TCG_HTML_PATH, newHtml, "utf8");
   console.log(`Synced ${cards.length} decks.`);
   if (added.length) {
     console.log(

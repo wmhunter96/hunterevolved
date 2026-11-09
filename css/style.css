@@ -12,7 +12,7 @@
         tabs, empty states, focus)
      5. Home
      6. Gear (garage)
-     7. MTG
+     7. TCG
      8. Warehouse
      9. Gunpla
     10. Utilities & motion
@@ -445,7 +445,7 @@ input[type="search"]::-webkit-search-cancel-button { filter: grayscale(1) bright
   .vehicle-photo { flex-basis: auto; }
 }
 
-/* 7. MTG ------------------------------------------------------------------- */
+/* 7. TCG ------------------------------------------------------------------- */
 .mana { display: inline-flex; align-items: center; gap: 3px; margin-left: var(--space-1); vertical-align: -3px; }
 .mana img { display: block; width: 15px; height: 15px; }
 

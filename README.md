@@ -1,6 +1,6 @@
 # hunterevolved.com
 
-Personal site — Gear, MTG, Gunpla, homelab rack viz. Plain HTML/CSS/JS, GitHub Pages (HOST-38).
+Personal site — Gear, TCG, Gunpla, homelab rack viz. Plain HTML/CSS/JS, GitHub Pages (HOST-38).
 
 ## Structure
 
@@ -12,8 +12,10 @@ gear/desktop-pc.html       Desktop PC BOM (HOST-32/33)
 gear/homelab.html          Homelab — real rack inventory table, plus a
                           #rack-viewer mount point for the future
                           interactive 3D rack (Three.js, HOST-63/65)
-mtg.html                  MTG — EDH decks (HOST-56/57/58), auto-synced from Archidekt
-scripts/sync-archidekt.mjs  Regenerates mtg.html's deck cards from Archidekt
+tcg.html                  TCG — EDH decks (HOST-56/57/58), auto-synced from Archidekt
+mtg.html                  Redirect to tcg.html for old links
+binder/                   3D card binder, built from the tcg-binder project
+scripts/sync-archidekt.mjs  Regenerates tcg.html's deck cards from Archidekt
 gunpla.html               Gunpla — every kit built, rendered by js/gunpla.js
                           from data/gunpla.json, grouped by grade
 scripts/sync-gundam-wiki.mjs  Regenerates data/gunpla-wiki.json (suit specs shown
@@ -58,7 +60,7 @@ open tickets.
 
 ## Archidekt sync
 
-`mtg.html`'s deck cards are generated from the ["Owned" Archidekt
+`tcg.html`'s deck cards are generated from the ["Owned" Archidekt
 folder](https://archidekt.com/folders/1610461), not hand-maintained. A
 GitHub Action (`.github/workflows/sync-archidekt.yml`) runs
 `scripts/sync-archidekt.mjs` daily (and can be run on demand from the
